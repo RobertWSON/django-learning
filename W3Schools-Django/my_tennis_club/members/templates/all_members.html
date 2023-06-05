@@ -1,0 +1,40 @@
+{# Now we use master template that has all necessary HTML elements common in the layout for the web pages #}    
+{% extends "master.html" %} 
+ 
+{# #} <!DOCTYPE html> {#  #}
+{# #} <html> {# #}
+        {# !DOCTYPE html and html tags now used in master.html Template #}
+
+    {# #} <head> {# head tag is now used in master.html template #}    
+    {# #} <title> {# "title tag is now used in master.html template" #}   
+        {% block title %}    {# Using title block tag from master.html #}
+            {# putting title to show on top of web page in all_members.html  #} 
+            My Tennis Club - List of all Members
+        {% endblock %}    
+    {# #} </title> {# " closing title tag is now used in master.html template" #}
+    {# #} </head> {# closing head tag is now used in master.html template #}    
+
+    {# #} <body> {# body tag is now used in master.html template #}    
+
+    {% block content %}   {# Using a content block tag from master.html #} 
+
+        {# Add Link Back to Main Page. Note that it is within a paragraph tag. #} 
+        <p><a href = "/">Home</a></p>
+
+        {# Now we can have html and django content for main body part of web page, within content block #}
+
+        <h1>Members</h1>
+
+        <ul>
+            {# For Loop used for iterating over a sequence, in this case a list#}
+            {% for x in mymembers %}
+                {% comment %}<li>{{ x.firstname }} {{ x.lastname }}</li>{% endcommment %}
+                {% comment "Need to Add Link to above List, below" %}{% endcomment %}
+                <li><a href = "details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>        
+            {% endfor %}
+        </ul>
+
+    {% endblock %}
+
+    {# #} </body> {# closing body tag is now used in master.html template #}        
+{# #} </html> {# closing html tag is now used in master.html template #}

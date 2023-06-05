@@ -1,0 +1,16 @@
+{# This is an HTML Template for Testing purposes. #}
+{# It is used for testing code and the result is shown on /testing/ url. #}
+<!DOCTYPE html>
+<html>
+<body>
+
+{# A for loop is used for iterating over a sequence, like looping over items in an array, a list, or a dictionary. #}
+{# In this case we are looping over a dictionary (refer to Django For Loop Section under Django Syntax). #}    
+{% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %}  {# End of For Loop #}
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+
+</body>
+</html>
