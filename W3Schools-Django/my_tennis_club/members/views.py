@@ -33,7 +33,7 @@ def details(request, id):
     mymember = Member.objects.get(id=id)
     # HTML details template to be used with loader
     template = loader.get_template('details.html')
-    # Creates an object containing a member
+#    # Creates an object containing a member
     context = {     # mymember string relates to a property name for example phone or joined_date.
                     # This is taken from one person's details, eg from an id in a table.
         'mymember': mymember,  
@@ -56,9 +56,22 @@ def testing(request):
     # HTML Template to be used with loader (load Template html file)
     template = loader.get_template('template.html')
     # Creates an object containing fruits as an array
-    context = {                                   # fruits is the object name  
-        'fruits': ['Apple', 'Banana', 'Cherry'],  # fruits object is an Array that has a variety of fruits   
-    }
-    # Sends object to template and output HTML rendered by template. 
-    return HttpResponse(template.render(context, request))
+    #context = {       # fruits is the object name  
+        # 'fruits': ['Apple', 'Banana', 'Cherry'],  # fruits object is an Array that has a variety of fruits   
+        #'firstname': 'Linus' , # HTMLTemplate Variable is given a name here
+    #}
     
+    # Sends object to template and output HTML rendered by template. 
+    #return HttpResponse(template.render(context, request))
+
+    #Use return Below for Creating Variables in Template within Django Variable of Django Syntax Section 
+    return HttpResponse(template.render())
+
+    # Data from a Model within Django Variable of Django Syntax Section    
+    #def testing(request):
+    #    mymembers = Member.objects.all().values()
+    #    template = loader.get_template('template.html')
+    #    context = {
+    #        'mymembers': mymembers,
+    #    }
+    #    return HttpResponse(template.render(context, request))

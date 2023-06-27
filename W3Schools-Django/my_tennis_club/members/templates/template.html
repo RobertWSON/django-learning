@@ -6,11 +6,33 @@
 
 {# A for loop is used for iterating over a sequence, like looping over items in an array, a list, or a dictionary. #}
 {# In this case we are looping over a dictionary (refer to Django For Loop Section under Django Syntax). #}    
-{% for x in fruits %}
-  <h1>{{ x }}</h1>
-{% endfor %}  {# End of For Loop #}
 
-<p>In views.py you can see what the fruits variable looks like.</p>
+{# Comment Fruits to Displaying a name Linus #}
+{# {% for x in fruits %} #}
+{#  <h1>{{ x }}</h1> #}
+{# {% endfor %} #}  {# End of For Loop #}
+
+{# <p>In views.py you can see what the fruits variable looks like.</p> #}
+
+{# Code for displaying Linus name, from Template Variables example under Django Variables from Django Syntax Section #}
+{#<h1>Hello {{ firstname }} #}  {# firstname is a Template Variable #} {#, how are you ?</h1> #}
+
+{% comment %}<p>In views.py you can see how to create the variable.</p>  
+<p>In template.html you can see how to use the variable.</p>{% endcomment %} 
+
+{# Code for Creating Variables in Template within Django Variable of Django Syntax Section #}
+{% with firstname = "Tobias" %}  {# with specifies a variable to use in its block #}
+<h1>Hello {{ firstname }}, how are you ?</h1> 
+{% endwith %}    {# endwith specifies end of its block #}
+
+{% comment%}<ul>
+  {% for x in members %}
+    <li>{{ x.firstname }}</li>
+  {% endfor %}   
+</ul>  
+
+<p>In views.py you can see how to import and fetch members from the database.</p>
+{% endcomment %}
 
 </body>
 </html>
