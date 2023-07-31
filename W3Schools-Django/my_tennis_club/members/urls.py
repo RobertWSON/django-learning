@@ -1,12 +1,55 @@
+# Original 2 imports below, created in URLs, within (9 Django URLs) of Django Tutorial Section
+# are originally used with members url 
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
-    # Added path to make sure that root url points to main view
-    path('', views.main, name='main'),
     
+    # Original members path created in URLs, within (9 Django URLs) of Django Tutorial Section
     # Path below makes sure that members url points to members view
     path('members/', views.members, name='members'),
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    # Added path to make sure that root url points to main view (Home Page)
+    path('', views.main, name='main'),
+    
+    
+    
     
     # "/details/ url points to correct details view with id as a parameter" 
     # <int:id> is a path converter that matches zero or a positive integer. 

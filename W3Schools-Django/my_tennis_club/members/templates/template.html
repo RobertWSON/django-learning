@@ -4,35 +4,420 @@
 <html>
 <body>
 
-{# A for loop is used for iterating over a sequence, like looping over items in an array, a list, or a dictionary. #}
-{# In this case we are looping over a dictionary (refer to Django For Loop Section under Django Syntax). #}    
 
-{# Comment Fruits to Displaying a name Linus #}
-{# {% for x in fruits %} #}
-{#  <h1>{{ x }}</h1> #}
-{# {% endfor %} #}  {# End of For Loop #}
 
-{# <p>In views.py you can see what the fruits variable looks like.</p> #}
 
-{# Code for displaying Linus name, from Template Variables example under Django Variables from Django Syntax Section #}
-{#<h1>Hello {{ firstname }} #}  {# firstname is a Template Variable #} {#, how are you ?</h1> #}
+{# Code for displaying Linus name, from Template Variables example, under Django Variables from Django Syntax Section. #}
+{# <h1>Hello {{ firstname }} #} {# firstname is a Template Variable #} {#, how are you ?</h1> #}
+{# <p>In views.py you can see how to create variable.</p> #}
+{# <p>In template.html you can see how to use variable.</p> #}
 
-{% comment %}<p>In views.py you can see how to create the variable.</p>  
-<p>In template.html you can see how to use the variable.</p>{% endcomment %} 
+{# Code for Creating Variables in Template within Django Variable of Django Syntax Section. #}
+{% with firstname="Tobias" %}   {# with specifies a variable to use in its block #} 
 
-{# Code for Creating Variables in Template within Django Variable of Django Syntax Section #}
-{% with firstname = "Tobias" %}  {# with specifies a variable to use in its block #}
 <h1>Hello {{ firstname }}, how are you ?</h1> 
-{% endwith %}    {# endwith specifies end of its block #}
-
-{% comment%}<ul>
-  {% for x in members %}
-    <li>{{ x.firstname }}</li>
-  {% endfor %}   
-</ul>  
-
-<p>In views.py you can see how to import and fetch members from the database.</p>
-{% endcomment %}
+{% endwith %}   {# endwith specifies end of its block #} 
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+{# Test Template within Django Add Test View (21 Django - Add Test View) of Django Display Data Section #}
+{# {% for x in fruits %} #}
+{# <h1>{{ x }}</h1> #}
+{# {% endfor %} #} {# End of For Loop #}
+
+{# <p>In views.py you can see what fruits variable looks like.</p> #}
+
+ 
+
+
+
+
+
+
+
+
+{# For Loops within Django for Tag or Django For Loop of Django Syntax Section (I think) #}
+{# A for loop is used for iterating over a sequence, like looping over items in an array, a list or a dictionary.  #}
+{# In this case we are looking over a dictionary (refer to Django For Loop Section under Django Syntax). #}
+
+{# {% for x in fruits %} #}
+{# <h1>{{ x }}</h1> #}
+{# {% endfor %} #} {# End of For Loop #}
+{# <p>In views.py you can see what fruits variable looks like.</p> #}
+
+
+{# Data From a Model within Django Variable of Django Syntax Section #} 
+{# <ul> #}
+    {# {% for x in mymembers %}  #}
+    {#}    <li>{{ x.firstname }}</li>  #}
+    {#  {% endfor %}  #}
+{# </ul>  #}
+
+{# <p>In views.py you can see how to import and fetch members from database.</p>  #}
+
+
+{# Code for Template Tags within Django Tags of Django Syntax Section. #}
+{# {% if greeting == 1 %} #}
+  {#<h1>Hello</h1> #}
+{# {% else %} #}
+  {# <h1>Bye</h1> #}
+{# {% endif %} #}
+
+{# <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+
+
+{# If Statement within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# {% if greeting == 1 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}
+{# <p>In views.py you can see what the greeting variable looks like.</p>#}
+
+
+
+{# Elif within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{#  {% if greeting == 1 %}  #}
+{#    <h1>Hello</h1> #}
+{#  {% elif greeting == 2 %} #}
+{#    <h1>Welcome</h1> #}
+{#  {% endif %} #} 
+{#  <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# Else within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{#  {% if greeting == 1 %}  #}
+{#    <h1>Hello</h1> #}
+{#  {% elif greeting == 2 %} #}
+{#    <h1>Welcome</h1> #}
+{#  {% else %} #}
+{#    <h1>Goodbye</h1> #}
+{#  {% endif %} #}
+{#  <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# Operators within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# Note == operator is dropped here with this example #}
+{#  {% if greeting == 1 %}  #}
+{#    <h1>Hello</h1> #}
+{#  {% endif %} #}
+{#  <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# == within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# {% if greeting == 2 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}
+{#  <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# != within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# {% if greeting != 1 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}
+{#  <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# < within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# {% if greeting < 3 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}   
+{# <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# <= within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# {% if greeting <= 3 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}   
+{# <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# > within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# {% if greeting > 1 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}   
+{# <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# >= within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# {% if greeting > 1 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}   
+{# <p>In views.py you can see what the greeting variable looks like.</p> #}
+
+
+{# and within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# and operator checks if more than one condition is true #}
+{# {% if greeting == 1 and day == "Friday" %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}   
+{# <p>In views.py you can see what the variables looks like.</p> #}
+
+
+{# or within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# or operator checks if one of conditions is true. #}
+{# greeting has a value of 1 in views, so Hello will be displayed. #}
+{# {% if greeting == 1 or greeting == 5 %} #}
+{#    <h1>Hello</h1> #}
+{# {% endif %} #}   
+{# <p>In views.py you can see what the variables looks like.</p> #}
+
+
+{# and/or within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# and/or operator has and condition, which allows for specific values of 2 variables,  #}
+{# the or part also allows for another specific value of one of the first 2 variables. #}
+{# Parentheses are not allowed in if statements in Django, so when you combine and and or operators, #}
+{# it is important to know that with code below, the interpreter reads it with parentheses #}
+{# being added for and but not for or. #} 
+{# It is read by interpreter like this {% if (greeting == 1 and day == "Friday") or greeting == 5 %} #}
+{# It is written in Django like this though #}
+{# {% if greeting == 1 and day == "Friday" or greeting == 5 %} #}
+{#    <h1>Hello Weekend!</h1> #}
+{# {% endif %} #}
+{# <p>In views.py you can see what the variables look like.</p> #}
+
+
+{# in within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# in operator checks if a certain item is present in an object. #}
+{# {% if 'Banana' in fruits %} #}
+{#   <h1>Hello</h1> #}
+{# {% else %} #}
+{#   <h1>Goodbye</h1> #}
+{# {% endif %} #}
+{# <p>In views.py you can see what fruits variable looks like.</p> #}
+
+
+{# not in within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# not in operator checks if a certain item is not present in an object. #}
+{# {% if 'Banana' in fruits %} #}
+{#   <h1>Hello</h1> #}
+{# {% else %} #}
+{#   <h1>Goodbye</h1> #}
+{# {% endif %} #}
+{# <p>In views.py you can see what fruits variable looks like.</p> #}
+
+
+{# is within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# is operator checks if identify of 2 objects (x and y variables below) are the same or not, #} 
+{# but not values like == does . #}
+{# {% if x is y %} #}
+{#   <h1>YES</h1> #}
+{# {% else %} #}
+{#   <h1><NO/h1> #}
+{# {% endif %} #}  
+{# <p>In views.py you can see what x and y variables look like.</p> #}
+
+
+{# == within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# == operator checks if values of 2 objects (x and y variables below) are the same or not.  #}
+{# {% if x == y %} #}
+{#   <h1>YES</h1> #}
+{# {% else %} #}
+{#   <h1><NO/h1> #}
+{# {% endif %} #}  
+{# <p>In views.py you can see what x and y variables look like.</p> #}
+
+
+{# with and is within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# with and is, determines if 2 objects are pointing to same object (variable) or not. #}
+{# {% with var1=x var2=x %} #}
+{#   {% if var1 is var2 %} #}
+{#     <h1>YES</h1> #}
+{#   {% else %} #}
+{#     <h1><NO/h1> #}
+{#   {% endif %} #}
+{# {% endwith %} #}  
+{# <p>The x variable is created in views.py, and both var and var2 points to x.</p> #}
+
+
+{# is not within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section #}
+{# is not checks if 2 objects are not the same. Meaning they do not have same identity eg x is not y. #}
+{# {% if x is not y %} #}
+{#   <h1>YES</h1> #}
+{# {% else %} #}
+{#   <h1><NO/h1> #}
+{# {% endif %} #} 
+{# <p>In views.py, you can see what the x and y variables look like.</p> #}
+
+
+{# For Loops List items within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# A for loop is used for iterating over a sequence, like looping over items in an array, a list or a dictionary.  #} 
+{# In this case we are using headings as a list of fruits. #}
+{# x is fruit item in list taken from fruits array and fruits is an object in views  #}
+{# {% for x in fruits %} #}
+{#   <h1>{{ x }}</h1> #}
+{# {% endfor %} #} {# End of For Loop #}
+{# <p>In views.py you can see what fruits variable looks like.</p> #}
+
+
+{# For Loops List dictionaries within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# A for loop is used for iterating over a sequence, like looping over items in an array, a list or a dictionary.  #} 
+{# Here we are using a for loop with a group of dictionaries in a list. #}
+{# cars is an object and x is a variable used to access property values within a dictionary eg x.brand . #}
+{# {% for x in cars %} #}
+{#   <h1>{{ x.brand }}</h1> #}
+{#   <p>{{ x.model }}</p> #}
+{#   <p>{{ x.year }}</p> #}
+{# {% endfor %} #} {# End of For Loop #}
+{# <p>In views.py you can see what cars variable looks like.</p> #}
+
+
+
+{# Data from a Model within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# Loop through items fetched from a database #}
+{# {% for x in members %} #}
+{# We are displaying each id in numerical order as a heading, #} 
+{# along with first and last name down the page. #}
+{#   <h1>{{ x.id }}</h1> #}
+{#    <p> #}
+{#     {{ x.firstname }} #}
+{#     {{ x.lastname }} #}
+{#    <p> #}
+{# {% endfor %} #} {# End of For Loop #}
+{# <p>In views.py you can see how to import and fetch members from the database.</p> #}
+
+
+
+{# Reversed within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# Reversed keyword is used when you want to do a loop in reversed order. #}
+{# {% for x in members reversed %} #}
+{# We are displaying each id in numerical order as a heading, #} 
+{# along with first and last name down the page. #}
+{#   <h1>{{ x.id }}</h1> #}
+{#    <p> #}
+{#     {{ x.firstname }} #}
+{#     {{ x.lastname }} #}
+{#    <p> #}
+{# {% endfor %} #} {# End of For Loop #}
+{# <p>In views.py you can see how to import and fetch members from the database.</p> #}
+
+
+
+{# Empty within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# The empty keyword can be used if you want to do something special if object is empty #}
+{# In this case we are displaying No members within a list, as object is empty #}
+{# <ul> #}
+{#   {% for x in emptytestobject %} #}
+{#     Note: firstname variable does not get displayed because it does not exist in object#}
+{#     <li>{{ x.firstname }}</li> #}
+{#   {% empty %} #}
+{#     <li>No members>/li> #}
+{#   {% endfor %} #} {# End of For Loop #}
+{# </ul> #}  
+{# <p>In views.py you can see the emptytestobject.</p> #}
+
+
+{# Empty used if object does not exist, #} 
+{# within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# empty keyword can also be used if object does not exist #}
+{# <ul> #}
+{#   Note: myobject object does not exist in views.py#}  
+{#   {% for x in myobject %} #}
+{#     Note: firstname variable does not get displayed because it does not exist in views.py fruits object #}
+{#     <li>{{ x.firstname }}</li> #}
+{#   {% empty %} #}
+{#     Note: No members gets diplayed in a list because myobject does not exist, so it is thought of as empty #}
+{#     <li>No members>/li> #}
+{#   {% endfor %} #} {# End of For Loop #}
+{# </ul> #}  
+{# <p>In views.py you can see that there is no myobject variable.</p> #}
+
+
+
+{# Django has some variables that are available for you inside a loop: #}
+{# We cover these forloop variables below. #}
+
+{# forloop.counter within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# For default loop counter, current iteration starts at 1 #}
+{# Here we are using a counter loop in a list for displaying index values in an array, starting at 1. #}
+{# It also displays it in number order from 1 up to top to 5 down bottom of list. #}
+{# <ul> #}
+{#   {% for x in fruits %} #}  
+{#     <li>{{ forloop.counter }}</li> #}
+{#   {% endfor %} #} {# End of For Loop #}
+{# </ul> #}
+{# <p>In views.py you can see what the fruits object looks like.</p> #}
+
+
+
+{# forloop.counter0 within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# For loop counter0, current iteration starts at 0 #}
+{# Here we are using a counter loop in a list for displaying index values in an array, starting at 0. #}
+{# It also displays it in number order from 0 up to top to 4 down bottom of list. #}
+{# <ul> #}
+{#   {% for x in fruits %} #}  
+{#     <li>{{ forloop.counter0 }}</li> #}
+{#   {% endfor %} #} {# End of For Loop #}
+{# </ul> #}
+{# <p>In views.py you can see what the fruits object looks like.</p> #}
+
+
+
+{# forloop.first within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# Using forloop.first allows you to test if loop is on its first iteration #}
+{# <ul> #}
+{#   {% for x in fruits %} #}  
+{#     <li #}
+       {# Here we are using an inline CSS Style on web page to Highlight first iteration of loop #}
+       {# First array index 1 named Apple should have a light blue background colour. #}
+{#       {% if forloop.first %} #}
+{#         style='background-color:lightblue;' #}
+{#       {% endif %} #}
+{#     >{{ x }}/li> #}
+{#   {% endfor %} #}
+{# </ul> #}
+{# <p>In views.py you can see what the fruits object looks like.</p>#}
+
+
+
+{# forloop.last within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# Using forloop.last allows you to test if loop is on its last iteration #}
+{# <ul> #}
+{#   {% for x in fruits %} #}  
+{#     <li #}
+       {# Here we are using an inline CSS Style on web page to Highlight first iteration of loop #}
+       {# Last array index 5 named Kiwi should have a light blue background colour. #}
+{#       {% if forloop.last %} #}
+{#         style='background-color:lightblue;' #}
+{#       {% endif %} #}
+{#     >{{ x }}/li> #}
+{#   {% endfor %} #}
+{# </ul> #}
+{# <p>In views.py you can see what the fruits object looks like.</p>#}
+
+
+
+{# forloop.revcounter within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# For revcounter, current iteration if you start at the end and count backwards, ends up at 1. #}
+{# Here we are using a reverse counter loop in a list for displaying index values in an array, starting at 1. #}
+{# It displays it in reverse number order from 5 up to top to 1 down bottom of list on page. #}
+{# <ul> #}
+{#   {% for x in fruits %} #}  
+{#     <li>{{ forloop.revcounter }}</li> #}
+{#   {% endfor %} #} {# End of For Loop #}
+{# </ul> #}
+{# <p>In views.py you can see what the fruits object looks like.</p> #}
+
+
+
+{# forloop.revcounter0 within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section #}
+{# For revcounter0, current iteration if you start at the end and count backwards, ends up at 0. #}
+{# Here we are using a reverse counter0 loop in a list for displaying index values in an array, starting at 0. #}
+{# It displays it in reverse number order from 4 up to top to 0 down bottom of list on page. #}
+{# <ul> #}
+{#   {% for x in fruits %} #}  
+{#     <li>{{ forloop.revcounter0 }}</li> #}
+{#   {% endfor %} #} {# End of For Loop #}
+{# </ul> #}
+{# <p>In views.py you can see what the fruits object looks like.</p> #}
