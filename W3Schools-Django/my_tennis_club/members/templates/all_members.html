@@ -14,7 +14,7 @@
     {# #} </title> {# " closing title tag is now used in master.html template" #}
     {# #} </head> {# closing head tag is now used in master.html template #}    
 
-    {# #} <body> {# body tag is now used in master.html template #}    
+    {# #} <body> {# closing body tag is now used in master.html template #}    
 
     {% block content %}   {# Using a content block tag from master.html #} 
 
@@ -29,7 +29,9 @@
             {# For Loop used for iterating over a sequence, in this case a list#}
             {% for x in mymembers %}
                 {% comment %}<li>{{ x.firstname }} {{ x.lastname }}</li>{% endcommment %}
-                {% comment "Need to Add Link to above List, below" %}{% endcomment %}
+                {# list in all_members.html should be clickable, and take you to details page 
+                    with ID of member you clicked on #}
+                {% comment "Need to Add Link to above commented List, below" %}{% endcomment %}
                 <li><a href = "details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>        
             {% endfor %}
         </ul>
@@ -38,3 +40,104 @@
 
     {# #} </body> {# closing body tag is now used in master.html template #}        
 {# #} </html> {# closing html tag is now used in master.html template #}
+
+
+
+{# Break down of above code into Separate Django Learning parts of their section #}
+
+{# Create Template within Django Prepare Template (16 Prepare Template and View) of Django Display Data Section #}
+{# my_tennis_club/members/templates/all_members.html #}
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Members</h1>
+  
+<ul>
+  {#  For Loop used for iterating over a sequence, in this case a list #}  
+  {% for x in mymembers %}
+    <li>{{ x.firstname }} {{ x.lastname }}</li>
+  {% endfor %}
+</ul>
+
+</body>
+</html> 
+{% endcomment %}
+
+
+
+{# Add Link in all_members Template within Django Add Link to Details (17 Add Link to Details ) #}
+{# of Django Display Data Section #}
+{# my_tennis_club/members/templates/all_members.html #}
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Members</h1>
+  
+<ul>
+  {% for x in mymembers %}
+    {# list in all_members.html should be clickable, and take you to details page with ID of member you clicked on, 
+       so we need to add link to list below #}
+    <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>
+{% endcomment %}
+
+
+
+{# Modify Templates within Django Add Master Template (18 Add Master Template ) of Django Display Data Section #}
+{# my_tennis_club/members/templates/all_members.html #}
+{% comment %}
+{% extends "master.html" %}
+
+{% block title %}
+  My Tennis Club - List of all members
+{% endblock %}
+
+
+{% block content %}
+  <h1>Members</h1>
+  
+  <ul>
+    {% for x in mymembers %}
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+{% endcomment %}
+
+
+
+{# Add Link Back to Main within Django Add Main Index Page (19 Add Main Index Page ) #}
+{# of Django Display Data Section #}
+{# my_tennis_club/members/templates/all_members.html #}
+{# members page is missing a link back to the main page, so let us add that in this all_members.html template, #}
+{# in the content block #}
+{% comment %}
+{% extends "master.html" %}
+
+{% block title %}
+  My Tennis Club - List of all members
+{% endblock %}
+
+{% block content %}
+  {# Add Link Back to Main Page. Note that it is within a paragraph tag. #}
+  # Nested Link within Paragraph Tag. #}
+  {# This can be helpful when you want to direct users to additional information concerning main content on page. #}
+  <p><a href="/">HOME</a></p>
+
+  <h1>Members</h1>
+  
+  <ul>
+    {% for x in mymembers %}
+      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+{% endcomment %}

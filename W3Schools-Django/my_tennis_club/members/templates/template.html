@@ -1,52 +1,41 @@
 {# This is an HTML Template for Testing purposes. #}
 {# It is used for testing code and the result is shown on /testing/ url. #}
+
+{# Test Template within Django Add Test View (21 Django - Add Test View) of Django Display Data Section #}
+{# This is testing code for first template example in my_tennis_club/members/templates/template.html#}
 <!DOCTYPE html>
 <html>
-<body>
+<body> 
 
-
-
-
-{# Code for displaying Linus name, from Template Variables example, under Django Variables from Django Syntax Section. #}
-{# <h1>Hello {{ firstname }} #} {# firstname is a Template Variable #} {#, how are you ?</h1> #}
-{# <p>In views.py you can see how to create variable.</p> #}
-{# <p>In template.html you can see how to use variable.</p> #}
-
-{# Code for Creating Variables in Template within Django Variable of Django Syntax Section. #}
-{% with firstname="Tobias" %}   {# with specifies a variable to use in its block #} 
-
-<h1>Hello {{ firstname }}, how are you ?</h1> 
-{% endwith %}   {# endwith specifies end of its block #} 
+{% for x in fruits %}  
+  <h1>{{ x }}</h1>
+{% endfor %}
+<p>In views.py you can see what the fruits variable looks like.</p>  
 
 </body>
 </html>
 
 
 
-
-
-
-
-
-
-
-
+{# This is code for first template example in my_tennis_club/members/templates/template.html#}
 {# Test Template within Django Add Test View (21 Django - Add Test View) of Django Display Data Section #}
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body> 
+{% endcomment %}
 {# {% for x in fruits %} #}
-{# <h1>{{ x }}</h1> #}
+  {# <h1>{{ x }}</h1> #}
 {# {% endfor %} #} {# End of For Loop #}
 
 {# <p>In views.py you can see what fruits variable looks like.</p> #}
+{% comment %}
+</body>
+</html>
+{% endcomment %}
 
- 
-
-
-
-
-
-
-
-
+{# I think this is the same Test Template within Django Add Test View (21 Django - Add Test View #}
+{# Test Template within Django Add Test View (21 Django - Add Test View) of Django Display Data Section #}
 {# For Loops within Django for Tag or Django For Loop of Django Syntax Section (I think) #}
 {# A for loop is used for iterating over a sequence, like looping over items in an array, a list or a dictionary.  #}
 {# In this case we are looking over a dictionary (refer to Django For Loop Section under Django Syntax). #}
@@ -57,7 +46,38 @@
 {# <p>In views.py you can see what fruits variable looks like.</p> #}
 
 
-{# Data From a Model within Django Variable of Django Syntax Section #} 
+
+
+  
+{# Template Variables within Django Template Variables (29 Django Syntax - Variables) of Django Syntax Section #}
+{# Code for displaying Linus name, from Template Variables example, under Django Variables from Django Syntax Section. #}
+{# <h1>Hello {{ firstname }} #} {# firstname is a Template Variable #} {#, how are you ?</h1> #}
+{# <p>In views.py you can see how to create variable.</p> #}
+{# <p>In template.html you can see how to use variable.</p> #}
+
+
+{# Create Variables in Template within Django Template Variables (29 Django Syntax - Variables) of Django Syntax Section #}
+{# Code for Creating Variables in Template within Django Variable of Django Syntax Section. #}
+{# {% with firstname="Tobias" %} #}  {# with specifies a variable to use in its block #} 
+
+{# <h1>Hello {{ firstname }}, how are you ?</h1> #}
+{# {% endwith %} #}  {# endwith specifies end of its block #} 
+{% comment %}
+</body>
+</html>
+{% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+{# Data From a Model within Django Template Variables (29 Django Variables) of Django Syntax Section #} 
 {# <ul> #}
     {# {% for x in mymembers %}  #}
     {#}    <li>{{ x.firstname }}</li>  #}
@@ -67,7 +87,7 @@
 {# <p>In views.py you can see how to import and fetch members from database.</p>  #}
 
 
-{# Code for Template Tags within Django Tags of Django Syntax Section. #}
+{# Code for Template Tags within Django Template Tags (30 Django Syntax - Tags) of Django Syntax Section. #}
 {# {% if greeting == 1 %} #}
   {#<h1>Hello</h1> #}
 {# {% else %} #}
@@ -421,3 +441,101 @@
 {#   {% endfor %} #} {# End of For Loop #}
 {# </ul> #}
 {# <p>In views.py you can see what the fruits object looks like.</p> #}
+
+
+
+
+{# Comments within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
+{# This is normal html code #}
+{# <!DOCTYPE html> #}
+{# <html> #}
+{# <body> #}
+
+{# <h1>Welcome Everyone</h1> #}
+{# Bottom of first section of normal html code #}
+{# Here we are commenting html h1 heading code. Allowing a section of code to be ignored #}
+{% comment %}
+  <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+
+{# back to normal html code for last part #}
+{# </body> #}
+{# </html> #}
+
+
+
+{# Comment Description within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
+{# This is normal html code #}
+{# <!DOCTYPE html> #}
+{# <html> #}
+{# <body> #}
+
+{# <h1>Welcome Everyone</h1> #}
+{# Bottom of first section of normal html code #}
+{# Here we are adding a message to your comment, to help you remember why you wrote the comment, #}
+{# or as a message to other people reading the code. #}
+{% comment "this was the original welcome message" %}
+    <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+
+{# back to normal html code for last part #}
+{# </body> #}
+{# </html> #}
+
+
+
+{# Smaller Comments within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
+{# This is normal html code #}
+{# <!DOCTYPE html> #}
+{# <html> #}
+{# <body> #}
+{# Bottom of first section of normal html code #}
+
+{# You can also use {# ... #} tags when commenting out code, which can be easier for smaller comments #}
+{# In this h1 heading code below, Everyone has been commented, so it does not show on localhost webpage #}
+{# and only Welcome gets shown on localhost web page.  #}    
+{# <h1>Welcome{# Everyone#}</h1> #}
+
+{# back to normal html code for last part #}
+{# </body> #}
+{# </html> #}    
+
+
+
+{# Include within Django include Tag (34 Django Include) of Django Syntax Section #}
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello</h1>
+
+<p>This page contains a footer in a template.</p>
+
+{% include 'footer.html' %} 
+
+<p>Check out the two templates to see what they look like, and views.py to see the reference to the child template.</p>
+
+</body>
+</html> 
+{% endcomment %}
+
+
+
+{# Variables in Include within Django include Tag (34 Django Include) of Django Syntax Section #}
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+{% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
+<h1>Welcome</h1>
+
+<p>This is my web site.</p>
+
+<p>Check out mymenu.html to see the HTML content of the include.</p>
+
+</body>
+</html> 
+{% endcomment %}

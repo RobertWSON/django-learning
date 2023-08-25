@@ -15,16 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-# Imports below (except include) came with original setup of my_tennis_club project, 
+# Imports below (except include) came with original setup of my_tennis_club project 
+#
 from django.contrib import admin
 # I have added include, for URLs, within (9 Django URLs) of Django Tutorial Section
+#
 from django.urls import include, path   
+
 
 # This is a list that takes requests for urls
 urlpatterns = [
     
     # Add members url in URLs part, within (9 Django URLs) of Django Tutorial Section
-    # Here I am doing routing in my_tennis_club root directory, using a path function and include module. 
+    # Here I am doing routing in my_tennis_club root directory my_tennis_club/my_tennis_club/urls.py , 
+    # using a path function and include module. 
     # These have arguments, that will route users to members page, coming in via 127.0.0.1:8000/ localhost.
     path('', include('members.urls')),
     

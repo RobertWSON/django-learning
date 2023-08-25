@@ -1,4 +1,4 @@
-{# Now we use master template that has all necessary HTML elements common in the layout for the web pages #}    
+{# Now we use master template that has all necessary HTML elements common in layout for web pages #}    
 {% extends "master.html" %}
 
 {# #} <!DOCTYPE html> {#  #}
@@ -33,3 +33,56 @@
 
     {# #} </body> {# closing body tag is now used in master.html template #}        
 {# #} </html> {# closing html tag is now used in master.html template #}
+
+
+
+
+{# Break down of above code into Separate Django Learning parts of their section #}
+
+{# Details Template within Django Add Link to Details (17 Django - Add Link to Details) #}
+{# of Django Display Data Section #}
+{# my_tennis_club/members/templates/details.html #}
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+{# Here we can list more details about a specific member #}
+{# The specific member here is called mymember #}    
+<h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
+  
+<p>Phone: {{ mymember.phone }}</p>
+<p>Member since: {{ mymember.joined_date }}</p>
+
+<p>Back to <a href="/members">Members</a></p>
+
+</body>
+</html> 
+{% endcomment %}
+
+
+
+
+{# Details within Django Add Master Template (18 Django - Add Master Template) #}
+{# of Django Display Data Section #}
+{# my_tennis_club/members/templates/details.html #}
+{% comment %}
+{# Now we use master template that has all necessary HTML elements common in the layout for the web pages #}
+{% extends "master.html" %}
+
+{% block title %}    {# Using title block tag from master.html #}
+  {# putting title to show on top of web page in all_members.html  #}
+  Details about {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+{% block content %}   {# Using a content block tag from master.html #}
+  {# Now we can have html and django content for main body part of web page, within content block #}
+  <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
+  
+  <p>Phone {{ mymember.phone }}</p>
+  <p>Member since: {{ mymember.joined_date }}</p>
+  
+  <p>Back to <a href="/members">Members</a></p>
+  
+{% endblock %}
+{% endcomment %}

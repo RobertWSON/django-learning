@@ -19,100 +19,56 @@
 
 
 
+  
 
 
-# Original 2 imports below, created in Views, within (8 Django Views) of Django Tutorial Section 
-from django.shortcuts import render
+
+# Create your views here.
+
+ 
+# Views within (8 Django Views) of Django Tutorial Section 
+ # Original 2 imports below, created in Views, within (8 Django Views) of Django Tutorial Section 
+#from django.shortcuts import render
 # import render library from django.shortcuts module.
 # django.shortcuts is a module, that collects helper functions and classes that “span” multiple levels of MVC. 
 # Check out another internet source educative.io/answers/how-to-render-data-in-django
 # Django shortcuts installs a django binary library that proxies Django's manage.py and django-admin.py scripts
-from django.http import HttpResponse
-# HttpResponse is a class that lives in django.http module, so it is imported here   
 
-
-# Create your views here.
+#from django.http import HttpResponse
+# HttpResponse is a class that lives in django.http module, so it is imported here 
  
 # Original members view created in Views, within (8 Django Views) of Django Tutorial Section
-def members(request):
+#def members(request):
 #    {# This displays just Hello world! on localhost 127.0.0.1:8000/members/ in next Django URLs part #}
-    return HttpResponse("Hello world!") 
+    #return HttpResponse("Hello world!") 
  
+  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-# Modify the View within (10 Django Templates) under Django Tutorial Section    
+# Modify the View within Django Templates (10 Django Templates) under Django Tutorial Section 
+#from django.http import HttpResponse
+#from django.template import loader
+   
 #def members(request) 
 #   {# HTML Template to be used with loader #}     
 #   template = loader.get_template('myfirst.html') 
 #   {# Modify HttpResponse with Template for rendering web page #}   
 #   return HttpResponse(template.render())
-#   {# This displays Hello World! as a heading with Welcome to my first Django project! underneath as a paragraph 
-#    on localhost 127.0.0.1:8000/members #} 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- #, HttpResponseRedirect
-# Use loader to Modify web page view
-#from django.template import loader
-# import Member Model, so we can use it display info from its Table  
-#from .models import Member
- 
- 
- 
+    # This displays Hello World! as a heading with Welcome to my first Django project! underneath, 
+    # as a paragraph on localhost 127.0.0.1:8000/members  
  
 
+ 
+# Modify View within Django Prepare Template (16 Prepare Template & View) of Display Data Section
+#from django.http import HttpResponse
+#from django.template import loader
+#from .models import Member
+
 # View that makes member model data in members folder, available from a template
+
 #def members(request):
     # Add this to create an object with all values of Member model to update Member Table
-#    mymembers = Member.objects.all().values()   
-    # HTML Template to be used with loader
-    # template = loader.get_template('myfirst.html')
+#    mymembers = Member.objects.all().values() 
+    # HTML Template to be used with loader  
     # Now load all_members.html template instead of myfirst.html
 #    template = loader.get_template('all_members.html')
     # Create object containing mymembers object
@@ -125,6 +81,14 @@ def members(request):
     # return HttpResponse(template.render()) 
     # Now change to send object to template and output HTML rendered by template
 #    return HttpResponse(template.render(context, request))
+
+
+
+# Create new View within Django Add Link to Details (17 Django - Add Link to Details) of Display Data Section
+
+#from django.http import HttpResponse
+#from django.template import loader
+#from .models import Member
 
 # View for dealing with incoming requests from /details/ url
 #def details(request, id):
@@ -141,27 +105,103 @@ def members(request):
     # Sends object to template and output HTML rendered by template. W3Schools does not use id for rendering
 #    return HttpResponse(template.render(context, request))
 
+
+
+
+# Create new View within Django Add Main Index Page (19 Django - Add Main Index Page) of Display Data Section 
 # View for dealing with incoming requests to root / of the project (main home landing page)
+#from django.http import HttpResponse
+#from django.template import loader
+#from .models import Member
+
+# This view is used for members page (/all_members.html url), which has all_members.html template
+#def members(request):
+  #mymembers = Member.objects.all().values()
+  #template = loader.get_template('all_members.html')
+  #context = {
+    #'mymembers': mymembers,
+  #}
+  #return HttpResponse(template.render(context, request))
+
+
+# This view is used for details page (/details.html url), which has details.html template
+#def details(request, id):
+  #mymember = Member.objects.get(id=id)
+  #template = loader.get_template('details.html')
+  #context = {
+    #'mymember': mymember,
+  #}
+  #return HttpResponse(template.render(context, request))
+
+# This view is used for main home page (/ url), which has main.html template 
 #def main(request):
     # HTML main Template to be used with loader (Load main html template)
 #    template = loader.get_template('main.html')
     # Output HTML that is rendered by template. W3Schools does not include request with render for some reason.
 #    return HttpResponse(template.render())
 
+
+
+
+# Test Template within Django Add Test View (21 Add Test View) of Django Display Data Section #}
+
+#from django.http import HttpResponse
+#from django.template import loader
+    
+#def testing(request)      
+#    template = loader.get_template('template.html')
+#    context = {
+#    'fruits': ['Apple', 'Banana', 'Cherry'],  # fruits object is an Array that has a variety of fruits   
+#    }
+#    Sends object to template and output HTML rendered by template. 
+#    return HttpResponse(template.render(context, request))
+
+
+# Add View within Django Add Test View (21 Django - Add Test View) of Django Display Data Section
 # View for dealing with testing different aspects of Django, 
 # as it can be a good idea to have somewhere to test code without destroying main project.
-# The View can deal with incoming rquests from a /testing/ url, to see how the testing works.  
+# The View can deal with incoming rquests from a /testing/ url, to see how the testing works. 
+#from django.http import HttpResponse
+#from django.template import loader
+#from .models import Member
+ 
 #def testing(request):
     # HTML Template to be used with loader (load Template html file)
 #    template = loader.get_template('template.html')
     # Creates an object containing fruits as an array
     #context = {       # fruits is the object name  
-    # 'fruits': ['Apple', 'Banana', 'Cherry'],  # fruits object is an Array that has a variety of fruits   
-    #'firstname': 'Linus' , # HTMLTemplate Variable is given a name here
-#}
-# Sends object to template and output HTML rendered by template. 
-# return HttpResponse(template.render(context, request))
+    # 'fruits': ['Apple', 'Banana', 'Cherry'],  # fruits object is an Array that has a variety of fruits 
+    #} 
+    # Sends object to template and output HTML rendered by template. 
+    #return HttpResponse(template.render(context, request))
+     
+     
 
+# Create Variable in View within Django Template Variables (29 Django Syntax - Variables) 
+# of Django Display Data Section    
+    # firstname Linus is from Template Variables within Django Template Variables (29 Django Syntax - Variables)
+    # of Django Syntax Section  
+    #'firstname': 'Linus' , # HTML Template Variable is given a name here
+
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+  #template = loader.get_template('template.html')
+  #context = {
+    #'firstname': 'Linus',  # HTML Template Variable is given a name here
+  #}
+  #return HttpResponse(template.render(context, request))
+
+
+
+# Create Variables in Template within Django Variables (29 Django Syntax - Variables) 
+# of Django Display Data Section
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+    #template = loader.get_template('template.html')
 # Use return Below for Creating Variables in Template within Django Variable of Django Syntax Section 
 #    return HttpResponse(template.render()) 
 # Does not need request with HttpResponse (I am not completely sure why this is at the moment)
@@ -171,38 +211,21 @@ def members(request):
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-# Views within (8 Django Views) of Django Tutorial Section
-#def members(request):
-#    {# This displays just Hello world! on localhost 127.0.0.1:8000/members/ in next Django URLs part #}
-#    return HttpResponse("Hello world!")     
-      
-      
-      
-# Modify the View within (10 Django Templates) under Django Tutorial Section    
-#def members(request) 
-#   {# HTML Template to be used with loader #}     
-#   template = loader.get_template('myfirst.html') 
-#   {# Modify HttpResponse with Template for rendering web page #}   
-#   return HttpResponse(template.render())
-#   {# This displays Hello World! as a heading with Welcome to my first Django project! underneath as a paragraph 
-#    on localhost 127.0.0.1:8000/members #}
+# HttpResponseRedirect was introduced in Data From a Model, within Django Template Variables
+# (29 Django Syntax - Variables) of Django Syntax Section)
+ #, HttpResponseRedirect
+# Use loader to Modify web page view
+#from django.template import loader
+# import Member Model, so we can use it display info from its Table  
+#from .models import Member
         
             
+# Data from a Model within Django Variable (29 Django Variables) of Django Syntax Section
 
-
-# Data from a Model within Django Variable of Django Syntax Section    
+#from django.http import HttpResponse, HttpResponseRedirect
+#from django.template import loader
+#from .models import Member
+    
 #def testing(request):
 #    mymembers = Member.objects.all().values()    
 #    template = loader.get_template('template.html')
@@ -213,7 +236,11 @@ def members(request):
     
     
     
-# Django Template Tags within Django Tags of Django Syntax Section
+# Django Template Tags within Django Tags (30 Django Syntax - Tags) of Django Syntax Section
+
+#from django.http import HttpResponse
+#from django.template import loader
+
 #def testing(request):
 #    template = loader.get_template('template.html')
 #    context = {
@@ -224,6 +251,8 @@ def members(request):
 
 
 # Django Code within Django Template Tags (30 Django Tags) of Django Syntax Section 
+
+
 #def members(request):
     # Add this to create an object with all values of Member model to update Member Table
 #    mymembers = Member.objects.all().values()   
@@ -240,22 +269,11 @@ def members(request):
 
 
 
-# Test Template within Django Add Test View (21 Django - Add Test View) of Django Display Data Section #}    
-#def testing(request)      
-#    template = loader.get_template('template.html')
-#    context = {
-#    'fruits': ['Apple', 'Banana', 'Cherry'],  # fruits object is an Array that has a variety of fruits   
-#    }
-#    Sends object to template and output HTML rendered by template. 
-#    return HttpResponse(template.render(context, request))
-
-
-
 # If Statement within Django if Tag (31 Django Syntax - If Else) of Django Syntax Section
 # Up top it uses {# from django.http import HttpResponse #}
 #                {# from django.template import loader #}
 #def testing(request):
-#   template = loader.get_tmeplate('template.html')
+#   template = loader.get_template('template.html')
 #   context = {
 #       'greeting': 1,     
 #   }
@@ -694,3 +712,71 @@ def members(request):
 #     'fruits': ['Apple','Banana','Cherry', 'Oranges', 'Kiwi'] 
 #  }  
 #  return HttpResponse(template.render(context, request))
+
+
+
+# Comments within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+#    template = loader.get_template('template.html')
+#    return HttpResponse(template.render()) 
+
+
+
+# Comment Description within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+#    template = loader.get_template('template.html')
+#    return HttpResponse(template.render()) 
+
+
+
+# Smaller Comments within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+#    template = loader.get_template('template.html')
+#    return HttpResponse(template.render())
+
+
+
+# Comment in Views within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+#  template = loader.get_template('template.html')
+  # Views are written in Python, and Python comments are written with the # character
+  # This comment in view example below, comments context, so John does not show on loclahost web page.
+  #context = {
+  #  'var1': 'John',
+  #}
+  # End of Comment in view example with context 
+  #return HttpResponse(template.render())   
+  
+  
+  
+# Include within Django include Tag (34 Django Include) of Django Syntax Section 
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+  #template = loader.get_template('template.html')
+  #return HttpResponse(template.render())
+  
+  
+  
+# Variables in Include within Django include Tag (34 Django Include) of Django Syntax Section 
+#from django.http import HttpResponse
+#from django.template import loader
+
+#def testing(request):
+  #template = loader.get_template('template.html')
+  #return HttpResponse(template.render()) 
+
+
