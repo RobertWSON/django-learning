@@ -1,0 +1,33 @@
+
+{# Here we are practising using Django Template Tags #}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Django Template Tag Reference</h2>
+
+<h3>autoescape Template Tag</h3>
+
+<h4>Autoescape Off</h4>
+
+{% autoescape off %}
+  <h1>{{ heading }}</h1>
+{% endautoescape %}
+
+<p>Check out views.py to see what the heading variable looks like.</p>
+
+
+{% comment %}
+<h4>Autoescape Off</h4>
+
+{% autoescape on %}
+  <h1>{{ heading }}</h1>
+{% endautoescape %}
+
+<p>Check out views.py to see what the heading variable looks like.</p>
+{% endcomment %}
+
+
+</body>
+</html>    

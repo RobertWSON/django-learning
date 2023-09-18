@@ -4,9 +4,17 @@
 # Imports 
 # from django.shortcuts import render 
 #  - Uses a django.shortcuts module to import a render library
+#    django.shortcuts module is used for  
+#    render is used for render() function with templates, requests etc. 
+#    See javatpoint.com/django-shortcuts and educative.io/ansers/how-to-render-data-in-django
+
 
 # from django.http import HttpResponse 
-# - Uses a django.http module to import an HttpResponse class
+# - Uses a django.http module to import an HttpResponse class from a library
+#   django.http module is used for  
+#   HttpResponse is a class used for HttpResponse() function for displaying text on a page. 
+#    See pytutorial.com/fjango-httpresponse/
+
 
 # from django.http import HttpResponse, HttpResponseRedirect
 # - 
@@ -17,71 +25,87 @@
 # from .models import Member
 # - 
 
-
-
   
-
-
 
 # Create your views here.
 
  
 # Views within (8 Django Views) of Django Tutorial Section 
  # Original 2 imports below, created in Views, within (8 Django Views) of Django Tutorial Section 
-#from django.shortcuts import render
+ 
+# comment code for now   from django.shortcuts import render
+
 # import render library from django.shortcuts module.
 # django.shortcuts is a module, that collects helper functions and classes that “span” multiple levels of MVC. 
 # Check out another internet source educative.io/answers/how-to-render-data-in-django
 # Django shortcuts installs a django binary library that proxies Django's manage.py and django-admin.py scripts
 
-#from django.http import HttpResponse
+# comment code for now   
+from django.http import HttpResponse
 # HttpResponse is a class that lives in django.http module, so it is imported here 
+from django.template import loader
+from .models import Member
+
  
 # Original members view created in Views, within (8 Django Views) of Django Tutorial Section
-#def members(request):
+
+# comment code for now   def members(request):
+# I have now decided to have my own view called first. 
+# Having my own view allows me to separate this page from members page, which requires use of database.
+# I feel that this the best way to approach this
+def hello(request):
+
 #    {# This displays just Hello world! on localhost 127.0.0.1:8000/members/ in next Django URLs part #}
-    #return HttpResponse("Hello world!") 
+    # comment code for now   
+    return HttpResponse("Hello world!") 
  
   
  
 # Modify the View within Django Templates (10 Django Templates) under Django Tutorial Section 
 #from django.http import HttpResponse
 #from django.template import loader
+#from .models import Member
    
-#def members(request) 
+#def members(request):
+# I have now decided to have my own view called first. 
+# Having my own view allows me to separate this page from members page, which requires use of database.
+# I feel that this the best way to approach this 
+def first(request): 
+
 #   {# HTML Template to be used with loader #}     
-#   template = loader.get_template('myfirst.html') 
+   template = loader.get_template('myfirst.html') 
 #   {# Modify HttpResponse with Template for rendering web page #}   
-#   return HttpResponse(template.render())
+   return HttpResponse(template.render())
     # This displays Hello World! as a heading with Welcome to my first Django project! underneath, 
     # as a paragraph on localhost 127.0.0.1:8000/members  
  
-
  
 # Modify View within Django Prepare Template (16 Prepare Template & View) of Display Data Section
+# Comment this for now and use imports above from previous view in 10 Django Templates.
 #from django.http import HttpResponse
 #from django.template import loader
 #from .models import Member
 
 # View that makes member model data in members folder, available from a template
 
-#def members(request):
+def members(request):
     # Add this to create an object with all values of Member model to update Member Table
-#    mymembers = Member.objects.all().values() 
+    mymembers = Member.objects.all().values() 
     # HTML Template to be used with loader  
     # Now load all_members.html template instead of myfirst.html
-#    template = loader.get_template('all_members.html')
+    template = loader.get_template('all_members.html')
     # Create object containing mymembers object
-#    context = {
-#        'mymembers': mymembers,   
+    context = {
+        'mymembers': mymembers,   
         # mymembers here, relates to all people (members) for the list taken from ids in a table.  
-#    }
+    }
     # return HttpResponse("Hello world!")
     # Modify HttpResponse with Template for rendering web page 
     # return HttpResponse(template.render()) 
     # Now change to send object to template and output HTML rendered by template
-#    return HttpResponse(template.render(context, request))
-
+    #return HttpResponse(template.render(context, request))
+  # Try no request with HttpResponse
+    return HttpResponse(template.render(context, request))  
 
 
 # Create new View within Django Add Link to Details (17 Django - Add Link to Details) of Display Data Section
@@ -91,19 +115,19 @@
 #from .models import Member
 
 # View for dealing with incoming requests from /details/ url
-#def details(request, id):
+def details(request, id):
     # Get id as an argument and use it to locate correct record in Member Table. 
-#    mymember = Member.objects.get(id=id)
+    mymember = Member.objects.get(id=id)
     # HTML details template to be used with loader
-#    template = loader.get_template('details.html')
+    template = loader.get_template('details.html')
 #    # Creates an object containing a member
-#    context = {     # mymember string relates to a property name for example phone or joined_date.
+    context = {     # mymember string relates to a property name for example phone or joined_date.
                     # This is taken from one person's details, eg from an id in a table.
-#        'mymember': mymember,  
+        'mymember': mymember,  
         # mymember here, relates to a property value of that property name. 
-#    }
+    }
     # Sends object to template and output HTML rendered by template. W3Schools does not use id for rendering
-#    return HttpResponse(template.render(context, request))
+    return HttpResponse(template.render(context, request))
 
 
 
@@ -134,11 +158,11 @@
   #return HttpResponse(template.render(context, request))
 
 # This view is used for main home page (/ url), which has main.html template 
-#def main(request):
+def main(request):
     # HTML main Template to be used with loader (Load main html template)
-#    template = loader.get_template('main.html')
+    template = loader.get_template('main.html')
     # Output HTML that is rendered by template. W3Schools does not include request with render for some reason.
-#    return HttpResponse(template.render())
+    return HttpResponse(template.render()) 
 
 
 
@@ -775,8 +799,70 @@
 #from django.http import HttpResponse
 #from django.template import loader
 
-#def testing(request):
-  #template = loader.get_template('template.html')
-  #return HttpResponse(template.render()) 
+def testing(request):
+  template = loader.get_template('template.html')
+  return HttpResponse(template.render()) 
 
 
+# Django References Section (57 to 59)
+
+# Django Template Tag Reference 57 within Django References Section
+
+# Using Keyword Autoescape
+# Autoescape Off
+#def template_autoescape_off(request):
+def template(request):
+  template = loader.get_template('template_tag_ref.html')
+  context = {
+    'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!',
+  }
+  return HttpResponse(template.render(context, request))
+
+# Autoescape On
+#def template(request):
+  #template = loader.get_template('template_tag_ref.html')
+  #context = {
+    #'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!',
+  #}
+  #return HttpResponse(template.render(context, request))
+
+
+# Django Filter Reference 58 within Django References Section
+
+# Using Keyword Add
+def filter(request):
+  template = loader.get_template('filter_ref.html')
+  context = {
+    'prices': [70, 35, 52],   
+  }
+  return HttpResponse(template.render(context, request))
+
+
+
+# Django Field Lookups Reference 59 within Django References Section
+
+# Using Keyword Contains
+def field(request):
+  mydata = Member.objects.filter(firstname__contains='bias').values()
+  template = loader.get_template('field_lookups_ref.html')
+  context = {
+    'mymembers': mydata,
+  }
+  
+  return HttpResponse(template.render(context, request))
+
+# Check out field_lookups_ref.html to see how mymember object was in HTML Code
+
+
+# Using Keyword Endswith
+
+#def field(request):
+  #mydata = Member.objects.filter(firstname__endswith='s').values()
+  #template = loader.get_template('field_lookups_ref.html')
+  #context = {
+    #'mymembers': mydata,
+  #}
+  #return HttpResponse(template.render(context, request))
+          
+# Check out template.html to see how the mymembers object
+# was used in the HTML code.     

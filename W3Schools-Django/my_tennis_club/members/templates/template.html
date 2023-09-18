@@ -1,8 +1,12 @@
 {# This is an HTML Template for Testing purposes. #}
 {# It is used for testing code and the result is shown on /testing/ url. #}
+{# comment is where the code should be #}
 
 {# Test Template within Django Add Test View (21 Django - Add Test View) of Django Display Data Section #}
 {# This is testing code for first template example in my_tennis_club/members/templates/template.html#}
+
+
+{% comment %}
 <!DOCTYPE html>
 <html>
 <body> 
@@ -14,7 +18,7 @@
 
 </body>
 </html>
-
+{% endcomment %}
 
 
 {# This is code for first template example in my_tennis_club/members/templates/template.html#}
@@ -66,12 +70,6 @@
 </body>
 </html>
 {% endcomment %}
-
-
-
-
-
-
 
 
 
@@ -491,10 +489,15 @@
 {# <body> #}
 {# Bottom of first section of normal html code #}
 
-{# You can also use {# ... #} tags when commenting out code, which can be easier for smaller comments #}
+{% comment %}
+You can also use Curly Braces with Hash tags inside it for commenting out code,
+which can be easier for smaller comments 
+{% endcomment %}
+
+
 {# In this h1 heading code below, Everyone has been commented, so it does not show on localhost webpage #}
-{# and only Welcome gets shown on localhost web page.  #}    
-{# <h1>Welcome{# Everyone#}</h1> #}
+{# and only Welcome gets shown on localhost web page. #}    
+{# <h1>Welcome Everyone</h1> #}
 
 {# back to normal html code for last part #}
 {# </body> #}
@@ -512,7 +515,9 @@
 
 <p>This page contains a footer in a template.</p>
 
-{% include 'footer.html' %} 
+{% include 'footer.html' %}
+{# Include tag, as its name suggests include a template inside this current template.html template. #} 
+{# footer.html template has all footer details inside that file to display on web page.#}
 
 <p>Check out the two templates to see what they look like, and views.py to see the reference to the child template.</p>
 
@@ -523,19 +528,23 @@
 
 
 {# Variables in Include within Django include Tag (34 Django Include) of Django Syntax Section #}
-{% comment %}
+{# comment code for now #}
 <!DOCTYPE html>
 <html>
 <body>
 
 {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+{# Include tag, as its name suggests includes a template inside current template. #}
+{# Include allows breakdown of a complex template into smaller more manageable chunks. #}
+{# With tag is advanced part here that has ability to pass variables to included mymenu.html template. #}  
+{# With tag has me and sponsor variables that have been given a name in this template.html #} 
+{# see codinggear.blog/django-include-tag/ found from django include google search #}  
 
 <h1>Welcome</h1>
-
+ 
 <p>This is my web site.</p>
 
 <p>Check out mymenu.html to see the HTML content of the include.</p>
 
 </body>
 </html> 
-{% endcomment %}

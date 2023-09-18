@@ -1,26 +1,32 @@
-{#  #}
-{# Now we use master template that has all necessary HTML elements common in layout for web pages #}
-{% extends "master.html" %}
 
-{# #} <!DOCTYPE html> {#  #}
-{# #} <html> {# #}
+{# comment is where the code should be #}
+{# Main of Main Index Page within Django Add Main Index Page (19 Django - Add Main Index Page) #}
+
+{# Now we use master template that has all necessary HTML elements common in layout for web pages #}
+
+{% extends "master.html" %} 
+
+{# <!DOCTYPE html> #}
+{# <html> #}
         {# !DOCTYPE html and html tags now used in master.html Template #}
 
-    {# #} <head> {# head tag is now used in master.html template #}    
-    {# #} <title> {# "title tag is now used in master.html template" #}
+    {# <head> head tag is now used in master.html template #}    
+    {# <title> "title tag is now used in master.html template" #}
 
 
         {# This child Title Block Tag is a placeholder, that tells Django to replace the master html parent #} 
         {# Title block with contents in it below. It also inherit the parent title tag with this child block #} 
+
         {% block title %}    {# Using title block tag from master.html #}
             {# putting title to show on top of web page in main.html  #}
-            My Tennis Club
+            My Tennis Club 
         {% endblock %}
+       
 
-    {# #} </title> {# " closing title tag is now used in master.html template" #}
-    {# #} </head> {# closing head tag is now used in master.html template #}    
+    {# </title> " closing title tag is now used in master.html template" #}
+    {# </head> closing head tag is now used in master.html template #}    
 
-    {# #} <body> {# body tag is now used in master.html template #}
+    {# <body> body tag is now used in master.html template #}
 
     {# This child Content Block Tag is a placeholder, that tells Django to replace the master html parent #} 
     {# Content Block with contents in it below. It also inherit the parent body tag with this child block #} 
@@ -32,11 +38,37 @@
         <h3>Members</h3>
   
         <p>Check out all our <a href="members/">members</a></p>
-  
-    {% endblock %}
 
-    {# #} </body> {# closing body tag is now used in master.html template #}        
-{# #} </html> {# closing html tag is now used in master.html template #}    
+        {# We want to add in here description with Link to Hello and first Pages  #}
+        <br>
+        <h3>Initial Django Setup</h3>
+
+        <p>Originally when this Django App was setup, a members views was created for displaying 
+           a hello world page and also <br> a template was used with a members view for displaying a page with
+           Hello World Heading and first Django Project Welcome Message. <br>
+        </p>   
+        <p>This was all displayed on members/ route, but because members/ route is now used for getting details 
+           of people from a database, <br> it is better to have separate routes to keep these initial 
+           Django setup pages.
+        </p>
+        <p>I have given a link here, to access <a href="hello/">Hello World Page</a></p>
+        <p>and I have a link here, to access <a href="first/">First Django Project Page</a></p> 
+        
+        <h3>Django References</h3>
+
+        <p><a href="template/">Template Tag Reference</a> </p>
+
+        <p><a href="filter/">Filter Reference</a> </p>
+          
+        <p><a href="field/">Field Lookups Reference</a></p>   
+
+
+
+    {% endblock %}
+    
+
+    {# </body> closing body tag is now used in master.html template #}        
+{# </html> closing html tag is now used in master.html template #}    
 
 
 

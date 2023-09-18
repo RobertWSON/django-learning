@@ -1,27 +1,32 @@
-{# Now we use master template that has all necessary HTML elements common in layout for web pages #}    
-{% extends "master.html" %}
 
-{# #} <!DOCTYPE html> {#  #}
-{# #} <html> {# #}
+{# comment is where the code should be #}
+
+{# Now we use master template that has all necessary HTML elements common in layout for web pages #} 
+
+{% extends "master.html" %} 
+
+{# <!DOCTYPE html> #}
+{# <html> #}
         {# !DOCTYPE html and html tags now used in master.html Template #}
 
-    {# #} <head> {# head tag is now used in master.html template #}    
-    {# #} <title> {# "title tag is now used in master.html template" #} 
+    {# <head> head tag is now used in master.html template #}    
+    {# <title> "title tag is now used in master.html template" #} 
 
         {# Add title block on Fri 1st Jun 2023 at 11:19pm in (Display Data - Add Master Template) Section #}
         {% block title %}    {# Using title block tag from master.html #} 
             {# putting title to show on top of web page in all_members.html  #} 
             Details about {{ mymember.firstname }} {{ mymember.lastname }}
-        {% endblock %}
+        {% endblock %} 
 
-    {# #} </title> {# " closing title tag is now used in master.html template" #}
-    {# #} </head> {# closing head tag is now used in master.html template #}    
+    {# </title> " closing title tag is now used in master.html template" #}
+    {# </head> closing head tag is now used in master.html template #}    
 
-    {# #} <body> {# body tag is now used in master.html template #}
-
+    {# <body> body tag is now used in master.html template #}
+  
     {% block content %}   {# Using a content block tag from master.html #}         
     
         {# Now we can have html and django content for main body part of web page, within content block #}
+        
         <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
     
         <p>Phone: {{ mymember.phone }}</p>
@@ -29,12 +34,10 @@
 
         <p>Back to <a href="/members">Members</a></p>
 
-    {% endblock %}
+    {% endblock %} 
 
-    {# #} </body> {# closing body tag is now used in master.html template #}        
-{# #} </html> {# closing html tag is now used in master.html template #}
-
-
+    {# </body> closing body tag is now used in master.html template #}        
+{# </html> closing html tag is now used in master.html template #}
 
 
 {# Break down of above code into Separate Django Learning parts of their section #}

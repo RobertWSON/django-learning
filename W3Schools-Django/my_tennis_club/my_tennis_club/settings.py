@@ -22,10 +22,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-xm&5-yo%zpl!md#arke8=n%%!qi9$50b6(e^zcz(v)bpvz@r9j'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
+# Originally it had 
+#DEBUG = True 
+# Page Not Found, within Django 404 (page not found) (20 Django 404 Template) of Django Display Data Section 
 DEBUG = False
 
-# Use * as a string domain name for now, as it works locally with localhost
+
+# Originally it had
+#ALLOWED_HOSTS = []
+# Use * as a string domain name for now, as it works locally with localhost 
 ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -37,6 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Change Settings, within Django Templates (10 Django Templates) of Django Tutorial Section. 
+    # To be able to work with more complicated stuff than "Hello World!", we have to tell Django that a new 
+    # app is created. To do this, we will add a members app below.
     'members'
 ]
 
