@@ -1,5 +1,21 @@
 
-{# Here we are practising using Django Template Tags #}
+{# Here we are practising using Django Template Tags and need to refer to master file #}
+
+{#  {% extends "django_refs_master.html" %}  #}
+
+{# {% block title %} #}
+{#  Django Template Tags Reference #}
+{#  <hr> #}
+{# {% endblock %} #}
+
+{# {% block content %} #}
+{#    <h2>Template Tags Reference</h2>#}
+{#    <p>A List of all template tags:</p> #}
+
+
+{# {% endblock %} #}
+
+{# I need separate pages for these Template Tags examples #}
 
 <!DOCTYPE html>
 <html>
@@ -28,6 +44,14 @@
 <p>Check out views.py to see what the heading variable looks like.</p>
 {% endcomment %}
 
-
 </body>
-</html>    
+</html>   
+
+{% comment %}
+I could have this as a Parent Template for all these Template tags
+Doing it this way I could have a Django Template Tags Reference heading at top of Page
+
+I could have a List of all Template Tags as Links down the page 
+
+
+{% endcomment %}
