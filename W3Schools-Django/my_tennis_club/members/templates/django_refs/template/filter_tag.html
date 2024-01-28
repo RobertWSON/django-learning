@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Reference</title>
+    </head>    
+ 
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Template Tag - filter</h3>  
+  
+    <p><b>Filter Example</b></p>
+
+    <p>Output text in upper case:</p>
+
+    <h1>Welcome Everyone!</h1>
+
+    {% filter upper %}
+        <p>Have a great day!</p>
+    {% endfilter %}    
+
+    <h3>Definition and Usage</h3>
+
+    <p>The filter tag allows you to run section of code through a filter and return it according to filter keyword(s).</p>
+
+    <p>To add multiple filters, separate keywords with pipe | character.</p>
+
+    <h3>Syntax</h3>
+
+    { % filter keyword % }
+      ...
+    { % endfilter % } 
+      
+</body>
+</html>

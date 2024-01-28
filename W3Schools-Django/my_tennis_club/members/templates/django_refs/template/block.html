@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>
+  
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Block Template Tag</h3>  
+
+<p>Block Example</p>
+
+</p>Define a section in a master template that should be replaced by a section in a child template.</p>
+
+<h1>Welcome</h1>
+
+{% block userinfo %}
+  <h2>Not registered yet</h2>
+{% endblock %}
+
+<p>Check out two templates to see what they look like and views.py to see reference to child template.</p>
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The block tag has two functions:</p>
+
+<ol>
+  <li>It is a placeholder for content.</li>
+  <li>It is content that will replace placeholder.</li>
+</ol>  
+
+<p>In master templates the block tag is a placeholder that will be replaced by a block in a child template with the same name.</p>
+<p>In child templates the block tag is content that will replace the placeholder in the master template with the same name.</p>
+<p>In the example above you see the content of a master template, it has a block called userinfo. This block will be replaced with a block called userinfo in a child template:</p>
+
+<h4>Block Child Template Example</h4>
+
+<p>This is a child template that refers to a master template via extend tag:</p>
+
+<p>extends "mymaster.html" {with % % inside brackets}</p>
+
+<p>block userinfo {with % % inside brackets}</p>
+   <h2>John Doe</h2>
+   <p>Explorer of life.</p>
+<p>endblock {with % % inside brackets}</p>
+
+<hr>
+
+<h3>Syntax</h3>
+
+<p>block name {with % % inside brackets}</p>
+<p>  ... </p>
+</p>endblock  {with % % inside brackets}</p> 
+
+
+<h3>Parameters</h3>
+
+<table border='3'>
+  <tr>
+      <th>Value</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td>name</td>
+      <td>Specifies that name of the block.</td>
+  </tr>
+  
+</table>   
+
+</body>
+</html>

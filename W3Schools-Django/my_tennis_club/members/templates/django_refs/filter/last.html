@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Template Filter - last</h3>  
+
+    <h4>Last for an Object Example</h4>
+
+    <p>Return number of items in a list:</p>
+
+    <h1>{{ fruits|last }}</h1>
+
+    <p> As you can see from this last example, we are using a django command, to display 
+        the last fruit item taken from a list in an array for an object.</p>
+
+    <p>In views.py you can see what fruits variable look like.</p>
+    
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>last</code> filter returns last item of an object.</p>
+    
+    <p>For strings, <code>last</code> filter returns last character:</p>
+
+    <h4>Last for strings Example</h4>
+    
+    <p>Return last character of a string:</p>
+
+    {# Example 2 Not displaying #}
+    {% include 'django_refs/filter/last_example2.html' %} 
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+    <p>Use <code><a href="filter/first.html">first</a></code> to return first item. </p>
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+
+    { { <code>value|last</code> } }
+
+
+</body>
+</html>

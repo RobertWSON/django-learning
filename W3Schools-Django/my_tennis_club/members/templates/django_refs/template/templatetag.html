@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Templatetag Template Tag</h3>
+    
+    <p><b>Templatetag Example</b></p>
+
+    <p>Output Django code without execute it:</b></p>
+
+    <h1>
+        {% templatetag openblock %}
+            extends
+        {% templatetag closeblock %}
+    </h1>
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The <code>templatetag</code> tag is used to display characters that are normally used to perform Django tasks.</p> 
+
+{#<p>Each tag character, like {{ , {% and {# , has their own name, see below:</p>#}
+
+
+<hr>
+
+<h3>Syntax</h3>
+
+<p>{ { % templatetag <code>name</code> % } }</p>
+
+
+<hr>
+
+<h3>Parameters</h3>
+
+<table border='3'>
+  <tr>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><em>name</em></td>
+    <td>Required. A string specifying what to output.
+        <br><br>
+        <table border='1'>
+            <tr>
+                <th>Name</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <td>
+                    <code>openvariables</code>
+                </td>
+                <td>{ {</td>        
+            </tr>
+            <tr>
+                <td>
+                    <code>closevariables</code>
+                </td>
+                <td>} }</td>        
+            </tr>
+            <tr>
+                <td>
+                    <code>openblock</code>
+                </td>
+                <td>{ %</td>        
+            </tr>
+            <tr>
+                <td>
+                    <code>closeblock</code>
+                </td>
+                <td>% }</td>        
+            </tr>
+            <tr>
+                <td>
+                    <code>openbrace</code>
+                </td>
+                <td>{ </td>        
+            </tr>
+            <tr>
+                <td>
+                    <code>closebrace</code>
+                </td>
+                <td>} </td>        
+            </tr>
+            <tr>
+                <td>
+                    <code>opencomment</code>
+                </td>
+                <td>{ #</td>        
+            </tr>
+            <tr>
+                <td>
+                    <code>closecomment</code>
+                </td>
+                <td># }</td>        
+            </tr>
+        </table>    
+    </td>    
+  </tr>
+
+</table>   
+
+</body>
+</html>

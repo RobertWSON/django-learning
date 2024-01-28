@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Comment Tag</title>
+    </head> 
+
+<body>
+
+    <h2>Django Syntax Section</h2>    
+
+    <h3>Django Comment Tag</h3>    
+
+    <h4>Comments</h4>
+
+    <p>Comments allow you to have sections of code that should be ignored.</p>
+
+    <h4>Comment Example</h4>
+
+    {% comment %} first section is normal html code {% endcomment%}
+    <h1>Welcome Everyone</h1>
+
+    {% comment %}
+        <h1>Welcome ladies and gentlemen</h1>  
+        Here we are commenting html h1 heading code. Allowing a section of code to be ignored
+    {% endcomment %}
+
+    <h4 id="comment_description">Comment Description</h4>
+
+    <p>You can add a message to your comment, to help you remember why you wrote comment,
+       or as a message to other people reading code.</p>
+
+    <h4>Comment Description Example</h4>
+    
+    <p>Add a description to your comment:</p>
+
+    {% comment %} first section is normal html code {% endcomment%}
+    <h1>Welcome Everyone</h1> 
+    
+    {% comment %} Here we are adding a message to your comment below, to help you remember why you wrote the comment, 
+    or as a message to other people reading the code.{% endcomment %}
+
+    {% comment "this was the original welcome message" %}
+        <h1>Welcome ladies and gentlemen</h1>
+    {% endcomment %}
+
+    <h4 id="comment_smaller">Smaller Comments</h4>
+
+    <p>You can also use <code>{ # ... # }</code> tags when commenting out code, which can be easier.<br>
+       for smaller comments:</p>
+ 
+    <h4>Smaller Comments Example</h4>
+     
+    <p>Comment out the word Everyone:</p>
+
+    {% comment %} You can also use Curly Braces with Hash tags inside it for commenting out code,
+        which can be easier for smaller comments 
+    {% endcomment %}
+
+    {# In this h1 heading code below, Everyone has been commented, so it does not show on localhost webpage #}
+    {# and only Welcome gets shown on localhost web page. #}
+    <h1>Welcome{# Everyone #}</h1>
+
+    <h4 id="comment_views">Comment in Views</h4>
+
+    <p>Views are written in Python and python comments are written with a <code>#</code> character.</p>
+
+    <h4>Comment in Views Example</h4>
+    
+    <p>Comment out a section in a view:</p>
+
+    {% include 'testing/comment_views.html' %} 
+
+</body>
+</html> 

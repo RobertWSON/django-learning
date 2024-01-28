@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Regroup Template Tag</h3>  
+
+<h4>Regroup from an Array</h4>
+
+<p>Regroup cars by Brand Example</p>
+
+<p>Display all cars with a new header for each brand:</p>
+
+{% regroup cars by brand as newlist %} 
+
+{{ newlist }}
+
+{% for x in newlist %}
+    <h1>{{ x.grouper }}</h1>
+    {% for y in x.list %}
+        <p>{{ y.model }}: {{ y.year }}</p>
+    {% endfor %}
+{% endfor %}    
+
+<p> As you can see from this array example, each car has been grouped, displaying it's model and year.<br> 
+    Note that it is in the same order as the array, but just those 2 properties values have been shown.
+</p>
+
+<p>Check out views.py to see what fruits variable looks like, for both examples.</p>
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The <code>regroup</code> tag returns a new object by a specified value.</p>
+
+<p>The result is divided into one <code>GroupedResult</code> object for each group, making a
+   <br><code>newlist</code> object from example above, looking like this:</p>
+
+<h4>Regroup - How it works with displaying a result</h4>
+
+<p>Regroup Returned Object Example</p>
+
+<p>The result from <code>{ % regroup cars by brand as newlist % }</code></p>
+
+<p>Show code for this example with a screenshot image for code, I think maybe best
+   <br> oe maybe I can use span tag similar to what W3Schools has but without CSS classes. 
+</p>
+
+<p><b>Note:</b> Make sure object is sorted correctly before regrouping, otherewise you will end up 
+    <br>with groups with same <code>grouper</code> name.
+</p>
+
+
+<hr>
+
+<h3>Syntax</h3>
+
+{# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+{#{ % resetcycle <em>name</em> % } #}
+{ % regroup <em>object</em> by <em>object.property</em> as <em>newname</em> % }
+
+<hr>
+
+<h3>Parameters</h3>
+
+<table border='3'>
+    <tr>
+       <th>Value</th>
+       <th>Description</th>
+    </tr>
+    <tr>
+       <td><em>object</em></td>
+       <td>Required. A list or object that you want to <br>regroup.</td>
+    </tr>
+    <tr>
+       <td><em>object.property</em></td> 
+       <td>Required. The name of the property you <br>want to group by.</td>
+    </tr>
+    <tr>
+        <td><em>newname</em></td>
+        <td>Required. A new name for a returned object</td>
+    </tr>        
+</table>   
+
+</body>
+</html>

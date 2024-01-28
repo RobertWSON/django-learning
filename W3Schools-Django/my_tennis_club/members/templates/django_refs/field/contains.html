@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Contains Reference</title>
+    </head>    
+ 
+<body>
+
+    <h2>Django Field Lookup Tag Reference</h2>
+
+    <h3>Field Lookups - contains</h3>  
+  
+    <p><b>Contains Example</b></p>
+
+    <p>Get all records that have the value "bias" in the firstname column:</p>
+
+    {# Contains Example starts here #}
+    <p>The queryset object:</p>
+
+    {{ mymembers }}
+
+    <p>Loop through the items:</p>
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {# Contains Example ends here #}
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The contains lookup is used to get records that contain a specified value.</p>
+
+    <p>The contains lookup is case sensitive.</p>
+
+    <p>For a case insensitive search, use the icontains lookup.</p>
+
+    <hr>
+
+    <h3>SQL Equivalent</h3>
+
+    <p>The SQL equivalent to the example above will be:</p>
+
+    <p>WHERE firstname LIKE '%bias%';</p>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>All Field lookup keywords must be specified with the fieldname, followed by two(!) underscore characters __ and the keyword:</p>
+
+    <p>fieldname__contains='value'</p>
+
+</body>
+</html>        

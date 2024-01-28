@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Verbatim Template Tag</h3>  
+
+    <p><b>verbatim without execute Example</b></p>
+
+    {% verbatim %}
+      {% for x in fruits %}
+        <h1>{{ x }}</h1>
+      {% endfor %}
+    {% endverbatim %}
+
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The <code>verbatim</code> template tag is used to stop Django from executing code.</p> 
+<p>Anything between { % verbatim % } and { % endverbatim % } will not be executed, but rendered as output instead.</p>
+<p>To be sure that you refer to correct verbatim code block, you can add a name to it:</p>
+
+
+<p>Verbatim choosing from more than one Example</p>
+
+{% verbatim mycode %}
+  {% for x in fruits %}
+    {% verbatim %}
+      <h1>{{ x }}</h1>
+    {% endverbatim %}
+  {% endfor %}
+{% endverbatim mycode %}      
+
+<hr>
+
+<h3>Syntax</h3>
+
+{#Rethink how to siplay this syntax example.#}
+{#<p>{{ % verbatim <code>name</code> %}}</p>#}
+<p>{ { % verbatim <code>name</code> % } }</p>
+<p>  ... </p>
+{#</p>{{ % endverbatim % }}</p>#}
+<p>{ { % endverbatim % } }</p>
+
+
+<h3>Parameters</h3>
+
+<table border='3'>
+  <tr>
+      <th>Value</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td><em>name</em></td>
+      <td>Optional. The name of verbatim block.</td>
+  </tr>
+</table>   
+
+</body>
+</html>

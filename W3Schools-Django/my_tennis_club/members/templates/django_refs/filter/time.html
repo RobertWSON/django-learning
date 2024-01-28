@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - time</h3>  
+  
+    <p><b>Time Example</b></p> 
+
+
+    </p>Return time from a date object:</p>
+
+    <h1>{{ mydate|time }}</h1>
+
+    <p> As you can see from this time example, we are using a django command, to display 
+        a time in 24 hour format with hour and minutes.</p>
+
+    <p>In views.py you can see what mydate variable looks like.</p>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>time</code> filter formatsand returnsa time from a datetime object.</p>
+
+    <p>You can specify format by using these format characters.</p>
+
+    <table border='3'>
+        <tr>
+          <td>g</td>
+          <td>Hour ( 1-12 )</td>
+        </tr>
+        <tr>
+            <td>G</td>
+            <td>Hour ( 0-23 )</td>
+        </tr>
+        <tr>
+            <td>h</td>
+            <td>Hour ( 01-12 )</td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td>Hour ( 00-23 )</td>
+        </tr>
+        <tr>
+            <td>i</td>
+            <td>Minutes ( 00-59 )</td>
+        </tr>
+        <tr>
+            <td>s</td>
+            <td>Seconds ( 00-59 )</td>
+        </tr>
+        <tr>
+            <td>u</td>
+            <td>Microseconds ( 000000-999999 )</td>
+        </tr>
+        <tr>
+            <td>a</td>
+            <td>am/pm suffix ( a.m. or p.m. )</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>AM/PM suffix ( A.M. or P.M. )</td>
+        </tr>
+        <tr>
+            <td>f</td>
+            <td>Time, hour and minute, but minutes are left out if they are 0</td>
+        </tr>
+        <tr>
+            <td>P</td>
+            <td>Same as f, but also including a.m. or p.m. and:
+                <br>
+                If time is exactly "12:00 a.m." it returns "midnight".
+                <br>
+                If time is exactly "12:00 p.m." it returns "noon".
+            </td>
+        </tr>
+      </table> 
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    { { datetime|time:"format"} }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>format</td>
+        <td>Optional. The format you want to return time in. Default value TIME_FORMAT, which will be same as "H:i"..</td>
+      </tr>
+    </table>   
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+<ul>
+    {% for x in cars %}
+        <li>{{ x }}:
+            <ul>
+                {% for y in color %} 
+                    <li>
+                        {{ forloop.parentloop.counter }}
+                        {{ y }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul> 
+
+<p>Check out views.py to see what cars and colors object looks like.</p>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - default_if_none</h3>  
+  
+    <p><b>Default_if_none Example</b></p> 
+
+    </p>Write color names, but write "nocolor" if value is none:</p>
+
+    {% for x in colors %}
+        <h1>{{ x|default_if_none:"nocolor"}}</h1>
+    {% endfor %}
+
+    <p>In views.py you can see what colors variable look like.</p>
+     
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The default_if_none filter allows you to specify a default value to use if value is None.</p>
+
+    <p>The value has to be exactly None for this filter to have an effect.</p>
+
+    <h3>Syntax</h3>
+
+    { { value|default_if_none:defaultvalue } }
+
+    <p>Template filters are defined bybusing a pipe | character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>defaultvalue</td>
+        <td>Required. The value to return if value is None.</td>
+      </tr>
+    </table>   
+
+
+</body>
+</html>

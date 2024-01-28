@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Unordered_list Template Tag</h3>  
+
+    <h4>Unordered_list Example</h4>
+
+    <p>Convert Python list into an HTML list:</p>
+
+    <ul>
+        {{ fruits|unordered_list }}
+    </ul> 
+
+    <p> As you can see from this array example, we are using a django command to convert a 
+        django or python list from an array in an object, into an HTML list.</p>
+
+    <p>Check out views.py to see what text variable looks like.</p>
+
+  {# Image below for showing code for this example #}
+  {# <img src=""> #}
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>unordered_list</code> filter converts an object into an HTML list.</p>
+
+    <p>The start <code> < ul></code> and end <code>< /ul></code> is not included, but if you have a
+       list inside a list, <code>unordered_list</code> filter will add proper <code>< ul></code> 
+        and <code>< /ul></code> for nested lists:</p>    
+
+
+    <h4>Unordered_list for nested lists</h4>
+
+    <h4>Unordered_list nested Example</h4>
+
+    <p>Converts nested Python lists into nested HTML lists:</p>
+
+    {% include 'django_refs/filter/unordered_list_nested.html' %}       
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>template filters are defined by using a pipe | character followed by name of filter.</p>
+
+    {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+    { % value|<em>unordered_list</em> % } 
+
+
+</body>
+</html>

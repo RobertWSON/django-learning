@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    
+    <h1>Welcome</h1>
+    <hr>
+    
+    {% block heading %}
+        <h2>No Name</h2>
+    {% endblock %}
+    
+    <h2>My Cars</h2>
+
+    <ul>
+        {% block cars %}
+            <li>No cars</li>
+        {% endblock %}
+    </ul>
+    
+<p>Check out two templates to see what they look like <br>
+   and views.py to see reference to child template</p>    
+
+</html>

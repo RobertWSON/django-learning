@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - escapejs</h3>  
+  
+    <p><b>Escapejs Example</b></p> 
+ 
+    </p>Escape a text to use in JavaScript:</p>
+
+
+    <h3>Without escapejs:</h3>
+    <button onclick="alert('{{ var1 }}')">Click me</button>    
+
+    <h3>With escapejs:</h3>
+    <button onclick="alert('{{ var1|escapejs }}')">Click me</button>
+
+    <p>Try clicking both buttons. The JavaScript without escapejs filter will raise an error.</p>
+    <p>In views.py you can see what var1 variable looks like.</p>
+
+    
+    <h3>Definition and Usage</h3>
+ 
+    <p>The escapejs filter escapes text to be used in JavaScript strings.</p>
+
+
+    <h3>Syntax</h3>
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+   
+    { { value|escapejs } }
+    
+</body>
+</html>

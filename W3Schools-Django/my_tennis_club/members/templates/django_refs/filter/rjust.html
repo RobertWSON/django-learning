@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - rjust</h3>  
+  
+    <p><b>Rjust Example</b></p> 
+
+    <p>Write name, justified to right of a 20 characters field:</p>
+
+    <h1>{{ name|rjust:20 }}</h1>
+
+    <p>In HTML display does not show more than one space, 
+        but if you view page source you will see that there are 
+        20 characters between &lt;h1&gt; and &lt;/h1&gt;.</p>
+   
+    <p>or, to demonstrate we can use a PRE element to see that "Tobias is right aligned:</p>
+
+    <pre>King {{ name|rjust:20 }} Refsnes</pre>
+
+    <p>In views.py you can see what name variable looks like.</p>
+     
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>rjust</code> filter places a value to right in a field of specified length.</p> 
+  
+
+    <h3>Syntax</h3>
+
+    { { <em>value</em>|rjust:<em>length</em> } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><em>length</em></td>
+        <td>Required. A number specifying length of a field where a value will be right justified in.
+        </td>
+      </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - linebreaksbr</h3>  
+  
+    <p><b>Linebreaksbr Example</b></p> 
+
+    <p>Convert any line breaks into <br>:</p>
+
+    <h3>Without linebreaksbr filter:</h3>
+
+    {{ mytext }}
+
+    <h3>With linebreaksbr filter:</h3>
+
+    {{ mytext|linebreaksbr }}
+
+    <p>Right-click in this frame and check out the frame source to see the added &lt;br&gt; elements.</p>
+
+    <p>In views.py you can see what the mytext variable looks like.</p>
+
+
+    <hr>    
+
+    <h3>Definition and Usage</h3>
+     
+    <p>The <code>linebreaksbr</code> filter replaces line breaks with < br> elements.</p>
+
+    <p>The difference between this filter and the linebreaks filter is that this filter replaces double line breaks with two < br>
+       elements, but the linebreaks filter replaces double line breaks with a <p> element.</p>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>{ { value|linebreaksbr } }</p>
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+
+</body>
+</html>

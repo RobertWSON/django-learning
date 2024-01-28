@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Autoescape Template Tag</h3>  
+
+<h4>Autoescape Off</h4>
+
+<p>Autoescape Off Example</p>
+
+<p>Escape variables that contain HTML Tags </p>
+
+{% autoescape off %}
+  <h2>{{ heading }}</h2>
+{% endautoescape %}
+
+<p>Check out views.py to see what the heading variable looks like.</p>
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The autoescape tag is used to specify if autoescape is on or off</p>
+<p>If autoescape is on, which is default, HTML code in variables will be escaped.</p>
+<p>When escape is on, these characters are escaped:</p>
+
+<ul>
+  <li>< is converted to & lt;</li>
+  <li>< is converted to & lt; </li>
+  <li>' is converted to '</li>
+  <li>" is converted to "</li>
+  <li>& is converted to & amp;</li>
+</ul>  
+
+<h4>Autoescape On</h4>
+
+<p>Autoescape On Example</p>
+
+</p>With autoescape on, any HTML elements inside variables will be converted according to the list above.</p>
+
+{% autoescape on %}
+  {# <h2>{{ heading_on }}</h2>{% endcomment #}
+  {% comment %}should be just heading no need to use heading_on for autoescape on{% endcomment %}
+  <h2>{{ heading }}</h2>
+{% endautoescape %}
+
+<hr>
+
+<h3>Syntax</h3>
+
+<p>autoescape on | off {with % % inside brackets}</p>
+<p>  ... </p>
+</p>endautoescape  {with % % inside brackets}</p>
+
+
+<h3>Parameters</h3>
+
+<table border='3'>
+  <tr>
+      <th>Value</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td>on</td>
+      <td>Default. Specifies that the block will be escaped.</td>
+  </tr>
+  <tr>
+    <td>off</td>
+    <td>Specifies that the block will not be escaped.</td>
+</tr>
+</table>   
+
+</body>
+</html>

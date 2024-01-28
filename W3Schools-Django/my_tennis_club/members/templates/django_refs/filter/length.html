@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Template Filter - length</h3>  
+
+    <h4>length for an Object Example</h4>
+
+    <p>Return number of items in a list:</p>
+
+    <h1>{{ fruits|length }}</h1>
+
+    <p> As you can see from this length example, we are using a django command, to display 
+        number of items from a list in an array for an object.</p>
+
+    <p>In views.py you can see what fruits variable look like.</p>
+    
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>length</code> filter returns number of items in an object.</p>
+    
+    <p>For strings, <code>length</code> filter returns number of characters:</p>
+
+    <h4>Length of String Characters Example</h4>
+    
+    <p>Return number of characters in a string:</p>
+
+    {# Example 2 Not displaying #}
+    {% include 'django_refs/filter/length_example2.html' %} 
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+
+    { { <code>value|length</code> } }
+
+
+</body>
+</html>

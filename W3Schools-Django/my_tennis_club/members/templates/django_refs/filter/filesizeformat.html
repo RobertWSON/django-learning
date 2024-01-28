@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - filesizeformat</h3>  
+  
+    <p><b>Filesizeformat Example</b></p> 
+
+    <p>Display file size in a more readable format:</p>
+
+    <h1>{{ size|filesizeformat }}</h1>
+
+    <p>In views.py you can see what the size variable looks like.</p>
+
+
+    <hr>    
+
+    <h3>Definition and Usage</h3>
+     
+    <p>The <code>filesizeformat</code> filter converts a large number into a more human readable.</p>
+
+    <p>Examples:</p>
+
+    <ul>
+        <li>1024 is converted into 1.0 KB.</li>
+        <li>524288 is converted into 512.0 KB.</li>
+    </ul>    
+
+    <hr>
+
+    
+    <h3>Syntax</h3>
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+
+    <p>{ { value|filesizeformat } }</p>
+
+
+</body>
+</html>

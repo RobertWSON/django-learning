@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - truncatechars_html</h3>  
+  
+    <p><b>Truncatechars_html Example</b></p> 
+
+
+    </p>Make sure text is no longer than 10 characters:</p>
+
+    {{ mytext|truncatechars_html:10 }}
+
+    <p>In views.py you can see what mytext variable looks like.</p>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>truncatechars_html</code> filter truncate a value if it is longer than a specified number of characters.</p>
+
+    <p>The <code>truncatechars_html</code> filter will not count any HTML tags, but closes tags that are being started, but not ended.</p>
+
+    <p>If a value gets truncated, a value will add three dots (...) at end of a string.</p>
+
+    <p>See also:</p>
+
+    <code>
+        <a href="/filter/truncatechars.html">truncatechars</a>
+    </code> <br> 
+    <code>
+        <a href="/filter/truncatewords.html">truncatewords</a>
+    </code> <br>
+    <code>
+        <a href="/filter/truncatewords_html.html">truncatewords_html</a>
+    </code>   
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    { { value|truncatechars_html:number } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>number</td>
+        <td>Required. A number specifying how many characters are allowed.</td>
+      </tr>
+    </table>   
+
+</body>
+</html>

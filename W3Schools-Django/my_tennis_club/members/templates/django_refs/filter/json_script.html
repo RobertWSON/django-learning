@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - json_script</h3>  
+  
+    <p><b>Json_script Example</b></p> 
+
+    <p>Convert an object into a JSON object:</p>
+
+    {{ cars|json_script:"mycars" }}
+
+    <p>Right-click in this frame and check out frame source to see added &lt;script&gt; element.</p>
+
+    <p>In views.py you can see what cars variable looks like.</p>
+
+    
+    <hr>
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>json_script</code> filter converts an object, like a python tuple, into a JSON object surrounded by 
+       &lt;script&gt; &lt;/script&gt; tags.
+      {# < script > < / script > tags. #}
+    </p> 
+
+   
+    <hr>   
+
+    <h3>Syntax</h3>
+
+    {# { { <em>value</em>|json_script<em>:id</em> } } #}
+    This maybe better with code
+    { { <code>value|json_script:id</code> } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon : character followed by argument value(s).</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><em>id</em></td>
+        {#<td>digit</td>#}
+        <td>Required. A string that will be an id value of a script element.</td>
+      </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+{% with myvar=fruits|length %}
+    {% for x in fruits %}
+        <p>{{ x }} is one of {{ myvar }} fruits.</p>
+    {% endfor %}
+{% endwith %}
+
+<p>Check out views.py to see what fruits list looks like.</p>

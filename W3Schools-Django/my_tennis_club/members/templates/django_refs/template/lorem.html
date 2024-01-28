@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Lorem Template Tag</h3>  
+
+<h4>Lorem Random Text</h4>
+
+<p>Lorem Random Text Example</p>
+
+<p>Insert 50 words of random text:</p>
+
+{% lorem 50 w %}
+
+<p>Check out views.py to see what the heading variable looks like.</p>
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The lorem tag iserts a specified amount of random text.</p>
+<p>The "random" text is famous "Lorem ipsum" text, in lower case letters.</p>
+
+<h4>Lorem Paragraphs</h4>
+
+<p>Lorem Paragraphs Example</p>
+
+<p>Insert 5 paragraphs of random text:</p>
+
+{% lorem 5 p %}
+
+<hr>
+
+<h3>Syntax</h3>
+
+{# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+{ % lorem count method random % }
+
+<hr>
+
+<h3>Parameters</h3>
+
+<table border='3'>
+  <tr>
+      <th>Value</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td><em>count</em></td>
+      <td>Optional. The number of words or paragraphs to display.
+          Default 1.
+      </td>
+  </tr>    
+  <tr>    
+      <td><em>method</em></td>
+      <td>"Optional. Specifies whether to display blocks, words or HTML paragraphs."
+      <br>
+      <code>b</code>"for blocks of text"
+      <br>
+      <code>p</code>"for HTML Paragraphs"
+      <br>
+      <code>p</code>"for words"
+      <br>
+      "Default "<code>b</code>
+      </td>
+  </tr>
+  <tr>
+      <td>random</td> 
+      <td>"Optional. If specified, random text start at a random word of "lorum ipsum" text"</td>   
+  </tr>
+</table>   
+
+</body>
+</html>

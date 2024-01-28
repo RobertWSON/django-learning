@@ -1,0 +1,306 @@
+{# Here we are practising using Django Filters #}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>
+      {% comment %}<h2> {% endcomment %}
+        Django Filter Reference
+      {% comment %}</h2>
+      <hr> {% endcomment %}
+    </title>
+  </head>
+
+  <body>
+
+    <h2>Django Filter Tags Reference</h2>
+    <p>A List of all filter keywords:</p> 
+
+    <table border='3'>
+       <tr>
+          <th>Keyword</th>
+          <th>Description</th>
+       </tr>
+       <tr>
+          <td><a href="/filter/add">add</a> </td>
+          <td>Adds a specific value.</td>
+       </tr>
+       <tr>
+          <td><a href="/filter/addslashes">addslashes</a></td>
+          <td>Adds a slash before any quote characters, to escape strings.</td>
+       </tr> 
+       <tr>
+        <td><a href="/filter/capfirst">capfirst</a></td>
+        <td>Returns first letter in uppercase.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/center">center</a></td>
+        <td>Centers value in middle of a specified width.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/cut">cut</a></td>
+        <td>Removes any specified characters or phrases.</td>
+       </tr>
+       <tr>
+        <td>date</td>
+        <td>Returns dates in specified format.</td>
+       </tr>       
+       <tr>
+        <td><a href="/filter/default">default</a></td>
+        <td>Returns a specific value if value is false.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/default_if_none">default_if_none</a></td>
+        <td>Returns a specified value if value is none.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/dictsort">dictsort</a></td>
+        <td>Sorts a dictionary by given value.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/dictsortreversed">dictsortreversed</a></td>
+        <td>Sorts a dictionary reversed, by given value.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/divisibleby">divisibleby</a></td>
+        <td>Returns True if value can be divided by specified number, otherwise it returns False.</td>
+       </tr>       
+       <tr>
+        <td><a href="/filter/escape">escape</a></td>
+        <td>Escapes HTML code from a string..</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/escapejs">escapejs</a></td>
+        <td>Escapes JavaScript code from a string.
+        </td>
+       </tr>
+       <tr>
+        <td><a href="/filter/filesizeformat">filesizeformat</a></td>
+        <td>Returns a number into a file size format.
+        </td>
+       </tr>
+       <tr>
+        <td><a href="/filter/first">first</a></td>
+        <td>Returns the first item of an object (for Strings, the first character is returned).</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/floatformat">floatformat</a></td>
+        <td>Rounds floating numbers to a specified number of decimals, default one decimal.</td>
+       </tr>
+       <tr>
+        <td>force_escape</td>
+        <td>Escapes HTML code from a string.</td>
+       </tr>       
+       <tr>
+        <td><a href="/filter/get_digit">get_digit</a></td>
+        <td>Returns a specific digit of a number.</td>
+       </tr>
+       <tr>
+        <td>iriencode</td>
+        <td>Convert an IRI into a URL friendly string.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/join">join</a></td>
+        <td>Returns the items of a list into a string.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/json_script">json_script</a></td>
+        <td>Returns an object into a JSON object surrounded by script tags.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/last">last</a></td>
+        <td>Returns the last item of an object (for Strings, the last character is returned).</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/length">length</a></td>
+        <td>Returns the number of items in an object, or the number of characters in a string.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/length_is">length_is</a></td>
+        <td>Returns the number of items in an object, or the number of characters in a string.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/linebreaks">linebreaks</a></td>
+        <td>Returns the text with br tag instead of line breaks, and p tag instead of more than one line break.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/linebreaksbr">linebreaksbr</a></td>
+        <td>Returns the text with br tag instead of line breaks.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/linenumbers">linenumbers</a></td>
+        <td>Returns the text with line numbers for each line.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/ljust">ljust</a></td>
+        <td>Left aligns the value according to a specified width.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/lower">lower</a></td>
+        <td>Returns the text in lower case letters.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/make_list">make_list</a></td>
+        <td>Converts a value into a list object.</td>
+       </tr>      
+       <tr>
+        <td><a href="/filter/phone2numeric">phone2numeric</a></td>
+        <td>Converts phone numbers with letters into numeric phone numbers.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/pluralize">pluralize</a></td>
+        <td>Adds a 's' at the end of a value if the specified numeric value is not 1.</td>
+       </tr>
+       <tr>
+        <td>pprint</td>
+        <td>pprint is used for </td>
+       </tr>
+       <tr>
+        <td><a href="/filter/random">random</a></td>
+        <td>Returns a random item of an object.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/rjust">rjust</a></td>
+        <td>Right aligns the value according to a specified width.</td>
+      </tr>
+      <tr>
+        <td>safe</td>
+        <td>Marks that this text is safe and should not be HTML escaped.</td>
+       </tr>
+       <tr>
+        <td>safeseq</td>
+        <td>Marks each item of an object as safe and the item should not be HTML escaped.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/slice">slice</a></td>
+        <td>Returns a specified slice of a text or object.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/slugify">slugify</a></td>
+        <td>Converts text into one long alphanumeric-lower-case word.</td>
+      </tr>
+      <tr>
+        <td>stringformat</td>
+        <td>Converts value into a specified format.</td>
+       </tr>
+       <tr>
+        <td><a href="/filter/striptags">striptags</a></td>
+        <td>Removes HTML tags from a text.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/time">time</a></td>
+        <td>Returns a time in specified format.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/timesince">timesince</a></td>
+        <td>Returns difference between two datetimes.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/timeuntil">timeuntil</a></td>
+        <td>Returns difference between two datetimes.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/title">title</a></td>
+        <td>Upper cases first character of each word in a text, all other characters are converted to lower case.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/truncatechars">truncatechars</a></td>
+        <td>Shortens a string into specified number of characters.</td>
+      </tr>      
+      <tr>
+        <td><a href="/filter/truncatechars_html">truncatechars_html</a></td>
+        <td>Shortens a string into specified number of characters and not considering length of any HTML tags.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/truncatewords">truncatewords</a></td>
+        <td>Shortens a string into specified number of words.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/truncatewords_html">truncatewords_html</a></td>
+        <td>Shortens a string into specified number of words, not considering any HTML tags.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/unordered_list">unordered_list</a></td>
+        <td>Returns items of an object as an unordered HTML list.</td>
+      </tr>
+      <tr>
+        <td><a href="/filter/upper">upper</a></td>
+        <td>Returns text in upper case letters.</td>
+      </tr>
+      <tr>
+        <td>urlencode</td>
+        <td>URL encodes a string.</td>
+      </tr>
+      <tr>
+        <td>urlize</td>
+        <td>Returns any URLs in a string as HTML links.
+        </td>
+      </tr>
+      <tr>
+        <td>urlizetrunc</td>
+        <td>Returns any URLs in a string as HTML links, but shortens links into specified number of characters.</td>
+      </tr>
+      <tr>
+        <td>wordcount</td>
+        <td>Returns number of words in a text.</td>
+      </tr>
+      <tr>
+        <td>wordwrap</td>
+        <td>Wrap words at a specified number of characters.</td>
+      </tr>
+      <tr>
+        <td>yesno</td>
+        <td>Converts Booleans values into specified values.</td>
+      </tr>
+      <tr>
+        <td>i18n</td>
+        <td>i18n is used for  </td>
+      </tr>
+      <tr>
+        <td>l10n</td>
+        <td>l10n is used for  </td>
+      </tr>
+      <tr>
+        <td>tz</td>
+        <td>tz is used for  </td>
+      </tr>
+
+     </table> 
+</body>         
+
+</html>
+
+
+
+{# Here we are practising using Django Filters #}
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Django Filter Reference</h1>
+ 
+{#<p><br><b>Add</b> Filter</p>#}
+{# Maybe I should use h3 instead with p above #}
+<h2>Add Filter</h2>
+
+{% for x in prices %}
+  <h1>The price is {{ x|add:"10" }} dollars.</h1>
+{% endfor %}
+  
+<p>In views.py you can see what the prices variable looks like.</p>
+
+
+</body>
+</html>  
+{% endcomment %}
+
+
+{% comment %}
+I could have this as a Parent Template for all these Filter tags
+Doing it this way I could have a Django Filter Reference heading at top of Page
+
+I could have a List of all Filter Tags as Links down the page 
+
+
+{% endcomment %}

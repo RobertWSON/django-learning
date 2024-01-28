@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django iexact Reference</title>
+    </head>    
+ 
+<body>
+
+    <h2>Django Field Lookup Tag Reference</h2>
+
+    <h3>Field Lookups - iexact</h3>  
+  
+    <p><b>Iexact Example</b></p>
+
+    <p>Get all records where firstname is exactly "emil":</p>
+
+    <p>The queryset object:</p>
+
+    {{ mymembers }}
+
+    <p>Loop through the items:</p>
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The iexact lookup is used to get records with a specified value.</p>
+
+    <p>The iexact lookup is case insensitive.</p>
+
+    <p>For a case sensitive search, use the exact lookup.</p>  
+    
+    <hr>
+
+    <h3>SQL Equivalent</h3>
+
+    <p>The SQL equivalent to the example above will be:</p>
+
+    <p>WHERE firstname = 'Emil';</p>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
+
+    <p>fieldname__iexact='value'</p>

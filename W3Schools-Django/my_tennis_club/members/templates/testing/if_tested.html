@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django For Tag</title>
+    </head> 
+
+<body>
+
+    {# <h2>Django Syntax Section</h2>  Maybe better to go one heading higher #}  
+    <h1><center>Django Syntax<center></h1>
+
+    {#<h2><center>Django For Tag</center></h2> #} 
+    <h2>Django If Tag</h2>   
+
+    <h3>If Statement</h3>
+
+    <p>An <code>if</code> statement evaluates a variable and executes a block of code if a value is true.</p>
+
+    <h4>If Statement Example</h4>
+
+    {% if greeting == 1 %}
+        <h1>Hello</h1>
+    {% endif %}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <p>In views.py you can see what greeting variable looks like.</p>
+
+    <h3 id="elif">Elif</h3>        
+
+    <p>The <code>elif</code> says "if a previous condition were not true, then try this condition".</p>
+
+    <h4>Elif Example</h4>
+
+    {# {% include 'testing/if_elif.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="else">Else</h3>        
+
+    <p>The <code>else</code> keyword catches anything which isn't caught by preceding conditions.</p>
+
+    <h4>Else Example</h4>
+
+    {# {% include 'testing/if_else.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3>Operators</h3>
+
+    <p>The above examples use <code>==</code> operator, which is used to check if a variable is equal to a value,<br>
+       but there are many other operators you can use, or you can even drop an operator if you want to check<br>
+       if a variable is not empty:</p>
+
+    <h4 id="drop_operator">Drop Operator Example</h4>
+    
+    <p>In this example we have dropped == operator from greeting variable because we are just checking if <br>
+       this variable is not empty. In views.py greeting variable has a number 2 value, so because it has a <br>
+       value, we just display a heading Hello.</p>
+
+    {# {% include 'testing/if_drop_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="==_operator">== Operator</h3>
+
+    <p>Is equal to.</p>
+
+    <h4>== Operator Example</h4>
+
+    {# {% include 'testing/if_==_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="!=_operator">!= Operator</h3>
+
+    <p>Is not equal to.</p>
+    
+    <h4>!= Operator Example</h4>
+    
+    {# {% include 'testing/if_!=_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="<_operator">< Operator</h3>
+
+    <p>Is less than.</p>
+        
+    <h4>< Operator Example</h4>
+        
+    {# {% include 'testing/if_<_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="<=_operator"><= Operator</h3>
+
+    <p>Is less than, or equal to.</p>
+        
+    <h4><= Operator Example</h4>
+        
+    {# {% include 'testing/if_<=_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id=">_operator">> Operator</h3>
+
+    <p>Is greater than.</p>
+            
+    <h4>> Operator Example</h4>
+            
+    {# {% include 'testing/if_>_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id=">=_operator">>= Operator</h3>
+
+    <p>Is greater than, or equal to.</p>
+            
+    <h4>>= Operator Example</h4>
+            
+    {# {% include 'testing/if_>=_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+   
+    <h3 id="and_operator">and Operator</h3>
+
+    <p>To check if more than one condition is true.</p>
+                
+    <h4>and Operator Example</h4>
+                
+    {# {% include 'testing/if_and_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="or_operator">or Operator</h3>
+
+    <p>To check if one of conditions is true.</p>
+                    
+    <h4>or Operator Example</h4>
+                    
+    {# {% include 'testing/if_or_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="and-or_operator">and/or Operator</h3>
+
+    <p>Combine <code>and</code> and <code>or</code>.</p>
+                        
+    <h4>and/or Operator Example</h4>
+                        
+    {# {% include 'testing/if_and-or_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <p>Parenthesis are not allowed in <code>if</code> statements in Django, so when you combine <code>and</code><br>
+       and <code>or</code> operators, it is important to know that parentheses are added for <code>and</code> , <br>
+       but not for <code>or</code> .</p>
+
+    <p>Meaning that above example is read by interpreter like this:</p>
+
+    {# Put screenshot from W3Schools on how code is read by interpreter #}   
+
+
+    <h3 id="in_operator">in Operator</h3>
+
+    <p>To check if a certain item is present in an object.</p>
+                        
+    <h4>in Operator Example</h4>
+                        
+    {# {% include 'testing/if_in_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="not-in_operator">not in Operator</h3>
+
+    <p>To check if a certain item is not present in an object.</p>
+                            
+    <h4>not in Operator Example</h4>
+                            
+    {# {% include 'testing/if_not-in_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="is_operator">is Operator</h3>
+
+    <p>Check if two objects are the same.</p>
+
+    <p>This operator is different from <code>==</code> operator, because <code>==</code> operator checks values<br> 
+       of two objects, but <code>is</code> operator checks identity of two objects:</p>
+
+    <p>In a view we have two objects, <code>x</code> and <code>y</code>, with same values:</p>
+
+    {# Put a screenshot of my code here for this example and show views.py code #}
+
+    <p>Two objects have same value, but is it same object ?</p>
+
+    <h4>is Operator Example</h4>
+
+    {# {% include 'testing/if_in_operator.html' %} #}
+
+    <p>Let us try same example with <code>==</code> operator instead:</p>
+
+    <h4 id="==replace_is_operator">replace == with is Example</h4>
+
+    {# {% include 'testing/if_==replace_is_operator.html' %} #}
+
+    {# Put a screenshot of my code here for this example #}
+
+    <p>How can two objects be same ? Well, if you have two objects that points to same object, then<br>
+       <code>is</code> operator evaluates to true:</p>
+    
+    <p>We will demonstrate this by using { % with % } tag, which allows us to create variables in template:</p>   
+
+    <h4 id="is_&_with_operator">is and with Example</h4>
+
+    {# {% include 'testing/if_is_&_with_operator.html' %} #}
+    
+    {# Put a screenshot of my code here for this example #}
+
+    <h3 id="is_not_operator">is not</h3>
+
+    <p>To check if two objects are not the same.</p>
+
+    <h4>is not Example</h4>
+
+    {# {% include 'testing/if_is_not_operator.html' %} #} 
+
+    {# Put a screenshot of my code here for this example #}
+
+</body>
+</html> 

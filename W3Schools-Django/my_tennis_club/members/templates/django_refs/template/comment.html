@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+  
+    <h3>Comment Template Tag</h3>  
+  
+    <h4>Comment Example (that has endcomment)</h4>
+
+    <p>Insert a comment in Django Code</p>
+
+    <h1>Welcome Everyone!</h1> 
+    
+    {% comment %}
+      <h1>Greetings!</h1>
+    {% endcomment %}
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The comment tag allows you to add comment sections that will be ignored by Django.</p>
+
+    <p>Comments can be used to make code more readable.</p>
+
+    <p>Comments can be used to prevent execution when testing code.</p>
+
+    <p>You can add an explanation to your comments to make them more understandable:</p>
+
+    <h4>Comment Example (that has an explanation)</h4>
+
+    <p>Add an explanation to your comments to make them more understandable.</p>
+
+    <h1>Welcome Everyone!</h1>
+
+    {% comment %}
+      <h1>Greetings!</h1>
+    {% endcomment %}
+
+    <h3>Syntax</h3>
+
+    <p>comment explanation {with % % inside brackets}</p>
+    <p> ... </p>
+    </p>endblock  {with % % inside brackets}</p>
+
+    <h3>Parameters</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>explanation</td>
+        <td>Optional. A string, specifying an explanation for that particular comment.</td>
+      </tr>
+    </table>   
+
+</body>
+
+</html>

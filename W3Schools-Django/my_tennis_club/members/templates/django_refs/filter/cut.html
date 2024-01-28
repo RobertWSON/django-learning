@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - cut</h3>  
+  
+    <p><b>Cut Example to Remove Several Letters</b></p> 
+
+    </p>Remove phrase "snes" from name "Emil Refsnes":</p>
+
+    <h1>{{ name|cut:"snes" }}</h1>
+
+    <p>In views.py you can see what name variable looks like. The same cut view and variable are used for both examples.</p>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The cut filter removes specified phrase from a value.</p>
+
+    <p>The cut filter is case sensitive.</p>
+
+    <p>All occurences of specified phrase/ character are removed.</p>
+
+    <p><b>Cut Example to remove one letter</b></p>
+
+    <h1>{{ name|cut:"e" }}</h1>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    { { value|cut:phrase } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>phrase</td>
+        <td>Required. A string specifying part to remove from a value.</td>
+      </tr>
+    </table>   
+
+</body>
+</html>

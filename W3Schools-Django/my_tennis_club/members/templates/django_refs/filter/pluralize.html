@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - pluralize</h3>  
+  
+    <p><b>Pluralize number with 's' Example</b></p> 
+
+    <p>Add a 's' at end of number, if number is not 1:</p>
+
+    {% for x in arr %}
+        <h1>You have {{ x }} life{{ x|pluralize }} left.</h1>
+    {% endfor %}
+
+    <p>In views.py you can see what arr variable looks like for all examples.</p>
+     
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>pluralize</code> filter adds a 's' suffix if value is not 1.</p> 
+
+    <p>You can specify another suffix with suffix argument:</p> 
+
+
+    <p><b>Pluralize with another suffix Example</b></p> 
+
+    {% for x in arr %}
+        <h1>You have {{ x }} kiss{{ x|pluralize:'es' }} left.</h1>
+    {% endfor %}    
+
+
+    <p>For words with different single and plural endings, you can add both by seperating them by a comma:</p>
+
+    <p><b>Pluralize for words with single and plural endings Example</b></p>
+
+    {% for x in arr %}
+        <h1>You have {{ x }} butterfl{{ x|pluralize:'y,ies' }} left.</h1>
+    {% endfor %}    
+
+    <h3>Syntax</h3>
+
+    { { <em>value</em>|pluralize:<em>suffix</em> } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><em>suffix</em></td>
+        <td>Optional. The suffix to add to a value.
+            <br>Default 's'.
+            <br>For words with different single and plural endings, you can add both by seperating them by a comma.
+        </td>
+      </tr>
+    </table>
+    
+
+    
+    
+
+</body>
+</html>

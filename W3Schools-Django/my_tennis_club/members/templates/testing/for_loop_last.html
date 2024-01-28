@@ -1,0 +1,12 @@
+
+<ul>
+    {% for x in fruits %}
+        <li
+            {% if forloop.last %}
+                style='background-color:lightblue;'
+            {% endif %}
+        >{{ x }}</li>
+    {% endfor %}        
+</ul>
+
+<p>In views.py you can see what fruits object looks like.</p>

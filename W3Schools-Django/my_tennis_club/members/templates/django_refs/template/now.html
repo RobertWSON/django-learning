@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Now Template Tag</h3>  
+
+<h4>Now - Current Date</h4>
+
+<p>Now - Current Date Example</p>
+
+<p>Add current date:</p>
+
+<h1>{% now "Y-m-d "%}</h1>
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The now tag inserts current date and/or time, according to specified format.</p>
+
+<h4>Now - Current Date and Time</h4>
+
+<p>Now - Current Date and Time Example</p>
+
+<p>Add current date and time:</p>
+
+<h1>{% now "Y-m-d G:i:s" %}</h1>
+
+<hr>
+
+<h3>Syntax</h3>
+
+{ %  now format % }
+
+<hr>
+
+<h3>Parameters</h3>
+
+<table border='3'>
+    <tr>
+        <th>Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><em>count</em></td>
+        <td>Optional. The number of words or paragraphs to display.
+            Default 1.
+        </td>
+    </tr>    
+    <tr>    
+        <td><em>method</em></td>
+        <td>"Optional. Specifies whether to display blocks, words or HTML paragraphs."
+        <br>
+        <code>b</code>"for blocks of text"
+        <br>
+        <code>p</code>"for HTML Paragraphs"
+        <br>
+        <code>p</code>"for words"
+        <br>
+        "Default "<code>b</code>
+        </td>
+    </tr>
+    <tr>
+        <td>random</td> 
+        <td>"Optional. If specified, random text start at a random word of "lorum ipsum" text"</td>   
+    </tr>
+  </table>
+
+</body>
+</html>

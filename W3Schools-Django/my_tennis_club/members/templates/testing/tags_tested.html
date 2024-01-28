@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Templates Tag</title>
+    </head> 
+
+<body>
+
+    <h2><center>Django Syntax Section</center></h2>    
+
+    <h3>Django Template Tag</h3>    
+
+    <h4>Template Tags</h4>
+
+    <p>In Django templates, you can perform programming logic like executing <code>if</code> statements and 
+       <code>for</code> loops.</p>
+    
+    <p>These keywords, <code>if</code> and <code>for</code> , are called "template tags" in Django.</p>  
+    
+    {# <p>To execute template tags, we surround them in { %  % } brackets.</p> #}
+
+    <h4>Template Tags Example</h4>
+
+    {% if greeting == 1 %}
+        <h1>Hello</h1>
+    {% else %}
+        <h1>Bye</h1>
+    {% endif %} 
+    
+    <p>In views.py you can see what greetings variable looks like.</p>
+
+
+
+    {# <h4 id="django_code">Django Code</h4> #}
+
+    <p>The template tags are a way of telling Django that here comes something else than plain HTML.</p>
+
+    <p>The template tags allow us to do some programming on a server before sending HTML to a client.</p>
+
+    <h4>Django Code Example</h4>
+
+    {# {% include 'testing/django_code.html' %} #}
+
+    <p>In the next testing pages to follow, more will be learnt about most common template tags used in Django.</p>
+
+    <p>You can also visit <a href="/template">Template Tags Reference Page</a>, 
+       as this shows a list of all Django template tags.<br> You can click on each tag to find out how they work.
+    </p>
+
+</body>
+</html> 

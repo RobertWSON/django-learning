@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - divisibleby</h3>  
+  
+    <p><b>Divisibleby 5 Example</b></p> 
+
+    <p>Check if a value is divisible by 5:</p>
+
+    {% if totalsum|divisibleby:5 %}
+        <h1>Yes, it is!</h1>
+    {% endif %}
+
+    <p>In views.py you can see what totalsum variable looks like for both examples.</p>
+     
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>divisibleby</code> filter returns <code>True</code> if a value is divisible by an argument, 
+       otherwise it returns <code>False</code>.</p>
+    
+    <p><b>Divisibleby 3 Example</b></p> 
+
+    <p>Display an answer, is <code>totalsum</code> divisibleby 3:</p>
+
+    <h1>{{ totalsum|divisibleby:3 }}</h1>
+
+    <h3>Syntax</h3>
+
+    { { value|divisibleby:num } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>num</td>
+        <td>Required. A number to try to divide a value with.</td>
+      </tr>
+    </table>   
+
+</body>
+</html>

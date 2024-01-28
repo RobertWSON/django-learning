@@ -1,0 +1,222 @@
+{# Here we are practising using Django Field Lookups #}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Field Lookups</title>
+  </head>  
+
+  <body>
+
+    <h2>Django Field Lookups Reference</h2>
+    <p>A List of all field look up keywords:</p>
+
+    <table border='3'>
+      <tr>
+         <th>Keyword</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td><a href="/field/contains">contains</a> </td>
+         <td>Contains the phrase.</td>
+      </tr>
+      <tr>
+         <td><a href="/field/icontains">icontains</a></td>
+         <td>Same as contains, but case-insensitive.</td>
+      </tr> 
+      <tr>
+         <td>date</td>
+         <td>Matches a date.</td>
+       </tr>
+       <tr>
+         <td>day</td>
+         <td>Matches a date (day of month, 1-31) (for dates).</td>
+       </tr>
+       <tr>
+         <td><a href="/field/endswith">endswith</a></td>
+         <td>Ends with.</td>
+       </tr>
+       <tr>
+         <td><a href="/field/iendswith">iendswith</a></td>
+         <td>Same as endswith, but case-insensitive.</td>
+       </tr>
+       <tr>
+         <td><a href="/field/exact">exact</a></td>
+         <td>An exact match.</td>
+       </tr>
+       <tr>
+        <td><a href="/field/iexact">iexact</a></td>
+        <td>Same as exact, but case-insensitive.</td>
+      </tr>
+      <tr>
+        <td><a href="/field/in">in</a></td>
+        <td>Matches one of values.</td>
+      </tr> 
+      <tr>
+        <td>isnull</td>
+        <td>Matches NULL values.</td>
+      </tr>      
+      <tr>
+        <td><a href="/field/gt">gt</a></td>
+        <td>Greater than.</td>
+      </tr>
+      <tr>
+        <td><a href="/field/gte">gte</a></td>
+        <td>Greater than, or equal to.</td>
+      </tr>
+      <tr>
+        <td>hour</td>
+        <td>Matches an hour (for datetimes).</td>
+      </tr>
+      <tr>
+        <td><a href="/field/lt">lt</a></td>
+        <td>Less than.</td>
+      </tr>
+      <tr>
+        <td><a href="/field/lte">lte</a></td>
+        <td>Less than, or equal to.</td>
+      </tr>
+      <tr>
+        <td>minute</td>
+        <td>Matches a minute (for datetimes).</td>
+      </tr>
+      <tr>
+        <td>month</td>
+        <td>Matches a month (for dates).</td>
+      </tr>
+      <tr>
+        <td>quarter</td>
+        <td>Matches a quarter of year (1-4) (for dates).</td>
+      </tr>      
+      <tr>
+        <td><a href="/field/range">range</a></td>
+        <td>Match between.</td>
+      </tr>
+      <tr>
+        <td>regex</td>
+        <td>Matches a regular expression.</td>
+      </tr>
+      <tr>
+        <td>iregex</td>
+        <td>Same as regex, but case-insensitive.</td>
+      </tr>
+      <tr>
+        <td>second</td>
+        <td>Matches a second (for datetimes).</td>
+      </tr>      
+      <tr>
+        <td><a href="/field/startswith">startswith</a></td>
+        <td>Starts with.</td>
+      </tr>
+      <tr>
+        <td><a href="/field/istartswith">istartswith</a></td>
+        <td>Same as startswith, but case-insensitive.</td>
+      </tr>
+      <tr>
+        <td>time</td>
+        <td>Matches a time (for datetimes).</td>
+      </tr>      
+      <tr>
+        <td>week</td>
+        <td>Matches a week number (1-53) (for dates).</td>
+      </tr>
+      <tr>
+        <td>week_day</td>
+        <td>Matches a day of week (1-7) 1 is Sunday.</td>
+      </tr>
+      <tr>
+        <td>iso_week_day</td>
+        <td>Matches a ISO 8601 day of week (1-7) 1 is Monday.</td>
+      </tr>
+      <tr>
+        <td>year</td>
+        <td>Matches a year (for dates).</td>
+      </tr>  
+      <tr>
+        <td>iso_year</td>
+        <td>Matches an ISO 8601 year (for dates).</td>
+      </tr>          
+
+    </table>
+
+  </body>
+
+</html>
+
+{# These examples will be covered in the examples pages, not here in main filter/ page #}
+{# Here we are practising using Django Field Lookups #}
+
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Django Field Lookups Reference</h2>
+{%} 
+{#<p><br><b>Contains</b> Field Lookup</p>#}
+
+{% comment %}
+<h3>Contains Field Lookup</h3>
+
+<p>The queryset object:</p>
+
+ {{ mymembers }}
+ 
+ <p>Loop through the items:</p>
+
+ <table border='1'>
+    <tr>
+        <th>ID</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+    </tr>
+    {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>    
+    {% endfor %}
+    
+ </table>
+{% endcomment %}
+
+{% comment %}
+ <p><br><b>Endswith</b> Field Lookup</p>
+
+ <p>The queryset object:</p>
+
+ {{ mymembers }}
+ 
+ <p>Loop through the items:</p>
+ 
+ <table border='1'>
+   <tr>
+     <th>ID</th>
+     <th>Firstname</th>
+     <th>Lastname</th>
+   </tr>
+   {% for x in mymembers %}
+     <tr>
+       <td>{{ x.id }}</td>
+       <td>{{ x.firstname }}</td>
+       <td>{{ x.lastname }}</td>
+     </tr>
+   {% endfor %}
+ </table>
+
+{% endcomment %}
+
+{% comment %}
+</body>
+</html>
+{% endcomment %}
+
+{% comment %}
+I could have this as a Parent Template for all these Field Lookup tags
+Doing it this way I could have a Django Field Lookups Reference heading at top of Page
+
+I could have a List of all Field Lookups Tags as Links down the page 
+
+
+{% endcomment %}

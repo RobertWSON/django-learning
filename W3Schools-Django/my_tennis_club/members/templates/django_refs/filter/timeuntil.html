@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Template Filter - timeuntil</h3>  
+
+    <h4>Timeuntil for an upcoming event Example</h4>
+
+    <p>Return time until May 17, 2050:</p>
+
+    <h1>{{ marslanding|timeuntil }}</h1>
+
+    <p> As you can see from this timeuntil example, we are using a django command to work out time
+        from a current date now until a mars landing event in 2050.</p>
+
+    <p>In views.py you can see what marslanding variable look like.</p>
+    
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>timeuntil</code> filter returns difference between two date times.
+    
+    <p>The default datetime to start count is now, but you can also specify it:</p>
+
+    <h4>Timeuntil using default start time Example</h4>
+    
+    <p>Return time until May 17, 2050, starting from moonlanding in 1969:</p>
+
+    {# Example 2 Not displaying #}
+    {# {% include 'django_refs/filter/timeuntil_example2.html' %} #}
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+    <p>You can also get difference in hours and minutes:</p>
+
+    <h4>Timeuntil in Hours and Minutes Example</h4>
+
+    <p>Return time until 17:39, starting from 8:13:</p>
+
+    {# Example 3 Not displaying #}
+    {# {% include 'django_refs/filter/timesince_example3.html' %} #}
+
+    <p>See also <code><a href="filter/timesince.html">timesince</a></code> filter.</p>
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    { { <code>datetime|timeuntil:comparedate</code> } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><em>comparedate</em></td>
+        <td>Optional. A datetime you want to conmpare with. Default value is datetime now.</td>
+      </tr>
+    </table>   
+
+</body>
+</html>

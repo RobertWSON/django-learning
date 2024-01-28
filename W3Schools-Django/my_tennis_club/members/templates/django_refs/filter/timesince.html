@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Template Filter - timesince</h3>  
+
+    <h4>Timesince between datetimes Example</h4>
+
+    <p>Return difference between two datetimes:</p>
+
+    <h1>{{ mybirthdate|timesince:mydate }}</h1>
+
+    <p> As you can see from this timesince example, we are using a django command to take time
+        difference between a birth date and current date.</p>
+
+    <p>In views.py you can see what mybirthdate and mydate variables look like.</p>
+    
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>timesince</code> filter returns difference between two date times.</p>
+    
+    <p>If you leave out date in argument, current date (now) will be used:</p>
+
+    <h4>Time since Birthday and Now Example</h4>
+    
+    <p>Return difference between now and mybirthday:</p>
+
+    {% include 'django_refs/filter/timesince_example2.html' %} 
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+    <p>You can also get difference between two times, in hours and minutes:</p>
+
+    <h4>Timesince in Hours and Minutes Example</h4>
+
+    <p>Return difference between 13:45 and 9:30:</p>
+
+    {#{% include 'django_refs/filter/timesince_example3.html' %}#}
+
+    <p>See also <code><a href="filter/timeuntil.html">timeuntil</a></code> filter.</p>
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    { { <code>datetime|timesince:comparedate</code> } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><em>comparedate</em></td>
+        <td>Optional. A datetime you want to conmpare with. Default value is datetime now.</td>
+      </tr>
+    </table>   
+
+</body>
+</html>

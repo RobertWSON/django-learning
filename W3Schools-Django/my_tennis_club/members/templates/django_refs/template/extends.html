@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>    
+
+    <h3>Extends Template Tag</h3>
+
+    <p>Use extends in Child Template to get data for parent template</p>
+
+    <p>Specify that this template relies on a parent template:</p>
+
+    {#<h4>#}
+      <a href="template/extends_example">Extends Example</a>
+    {#</h4>#}
+
+    {#Need to create screenshot for this first 1st example <img src="">#}
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>extends</code> tag is used to specify that this template needs a parent template.</p>
+
+    <p>The <code>extends</code> tag takes one argument, which is name of parent template.</p>
+
+    <p>When a child template with a parent template is requested, django uses parent template as a "skeleton" 
+       and fills it with content from child template, according to match block tags.</p>
+
+    <h4>Above Example from a Parent Template Perspective</h4>
+    
+    <p>The parent template has blocks that fit the child template's blocks.</p>
+    <code>mymaster.html</code>    
+
+    {#Need to create screenshot of mymaster.html file for this example <img src="">#}
+
+       <hr>
+
+       <h3>Syntax</h3>
+       
+       {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+       { % extends <em>parenttemplate</em> % }
+       
+    <hr>
+       
+    <h3>Parameters</h3>
+       
+    <table border='3'>
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><em>parenttemplate</em></td>
+            <td>Required. The name of parent template.<br> Either a string or a variable.</td>
+        </tr>    
+    </table>     
+
+</body>
+</html>

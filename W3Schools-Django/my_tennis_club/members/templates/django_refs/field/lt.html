@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django less than Reference</title>
+    </head>    
+ 
+<body>
+
+    <h2>Django Field Lookup Tag Reference</h2>
+
+    <h3>Field Lookups - lt (less than)</h3>  
+  
+    <p><b>Less Than Example</b></p>
+
+    <p>Get all records where id is less than 3:</p>    
+
+    <p>The queryset object:</p>
+
+    {{ mymembers }}
+
+    <p>Loop through the items:</p>
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The lt lookup is used to get records that are less than a specified value.</p>
+
+    <p>For a less than or equal to search, use the lte lookup.</p>  
+    
+    <hr>
+
+    <h3>SQL Equivalent</h3>
+
+    <p>The SQL equivalent to the example above will be:</p>
+
+    <p>WHERE id < 3;</p>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
+
+    <p>fieldname__lt=value</p>
+    
+</body>    
+</html>    

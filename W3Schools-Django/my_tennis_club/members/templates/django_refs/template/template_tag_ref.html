@@ -1,0 +1,179 @@
+
+{# Here we are practising using Django Template Tags and need to refer to master file #}
+
+{# I think I need to comment all extends and block tags because it does not work with view otherwise #}
+{# {% extends "django_refs_master.html" %} #} 
+<!DOCTYPE html>
+<html>
+
+{# {% block title %} #} 
+  <head>
+    <title>
+      {% comment %}<h2> {% endcomment %}
+        Django Template Tags Reference
+      {% comment %}</h2>
+      <hr> {% endcomment %}
+    </title> 
+  </head>  
+{#{% endblock %} #}
+
+ {# {% block content %} #}
+  <body>
+
+    <h2>Django Template Tags Reference</h2>
+
+    <a href="/">Back</a>
+
+    <p>A List of all template tags:</p> 
+
+      <table border='3'>
+         <tr>
+            <th>Tag</th>
+            <th>Description</th>
+         </tr>
+         <tr>
+            <td><a href="/template/autoescape">autoescape</a> </td>
+            <td>Specifies if autoescape mode is on or off.</td>
+         </tr>
+         <tr>
+            <td><a href="/template/block">block</a></td>
+            <td>Specifies a block section.</td>
+         </tr> 
+         <tr>
+            <td><a href="/template/comment">comment</a></td>
+            <td>Specifies a comment section.</td>
+         </tr>
+         <tr>
+          <td>csrf_token</td>
+          <td>Protects forms from Cross Site Request Forgeries.</td>
+         </tr> 
+         <tr>
+          <td><a href="/template/cycle">cycle</a></td>
+          <td>Specifies content to use in each cycle of a loop.</td>
+         </tr> 
+         <tr>
+          <td>debug</td>
+          <td>Specifies debugging information.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/extends">extends</a></td>
+          <td>Specifies a parent template.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/filter_tag">filter</a></td>
+          <td>Filters content before returning it.</td>
+         </tr> 
+         <tr>
+          <td><a href="/template/firstof">firstof</a></td>
+          <td>Returns first not empty variable.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/for">for</a></td>
+          <td>Specifies a for loop.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/if">if</a></td>
+          <td>Specifies an if statement.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/ifchanged">ifchanged</a></td>
+          <td>Used in for loops. Outputs a block only if a value has changed since last iteration.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/include">include</a></td>
+          <td>Specifies included content or template.</td>
+         </tr>
+         <tr>
+          <td>load</td>
+          <td>Loads template tags from another library.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/lorem">lorem</a></td>
+          <td>Outputs random text.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/now">now</a></td>
+          <td>Outputs current date or time.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/regroup">regroup</a></td>
+          <td>Sorts an object by a group.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/resetcycle">resetcycle</a></td>
+          <td>Used in cycles. Resets the cycle.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/spaceless">spaceless</a></td>
+          <td>Removes whitespace between HTML tags.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/templatetag">templatetag</a></td>
+          <td>Outputs a specified template tag.</td>
+         </tr>
+         <tr>
+          <td>url</td>
+          <td>Returns absolute URL part of a URL.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/verbatim">verbatim</a></td>
+          <td>Specifies contents that should not be rendered by template engine.</td>
+         </tr>
+         <tr>
+          <td>widthratio</td>
+          <td>Calculates a width value based on ratio between a given value and a max value.</td>
+         </tr>
+         <tr>
+          <td><a href="/template/with">with</a></td>
+          <td>Specifies a variable to use in the block.</td>
+         </tr>
+
+       </table> 
+  </body>         
+{# {% endblock %} #}
+
+</html>
+
+{# I need separate pages for these Template Tags examples #}
+
+{% comment %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Django Template Tag Reference</h2>
+
+<h3>autoescape Template Tag</h3>
+
+<h4>Autoescape Off</h4>
+
+{% autoescape off %}
+  <h1>{{ heading }}</h1>
+{% endautoescape %}
+
+<p>Check out views.py to see what the heading variable looks like.</p>
+{% endcomment %}
+
+{% comment %}
+<h4>Autoescape Off</h4>
+
+{% autoescape on %}
+  <h1>{{ heading }}</h1>
+{% endautoescape %}
+
+<p>Check out views.py to see what the heading variable looks like.</p>
+{% endcomment %}
+
+{% comment %}
+</body>
+</html>   
+{% endcomment %}
+
+{% comment %}
+I could have this as a Parent Template for all these Template tags
+Doing it this way I could have a Django Template Tags Reference heading at top of Page
+
+I could have a List of all Template Tags as Links down the page 
+
+
+{% endcomment %}

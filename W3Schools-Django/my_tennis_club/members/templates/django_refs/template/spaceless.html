@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Spaceless Reference</title>
+    </head>    
+ 
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Template Tag - Spaceless</h3>  
+  
+    <p><b>Spaceless Example</b></p>
+
+    <p>Remove space between HTML tags:</p>
+
+    {% spaceless %}
+        <ul>
+            {% for x in fruits %}
+                <li>{{x}}</li>
+            {% endfor %}
+        </ul>        
+    {% endspaceless %}
+    
+    <p>Right-click result and view page source. Entire HTML code is written in one line.</p>
+    <p>Check out views.py to see what fruits variable looks like.</p>
+
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The spaceless tag is used to remove any space between tags, in code.</p>
+
+    <p>The spaceless tag removes any whitespaces,new lines and tabs.</p>
+
+    <h3>Syntax</h3>
+
+    { % spaceless % }
+      ...
+    { % endspaceless % } 
+      
+</body>
+</html>

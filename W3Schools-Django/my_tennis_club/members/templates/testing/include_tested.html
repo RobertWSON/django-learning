@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Include Tag</title>
+    </head> 
+
+<body>
+
+    <h2>Django Syntax Section</h2>    
+
+    <h3>Django Include Tag</h3>    
+
+    <h4>Include</h4>
+
+    <p>The <code>include</code> tag allows you to include a template inside current template.</p>
+
+    <p>This is useful when you have a block of content that is the same for many pages.</p>
+
+    <h4>Include with Footer Example</h4>
+
+    <h1>Hello</h1>
+
+    <p>This page contains a footer in a template.</p>
+
+    {% include 'testing/footer.html' %} 
+
+    <p>Check out two templates to see what they look like, and views.py to see reference to child template.</p>
+
+    {# <h1>Hello</h1> #}
+
+    {# <p>This page contains a footer in a template.</p> #}
+
+    {# {% include 'testing/footer.html' %} #}
+
+    {# <p>Check out the two templates to see what they look like, and views.py to see the reference to the child template.</p> #}
+
+
+    <h4 id="include_variables">Variables in Include</h4> 
+    {#<h4>Variables in Include</h4>#}
+
+    {# <p>You can send variables into template using <b>with</b> keyword.</p> #}
+    <p>You can send variables into a template by using <code>with</code> keyword.</p>
+
+    <p>In include file, you refer to variables by using { { <code>variablename</code> } } syntax:</p>
+
+    <h4>Include with Variables Example</h4>
+
+    {# W3Schools template below used for this Include with Variables example #}
+    {% include "testing/mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
+    <h1>Welcome</h1>
+
+    <p>This is my web site.</p>
+
+    <p>Check out mymenu.html to see the HTML content of the include.</p>
+
+</body>
+</html>                  

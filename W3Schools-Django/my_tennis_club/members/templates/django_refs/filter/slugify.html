@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Slugify Template Tag</h3>  
+
+  <h4>Slugify Text into a Word Example</h4>
+
+  <p>Convert a text into one long word:</p>
+
+  <p>{{ text|slugify }}</p> 
+
+  <p> As you can see from this text example, it is converted into a long word with slugs to seperate 
+    each word.</p>
+
+  <p>Check out views.py to see what text variable looks like.</p>
+
+  {# Image below for showing code for this example #}
+  {# <img src=""> #}
+
+  <hr>
+
+  <h3>Definition and Usage</h3>
+
+  <p>The <code>slugify</code> filter returns a text into one long word containing nothing
+     but lower case ASCII characters and hyphens (-).</p>
+
+  <p>Meaning:</p>
+
+  <p> - All spaces converted into hyphens.</p>
+  <p> - Removing all characters that are not alphanumeric, except hyphens and underscores.</p>
+  <p> - Removes any underscores and/or hyphens at beginning or end of a value.</p>
+  <p> - Converting to lower case characters.</p>
+
+
+  <h4>Slugify - handling of non alphanumeric characters</h4>
+
+  <h4>Slugify Text non alphanumeric Example</h4>
+
+  <p>Slugify a text with a lot of non alphanumeric characters:</p>
+
+  {% include 'django_refs/filter/slugify_example2.html' %} 
+
+  {# Image below for showing code for this example #}
+  {# <img src=""> #}
+
+
+  <hr>
+
+  <h3>Syntax</h3>
+
+  {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+  {# { % value|<em>slugify</em> % } #}
+
+  <p>template filters are defined by using a pipe | character followed by name of filter.</p>
+
+</body>
+</html>

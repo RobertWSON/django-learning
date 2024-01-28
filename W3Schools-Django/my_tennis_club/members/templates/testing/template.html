@@ -1,3 +1,358 @@
+{# This is an HTML Template for Testing Home Page to Django Examples used for Testing   #}
+{# Testing Home Page has Links to these Django Examples and it has a /testing/ url.#}
+
+<!DOCTYPE html>
+<html>
+
+{# {% block title %} #} 
+  <head>
+    <title>
+      {% comment %}<h2> {% endcomment %}
+        Django Examples
+      {% comment %}</h2>
+      <hr> {% endcomment %}
+    </title> 
+  </head>  
+{#{% endblock %} #}
+
+ {# {% block content %} #}
+  <body>
+
+    {# <h2>Django Examples</h2> change to h1 heading for main heading of page #}
+    <h1>Django Examples</h1>
+
+    <a href="/">Back</a>
+
+    <p>A List of all Django Examples Tested for how they are displayed:</p> 
+
+    <h2>Display Data</h2>
+
+      <table border='3'>
+        <tr>
+          <th>Task</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><a href="/testing/prepare_template">Prepare Template</a> </td>
+          <td>In django we create a template with HTML in a templates folder. <br>
+              As well as HTML, a template uses django tags and this is covered in more detail, when you click on link.</td> 
+        </tr>
+        <tr>
+          <td><a href="/testing/prepare_template#prepare_view">Prepare Django View</a></td>
+          <td>In django we want to make model data taken from database available in template.<br>
+              A django view is used to do this.
+          </td>
+        </tr> 
+        <tr>
+          <td><a href="/testing/details_link">Add Link to Details</a></td>
+          <td>Create a Details template and make a link from members template back to new details template.<br>
+              The process of how this works is covered in more detail when you click on link. 
+          </td> 
+        </tr> 
+        <tr>
+          <td><a href="/testing/details_link#details_view">Add Details View</a></td>
+          <td>In django we need to add a details view, so that the the link goes to correct URL.</td>
+        </tr> 
+        <tr>
+          <td><a href="/testing/master_template">Add Master Template</a></td>
+          <td>In django we need to add a master template, so that a group of pages having same structure can use<br>
+              a common template.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/main_page">Add Main Index Page</a></td>
+          <td>In django we need to add a main page for the whole website. <br>
+              This main page has links to everything on website and can also be called a home page.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/django_404">Django 404 Template</a></td>
+          <td>In django a 404 is an error that relates to a page not being found. <br>
+              A 404 template uses a message to appear when this happens.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/django_404">Add Test View</a></td>
+          <td>Add a view to test how code works.</td>
+        </tr>
+      </table>
+
+
+    <h2>Django Syntax</h2>
+
+    <h3>Django Variables</h3>
+
+      <table border='3'>
+         <tr>
+            <th>Tag</th>
+            <th>Description</th>
+         </tr>
+         <tr>
+            <td><a href="/testing/template_variable">Template Variable</a> </td>
+            <td>In Django templates, you can render (show) variables by putting them <b> inside { {  } } curly brackets </b>.</td> 
+         </tr>
+         <tr>
+            <td><a href="/testing/view_variable">Variable in View</a></td>
+            <td>A variable in a views.py file is sent to a template through this view.</td>
+         </tr> 
+         <tr>
+            <td><a href="/testing/template_variables">Variables in Template</a></td>
+            <td>You can also create a variable and assign it a value directly in a template, by using <br><b>{ % with % } </b> template tag. <br> An assigned variable can then be used as a template variable with <b>{ { } } brackets</b>, as mentioned above. <br> The assigned variable is available for use until the <b>closing tag { % endwith % } appears</b>. </td> 
+         </tr> 
+         <tr>
+            <td><a href="/testing/model_data">Data From a Model</a></td>
+            <td>Normally, most of external data you want to use in a template, comes from a table in a database called a <br>model. To get data from a model, an import has to be created in views.py file and data is extract from it<br> in a view. Data can now be used in an HMTL Template by using a <b>For Loop Django Template Tag <br>{ % for % } </b> to loop through an object that has all values of a model.</td>
+         </tr> 
+        </table> 
+
+
+    <h3>Django Tags</h3>     
+
+        <table border='3'>
+         <tr>
+          <th>Tag</th>
+          <th>Description</th>
+         </tr>  
+         <tr>
+          {#<td><a href="/testing/template_tags">Template Tags</a></td>#}
+          <td><a href="/testing/tags_tested">Template Tags</a></td>
+          <td>In Django templates, you can perform programming logic like executing <b>if</b> statements and <b>for</b> loops. These<br> keywords, <b>if</b> and <b>for</b> are called "template tags" in Django. <br>To execute template tags, we surround them in { % % }.</td>
+         </tr>
+         <tr>
+          {#<td><a href="/testing/django_code">Django Code</a></td>#}
+          <td><a href="/testing/tags_tested#django_code">Django Code</a></td>
+          <td>Django Template tags are a way of telling Django that here comes something else other than plain HTML. They<br> also allow us to do some programming on server before sending HTML to client.</td>
+         </tr> 
+        </table> 
+
+
+
+    <h3>Django If Else</h3>     
+
+         <table border='3'>
+          <tr>
+           <th>Tag</th>
+           <th>Description</th>
+          </tr> 
+         <tr>
+          {# <td><a href="/testing/if">If Statement</a></td> #}
+          <td><a href="/testing/if_tested">If Statement</a></td>
+          <td>An <code>if statement</code> evaluates a variable and executes a block of code if the value is true.</td>
+         </tr>
+         <tr>
+          {# <td><a href="/testing/elif">Elif</a></td>#}
+          <td><a href="/testing/if_tested#elif">Elif</a></td>
+          <td>The <code>elif</code> keyword says "if the previous conditions were not true, then try this condition".</td>
+         </tr>
+         <tr>
+          {#<td><a href="/testing/else">Else</a></td>#}
+          <td><a href="/testing/if_tested#else">Else</a></td>
+          <td>The <code>else</code> keyword catches anything which isn't caught by the preceding conditions.</td>
+         </tr>
+         <tr>
+          {#<td><a href="/testing/drop_operator">Operater dropped</a></td>#}
+          <td><a href="/testing/if_tested#drop_operator">Operater dropped</a></td>
+          <td>An <code>operator</code> can be <code>dropped</code> if you just want to check if a variable is not empty</td>
+         </tr>
+         <tr>
+          {#<td><a href="/testing/==_operator">Operator ==</a></td>#}
+          <td><a href="/testing/if_tested#==_operator">Operator ==</a></td>
+          <td>This is an <code>equal to</code> operator.<br>
+              It compares if left side variable is equal to a value on right hand side of an expression.<br> 
+              If both sides are equal, then code below expression gets displayed, but if they are not then <br>
+              nothing gets displayed.</td>
+         </tr>
+         <tr>
+          {#<td><a href="/testing/!=_operator">Operator !=</a></td>#}
+          <td><a href="/testing/if_tested#!=_operator">Operator !=</a></td>
+          <td>This is a <code>not equal</code> to operator. <br>It compares if left side variable is not equal to a value on right hand side of an expression. <br>
+              If both sides are not equal, then code below expression gets displayed, but if they are equal then <br>
+              nothing gets displayed.</td>
+         </tr>
+        <tr> 
+          {# <td><a href="/testing/!=_operator">Operator < </a></td>#} 
+          <td><a href="/testing/if_tested#<_operator">Operator < </a></td>
+          <td>This is a <code>less than</code> operator.</td>
+        </tr>
+        <tr>        
+          {#<td><a href="/testing/!=_operator">Operator <=</a></td>#}
+          <td><a href="/testing/if_tested#<=_operator">Operator <=</a></td>
+          <td>This is a <code>less than</code> and <code>equal to</code> operator.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/if_tested#>_operator">Operator > </a></td>
+          <td>This is a <code>greater</code> than operator.</td>
+        </tr>        
+        <tr>
+          <td><a href="/testing/if_tested#>=_operator">Operator >=</a></td>
+          <td>This is a <code>greater than</code> and <code>equal</code> to operator.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/if_tested#and_operator">Operator <b>and</b> </a></td>
+          <td>This is an <code>and</code> operator. It considers 2 conditions when deciding what to display.</td>
+        </tr>
+        <tr>        
+          <td><a href="/testing/if_tested#or_operator">Operator <b>or</b> </a></td>
+          <td>This is an <code>or</code> operator.</td>
+        </tr>       
+        <tr>
+          <td><a href="/testing/if_tested#and-or_operator">Operator <b>and / or</b> </a></td>
+          <td>This a <code>and</code> operator with an <code>or</code> operator combined.</td>
+        </tr> 
+        <tr>       
+          <td><a href="/testing/if_tested#in_operator">Operator <b>in</b> </a></td>
+          <td>This is an <code>in</code> operator.</td>
+        </tr>
+        <tr>        
+          <td><a href="/testing/if_tested#not-in_operator">Operator <b>not in</b> </a></td>
+          <td>This is a <code>not in</code> operator.</td>
+        </tr>
+        <tr>        
+          <td><a href="/testing/if_tested#is_operator">Operator <b>is</b> </a></td>
+          <td>This is an <code>is</code> operator.</td>
+        </tr>
+        <tr>        
+          <td><a href="/testing/if_tested#==replace_is_operator">Operator <b>== replace is</b> </a></td>
+          <td>This is an <code>equal to</code> operator with an <code>is</code> operator combined.</td>
+        </tr>
+        <tr>        
+          <td><a href="/testing/if_tested#if_is_&_with_operator">Operator <b>is & with</b> </a></td>
+          <td>This is an <code>is</code> operator and <code>with</code> operator combined.</td>
+        </tr>
+        <tr>        
+          <td><a href="/testing/if_tested#is-not_operator">Operator <b>is not</b> </a></td>
+          <td>This is an <code>is not</code> operator. It uses an if statement to determine if 2 variables are not the same and if this<br> 
+              is correct then display something.</td>
+        </tr>
+       </table> 
+
+
+    <h3>Django For Loop</h3>     
+
+      <table border='3'>
+        <tr>
+          <th>Tag</th>
+          <th>Description</th>
+        </tr>
+
+        <tr>
+          {# <td><a href="/testing/reversed">For Loops</a></td> #}
+          {#Link changed to this below#}
+          <td><a href="/testing/for_loop_tested">For Loops</a></td>
+          <td>A for loop is used for iterating over a sequence, like looping over items in an array, a list, or a dictionary.</td>
+        </tr>
+        <tr>
+          {# <td><a href="/testing/reversed">Data From a Model</a></td> #}
+          <td><a href="/testing/for_loop_tested#model_data">Data From a Model</a></td>
+          <td>.</td>
+        </tr>        
+        <tr>
+          <td><a href="/testing/for_loop_tested#reversed">Reversed</a></td>
+          <td>The reversed keyword is used when you want to do the loop in reversed order.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/for_loop_tested#empty">Empty - Empty Object</a></td>
+          <td>The empty keyword can be used if you want to do something special if the object is empty.</td>
+        </tr>        
+        <tr>
+          <td><a href="/testing/for_loop_tested#empty_noobject">Empty - No Object</a></td>
+          <td>The empty keyword can also be used if the object does not exist:</td>
+        </tr>
+        <tr>
+          
+          <td><a href="/testing/for_loop_tested#counter">forloop.counter</a></td> 
+          <td>The current iteration, starting at 0.</td>
+        </tr>
+        <tr>
+          {# <td><a href="/testing/counter0">forloop.counter0</a></td> #}
+          <td><a href="/testing/for_loop_tested#counter0">forloop.counter0</a></td> 
+          <td>The current iteration, starting at 0.</td>
+        </tr>
+        <tr>
+          {# <td><a href="/testing/loop_first">forloop.first</a></td> #}
+          <td><a href="/testing/for_loop_tested#first">forloop.first</a></td>
+          <td>Allows you to test if the loop is on its first iteration.</td>
+        </tr>
+        <tr>
+          {# <td><a href="/testing/loop_last">forloop.last</a></td> #}
+          <td><a href="/testing/for_loop_tested##last">forloop.last</a></td>
+          <td>Allows you to test if the loop is on its last iteration.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/for_loop_tested#parent">forloop.parentloop</a></td>
+          <td>Allows you to use a parent loop with a child loop.<br>
+              These can be used with array objects when you want to nest a child list within a parent list.
+          </td>
+        </tr>
+        <tr>
+          {# <td><a href="/testing/rev_counter">forloop.revcounter</a></td> #}
+          <td><a href="/testing/for_loop_tested#revcounter">forloop.revcounter</a></td>
+          <td>The current iteration if you start at the end and count backwards, ending up at 1.</td>
+        </tr>
+        <tr>
+          {# <td><a href="/testing/rev_counter0">forloop.revcounter0</a></td> #}
+          <td><a href="/testing/for_loop_tested#revcounter0">forloop.revcounter0</a></td> 
+          <td>The current iteration if you start at the end and count backwards, ending up at 0.</td>
+        </tr>  
+      </table>  
+
+
+      <h3>Django Comment</h3>     
+
+      <table border='3'>
+        <tr>
+          <th>Tag</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><a href="/testing/comments_tested">Comments</a></td>
+          <td><b>Comments</b> allow you to have sections of code that should be ignored.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/comments_tested#comment_description">Comment Description</a></td>
+          <td>You can add a message to your comment to help you remember why you wrote comment or as a message<br>
+              to other people reading code.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/comments_tested#comment_smaller">Smaller Comments</a></td>
+          <td>You can also use { with # .. # inside these brackets } as tags, when commenting out code, as this can be<br> 
+              easier for smaller comments.</td>
+        </tr>
+        <tr>
+          <td><a href="/testing/comments_tested#comment_views">Comment in Views</a></td>
+          <td>Views are written in Python and Python just like Django has comments written with a # character.</td>
+        </tr>
+      </table>
+
+      <h3>Django Include</h3>     
+
+      <table border='3'>
+        <tr>
+          <th>Tag</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          {# <td><a href="/testing/include">Include</a></td> #}
+          {# Use this link below for what should be called include_tested page #}
+          <td><a href="/testing/include_tested">Include</a></td>
+          <td><b>Include</b> tag allows you to include a template inside current template.<br> 
+              This is useful when you have a block of content that is the same for many pages.</td>
+        </tr>
+        <tr>
+          {#<td><a href="/testing/include_variables">Variables in Include</a></td>#}
+          {# <td><a href="/testing/include#include_variables">Variables in Include</a></td> #}
+          {# Use this link below for what should be called include_tested page #}
+          <td><a href="/testing/include_tested#include_variables">Variables in Include</a></td>
+          
+          <td>You can send variables into template by using <b>with</b> keyword. In include file, you refer to variables by using <br>
+              { { variablename } } syntax.</td>
+        </tr>
+      </table>      
+
+  </body>         
+{# {% endblock %} #}
+
+</html>
+
+
+
 {# This is an HTML Template for Testing purposes. #}
 {# It is used for testing code and the result is shown on /testing/ url. #}
 {# comment is where the code should be #}
@@ -318,7 +673,7 @@
 {#     {{ x.lastname }} #}
 {#    <p> #}
 {# {% endfor %} #} {# End of For Loop #}
-{# <p>In views.py you can see how to import and fetch members from the database.</p> #}
+{# <p>In views.py you can see how to import and fetch members from database.</p> #}
 
 
 
@@ -527,24 +882,33 @@ which can be easier for smaller comments
 
 
 
+
+
+
+
+{# Put this include in it's own page, so have a testing/include_testing routes #}
+{# to seperate it from include in Django Reference Template section #}
 {# Variables in Include within Django include Tag (34 Django Include) of Django Syntax Section #}
 {# comment code for now #}
-<!DOCTYPE html>
-<html>
-<body>
 
-{% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<body>#}
+
+{# {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %} #}
+
 {# Include tag, as its name suggests includes a template inside current template. #}
 {# Include allows breakdown of a complex template into smaller more manageable chunks. #}
 {# With tag is advanced part here that has ability to pass variables to included mymenu.html template. #}  
 {# With tag has me and sponsor variables that have been given a name in this template.html #} 
 {# see codinggear.blog/django-include-tag/ found from django include google search #}  
 
-<h1>Welcome</h1>
+{#<h1>Welcome</h1> may not need this#}
  
-<p>This is my web site.</p>
 
-<p>Check out mymenu.html to see the HTML content of the include.</p>
+{#<p>This is my web site.</p>#}
 
-</body>
-</html> 
+{#<p>Check out mymenu.html to see the HTML content of the include.</p>#}
+
+{#</body>#}
+{#</html>#} 

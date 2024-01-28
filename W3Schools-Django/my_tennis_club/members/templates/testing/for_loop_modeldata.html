@@ -1,0 +1,10 @@
+
+{% for x in member %}
+    <h1>{{ x.id }}
+    <p>
+        {{ x.firstname }}
+        {{ x.lastname }}
+    </p>
+{% endfor %}
+
+<p>In views.py you can see how to import and fetch members from a database.</p>

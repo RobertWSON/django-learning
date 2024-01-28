@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Template Filter - floatformat</h3>  
+
+    <h4>Floatformat with 2 decimal places Example</h4>
+
+    <p>Round a number to only two decimal places:</p>
+
+    <h1>{{ mynumber|floatformat:2 }}</h1>
+
+    <p> As you can see from this floatformat example, we are using a django command to round a number that 
+        has 6 decimal places down to 2 decimal places.</p>
+
+    <p>In views.py you can see what mynumber variable look like.</p>
+    
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>floatformat</code> filter rounds a floating-point number to a specified number of decimals,
+       or one, if no decimal argument is specified.
+    
+    <p>If argument decimal value is a positive number, a value will be displayed with specified number of decimals,
+       even if value is an integer:</p>
+
+    <h4>Floatformat with Positive Decimal Number Example</h4>
+
+    {% include 'django_refs/filter/floatformat_example2.html' %} 
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+    <p>If argument decimal value is a negative number, a value will be displayed with a specified number of decimals,
+       only if a value has decimals:</p>
+
+    <h4>Floatformat with Negative Decimal Number Example</h4>
+
+    {% include 'django_refs/filter/floatformat_example3.html' %}
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+    <p>You can add a <code>g</code> in an argument value to specify that a result should include a seperator 
+       for each thousand:</p>
+
+    <h4>Floatformat with g Argument Example</h4>
+
+    <p>Round a number to only two decimals and add a thousand seperator:</p>
+
+    {#{% include 'django_refs/filter/floatformat_example4.html' %}#}
+
+    {# Image below for showing code for this example #}
+    {# <img src=""> #}
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    { { <code>value|floatformat:decimalsg</code> } }
+
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
+    
+    <p>Arguments are defined by using a colon <code>:</code> character followed by argument value(s).</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><em>decimals</em></td>
+        <td>Optional. A number specifying number of decimals. Default value is -1,
+            which will round a number to only one decimal, or no decimals if number
+            has no decimals.</td>
+      </tr>
+      <tr>
+        <td><em>g</em></td>
+        <td>Optional. If present, a number will be displayed with a seperator for each
+            thousand, using local settings (using , for English and . for Norwegian).</td>
+      </tr>  
+      <tr>
+        <td><em>u</em></td>
+        <td>Optional. If present, a number will be displayed with a seperator for each
+            thousand, using local settings. If <code>u</code> is present <code>g</code> cannot be present.</td>
+      </tr>
+    </table>   
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django exact Reference</title>
+    </head>    
+ 
+<body>
+
+    <h2>Django Field Lookup Tag Reference</h2>
+
+    <h3>Field Lookups - exact</h3>  
+  
+    <p><b>Exact Example</b></p>
+
+    <p>Get all records where firstname is exactly "Emil":</p>
+
+    <p>The queryset object:</p>
+
+    {{ mymembers }}
+
+    <p>Loop through the items:</p>
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The exact lookup is used to get records with a specified value.</p>
+
+    <p>The exact lookup is case sensitive.</p>
+
+    <p>For a case insensitive search, use the iexact lookup.</p>  
+    
+    <hr>
+
+    <h3>SQL Equivalent</h3>
+
+    <p>The SQL equivalent to the example above will be:</p>
+
+    <p>WHERE firstname = 'Emil';</p>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
+
+    <p>fieldname__exact='value'</p>

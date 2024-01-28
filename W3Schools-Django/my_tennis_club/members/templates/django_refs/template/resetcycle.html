@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Resetcycle Template Tag</h3>  
+
+<h4>Reset a Cycle on a List Item</h4>
+
+<p>Resetcycle on a List Item Example</p>
+
+<p>Reset the cycle if the fruit is "Banana":</p>
+
+<ul>
+    {% for x in fruits %}
+        <li style='color:{% cycle 'red' 'green' 'blue' 'pink' %}'>
+            {{ x }}
+        </li>
+        {% if x == "Banana" %} 
+            {% resetcycle %} 
+        {% endif %} 
+    {% endfor %}         
+</ul>    
+
+<p> As you can see from this list example, Apple is red and Banana is green color.<br> 
+    Cycle then restarts and gets reset again, so next item Cherry is red and finally Orange fruit item 
+    is green color.
+</p>
+
+<p>Check out views.py to see what fruits variable looks like, for both examples.</p>
+
+<img src="my_tennis_club/members/templates/django_refs/template/resetcycle_example1.png">
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The <code>resetcycle</code> tag is used inside a cycle and resets a <a href= "template/cycle.html">cycle</a>, making it start at beginning again.</p>
+
+<p>It does not reset loop, only the cycle.</p>
+
+<p>If you have multiple cycles, you can specify which one to reset with name argument:</p>
+
+<h4>Reset a Cycle from Multiple Cycles</h4>
+
+<p>Resetcycle from Multiple Cycles Example</p>
+
+<p>Reset mybg cycle if the fruit is "Banana":</p>
+
+<ul>
+    {% for x in fruits %}
+        <li style='
+            color:{% cycle 'red' 'green' 'blue' 'pink' as mycolor %};
+            background:{% cycle 'lightgrey' 'beige' 'red' 'purple' as mybg %};
+            '>
+            {{ x }}
+        </li> 
+        {% if x == "Banana" %}
+            {% resetcycle mybg %}   
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<p> As you can see from this list example, we are resetting a cycle named mybg for background color. 
+    <br>Apple has grey and Banana has beige background color.<br> 
+    Cycle then gets reset again, so next item Cherry has grey and finally Orange fruit item has beige background color.
+</p>
+
+<img src="my_tennis_club/members/templates/django_refs/template/resetcycle_example2.png">
+
+<hr>
+
+<h3>Syntax</h3>
+
+{# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+{#{ % resetcycle <em>name</em> % } #}
+
+<hr>
+
+<h3>Parameters</h3>
+
+<table border='3'>
+  <tr>
+      <th>Value</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td><em>name</em></td>
+      <td>Optional. The name of a cycle to reset.</td>
+  </tr>    
+</table>   
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+  <h2>Django Template Tag Reference</h2>
+
+  <h3>Cycle Template Tag</h3>  
+
+<h4>Cycle with Seperate colors</h4>
+
+<p>Cycle for new color in for loop Example</p>
+
+<p>Add a new color for each iteration in a for loop:</p>
+
+<ul>
+    {% for x in fruits %}
+        <li style='color:{% cycle 'red' 'green' 'blue' 'pink' %}'>
+            {{ x }}
+        </li> 
+    {% endfor %}           
+</ul>        
+
+<p> As you can see from this array example, each fruit word changes color as there is 1 cycle for the whole array.</p>
+
+<p>Check out views.py to see what fruits variable looks like, for both examples.</p>
+
+<hr>
+
+<h3>Definition and Usage</h3>
+
+<p>The <code>cycle</code> tag returns different values for different iterations in a loop.</p>
+
+<p>The first iteration gets a first value, second iteration gets second value etc.</p>
+
+<p>You can have as many values as you like.</p>
+
+<p>If there are more iterations than values, cycle resets and starts at value 1:</p>
+
+
+<h4>Cycle - How it works with restarting</h4>
+
+<p>Cycle with reset on restart Example</p>
+
+<ul>
+    {% for x in fruits %}
+        <li style='color:{% cycle 'red' 'blue' %}'>
+            {{ x }}
+        </li>
+    {% endfor %}        
+</ul>  
+
+<p> As you can see from this array example, there are 4 fruit words, but only 2 colors<br>
+    The 2 colors can be used in 1 cycle, so the cycle resets on 3rd word Cherry and restarts on first color red.</p>
+
+<hr>
+
+<h3>Syntax</h3>
+
+{# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+{#{ % resetcycle <em>name</em> % } #}
+{ % cycle <em>arg1</em> by <em>arg2</em> <em>arg3</em> <em>etc</em> . % }
+
+<hr>
+
+<h3>Parameters</h3>
+
+<table border='3'>
+    <tr>
+       <th>Value</th>
+       <th>Description</th>
+    </tr>
+    <tr>
+       <td><em>arg1 arg2 arg3 etc.</em></td>
+       <td>The values that will be returned, one argument for each<br> cycle.</td>
+    </tr>       
+</table>   
+
+</body>
+</html>

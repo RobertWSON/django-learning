@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django greater than Reference</title>
+    </head>    
+ 
+<body>
+
+    <h2>Django Field Lookup Tag Reference</h2>
+
+    <h3>Field Lookups - gte (greater than, or equal to)</h3>  
+  
+    <p><b>Greater Than or Equal To Example</b></p>
+
+    <p>Get all records where id is 3 or larger:</p>    
+
+    <p>The queryset object:</p>
+
+    {{ mymembers }}
+
+    <p>Loop through the items:</p>
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The gte lookup is used to get records that are larger than, or equal to, a specified value.</p>
+
+    <p>For a greater than, but not equal to search, use the gt lookup.</p>  
+    
+    <hr>
+
+    <h3>SQL Equivalent</h3>
+
+    <p>The SQL equivalent to the example above will be:</p>
+
+    <p>WHERE id >= 3;</p>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
+
+    <p>fieldname__gte=value</p>
+    
+</body>    
+</html>    

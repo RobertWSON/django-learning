@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h2>Django Template Tag Reference</h2>
+
+    <h3>Striptags Template Tag</h3>  
+
+    <h4>Striptag Example</h4>
+
+    <p>Remove HTML from text:</p>
+
+    <h3>Without striptags filter:</h3>
+
+    {{ mytext }}
+
+    <h3>With striptags filter:</h3>
+
+    {{ mytext|striptags }}
+
+  <p> As you can see from this text example, without striptags you have html tags shown with text
+      and with striptags, html tags are not shown, so just text is shown.</p>
+
+  <p>In views.py you can see what mytext variable looks like.</p>
+
+  {# Image below for showing code for this example #}
+  {# <img src=""> #}
+
+  <hr>
+
+  <h3>Definition and Usage</h3>
+
+  <p>The <code>striptags</code> filter removes any html tags from a value.</p>
+
+  
+  <hr>
+
+  <h3>Syntax</h3>
+
+  {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+  { % value|<em>striptags</em> % } 
+
+  <p>template filters are defined by using a pipe | character followed by name of filter.</p>
+
+</body>
+</html>

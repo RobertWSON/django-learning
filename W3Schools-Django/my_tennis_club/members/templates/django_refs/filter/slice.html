@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - slice</h3>  
+  
+    <p><b>Slice Example</b></p> 
+
+    <p>Get items 1, 2 and 3 from a list (first item is 0):</p>
+
+    <h1>{{ fruits|slice:"1:4" }}</h1>
+
+    <p>In views.py you can see what name variable looks like.</p>
+     
+    <hr>
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>slice</code> filter returns specified items from a list.</p> 
+
+    <p>You can define from (included) and to (not included) indexes.</p>
+  
+    <p>If you use negative indexes, it means slicing from end of a list, <code>-1</code> refers to last item, 
+       <code>-2</code> refers to second last item etc.</p>
+
+
+    <hr>   
+
+    <h3>Syntax</h3>
+
+    { { <code>list</code> | <code>slice</code><em>"from:to"</em> } }
+
+    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        {#<td><em>from</em></td>#}
+        <td><em>from</em></td>
+        <td>Optional. Index to start slicing. If omitted, default value is 0 and slicing will start at first item.</td>
+      </tr>
+      <tr>
+        {#<td><em>to</em><td>#}
+        <td><em>to</em></td>    
+        <td>Optional. Index to end slicing. If omitted, slicing will end at last item.</td>    
+      </tr>  
+    </table>
+
+</body>
+</html>

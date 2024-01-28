@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Template Filter - add</h3>  
+  
+    <p>Add Example</p> 
+
+    </p>Add 10 dollars to all prices:</p>
+
+    {% for x in prices %}
+    <h1>The price is {{ x|add:"10" }} dollars.</h1>
+    {% endfor %}    
+
+    <p>As you can see, this first example adds a price amount within a heading.<br>
+       This price amount is taken from a prices variable in views.py and 
+       x is just used to represent a price as a character within a for loop.</p>
+
+    <p>In views.py you can see what prices variable looks like.</p>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>add</code> filter adds a specified argument to a value.</p>
+    <p>The <code>add</code> filter tries to convert the values into numbers and return a sum, but if it is not possible 
+       to convert values into numbers, a specified argument will be added at the end:</p>
+    
+    <h4>Add Filter Example with Check</h4>
+
+    </p>Add phrase "-Check" at end of each fruit:</p>
+
+    {# add Check not working just yet #}
+    {% comment %}
+    {% for x in fruits %}
+        <h1>{{ x|add:"-CHECK" }}</h1>
+    {% endfor %}
+
+    <p>In views.py you can see what the fruits variable looks like.</p>
+    {% endcomment %}
+
+    {% include 'django_refs/filter/add_example2.html' %}
+
+    <p>You can also add one list to another:</p>
+
+    <h4>Add Filter Example with Added List</h4>
+
+    <p>Add list <code>vegetables</code> at the end of list <code>fruits</code>:</p>
+
+
+    {# add List not working just yet #}
+    {% comment %}{{ fruits|add:vegetables }}  
+
+    <p>In views.py you can see what the fruits and vegetables variables look like.</p>
+    {% endcomment %}
+
+    {# {% include 'django_refs/filter/add_example3.html' %} #}
+
+
+    <p><b>Note:</b> If Django is unable to convert the values into the same data type, it will return an empty string. </p>
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    {% comment %}
+    # Problem with this commented Code
+    </p>{{ value|add:valuetoadd }}</p>{% endcomment %}
+    {# <p> value|add:valuetoadd { { inside these brackets } } </p> #}
+    <p> <code>value|add:valuetoadd</code></p>
+
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by the name of the filter.</p>
+    <p>Arguments are defined by using a colon <code>:</code> character followed by the argument value.</p>
+
+    <hr>
+
+    <h3>Arguments</h3>
+
+    <table border='3'>
+        <tr>
+            <th>Value</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><em>valuetoadd</em></td>
+            <td>Required. The value to add to the original value. If both values can be<br> 
+                converted to numbers, the sum will be returned, otherwise the added value<br> 
+                will be added at the end of the original value.</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Filter Tag Reference</title>
+    </head>
+
+<body>
+
+    <h2>Django Filter Tag Reference</h2>
+
+    <h3>Include Template tag</h3>  
+  
+    {# <p><b>Include with Templates example</b></p> #}
+    {# Use heading h4 rather than bold paragraph text #} 
+    <h4>Include with Templates example</h4>
+
+    <p>Include a template inside a template:</p>
+
+    {#include does not work at the moment#}
+    {# Try it now #}
+    {% include 'django_refs/template/mymenu.html' %} 
+
+    <p>This is my web site.</p>
+
+    <p>Check out mymenu.html to see HTML content of include.</p>
+
+    <hr>
+
+
+    <h3>Definition and Usage</h3>
+ 
+    <p>The <code>include</code> template tag allows you to include content from another template.</p>
+
+    <p>Place <code>include</code> tag exactly where you want content to be displayed.</p>
+
+    <p>This is useful when you have same content for many pages.</p>
+
+    <p>You can also send variables into template, by using <code>with</code> keyword:</p>
+  
+
+    {# <p><b>Include with Variables in Template example</b></p> #}
+    <h4>Include with Variables in Template example</h4>    
+
+    <p>If include file looks like this</p>
+
+    {#<img src=""/>#}
+
+    <p>The template can send variable values into include like this:
+
+    {#<img src=""/>#}
+
+    <p><b>This is the result for this example</b></p>
+
+    {#include does not work at the moment#}
+    {# It now works with this directory to mymenu_variables.html #}
+    {% include "django_refs/template/mymenu_variables.html" with me="Alexander" sponsor="W3SCHOOLS" %}
+
+    <h1>Welcome</h1>
+
+    <p>This is my web site.</p>
+
+    <p>Check out mymenu_variables.html to see HTML content of include.</p>
+
+
+    <hr>
+
+    <h3>Syntax</h3>
+
+    {#{ { % include <em>template</em> % } }#}
+    {  <code>% include template % </code> } 
+
+    <p>or</p>
+
+    {#{ % include <em>template</em> with <em>key=value</em> % }#}
+    { <code>% include template with key=value</code> % } 
+
+    <hr>
+
+    <h3>Parameters</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><code>template</code></td>
+        <td>Required. A filename of a template. Either a string or a variable.</td>
+      </tr>
+      <tr>
+        <td><code>key=value</code></td>
+        <td>Optional. A variable name and value to send into include field.
+            <br>
+            Used together with a <code>with</code> keyword. You can have as many key/value pairs as you like.
+        </td>
+      </tr>
+    </table>   
+
+</body>
+</html>
