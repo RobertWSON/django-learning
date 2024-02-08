@@ -1,0 +1,160 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Slug</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Add Django Slug Field</center></h1>
+
+        <h2>What is a Slug ?</h2>
+
+        <p>Have you ever seen a url that looks like this:</p>
+
+        <code>w3schools.com/django/learn-about-slug-field</code>
+
+        <p>The <code>learn-about-slug-field</code> part is a slug.</p>
+
+        <p>It is a description containing only letters, hyphens with a - like this example, numbers or 
+           underscores.</p>
+
+        <p>It is often used in a url to make them easier to read, but also to make them more search engine 
+           friendly.</p>
+
+        <h2 id="url_no_slug">URL Without Slug</h2>
+
+        <p>If you have followed this Django project created earlier, you will see that members page looks like 
+           this now:</p>
+
+        {# <img src="{% static 'django_more/images/members_url.png' %}"> #}
+        
+        <p>If you click on first member from list, you will go to this page:</p>
+
+         {# <img src="{% static 'django_more/images/page_shows_details_id.png' %}"> #}
+
+      <p>Check out address bar:</p>
+
+      <code>127.0.0.1:8000/members/details/1</code>
+
+      <p>Number "1" refers to ID of that particular record in a database.<br>
+         Makes sense to a web developer, but probably not to anyone else.
+      </p>
+
+      <hr>
+
+      <h2 id="url_slug">URL With Slug</h2>
+
+      <p>It would have made more sense if a url looks like this:</p>
+
+      {# <img src="{% static 'django_more/images/url_with_slug.png' %}"> #}
+
+      <p>Check out address bar:</p>
+
+      <code>127.0.0.1:8000/members/details/emil-refsnes</code>
+
+      <p>This is a more user friendly url and Django can help you create a url like this in your project.</p>
+
+      <hr>
+
+      <h2 id="slug_in_models">Allow for a Slug in models.py File</h2>
+
+      <p>Start by adding a new field in database.</p>
+
+      <p>Open <code>models.py</code> file and add a field called <code>slug</code> with data type 
+         <code>SlugField</code>:
+      </p>
+
+      <p><code>my_tennis_club/members/models.py</code>:</p>
+
+      {# <img src="{% static 'django_more/images/slug_in_models.png' %}"> #}
+
+      <p>This is a change in Model's structure and therefore we have to make a migration to tell Django that it 
+         has to update database:
+      </p>
+
+      {# <img src="{% static 'django_more/images/make_migration.png' %}"> #}      
+
+      <p>And migrate command:</p>
+
+      {# <img src="{% static 'django_more/images/migrate.png' %}"> #}
+
+      <hr>
+
+      <h2 id="admin_prepop">Add Prepopulated Fields to admin.py File</h2>	
+
+      <p>Now we have a new field in database, but we also want this field to be updated automatically when we 
+         set firstname or lastname of a member.<br><br>This can be done with a built-in Django feature called 
+         <code>prepopulated_fields</code> where you specify a field you want to pre-populate, and a tuple with<br> 
+         field(s) you want to populate it with.<br><br>
+         This is done in <code>admin.py</code> file:<br><br>
+         <code>my_tennis_club/members/admin.py</code> :
+      </p>
+
+      {# <img src="{% static 'django_more/images/change_admin.png' %}"> #}
+
+      <p>Enter Admin interface and open a record for editing:<br>
+         <b>Note:</b> New slug field is empty by default.
+      </p>
+
+      {# <img src="{% static 'django_more/images/edit_admin_record.png' %}"> #}
+
+      <p>Click "SAVE" and a "slug" field will be auto populated with firstname and lastname and since a 
+         "slug" field is of type SlugField, it will "slugify" a value, meaning it will put a hyphen between each word.<br><br>
+         <b>Note:</b> This save operation for has to be done each member because a new field is empty by default.<br><br>
+
+         Next time you open a member for editing you will see a slug field with a value:
+      </p>
+
+      {# <img src="{% static 'django_more/images/record_slug_field.png' %}"> #}
+
+      <hr>
+
+      <h2 id="template_slug">Modify Template with Slug</h2>
+
+      <p>Now we can replace ID field with a slug field throughout project.<br><br>
+         Start with <code>all_members.html</code> template, where we have a link to details page:<br><br>
+
+         <code>my_tennis_club/members/templates/all_members.html</code> :
+      </p>
+
+      {# <img src="{% static 'django_more/images/all_members_details.png' %}"> #}
+
+      <hr>
+
+      <h2 id="mod_urls_file">Modify URL with Slug</h2>
+
+      <p>We also have to make some changes in the urls.pyfile.<br><br>
+         For members details path change from <code>< int:id ></code> to <code>< slug:slug ></code> :
+         <br><br></p> <code>my_tennis_club/members/urls.py</code>:
+      </p>
+
+      {# <img src="{% static 'django_more/images/mod_urls_file.png' %}"> #}
+
+      <hr>
+
+      <h2 id="details_view">Modify Details View with Slug</h2>
+
+      <p>Finally, change <code>details</code> view to handle incoming request as slug instead of ID:</p>
+      
+      {# <img src="{% static 'django_more/images/details_view_slug.png' %}"> #}
+      <p> Details View before using Slug
+      {# <img src="{% static 'django_more/images/details_before_slug.png' %}"> #}
+
+      <p>If you do not have your localhost server running, start it again with <code>runserver</code> 
+         command:
+      </p>
+      {# <img src="{% static 'django_more/images/run_localhost_server.png' %}"> #}
+
+      <p>In your browser address bar, type or copy and paste <code>127.0.0.1:8000/members/</code><br><br>
+         Click on a member and now we can see that a link to details works with new slugified url:
+      </p>
+
+      {# <img src="{% static 'django_more/images/details_slugified.png' %}"> #}
+
+    </body>
+</html>

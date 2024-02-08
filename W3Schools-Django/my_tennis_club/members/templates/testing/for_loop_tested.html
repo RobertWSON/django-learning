@@ -19,20 +19,21 @@
 
     <h4>For Loop List Items Example</h4>
 
-    <p>Loop through items of a list:</p>
+    <p>Loop through items of a list:</p> 
 
+    {% comment %}This code below is used in include file
     {% for x in fruits %}
         <h1>{{ x }}</h1>
     {% endfor %}
 
-    <p>In views.py you can see what fruits variable looks like.</p>
+    <p>In views.py you can see what fruits variable looks like.</p>{% endcomment %}
 
+    {# {% include "testing/for_loop_item.html" with fruits="x" %} #}
+    {% include 'testing/for_loop_item.html' %}
 
     <h4>For Loop List Dictionaries Example</h4>
 
-    <p>Loop through items of a list:</p>
-
-    {# {% include 'testing/for_loop_dict.html' %} #}
+    {% include 'testing/for_loop_dict.html' %} 
    {# with cars=("x.brand", "x.model","x.year") %} #}
 
     <hr>
@@ -79,9 +80,10 @@
     
     <h4>Model Data Example</h4>
 
-    <p>Loop through items fetched from a database:</p>
+    {# This p tag below is in include file #}
+    {#<p>Loop through items fetched from a database:</p>#}
 
-    {# {% include 'testing/for_loop_modeldata.html' %} #} 
+    {% include 'testing/for_loop_modeldata.html' %} 
 
     <hr>
 
@@ -150,14 +152,14 @@
     {# {% include 'testing/for_loop_first.html' %} #}
 
     <h3 id="last">forloop.last</h4>
-
+        
     <p>Allows you to test if a loop is on its last iteration.</p>
 
     <h4>For Loop Last Example</h4>
 
     <p>Draw a blue background for last iteration of a loop:</p>
 
-    {# {% include 'testing/for_loop_last.html' %} #}
+    {% include 'testing/for_loop_last.html' %} 
 
     <h3 id="parent">forloop.parentloop</h4>
 

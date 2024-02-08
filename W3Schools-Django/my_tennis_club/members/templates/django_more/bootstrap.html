@@ -1,0 +1,102 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Bootstrap with Django</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Add Bootstrap</center></h1>
+
+        <h2>Add Bootstrap 5</h2>
+
+        <p>There are two main methods to use bootstrap in your Django project:</p>
+
+        <ul>
+            <li>Install Bootstrap 5 in your <a href="/django_setup/ve">virtual environment</a></li>
+            <li>Download required files (eg a css file) and include them in your project.</li>
+        </ul>
+
+        <p>We will learn how to install Bootstrap 5 in a virtual environment.</p>
+
+        <hr>
+
+        <h2>Install Bootstrap 5</h2>
+
+        <p>We will install bootstrap 5 in virtual environment of existing 
+           <a href="/django_setup/project">My Tennis Club project</a> created earlier.<br>
+        </p>
+        <p>Open command line, navigate to virtual environment folder (myworld) and activate virtual environment:
+        </p>  
+        
+        {# <img src="{% static 'django_more/images/activate_ve.png' %}"> #}
+
+        <p>Once you are inside virtual environment, install Bootstrap 5 with this command:</p>
+
+        {# <img src="{% static 'django_more/images/install_bootstrap_5.png' %}"> #}
+
+        <P>which will give you a result like this:</P>
+
+        {# <img src="{% static 'django_more/images/bootstrap_install_process.png' %}"> #}
+
+        <hr>
+
+        <h2>Update Settings</h2>
+
+        <p>Next step is to include bootstrap module in <code>INSTALLED_APPS</code> list in <code>settings.py</code> :</p>
+        <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
+
+        {# <img src="{% static 'django_more/images/bootstrap_settings.png' %}"> #}
+
+        <p>Bootstrap 5 is now ready to use in your project!</p>
+
+        <hr>
+
+        <h2>Remove Old CSS Styling</h2>
+
+        <p>My Tennis Club project already has a CSS stylesheet.<br>
+           Process below shows how to remove it.</p>
+
+        {#either use an image like this or a video instead showing process #}  
+        {# <img src="{% static 'django_more/images/remove_old_css.png' %}"> #}
+
+        <p>Now members page without CSS styling will look like this.</p>
+
+        {# <img src="{% static 'django_more/images/remove_old_css.png' %}"> #}
+
+        <hr>
+
+        <h2>Add Bootstrap 5 to Template</h2>
+
+        <p>To use Bootstrap 5 in project, start by inserting some lines of code in <code>master.html</code>
+            template:</p>
+        
+        <p><code>my_tennis_club/my_tennis_club/master.html</code> :</p>
+        
+        {# <img src="{% static 'django_more/images/master_bootstrap.png' %}"> #}
+
+        <p>As you can see, we inserted these three lines in <code>head</code> section:</p>
+
+        {# <img src="{% static 'django_more/images/head_bootstrap.png' %}"> #}
+
+        <ul>
+            <li>First line tells Django that it should load Bootstrap 5 module in this template.</li>
+            <li>Second line inserts <code>link</code> element with reference to bootstrap stylesheet.</li>
+            <li>Third line inserts <code>script</code> element with reference to necessary javascript file.</li>
+        </ul>
+
+        <p>We also did changes to HTML elements in master template by inserting bootstrap classes to 
+           navigation bar:</p>
+
+        {# <img src="{% static 'django_more/images/master_html_class.png' %}"> #}
+
+        <p>Bootstrap 5 is now a part of your project and if you run it, members page will look like this:</p>
+
+        {# <img src="{% static 'django_more/images/bootstrap_in_project.png' %}"> #}
+
+    </body>
+</html>    

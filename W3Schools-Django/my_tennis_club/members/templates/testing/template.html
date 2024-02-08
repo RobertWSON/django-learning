@@ -19,7 +19,7 @@
   <body>
 
     {# <h2>Django Examples</h2> change to h1 heading for main heading of page #}
-    <h1>Django Examples</h1>
+    <h1><center>Django Examples</center></h1>
 
     <a href="/">Back</a>
 
@@ -272,7 +272,7 @@
         </tr>
         <tr>
           {# <td><a href="/testing/loop_last">forloop.last</a></td> #}
-          <td><a href="/testing/for_loop_tested##last">forloop.last</a></td>
+          <td><a href="/testing/for_loop_tested#last">forloop.last</a></td>
           <td>Allows you to test if the loop is on its last iteration.</td>
         </tr>
         <tr>
@@ -345,6 +345,50 @@
               { { variablename } } syntax.</td>
         </tr>
       </table>      
+
+      <h2>Django QuerySets</h2>
+
+      <h3>QuerySet Introduction</h3>
+
+      <table border='3'>
+         <tr>
+            <th>Method</th>
+            <th>Description</th>
+         </tr>
+         <tr>
+            <td><a href="/testing/queryset_intro">Django QuerySet</a> </td>
+            <td>A django queryset is a collection of data from a database. A QuerySet is built up as a list of objects.</td> 
+         </tr>
+         <tr>
+            <td><a href="/testing/queryset_intro#query_data">Query Data</a></td>
+            <td>To use a queryset, we have to query data. To do this we have to use a method to get data that we need from a
+                <br> database.</td>
+         </tr>
+      </table>
+
+      <h3>QuerySet Get</h3>
+
+      <table border='3'>
+         <tr>
+            <th>Method</th>
+            <th>Description</th>
+         </tr>
+         <tr>
+            <td><a href="/testing/queryset_get">values() Method</a> </td>
+            <td>A django queryset is a collection of data from a database. A QuerySet is built up as a list of objects.</td> 
+         </tr>
+         <tr>
+            <td><a href="/testing/queryset_get#columns">Return Specific Columns</a></td>
+            <td>To use a queryset, we have to query data. To do this we have to use a method to get data that we need from a
+                <br> database.</td>
+         </tr>
+         <tr>
+          <td><a href="/testing/queryset_get#rows">Return Specific Rows</a></td>
+          <td>To use a queryset, we have to query data. To do this we have to use a method to get data that we need from a
+              <br> database.</td>
+       </tr>
+      </table>      
+
 
   </body>         
 {# {% endblock %} #}

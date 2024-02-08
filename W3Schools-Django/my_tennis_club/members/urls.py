@@ -51,6 +51,19 @@ urlpatterns = [
     path('first_django_page/', views.first_django_page, name="first_page"),
     
     
+    
+    
+    # Django setup section at the beginning. W3Schools has this as a Django Tutorial section
+    # covering 1 Django Tutorial Home to 15 Django Update model sections.
+    path('django_setup/', views.django_setup, name="django_setup"),
+    
+    
+    
+    
+    
+    
+    
+    # Django Display Data section at beginning below.
     # For handling Prepare Template and View Page I will use a testing//prepare_template url
     # This is for Django Prepare Template (16 Prepare Template & View) of Display Data Section.
     path('testing/prepare_template', views.prepare_template, name='prepare_template'),
@@ -83,6 +96,13 @@ urlpatterns = [
     # comment code for now
      # Add path to make sure that testing url (just for testing purposes) points to testing view 
     path('testing/', views.testing, name='testing'),
+    
+    
+    # Django admin section at beginning. W3Schools has this as a Admin section covering 
+    # 22 Django Admin to 28 Delete Members sections. 
+    path('django_admin/', views.django_admin, name="django_admin"),
+    
+    
     
     
     #Django Syntax Section
@@ -134,13 +154,18 @@ urlpatterns = [
     
     # Django For Loops
     path('testing/for_loop_tested', views.for_loop_tested, name='for_loop_tested'),
+
+    #This is for loop used with looping through items of a list  
+    path('testing/for_loop_tested', views.for_loop_item, name='for_loop_item'),
     
     path('testing/for_loop_tested', views.for_loop_dict, name='for_loop_dict'),
     
     path('testing/for_loop_tested', views.for_loop_modeldata, name='for_loop_modeldata'),
     
-    #path('testing/for_loop_tested', view )
+
+    path('testing/for_loop_tested', views.for_loop_last, name='for_loop_last'),
     
+
     
     # Django Comment Section
     
@@ -166,6 +191,34 @@ urlpatterns = [
     #path('members/details/<int:id>', views.details, name='details'),
     
    
+   
+   
+    # Django Static section at beginning. W3Schools has this as a Static Files section
+    # 39 Django - Add Static Files to 43 Django - Add Styles to Project sections.
+    path('django_static/', views.django_static, name="django_static"),
+   
+   
+    # Django PostgreSQL section at beginning. W3Schools has this as a postgreSQL section
+    # 44 Django - ProstgreSQL Intro to 48 Django - Add Members sections.
+    path('django_postgresql/', views.django_postgresql, name="django_postgresql"),
+   
+   
+   
+    # Django Deploy section at beginning. W3Schools has this as a Deploy Django section
+    # 49 Django - Elastic Beanstalk to 54 Django - Update Project sections.
+    path('django_deploy/', views.django_deploy, name="django_deploy"),
+   
+   
+    # More Django section at beginning. W3Schools has this as a More Django section
+    # covering 55 Django - Add Slug Field to 56 Django - Add Bootstrap 5 sections.
+    path('django_more/', views.django_more, name="django_more"),
+   
+    # Create a url for a page that will show 55 Django - Add Slug Field section
+    path('django_more/slug', views.slug, name='slug'),
+    
+    # Create a url for a page that will show 56 Django - Add Bootstrap 5 section
+    path('django_more/bootstrap', views.bootstrap, name='bootstrap'),
+    
     
     
     # Add Routes for Django References Section

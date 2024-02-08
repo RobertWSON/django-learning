@@ -84,6 +84,16 @@ def first_django_page(request):
     # This displays Hello World! as a heading with Welcome to my first Django project! underneath, 
     # as a paragraph on localhost 127.0.0.1:8000/members  
  
+# Django setup section at beginning. W3Schools has this as a Django Tutorial section
+# covering 1 Django Tutorial Home to 15 Django Update model sections.
+def django_setup(request): 
+  template = loader.get_template('django_setup/django_setup_refs.html')
+  return HttpResponse(template.render())
+ 
+ 
+ 
+ 
+ 
  
  
 # Create a view for handling Prepare Template and View Page. This will be for testing//prepare_template url  
@@ -247,6 +257,13 @@ def testing(request):
     #'firstname': 'Linus',  # HTML Template Variable is given a name here
   #}
   #return HttpResponse(template.render(context, request))
+
+
+# Django admin section at beginning. W3Schools has this as a Admin section
+# covering 1 Django Tutorial Home to 15 Django Update model sections.
+def django_admin(request): 
+  template = loader.get_template('django_admin/django_admin_refs.html')
+  return HttpResponse(template.render())
 
 
 
@@ -623,13 +640,20 @@ def if_tested(request):
 
 
 # For Loop List within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section 
+def for_loop_tested(request):
+  template = loader.get_template('testing/for_loop_tested.html')
+  return HttpResponse(template.render())
+
+# For Loop List within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section 
 # We are using fruits object and each of its items within an array for template.html. 
 # Up top it uses {# from django.http import HttpResponse #}
 #                 {# from django.template import loader #}
 #def testing(request):  This is original testing view, but I need an individual view to keep it seperated 
 # from testing page, which now has links to all examples. 
-def for_loop_tested(request):
-  template = loader.get_template('testing/for_loop_tested.html')
+#def for_loop_tested(request): have separate view for fruits item example
+def for_loop_item(request):
+  #template = loader.get_template('testing/for_loop_tested.html') use seperate html file included below
+  template = loader.get_template('testing/for_loop_item.html')
 #  {# Context Creates 1 object, a fruits variable, that works as properties and each property  
 #     has an array with values. #}
   context = {
@@ -822,15 +846,15 @@ def for_loop_reversed(request):
 #                {# from django.template import loader #}
 #def testing(request): This is original testing view, but I need an individual view to keep it seperated 
 # from testing page, which now has links to all examples.
-# def for_loop_last(request):
+def for_loop_last(request):
 #  template = loader.get_template('template.html') Now use template below
-#  template = loader.get_template('testing/for_loop_last.html')
+  template = loader.get_template('testing/for_loop_last.html')
 #  {# Context creates a fruits object that has an array with property values. #}
 #  {# These array values will be displayed in a list and the last value Kiwi will be highlighted #}
-#  context = {
-#     'fruits': ['Apple','Banana','Cherry', 'Oranges', 'Kiwi'] 
-#  }  
-#  return HttpResponse(template.render(context, request))
+  context = {
+    'fruits': ['Apple','Banana','Cherry', 'Oranges', 'Kiwi'] 
+  }  
+  return HttpResponse(template.render(context, request))
 
 
 # forloop.parentloop within Django for Template Tag (57 Django - Template Tag Reference) 
@@ -975,6 +999,50 @@ def include_tested(request):
 #def include_variables(request):
   #template = loader.get_template('testing/include_variables.html')
   #return HttpResponse(template.render())
+
+
+
+
+
+
+
+# Django Static section at beginning. W3Schools has this as a Static Files section
+# 44 Django - ProstgreSQL Intro to 48 Django - Add Members sections.
+def django_static(request):
+  template = loader.get_template('django_static/django_static_refs.html')
+  return HttpResponse(template.render())
+
+
+
+# Django PostgreSQL section at beginning. W3Schools has this as a postgreSQL section
+# 44 Django - ProstgreSQL Intro to 48 Django - Add Members sections.
+def django_postgresql(request):
+  template = loader.get_template('django_postgresql/django_postgresql_refs.html')
+  return HttpResponse(template.render())
+
+
+# Django Deploy section at beginning. W3Schools has this as a Deploy Django section
+# 49 Django - Elastic Beanstalk to 54 Django - Update Project sections.
+def django_deploy(request):
+  template = loader.get_template('django_deploy/django_deploy_refs.html')
+  return HttpResponse(template.render())
+
+# More Django section at beginning. W3Schools has this as a More Django section
+# covering 55 Django - Add Slug Field to 56 Django - Add Bootstrap 5 sections.
+def django_more(request): 
+  template = loader.get_template('django_more/django_more_refs.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 55 Django - Add Slug Field section
+def slug(request):
+  template = loader.get_template('django_more/slug.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 56 Django - Add Bootstrap 5 section
+def bootstrap(request):
+  template = loader.get_template('django_more/bootstrap.html')
+  return HttpResponse(template.render())
+
 
 
 # Django References Section (57 to 59)
