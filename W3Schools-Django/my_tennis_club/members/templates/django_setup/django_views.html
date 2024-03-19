@@ -1,0 +1,47 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Views</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django Views</center></h1>
+
+        <h3>Views</h3>
+
+        <p>Django views are Python functions that take http requests and return an http response, from like HTML documents.
+           <br>
+           A web page that uses Django is full of views with different tasks and missions.<br>
+           Django Views are put in a file called views.py located in your app's folder.<br>
+           There is a <code>views.py</code> file in your <code>members</code> folder that looks like this : 
+        </p>
+
+        {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}
+
+        <p>Find views.py, open it and replace content with this :</p>
+
+        {# <img src="{% static 'django_setup/images/Members in (8 Django Views).png' %}"> #}
+
+        <p><b>Note:</b> Name of view does not have to be same as <code>members</code> application, it can be a name of your 
+            choice.<br><br> 
+            It should be kept in mind that members view will be used later on for a page to show all tennis club members, so 
+            <br> 
+            you are better off using a different name after your initial members view setup, like shown with my example below.  
+        </p>
+
+        {# <img src="{% static 'django_setup/images/Use hello for 1st view.png' %}"> #}
+
+        <p>This is a simple example on how to send a response back to a browser.<br><br>
+           How can we execute this view (run code within view function) ?<br>
+           We must call a view through a URL, which we will do in next 
+           <a href="/django_setup/url">URL</a> section.
+        </p>
+        
+
+    </body>
+</html>   

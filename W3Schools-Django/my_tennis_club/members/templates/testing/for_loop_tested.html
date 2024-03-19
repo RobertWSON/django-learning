@@ -21,21 +21,33 @@
 
     <p>Loop through items of a list:</p> 
 
-    {% comment %}This code below is used in include file
+    {#This code below originally used in include file#}
     {% for x in fruits %}
         <h1>{{ x }}</h1>
     {% endfor %}
 
-    <p>In views.py you can see what fruits variable looks like.</p>{% endcomment %}
+    <p>In views.py you can see what fruits variable looks like.</p>
+    
 
     {# {% include "testing/for_loop_item.html" with fruits="x" %} #}
-    {% include 'testing/for_loop_item.html' %}
+
+    {# {% include 'testing/for_loop_item.html' %} #}
 
     <h4>For Loop List Dictionaries Example</h4>
 
-    {% include 'testing/for_loop_dict.html' %} 
-   {# with cars=("x.brand", "x.model","x.year") %} #}
+    {# {% include 'testing/for_loop_dict.html' %} #}
+   
+    {# with cars=("x.brand", "x.model","x.year") %} #}
 
+    {% for x in cars %}
+        <h1>{{ x.brand }}</h1>
+        <p>{{ x.model }}</p>
+        <p>{{ x.year }}</p>
+    {% endfor %}
+    
+    <p>In views.py you can see what cars variable looks like.</p>
+
+    
     <hr>
 
     <h3 id="model_data">Data From a Model</h3>
@@ -83,7 +95,7 @@
     {# This p tag below is in include file #}
     {#<p>Loop through items fetched from a database:</p>#}
 
-    {% include 'testing/for_loop_modeldata.html' %} 
+    {# {% include 'testing/for_loop_modeldata.html' %} #}
 
     <hr>
 
@@ -159,7 +171,7 @@
 
     <p>Draw a blue background for last iteration of a loop:</p>
 
-    {% include 'testing/for_loop_last.html' %} 
+    {# {% include 'testing/for_loop_last.html' %} #}
 
     <h3 id="parent">forloop.parentloop</h4>
 

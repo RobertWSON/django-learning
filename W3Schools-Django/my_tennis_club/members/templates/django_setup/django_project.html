@@ -1,0 +1,75 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Create Django Project</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django Create Project</center></h1>
+
+        <h3>My First Django Project</h3>
+
+        <p>For this Django learning we will create a website for a tennis club with made up members and take you through 
+           how to use Django<br> with lots of examples.<br> 
+           As this website will initially be setup for a tennis club, a suitable 
+           name for this Django project is <code>my_tennis_club</code>.<br><br>        
+   
+           If you are not in your folder, navigate to where you have your folder setup for Django.<br> 
+           As an example mine is <code>cd workspace/django_learning/W3Schools-Django</code> .<br><br> 
+           First activate your virtual environment, just like before with following command :
+        </p>
+
+        <p><b>My Mac example</b>, which has <b>same command as Unix:</b></p>
+
+        {# <img src="{% static 'django_setup/images/Django - Activate myworld venv.png}"> #}
+
+        <p><b>Windows:</b></p>
+
+        {# <img src="{% static 'django_setup/images/activate_venv_windows.png' %}"> #}
+
+        <p>Now that we are in our virtual environment and in file system where we want to store code, we can run this 
+           command<br> in command prompt :  
+        </p>
+
+        {# <img src="{% static 'django_setup/images/Django - Create Tennis Club Proj.png' %}"> #}
+    
+         <p>Django creates a <code>my_tennis_club</code> folder on my Mac, with content.<br>
+           Notice that content has files and folders with a special meaning, you will learn about some of them later,
+           but for now,<br> it is more important to know that <code>my_tennis_club</code> folder is a location of your
+           Django project.<br>
+           We can now start building an application(s) within a <code>my_tennis_club</code> Django project.  
+         </p>
+
+         <hr>
+        
+         <h3 id="run_it">Run a Django Project</h3>
+
+         <p>Now that you have a Django project in your virtual environment, you can run it and see what it looks like in a 
+           browser.<br><br>
+           We can now navigate to my_tennis_club folder with <code>cd my_tennis_club</code> , execute this command 
+           <code>python manage.py runserver</code> in command prompt<br> and this will produce a result like below :<br><br> 
+           <b>Note:</b> Don't worry about 18 unapplied migration(s), we will apply them later when we start working with 
+           Django Templates.         
+         </p>
+
+         {# <img src="{% static 'django_setup/images/Django - Run Tennis Club Proj.png' %}"> #}
+      
+         <p>Now when you open a new browser and type <code>127.0.0.1:8000</code> in address bar, you will see that Django is 
+            now installed and ready to use. 
+         </p>
+
+         {# <img src="{% static 'django_setup/images/Django Project Running on Server.png' %}"> #}         
+
+         <h3>What's Next</h3>
+
+         <p>Now we have a Django project, but you cannot have a web page created with Django without an app.<br> 
+            In next section we will make an <a href="/django_setup/app">app</a>  in your Django project.
+         </p>
+
+    </body>
+</html>        

@@ -1,0 +1,114 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django URL</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django URL</center></h1>
+
+        <h3>URL</h3>
+
+         {#<p>URL stand for uniform resource locator that is known as an address on web (internet).<br>#}
+         <p>URL stand for uniform resource locator and it is a complete web address used to find a particular page on internet.<br>   
+            It uses a reference to a resource (a web page) located on a computer network (server) and has a method for getting 
+            that.<br>
+            Web bowsers show URL of a web page in an address bar above a page. <br> 
+            A URL can have a form <code>http://www.django.com/setup.html</code>, with <code>http</code> as a hypertext 
+            transfer protocol, a <code>hostname</code> <code>www.example.com</code><br> and a file name <code>setup.html</code> .
+            A <code>URL</code> thats starts with <code>https://</code> shows that you are on a secure site. 
+         </p>
+
+        <p>Create a file named <code>urls.py</code> in same <code>members</code> folder as <code>views.py</code> file:<br><br>
+           located at <code>my_tennis_club/members/urls.py</code>
+        </p>
+
+        {# <img src="{% static 'django_setup/images/Create New Members URL.png' %}"> #}
+
+        <p>Type code below in <code>urls.py</code> file:<br><br>
+           located at <code>my_tennis_club/members/urls.py</code>
+        </p>
+
+        {# <img src="{% static 'django_setup/images/ New Members App URL.png' %}"> #}
+
+        <p>Here we are using a <code>django.urls</code> library to import (bring in) a <code>path</code> library .<br>
+           <code>from . import views</code> is used to import (bring in) a views function for a url.<br> 
+           A single dot . shows a relative import, which means a views function in <code>views.py</code> file, is in same 
+           folder as <code>urls.py</code> file . <br> 
+           <code>urlpatterns</code> is a list that has a path function within it and path function takes a url 
+           <code>'members/'</code>, a members view with <code>views.members</code> from views.py<br> file and has an optional 
+           name with <code>name='members'</code> (name does not have to be same as url).    
+        </p>
+
+        <p><code>urls.py</code> file you just created is specific for a <code>members</code> application.<br><br>
+           <b>However:</b> You will remember from before that we do not have to use same name as <code>members</code> 
+           application and same applies with a url as well.<br>
+           It should be kept in mind just like with a view, that a members url will be used later on for a page to show all 
+           tennis club members.<br>
+           Just like before with a view, you are better off using a  different name after your initial members url setup, 
+           like shown with my example below.
+        </p>
+
+        {# <img src="{% static 'django_setup/images/.png' %}"> #}
+
+        <p>We have to do some routing in root directory <code>my_tennis_club</code> .<br>
+           There is a file called <code>urls.py within </code>my_tennis_club/my_tennis_club</code> folder, open that file
+           and you will see with initial Django setup,<br> that looks like this:
+        </p>
+
+        {# <img src="{% static 'django_setup/images/Tennis Club Initial URLS File.png' %}"> #}
+
+        <p>Here we are using <code>django.contrib</code> module to import (bring in) an admin library for administration 
+           part of Django.<br>
+           We are also using a <code>django.urls</code> module to import (bring in) a path library  function for url of 
+           administration part.<br>
+           In <code>urlpatterns</code> list, we are using a <code>path</code> function, so that administration comes in on 
+           <code>admin/</code> url and using a built in feature for Django Admin urls<br> with <code>admin.site.urls</code> 
+           that is taken in by <code>from django.contrib import admin</code> .
+        </p>    
+
+        <p>Add an <code>include</code> module in <code>import</code> statement and add a <code>path()</code> function in 
+           <code>urlpatterns[]</code> list, with arguments such as <code>''</code> for users coming in<br> through localhost
+           127.0.0.1:8000/ route. This is a home page with <code>/</code> as a route in this url and <code>include</code> 
+           module has a second argument that says<br> we are using a <code>url</code> from a <code>members</code> application 
+           with <code>include('members.url')</code> . <br><br>
+           <b>Note:</b> It is vital that code in this <code>my_tennis_club/my_tennis_club/urls.py</code> file, stays and does
+           not get changed,<br> because this is a Django setup for administration control and this application.<br>   
+           Now your file will look like this : 
+        <p>
+
+        {# <img src="{% static 'django_setup/images/import & path - Tennis Club URLS.png' %}"> #}
+
+        <p>Here we show same code explained in more detail, following on from before :</p>
+
+        {# <img src="{% static 'django_setup/images/Tennis Club URLs Explained.png' %}"> #}        
+
+         <p>If localhost server is not running, navigate to the <code>my_tennis_club</code> folder with 
+            <code>cd my_tennis_club</code> and execute your normal<br> runserver command in command prompt:
+         </p>
+
+         {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}
+
+         <p>If you have kept <code>members/</code> in your <code>my_tennis_club/members/urls.py</code> file, then when you
+             type <br><code>127.0.0.1:8000/members/</code> in your browser window address bar, it should look like this:
+         </p>
+
+         {# <img src="{% static 'django_setup/images/Django Initial Members Page.png' %}"> #}
+
+         <p>If you have changed to a different url, that will not conflict with tennis club members later, then as my example
+            shows, url and content could look like this : 
+         </p>
+
+         {# <img src="{% static 'django_setup/images/suitable_hello_first_url.png' %}"> #}
+
+         <p>Now that we have created our first <code>url</code> with Django, we are now ready to create our first 
+            <a href="/django_setup/template">Template</a> that we can use with a url.
+         </p>
+
+    </body>
+</html>

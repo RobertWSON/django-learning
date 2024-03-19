@@ -57,12 +57,50 @@ urlpatterns = [
     # covering 1 Django Tutorial Home to 15 Django Update model sections.
     path('django_setup/', views.django_setup, name="django_setup"),
     
+    # Create a url for a page that will show 2 Django Intro section
+    path('django_setup/intro', views.django_intro, name='django_intro'),
     
-    
-    
-    
-    
-    
+    # Create a url for a page that will show 3 Django Get Started section
+    path('django_setup/get_started', views.get_started, name='get_started'),
+
+    # Create a url for a page that will show 4 Django Create Virtual Environ section
+    path('django_setup/virtual_environment', views.virtual_env, name='virtual_env'),
+
+    # Create a url for a page that will show 5 Install Django section
+    path('django_setup/install', views.install, name='install'),
+
+    # Create a url for a page that will show 6 Django Create Project
+    path('django_setup/project', views.project, name='project'),
+
+    # Create a url for page that will show 7 Django Create App section
+    path('django_setup/app', views.app, name='app'),
+
+    # Create a url for page that will show 8 Django Views section 
+    path('django_setup/views', views.views, name='views'),
+
+    # Create a url for page that will show 9 Django URLs section
+    path('django_setup/url', views.url, name='url'),
+
+    # Create a url for page that will show 10 Django Templates section 
+    path('django_setup/template', views.django_template, name='django_template'),
+
+    # Create a url for page that will show 11 Django Models section 
+    path('django_setup/model', views.model, name='model'),
+
+    # Create a url for page that will show 12 Django Insert Data section 
+    path('django_setup/insert_data', views.insert_data, name='insert_data'),
+
+    # Create a url for page that will show 13 Django Update Data section 
+    path('django_setup/update_data', views.update_data, name='update_data'),
+
+    # Create a url for page that will show 14 Django Delete Data section 
+    path('django_setup/delete_data', views.delete_data, name='delete_data'),
+
+    # Create a url for page that will show 15 Django Update model section
+    path('django_setup/update_model', views.update_model, name='update_model'),
+
+
+
     # Django Display Data section at beginning below.
     # For handling Prepare Template and View Page I will use a testing//prepare_template url
     # This is for Django Prepare Template (16 Prepare Template & View) of Display Data Section.
@@ -156,14 +194,13 @@ urlpatterns = [
     path('testing/for_loop_tested', views.for_loop_tested, name='for_loop_tested'),
 
     #This is for loop used with looping through items of a list  
-    path('testing/for_loop_tested', views.for_loop_item, name='for_loop_item'),
+    #path('testing/for_loop_tested', views.for_loop_item, name='for_loop_item'),
     
-    path('testing/for_loop_tested', views.for_loop_dict, name='for_loop_dict'),
+    #path('testing/for_loop_tested', views.for_loop_dict, name='for_loop_dict'),
     
-    path('testing/for_loop_tested', views.for_loop_modeldata, name='for_loop_modeldata'),
+    #path('testing/for_loop_tested', views.for_loop_modeldata, name='for_loop_modeldata'),
     
-
-    path('testing/for_loop_tested', views.for_loop_last, name='for_loop_last'),
+    #path('testing/for_loop_tested', views.for_loop_last, name='for_loop_last'),
     
 
     
@@ -190,25 +227,96 @@ urlpatterns = [
     # Also see stackoverflow.com/questions/57993808/what-difference-it-makes-when-using-intid-instead-of-slug-in-url-pat
     #path('members/details/<int:id>', views.details, name='details'),
     
+
+
+    # Django QuerySets section at beginning. W3Schools has this as a QuerySets section
+    # 35 Django QuerySet - Intro to 38 QuerySet - Order By sections.
+
+    # Create a url for a page that will show 35 Django QuerySet - Intro section
+    path('testing/queryset_intro', views.queryset_intro, name='queryset_intro'),
+
+    # Create a url for a page that will show  36 Django QuerySet - Get section
+    path('testing/queryset_get', views.queryset_get, name='queryset_get'),
    
-   
+    # Create a url for a page that will show 37 Django QuerySet - Filter
+    path('testing/queryset_filter', views.queryset_filter, name='queryset_filter'),
+
+    # Create a url for a page that will show 38 QuerySet - Order By section
+    path('testing/queryset_order_by', views.queryset_order_by, name='queryset_order_by'),
+
+
+
+
    
     # Django Static section at beginning. W3Schools has this as a Static Files section
     # 39 Django - Add Static Files to 43 Django - Add Styles to Project sections.
-    path('django_static/', views.django_static, name="django_static"),
+    path('django_static/', views.django_static, name='django_static'),
    
-   
+    # Create a url for a page that will show 39 Django - Add Static Files section 
+    path('django_static/files', views.static_files, name='static_files'),
+
+    # Create a url for a page that will show First CSS Example from 39 Django - Add Static Files section
+    path('django_static/files/first_css_example', views.first_css_example, name='first_css_example'),
+
+    # Create a url for a page that will show 40 Django - Install WhiteNoise section
+    path('django_static/whitenoise', views.whitenoise, name='whitenoise'),
+
+    # Create a url for a page that will show 41 Django - Collect Static Files section 
+    path('django_static/collect', views.collect_static, name='collect_static'),
+
+    # Create a url for a page that will show 42 Django - Add Global Static Files section 
+    path('django_static/global', views.global_static, name='global_static'),
+
+    # Create a url for a page that will show 43 Django - Add Styles to Project
+    path('django_static/styles', views.styles, name='styles'),
+
+
+
+
+
     # Django PostgreSQL section at beginning. W3Schools has this as a postgreSQL section
     # 44 Django - ProstgreSQL Intro to 48 Django - Add Members sections.
-    path('django_postgresql/', views.django_postgresql, name="django_postgresql"),
+    path('django_postgreSQL/', views.django_postgresql, name="django_postgresql"),
    
-   
+    # Create a url for a page that will show 44 Django - ProstgreSQL Intro section
+    path('django_postgreSQL/intro', views.intro, name='intro'),
+
+    # Create a url for a page that will show 45 Django - AWS Account section
+    path('django_postgreSQL/AWS', views.aws, name='aws'),
+
+    # Create a url for a page that will show 46 Django - Database in RDS section
+    path('django_postgreSQL/RDS', views.rds, name='rds'),
+
+    # Create a url for a page that will show 47 Django - Connect Database section
+    path('django_postgreSQL/RDS_Connect', views.rds_connect, name='rds_connect'),
+
+    # Create a url for a page that will show 48 Django - Add Members section
+    path('django_postgreSQL/members', views.add_members, name='add_members'),
+
    
     # Django Deploy section at beginning. W3Schools has this as a Deploy Django section
     # 49 Django - Elastic Beanstalk to 54 Django - Update Project sections.
     path('django_deploy/', views.django_deploy, name="django_deploy"),
    
-   
+    # Create a url for a page that will show 49 Django - Elastic Beanstalk section
+    path('django_deploy/choose_provider', views.choose_provider, name='choose_provider'),
+
+    # Create a url for a page that will show 50 Django - requirements txt section
+    path('django_deploy/requirements', views.requirements, name='requirements'),
+
+    # Create a url for a page that will show 51 Django - django config section
+    path('django_deploy/config', views.config, name='config'),
+
+    # Create a url for a page that will show 52 Django - Create zip File section.
+    path('django_deploy/zip', views.zip, name='zip'),
+
+    # Create a url for a page that will show 53 Django - Deploy with EB section.
+    path('django_deploy/deploy_eb', views.deploy_eb, name='deploy_eb'),
+
+    # Create a url for a page that will show 54 Django - Update Project section.
+    path('django_deploy/update_project', views.update_project, name='update_project'),
+
+
     # More Django section at beginning. W3Schools has this as a More Django section
     # covering 55 Django - Add Slug Field to 56 Django - Add Bootstrap 5 sections.
     path('django_more/', views.django_more, name="django_more"),

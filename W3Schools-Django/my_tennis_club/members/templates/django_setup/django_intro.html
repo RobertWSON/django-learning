@@ -1,0 +1,143 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Intro</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django Introduction</center></h1>
+
+        <h3>What is Django ?</h3>
+
+        <p>Django is a mainly a back-end server side web development framework that is written in Python and it has <br>
+           features that allow it to handle frontend web development as well.<br><br>
+           For those that are not familiar with difference between frontend and backend web development, I will make it clear.<br><br>
+           <b>Frontend web development</b> is code used to display what is on a web page, so you can see it on your screen.<br>
+           <b>Backend web development</b> is code used to make a connection with a server and a common task of getting data 
+           from a database with Django.  
+           <br><br>   
+           Django makes it easier to create websites because it takes care of difficult stuff, so that you can concentrate
+           on<br> building your web applications. <br><br> 
+           Django emphasizes reusability of components, which is referred to as DRY (Don't repeat yourself) and comes<br>
+           with ready-to-use features like login system, database connection and CRUD (Create Read Update Delete).<br><br>
+           It must be remembered that Django is especially helpful for database driven websites, it is free and open source,
+           so code is available to see for public.
+        </p>
+
+        <hr>
+
+        <h3 id="history">Django History</h3>
+
+        <p>Django was invented by Lawrence Journal-World in 2003 to meet short deadlines in newspapers and at same<br>
+           time meeting demands of experienced web developers.<br><br>
+           Initial release to public was in July 2005.<br><br>
+           Latest version of Django is 5.0.2 (February 6, 2024)</p>
+
+        <hr>
+
+        <h3 id="how_it_works">How does Django Work ?</h3>
+
+        <p>Django follows a Model View Template design pattern (MVT).</p>
+
+        <ul>
+            <li>Model - This is data that you want to present and is usually data from a database.</li>
+            <li>View - A request handler that returns a revelant template and content - base on a request from a user.</li>
+            <li>Template - A text file (usually an HTML file) that has layout of a web page, with logic on how to display data.</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="django_model">Django Model</h3>
+
+        <p>A Django model provides data from a database.<br><br>
+           In Django, data is delivered as Object Relational Mapping (ORM), which is a technique designed to make it easier 
+           to work with databases.<br>
+           ORM converts data between a relational database and objects in an object oriented programming language.<br><br>
+           Most common way to extract (get) data from a database is SQL, but one problem with this is that you have to have<br>
+           a pretty good understanding of a database structure to be able to work with it.<br><br> 
+           Django with ORM, makes it easier to communicate with a database, without having to write complex SQL statements.
+           <br><br>
+           Models are created in a file called <code>models.py</code> .   
+        </p>
+
+        <hr>
+
+        <h3 id="django_view">Django View</h3>
+
+        <p>A view is a function that takes http requests as arguments, imports relevant model(s), finds out what data to<br>
+           send to template and returns a final result.<br><br>
+           Views are created in a file called <code>views.py</code> .  
+        </p>
+
+        <hr>
+
+        <h3 id="django_template">Django Template</h3>
+
+         <p>A template is a file (it can be called a text document), where you describe how a result should be displayed.<br><br>
+            Templates with Django are often .html files, with HTML code describing layout of a web page.<br>
+            As a Template is a text document, it can also be in other file formats to show other results, but for this website<br> 
+            we will concentrate on .html files.<br><br>
+            Django uses standard HTML to describe layout, but uses Django tags to add logic, as can be seen below :
+         </p>
+
+         {# <img src="{% static 'django_intro/images/template_code_example.png' %}"> #}
+
+        <p>Templates of an application are located in a folder named <code>templates</code> .</p>
+
+        <hr>
+
+        <h3 id="django_url">Django URL</h3>
+
+        <p>Django provides a way to naviagte around different web pages in a website through a URL.<br><br>
+           When a user requests a URL, Django decides which view it will send it to and this is done in a file called 
+           <code>urls.py</code> .
+        </p>
+
+        <hr>
+
+        <h3 id="happening">What is Happening ?</h3> 
+
+        <p>When you have installed Django, created your first web application and browser requests a URL, this is what<br>
+           happens :
+         </p>
+
+         <ol>
+            <li>Django receives a url, checks <code>urls.py</code> file and calls a view that matches a URL .</li>
+            <li>A view in <code>views.py</code> file checks for relevant models. </li>
+            <li>Models are imported from models.py file .</li>
+            <li>A view sends data to a specified template in a <code>template</code> folder .</li>
+            <li>A template contains HTML and Django tags and with data it returns finished HTML content back to a browser.</li>    
+         </ol>
+
+         <p>This is basically what you will learn in this Django learning website and are basic steps in making a 
+            Django web application.<br> 
+            We will learn what an application is later.<br><br>
+            Django can do more than this, but what we learn is enough to be able to produce a stylish website.
+         </p>
+
+        <hr>
+
+        <h3 id="learn">Django Learning Process</h3>
+
+        <p>On this Django learning website you will learn the following :
+        </p>
+
+        <ul>
+            <li>Step by step guide on how to install and create a Django project.</li>
+            <li>Create a Django project where you can add, read, update or delete data.</li>
+            <li>Make HTML Templates and use Django Template Tags to insert data within an HTML document.</li>
+            <li>Work with QuerySets to extract, filter and sort data from a database.</li>
+            <li>Set up a PostgeSQL database and Deploy you Django project to the world.</li>
+        </ul>
+
+        <p>Here is a breakdown, below of Django learning process :</p>
+
+        {# <img src="{% static 'django_setup/images/django_learning_process_breakdown.png' %}"> #}
+
+    </body>
+</html>

@@ -1,0 +1,112 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Model</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django Model</center></h1>
+
+        <h3>Django Model</h3>
+
+        <p>Up until now, what we have displayed has been data that is static, just taken from Python or HTML templates.<br>
+           Now we will see how Django allows us to work with data, without having to change or upload files in process.<br><br>   
+           In Django, data is created in an object, called a Model, which are a table in a database.
+        </p>
+
+        <hr>
+
+        <h3 id="create_model">Create Django Model (Table)</h3>
+
+        <p>To create a model (table in a databse), navigate to <code>models.py</code> file in <code>/members/</code> folder.<br>
+           When you open <code>models.py</code> file it should look like this:
+        </p>
+
+        {# <img src="{% static 'django_setup/images/Initial Models File for Tables.png' %}"> #} 
+
+        <p>Now let's add a <code>Member</code> table to models.py file, by creating a <code>Member class</code> :<br>
+           <b>Note:</b> We are are using a django.db module to import a models library for class to use with database. 
+        </p>
+
+        {# <img src="{% static 'django_setup/images/Member Table in Models File.png' %}"> #}        
+
+        <p>A table field is within a column of a table (model).<br> 
+           It is shown as a heading at top of a table column and it has values below this for each row wtihin this column.<br>
+           Think of fields as columns and records as rows of a table (model).<br><br>  
+           We will now describe these new table fields<br>
+           First Field, <code>firstname</code>, is a Text Field and will contain first name of members.<br>
+           Second Field, <code>lastname</code>, is a Text Field with a member's last name.<br>
+           Both <code>firstname</code> and <code>lastname</code> are set to have a maximum of 255 characters.   
+        </p>
+
+        <hr>
+
+        <h3 id="sqlite">SQLite Database</h3>
+
+        <p>When we created a Django project we got an empty SQLite database.<br>
+           You may have noticed that a <code>db.sqlite3</code> filename was created in <code>my_tennis_club</code> 
+           root (main) folder for this Django project.<br>  
+           By default, all Models created in a Django project will be created as tables in this database.
+        </p>
+
+        <hr>
+
+        <h3 id="migrate">Migrate</h3>
+
+        <p>Now that we have described a Model in our models.py file, we must run a command to setup a table in our 
+           database.<br><br>
+           If you are not in your folder, navigate to <code>/my_tennis_club</code> folder with <code>cd my_tennis_club</code> 
+           and run either of these commands :<br><br>
+           <b>Windows:</b> Use <code>py manage.py makemigrations members</code><br>
+           <b>Mac / Unix:</b> Use <code>python manage.py makemigrations members</code>
+        </p>
+
+        {# <img src="{% static 'testing/images/Setup Initial Migration.png' %}"> #}
+
+        <p>Django creates a migration file shown below, that describes changes to database in <code>/migrations</code> 
+           folder :
+        </p>
+
+        {# <img src="{% static 'testing/images/Initial Migration File.png' %}"> #}
+
+         <p><b>Note:</b> Django inserts an id field for your table.<br>
+            Django uses default behaviour for ids with an <code>auto increment number</code> 
+            (first record get value 1, second record 2 etc)<br> and you can override this if you want by describing your own 
+            <code>id</code> field, but for this Django project we do not need to do this.<br><br> 
+
+            So far we have created a models.py file for our model and setup a table with our 0001_initial.py migration file.<br>
+            However we have not created our table yet, so now we have to run a migrate command to make a change for a new
+            table in our database, <br>based on content of new 0001_initial.py migration file in <code>/migrations</code> 
+            folder.<br>
+            Run either of these commands :<br><br>
+            <b>Windows:</b> Use <code>py manage.py migrate</code><br>
+            <b>Mac / Unix:</b> Use <code>python manage.py migrate</code>
+         </p>
+
+         {# <img src="{% static 'testing/images/Migrate to Create Member Table.png' %}"> #}
+        
+         <p>Now you have a <code>Member</code> table in your database.</p>
+
+         <hr>
+
+         <h3 id="sql">View SQL</h3>
+
+         <p><b>As a side note:</b> You can view SQL statement that was executed from above migration by running following.
+            command with a migration number:<br>
+            <b>Windows:</b> Use <code>py manage.py sqlmigrate members 0001</code><br>
+            <b>Mac / Unix:</b> Use <code>python manage.py sqlmigrate members 0001</code><br>
+         </p>
+
+         {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}
+
+         <p>This shows you how SQL (Structured Query Language) program handles same migration.<br><br>
+            Next we will look at how we can <a href="/django_setup/insert_data">insert data</a> in a model (table).
+         </p>
+
+    </body>
+</html>

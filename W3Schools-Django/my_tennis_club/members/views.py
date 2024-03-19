@@ -2,7 +2,7 @@
 # This helps give me a better understanding on what the code is doing. 
 
 # Imports 
-# from django.shortcuts import render 
+#from django.shortcuts import render 
 #  - Uses a django.shortcuts module to import a render library
 #    django.shortcuts module is used for  
 #    render is used for render() function with templates, requests etc. 
@@ -40,26 +40,38 @@
 # Check out another internet source educative.io/answers/how-to-render-data-in-django
 # Django shortcuts installs a django binary library that proxies Django's manage.py and django-admin.py scripts
 
-# comment code for now   
-from django.http import HttpResponse
-#from django.http import HttpResponseRedirect
-# HttpResponse is a class that lives in django.http module, so it is imported here 
+from django.http import HttpResponseRedirect
+from .models import Member
 from django.template import loader
 # loader is a class that is in django.template module and is used for loading data from a template
-from .models import Member
+
+
+
+
+
+
+
+
+
+
+
+from django.shortcuts import render 
+#  - Uses a django.shortcuts module to import a render library
+from django.http import HttpResponse
+# HttpResponse is a class that lives in django.http module, so it is imported here 
+
 
  
 # Original members view created in Views, within (8 Django Views) of Django Tutorial Section
 
 # comment code for now   def members(request):
-# I have now decided to have my own view called first. 
+# I have now decided to have my own view called hello. 
 # Having my own view allows me to separate this page from members page, which requires use of database.
 # I feel that this the best way to approach this
 def hello(request):
 
-#    {# This displays just Hello world! on localhost 127.0.0.1:8000/members/ in next Django URLs part #}
-    # comment code for now   
-    return HttpResponse("Hello world!") 
+  # This displays just Hello world! on localhost 127.0.0.1:8000/hello/ in next Django URLs part 
+  return HttpResponse("Hello world!") 
  
   
  
@@ -90,12 +102,80 @@ def django_setup(request):
   template = loader.get_template('django_setup/django_setup_refs.html')
   return HttpResponse(template.render())
  
+# Create a view for a page that will show 2 Django Intro section
+def django_intro(request):
+  template = loader.get_template('django_setup/django_intro.html')
+  return HttpResponse(template.render())
  
+# Create a view for page that will show 3 Django Get Started section
+def get_started(request):
+  template = loader.get_template('django_setup/django_get_started.html')
+  return HttpResponse(template.render())
  
- 
- 
- 
- 
+# Create a view for page that will show 4 Django Create Virtual Environ section
+def virtual_env(request):
+  template = loader.get_template('django_setup/django_virtual_env.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 5 Install Django section
+def install(request):
+  template = loader.get_template('django_setup/django_install.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 6 Django Create Project section
+def project(request):
+  template = loader.get_template('django_setup/django_project.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 7 Django Create App section
+def app(request):
+  template = loader.get_template('django_setup/django_app.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 8 Django Views section
+def views(request):
+  template = loader.get_template('django_setup/django_views.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 9 Django URLs section 
+def url(request):
+  template = loader.get_template('django_setup/django_url.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 10 Django Templates section 
+def django_template(request):
+  template = loader.get_template('django_setup/django_template.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 11 Django Models section 
+def model(request):
+  template = loader.get_template('django_setup/django_model.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 12 Django Insert Data section 
+def insert_data(request):
+  template = loader.get_template('django_setup/django_insert_data.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 13 Django Update Data section 
+def update_data(request):
+  template = loader.get_template('django_setup/django_update_data.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 14 Django Delete Data section 
+def delete_data(request):
+  template = loader.get_template('django_setup/django_delete_data.html')
+  return HttpResponse(template.render())
+
+# Create a view for page that will show 15 Django Update model section 
+def update_model(request):
+  template = loader.get_template('django_setup/django_update_model.html')
+  return HttpResponse(template.render())
+
+
+
+
+
 # Create a view for handling Prepare Template and View Page. This will be for testing//prepare_template url  
 # and Django Prepare Template (16 Prepare Template & View) of Display Data Section.
  
@@ -639,38 +719,31 @@ def if_tested(request):
 #   return HttpResponse(template.render(context, request))
 
 
-# For Loop List within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section 
+
+# For Loop List within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section
+
+# We will do a view that handles all views from examples within seperate contexts
 def for_loop_tested(request):
   template = loader.get_template('testing/for_loop_tested.html')
-  return HttpResponse(template.render())
-
-# For Loop List within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section 
-# We are using fruits object and each of its items within an array for template.html. 
-# Up top it uses {# from django.http import HttpResponse #}
-#                 {# from django.template import loader #}
-#def testing(request):  This is original testing view, but I need an individual view to keep it seperated 
-# from testing page, which now has links to all examples. 
-#def for_loop_tested(request): have separate view for fruits item example
-def for_loop_item(request):
-  #template = loader.get_template('testing/for_loop_tested.html') use seperate html file included below
-  template = loader.get_template('testing/for_loop_item.html')
-#  {# Context Creates 1 object, a fruits variable, that works as properties and each property  
-#     has an array with values. #}
-  context = {
-    'fruits': ['Apple', 'Banana', 'Cherry'],
-  }
-  return HttpResponse(template.render(context, request))
-
-# For Loop Dictionaries within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section 
-# We are using cars object, which has properties and property values within it, that can be used in template.html
-# Up top it uses {# from django.http import HttpResponse #}
-#                {# from django.template import loader #}
-#def testing(request):  This is original testing view, but I need an individual view to keep it seperated 
-# from testing page, which now has links to all examples.
-def for_loop_dict(request):
-  template = loader.get_template('testing/for_loop_dict.html')
-# {# Context Creates 1 cars object, that has an array with groups (dictionaries) of properties 
-#    and property values for each car. #}
+    #context = {}
+    #context['fruits'] = ['Apple', 'Banana', 'Cherry'],
+    #context['cars'] = [
+    #{
+      #'brand': 'Ford',
+      #'model': 'Mustang',
+      #'year': '1964',
+    #},
+    #{
+      #'brand': 'Ford',
+      #'model': 'Bronco',
+      #'year': '1970',
+    #},  
+    #{
+      #'brand': 'Volvo',
+      #'model': 'P1800',
+      #'year': '1964',
+    #}]
+# Older way of doing this with one context below  
   context = {
     'cars': [
       {
@@ -687,9 +760,76 @@ def for_loop_dict(request):
         'brand': 'Volvo',
         'model': 'P1800',
         'year': '1964',
-      }]     
-    } 
+      }]
+    }
+
   return HttpResponse(template.render(context, request))
+
+
+
+
+
+# For Loop List within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section
+
+#def for_loop_tested(request):
+  #template = loader.get_template('testing/for_loop_tested.html')
+  #return HttpResponse(template.render())
+
+# For Loop List within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section 
+# We are using fruits object and each of its items within an array for template.html. 
+# Up top it uses {# from django.http import HttpResponse #}
+#                 {# from django.template import loader #}
+#def testing(request):  This is original testing view, but I need an individual view to keep it seperated 
+# from testing page, which now has links to all examples. 
+#def for_loop_tested(request): have separate view for fruits item example
+
+#def for_loop_item(request):
+
+  #template = loader.get_template('testing/for_loop_tested.html') use seperate html file included below
+
+  #template = loader.get_template('testing/for_loop_item.html')
+
+#  {# Context Creates 1 object, a fruits variable, that works as properties and each property  
+#     has an array with values. #}
+
+  #context = {
+    #'fruits': ['Apple', 'Banana', 'Cherry'],
+  #}
+  #return HttpResponse(template.render(context, request))
+
+
+# For Loop Dictionaries within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section 
+# We are using cars object, which has properties and property values within it, that can be used in template.html
+# Up top it uses {# from django.http import HttpResponse #}
+#                {# from django.template import loader #}
+#def testing(request):  This is original testing view, but I need an individual view to keep it seperated 
+# from testing page, which now has links to all examples.
+
+#def for_loop_dict(request):
+  #template = loader.get_template('testing/for_loop_dict.html')
+
+# {# Context Creates 1 cars object, that has an array with groups (dictionaries) of properties 
+#    and property values for each car. #}
+
+  #context = {
+    #'cars': [
+      #{
+        #'brand': 'Ford',
+        #'model': 'Mustang',
+        #'year': '1964',
+      #},
+      #{
+        #'brand': 'Ford',
+        #'model': 'Bronco',
+        #'year': '1970',
+      #},
+      #{
+        #'brand': 'Volvo',
+        #'model': 'P1800',
+        #'year': '1964',
+      #}]     
+    #} 
+  #return HttpResponse(template.render(context, request))
 
 
 # Data from a Model within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section
@@ -704,16 +844,23 @@ def for_loop_dict(request):
 
 #def testing(request): This is original testing view, but I need an individual view to keep it seperated 
 # from testing page, which now has links to all examples.
-def for_loop_modeldata(request):
+
+#def for_loop_modeldata(request):
+
 # {# Add this below to create an object with all values of Member model to update Member Table #}
-  mymembers = Member.objects.all().values()
+
+  #mymembers = Member.objects.all().values()
+
 #  template = loader.get_template('template.html')
-  template = loader.get_template('testing/for_loop_modeldata.html')
+
+  #template = loader.get_template('testing/for_loop_modeldata.html')
+
 #  {# Context creates a members object that has a property name of mymembers with a value. #}
-  context = {
-    'members': mymembers,   
-  }
-  return HttpResponse(template.render(context, request))
+
+  #context = {
+    #'members': mymembers,   
+  #}
+  #return HttpResponse(template.render(context, request))
 
 
 
@@ -726,16 +873,23 @@ def for_loop_modeldata(request):
 
 #def testing(request): This is original testing view, but I need an individual view to keep it seperated 
 # from testing page, which now has links to all examples.
-def for_loop_reversed(request):
+
+#def for_loop_reversed(request):
+
 # {# Add this below to create an object with all values of Member model to update Member Table #}
-  mymembers = Member.objects.all().values()
+
+  #mymembers = Member.objects.all().values()
+
 #  template = loader.get_template('template.html')
-  template = loader.get_template('testing/for_loop_reversed.html')
+
+  #template = loader.get_template('testing/for_loop_reversed.html')
+
 #  {# Context creates a members object that has a property name of mymembers with a value. #}
-  context = {
-    'members': mymembers,   
-  }
-  return HttpResponse(template.render(context, request))
+  
+  #context = {
+    #'members': mymembers,   
+  #}
+  #return HttpResponse(template.render(context, request))
 
 
 
@@ -846,15 +1000,20 @@ def for_loop_reversed(request):
 #                {# from django.template import loader #}
 #def testing(request): This is original testing view, but I need an individual view to keep it seperated 
 # from testing page, which now has links to all examples.
-def for_loop_last(request):
+
+#def for_loop_last(request):
+
 #  template = loader.get_template('template.html') Now use template below
-  template = loader.get_template('testing/for_loop_last.html')
+
+  #template = loader.get_template('testing/for_loop_last.html')
+
 #  {# Context creates a fruits object that has an array with property values. #}
 #  {# These array values will be displayed in a list and the last value Kiwi will be highlighted #}
-  context = {
-    'fruits': ['Apple','Banana','Cherry', 'Oranges', 'Kiwi'] 
-  }  
-  return HttpResponse(template.render(context, request))
+
+  #context = {
+    #'fruits': ['Apple','Banana','Cherry', 'Oranges', 'Kiwi'] 
+  #}  
+  #return HttpResponse(template.render(context, request))
 
 
 # forloop.parentloop within Django for Template Tag (57 Django - Template Tag Reference) 
@@ -1001,7 +1160,28 @@ def include_tested(request):
   #return HttpResponse(template.render())
 
 
+# Views for Django QuerySets (35 to 38) section
+# 35 Django QuerySet - Intro to 38 QuerySet - Order By sections.
 
+# Create a view that will show 35 Django QuerySet - Intro section
+def queryset_intro(request):
+  template = loader.get_template('testing/queryset_intro.html')
+  return HttpResponse(template.render())
+
+# Create a view that will show 36 Django QuerySet - Get section
+def queryset_get(request):
+  template = loader.get_template('testing/queryset_get.html')
+  return HttpResponse(template.render())
+
+# Create a view that will show 37 Django QuerySet - Filter section
+def queryset_filter(request):
+  template = loader.get_template('testing/queryset_filter.html')
+  return HttpResponse(template.render())
+
+# Create a view that will show 38 QuerySet - Order By section
+def queryset_order_by(request):
+  template = loader.get_template('testing/queryset_order_by.html')
+  return HttpResponse(template.render())
 
 
 
@@ -1012,12 +1192,68 @@ def django_static(request):
   template = loader.get_template('django_static/django_static_refs.html')
   return HttpResponse(template.render())
 
+# Create a view for a page that will show 39 Django - Add Static Files section
+def static_files(request):
+  template = loader.get_template('django_static/static_files.html')
+  return HttpResponse(template.render())
 
+# first css example from a link off static_files page.
+def first_css_example(request):
+  template = loader.get_template('django_static/first_css_example.html')
+  context = {
+    'fruits': ['Apple', 'Banana', 'Cherry'],
+  }
+  return HttpResponse(template.render(context, request))
+
+# Create a view for a page that will show 40 Django - Install WhiteNoise section
+def whitenoise(request):
+  template = loader.get_template('django_static/install_whitenoise.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 41 Django - Collect Static Files section
+def collect_static(request):
+  template = loader.get_template('django_static/collect_static.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 42 Django - Add Global Static Files section
+def global_static(request):
+  template = loader.get_template('django_static/global_static.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 43 Django - Add Styles to Project
+def styles(request):
+  template = loader.get_template('django_static/project_styles.html')
+  return HttpResponse(template.render())
 
 # Django PostgreSQL section at beginning. W3Schools has this as a postgreSQL section
 # 44 Django - ProstgreSQL Intro to 48 Django - Add Members sections.
 def django_postgresql(request):
   template = loader.get_template('django_postgresql/django_postgresql_refs.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 44 Django - ProstgreSQL Intro section
+def intro(request):
+  template = loader.get_template('django_postgresql/postgresql_intro.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 45 Django - AWS Account section
+def aws(request):
+  template = loader.get_template('django_postgresql/aws.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 46 Django - Database in RDS section
+def rds(request):
+  template = loader.get_template('django_postgresql/rds.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 47 Django - Connect Database section
+def rds_connect(request):
+  template = loader.get_template('django_postgresql/rds_connect.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 48 Django - Add Members section
+def add_members(request):
+  template = loader.get_template('django_postgresql/members.html')
   return HttpResponse(template.render())
 
 
@@ -1026,6 +1262,39 @@ def django_postgresql(request):
 def django_deploy(request):
   template = loader.get_template('django_deploy/django_deploy_refs.html')
   return HttpResponse(template.render())
+
+# Create a view for a page that will show 49 Django - Elastic Beanstalk section
+def choose_provider(request):
+  template = loader.get_template('django_deploy/choose_provider.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 50 Django - requirements txt section
+def requirements(request):
+  template = loader.get_template('django_deploy/requirements.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 51 Django - django config section
+def config(request):
+  template = loader.get_template('django_deploy/django_config.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 52 Django - Create zip File section
+def zip(request):
+  template = loader.get_template('django_deploy/django_zip.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 53 Django - Deploy with EB section
+def deploy_eb(request):
+  template = loader.get_template('django_deploy/deploy_eb.html')
+  return HttpResponse(template.render())
+
+# Create a view for a page that will show 54 Django - Update Project section
+def update_project(request):
+  template = loader.get_template('django_deploy/update_django_project.html')
+  return HttpResponse(template.render())
+
+
+
 
 # More Django section at beginning. W3Schools has this as a More Django section
 # covering 55 Django - Add Slug Field to 56 Django - Add Bootstrap 5 sections.

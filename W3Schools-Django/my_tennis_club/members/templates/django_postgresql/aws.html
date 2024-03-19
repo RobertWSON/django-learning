@@ -1,0 +1,73 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>PostgeSQL </title>
+   </head> 
+
+   <body>
+
+      <h1><center>Create AWS Account</center></h1>
+
+      <h3>Why AWS?</h3>
+
+      <p>There are many server providers out there that can host Django projects and PostgreSQL databases.<br>
+         <br>
+         We will use Amazon Web Services (AWS) platform, mainly because they offer a free solution that can <br>
+         host both Django projects and PostgreSQL databases and All that is needed is an account.<br>
+         <br><br>
+         <b>Note:</b> You can choose whatever server provider you like, they all give same result, but they <br>
+         will have some provider-specific settings that you should be aware of.
+      </p>
+
+      <hr>
+
+      <h3>AWS</h3>
+
+      <p>Go to aws.amazon.com, and create an account:</p>
+
+      {# <img src="{% static 'django_postgresql/images/create_aws_account.png' %}"> #}
+
+      <hr>
+
+      <h3 id="sign_in">AWS Sign In</h3>
+
+      <p>Once you have created an Amazon Web Services Account, it is time to sign in for first time.<br>
+         It should recognize you as a Root user with unrestricted free access.  
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/aws_sign_in.png' %}"> #}
+
+      <hr>
+
+      <h3 id="console">AWS Console</h3>
+
+      <p>If this is your first time you are signing into an AWS account, you will be directed to an <br>
+         AWS Console Home page:
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/aws_console_home.png' %}"> #}
+
+      <hr>
+
+      <h3 id="RDS">Add RDS Service</h3>
+
+      <p>Once you have an AWS account, you can start creating a database.<br><br>
+         We will use a database service at AWS, called RDS.<br><br>
+         RDS stands for Relational Database Service and it can be found in search field by typing RDS<br>
+         and then under Service click on RDS to start it's service.
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/click_RDS_service.png' %}"> #}
+
+      <p>Once RDS service has started, you should see this:</p>
+
+      {# <img src="{% static 'django_postgresql/images/Amazon_RDS_started.png' %}"> #}
+
+      <p>Next create PostgreSQL database in <a href="/django_postgreSQL/RDS">RDS</a></p>
+
+   </body>
+</html>          

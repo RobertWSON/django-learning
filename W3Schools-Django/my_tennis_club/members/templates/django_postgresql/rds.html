@@ -1,0 +1,100 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Database in RDS </title>
+    </head> 
+
+    <body>
+
+        <h1><center>Create PostgreSQL Database in RDS</center></h1>
+
+        <h3>Create PostgreSQL Database</h3>
+
+        <p>Inside RDS service, create a postgresql database, either by navigating to Database section or just <br> 
+           clicking "Create database" button:
+        </p>
+
+        {# <img src="{% static 'django_postgresql/images/create_postgreSQL_database.png' %}"> #}   
+
+
+        <h3 id="dbase_settings">PostgreSQL Database Settings</h3>
+
+        <p>Once you have started creating a database, you will be given some choices for type and settings
+           of your databases.<br><br>
+           To add a PostgreSQL database to your Django project, choose following options:
+        </p>
+
+        <h4>Standard Creation Method:</h4>
+
+        {# <img src="{% static 'django_postgresql/images/create_database_method.png' %}"> #}
+
+        <h4>Database Engine Method:</h4>
+
+        {# <img src="{% static 'django_postgresql/images/database_engine_method.png' %}"> #}
+        
+        <h4>Database Free Tier Template:</h4>
+
+        {# <img src="{% static 'django_postgresql/images/database_free_tier_template.png' %}"> #}
+
+        <h4>Database Settings (Name, Username and Password):</h4>
+
+        <p>You can choose any name, username, and password.</p>
+
+        {# <img src="{% static 'django_postgresql/images/database_settings.png' %}"> #}
+
+        <h4>Database Configuration:</h4>
+
+        <p>Keep default instance configuration.</p>
+
+        {# <img src="{% static 'django_postgresql/images/database_default_config.png' %}"> #}        
+
+        <h4>Database Storage:</h4>
+
+        <p>It can be a good idea to enable storage autoscaling by clicking on check box when a project is large.<br>
+           For this project it is not necessary though, as members database does not have a large amount of data.
+        </p>
+
+        {# <img src="{% static 'django_postgresql/images/database_storage.png' %}"> #}
+
+        <h4>Database Connectivity:</h4>
+
+        <p>We make a connection with database by granting public access and creating a new security group.<br>
+           Make sure public access is given by clicking yes and give security group a name.<br>
+           It can be called what you like, but a suitable name for this one is "w3-django-project". 
+        </p>
+
+        {# <img src="{% static 'django_postgresql/images/database_connectivity.png' %}"> #}
+
+        <h4>Database Authentication:</h4>
+
+        <p>Keep database default password authentication.</p>
+
+        {# <img src="{% static 'django_postgresql/images/database_authentication.png' %}"> #}
+
+        <h4>Database Monitoring:</h4>
+
+        <p>Keep database default monitoring.</p>
+
+        {# <img src="{% static 'django_postgresql/images/database_monitoring.png' %}"> #}
+
+        <h4>Click Create database:</h4>
+
+        <p>Note monthly costs and that our free tier is available for 12 months with 20 Gigabytes of general<br> 
+           purpose storage.<br><br>
+           <b>Click on Create database button</b><br> 
+           This will take a few minutes, so please be patient, but when it is finished, you will have a new <br> 
+           PostgreSQL database. 
+        </p>
+
+        {# <img src="{% static 'django_postgresql/images/click_create_database.png' %}"> #}
+
+        <p>We now have a new PostgreSQL database almost ready to run on this Django project, so next we will learn
+            <br> how to <a href="/django_postgreSQL/RDS_Connect">connect</a> this Django project to this database.
+        </p>
+
+    </body>
+</html>             

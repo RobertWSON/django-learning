@@ -1,0 +1,84 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>EB Deploy</title>
+   </head> 
+
+   <body>
+
+      <h1><center>Deploy with Elastic Beanstalk</center></h1>
+
+      <h2>Elastic Beanstalk</h2>
+
+      <p>In Amazon Web Services, navigate to Elastic Beanstalk application, as we did when we
+         <a href="/django_deploy/choose_provider">chose a provider</a><br>and click "Create Application" button:
+      </p>
+
+      {# <img src="{% static 'django_deploy/images/create_app_button.png' %}"> #}
+
+
+      <h3 id="eb_app">Create EB Application</h3>
+
+      <p>Once you  have clicked "Create Application" button, you will be taken to this page below, where<br>
+         you can give your Django project a name. I will name it "my_first_django_project":
+      </p>
+
+      {# <img src="{% static 'django_deploy/images/create_app_process.png' %}"> #}
+
+      <hr>
+
+      <h3 id="eb_platform">Choose Platform</h3>
+
+      <p>Scroll down until you see "Platform" section and choose "Python", with recommended version:
+      </p>
+
+      {# <img src="{% static 'django_deploy/images/eb_platform.png' %}"> #}
+
+      <hr>
+
+      <h3 id="zip_upload">Upload .zip File</h3>
+
+      <p>Next, scroll down to next "Application code" section and choose "Upload your code".<br><br>
+         Under "Source code origin section", Click on "Choose file" button, navigate to .zip file 
+         <a href="/django_deploy/django_zip">created earlier</a> and upload:  
+      </p>
+
+      {# <img src="{% static 'django_deploy/images/zip_upload.png' %}"> #}
+
+      <p>As you can see below .zip file is uploaded and now wer are ready to deploy!</p>
+
+      {# <img src="{% static 'django_deploy/images/zip_has_uploaded.png' %}"> #}
+
+      <hr>
+
+      <h3 id="deploy">Deploy</h3>
+
+      <p>Click "Create Application" button to start deploying.</p>
+
+      {# <img src="{% static 'django_deploy/images/start_deploy.png' %}"> #}
+
+      <hr>
+
+      <h3 id="waiting">Waiting</h3>
+
+      <p>Deployment will take a few minutes, so please be patient, wait and let it go through its process.
+      </p>
+
+      {# <img src="{% static 'django_deploy/images/waiting.png' %}"> #}
+
+      <hr>
+
+      <h3 id="success">Success!</h3>
+
+      <p>Finally project is live and you can view it by clicking link below Myfirstdjangoproject-env
+         header,<br> or type host address in your browser:
+      </p>
+        
+      {# <img src="{% static 'django_deploy/images/success.png' %}"> #}
+
+    </body>
+</html>        

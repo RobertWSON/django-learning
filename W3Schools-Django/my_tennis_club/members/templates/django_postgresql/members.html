@@ -1,0 +1,96 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>PostgreSQL - Add Members</title>
+   </head> 
+
+   <body>
+
+      <h1><center>PostgreSQL - Add Members</center></h1>
+
+      <h3>Members</h3>
+
+      <p>"My Tennis Club" project has no members on localhost <code>127.0.0.1:8000/members/</code> .<br><br>
+         This is because we have created a brand new PostgrSQL database and it is empty.<br><br>
+         Original SQlite database contained 5 members, so now we have to added these same 5 members in our new<br>
+         PostgreSQL database through admin interface.<br><br>
+         We will cover this later down this page, but first we have to create a new superuser.
+      </p>
+
+      <hr>
+
+      <h3 id="superuser">Create Superuser</h3>
+
+      <p>Since we now have a new PostgreSQL database, we have to create a superuser:<br><br>
+         
+         This is done in same way as <a href="django_admin/user">Create User</a> in Admin section and purpose <br>
+         is to allow login into Django administration application.<br><br>  
+         
+         Creating a superuser is done by typing this command in command line:   
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/postgeresql_superuser.png' %}"> #}
+
+      <p>Which will give this Username prompt:</p>
+
+      {# <img src="{% static 'django_postgresql/images/postgresql_superuser_username_prompt.png' %}"> #}
+
+      <p>Here you must enter: username, e-mail address and password:<br>        
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/postgresql_superuser_setup.png' %}"> #}
+
+      <p>Email address can be a fake one if you like.<br>
+         My password did not meet criteria, but this is a test environment, so I chose to create a user<br> 
+         by entering y for yes:
+      </p>   
+
+      {# <img src="{% static 'django_postgresql/images/postgresql_superuser_password_validation.png' %}"> #}         
+
+      <p>If you press [Enter], you should have successfully created a user:</p>
+
+      {# <img src="{% static 'django_postgresql/images/postgresql_superuser_success.png' %}"> #} 
+
+      <p>Now if you run Django project on your local host server again:</p>
+
+      {# <img src="{% static 'django_postgresql/images/run_localhost_server.png' %}"> #}
+
+      <p>And in your browser window address bar type: <code>127.0.0.1:8000/admin</code>, you will get a form that you<br>
+         can fill in with your correct username and password:
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/postgresql_admin_login.png' %}"> #}
+
+      <p>Which should result in this Django admin interface:</p>
+
+      {# <img src="{% static 'django_postgresql/images/postgresql_django_admin_interface.png' %}"> #}
+
+      <hr>
+
+      <h3 id="add_members">Add Members</h3>
+
+      <p>Just like before when we added a member with Django Admin, in admin interface click "ADD MEMBER" and start<br>  
+         inserting new members until you have a list like this:
+      </p>
+ 
+      {# <img src="{% static 'django_postgresql/images/postgresql_django_admin_members.png' %}"> #}
+
+      <hr>
+
+      <h3>My Tennis Club</h3>
+
+      <p>In browser window address bar, type <code>127.0.0.1:8000/members</code>.<br>
+         And once agin you have a Tennis Club page with 5 members!
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/postgresql_django_admin_members.png' %}"> #}
+
+      <p>Next: let's <a href="/django_deploy">deploy</a> this Django project, so that the whole world can see it!
+      </p>
+
+    </body>
+</html>

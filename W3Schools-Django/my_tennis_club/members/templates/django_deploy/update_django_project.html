@@ -1,0 +1,78 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Update Django Project</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Update Django Project</center></h1>
+
+        <h2>Deploy Changes</h2>
+
+        <p>Any changes you do with application locally on your own computer are not visible on deployed<br> 
+           version.<br><br>
+           So if you make a change and you want it to be visible on deployed version, you have to upload a<br>
+           new .zip file. 
+        </p>
+
+        <hr>
+
+        <h3>Create a .zip File</h3>
+
+        <p>To wrap your project into a .zip file, follow steps from 
+           <a href="/django_deploy/django_zip">Create .zip File</a> section:<br><br>
+
+           Start by selecting relevant fles and folders of your project. If you have been following this
+           project build,<br> you should select highlighted files in example below:
+        </p>
+
+        {# <img src="{% static 'django_deploy/images/create_zip.png' %}"> #}
+
+         <p>Right-click on selected files and choose create a .zip file.<br><br>
+
+            Now you have a .zip file containing project changes and you can upload it to Elastic Beanstalk:
+        </p>
+
+        {# <img src="{% static 'django_deploy/images/project_zip.png' %}"> #}
+
+        <hr>
+
+        <h3 id="eb_upload">Upload to Elastic Beanstalk</h3>
+
+        <p>Log into your Amazon Web Services Account, find your project under "Elastic Beanstalk" 
+           application<br> and click upload and deploy:
+        </p>
+
+        {# <img src="{% static 'django_deploy/images/upload_eb_project.png' %}"> #}
+
+        <hr>
+
+        <h3>Choose .zip File</h3>
+
+        <p>Click "choose file" button to upload .zip file created just before:</p>
+
+        {# <img src="{% static 'django_deploy/images/upload_zip.png' %}"> #}
+
+        <hr>
+
+        <h3>Deploy</h3>
+
+        <p>Click "Deploy" button:</p>
+
+        {# <img src="{% static 'django_deploy/images/deploy_button.png' %}"> #}
+
+        <h3>Uploaded!</h3>
+
+        <p>That's it, your project is updated with all new changes, Awesome.<br><br>
+           Note: Follow these steps every time you want to update your project. 
+        </p>
+
+        {# <img src="{% static 'django_deploy/images/deploy_project_uploaded.png' %}"> #}
+
+    </body>
+</html>        

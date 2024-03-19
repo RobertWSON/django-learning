@@ -1,0 +1,35 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Queryset</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django QuerySet Introduction</center></h1>
+
+        <h3>Django QuerySet</h2>
+
+        <p>A QuerySet is a collection of data from a database and it is built up as a list of objects.<br><br>
+           Querysets make it easier to get data that you actually need, by allowing you to filter and order data at an early 
+           stage.<br>
+           We will be querying data from a <code>Member</code> table.<br><br>
+           <code>Member</code> :
+        </p>
+
+        {# <img src="{% static 'testing/images/member_table.png' %}"> #}
+
+        <h3 id="query_data">Querying Django Data</h3>
+
+        <p>In <code>views.py</code>, we have a view for testing a Django data query called <code>django_query</code> where 
+            we will test a data query.<br><br>
+            With Member table, we can use .all() method to get all records and fields in example below 
+        </p>
+
+        
+    </body>
+</html>

@@ -1,0 +1,115 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>Static Files</title>
+   </head> 
+
+   <body>
+
+      <h1><center>Django - Add Static File</center></h1>
+
+      <h3>Create Static Folder</h3>
+
+      <p>When building Django web applications at some stage you would most probably want to add images or css files.<br><br>
+         Django uses static files to handle this and it needs a folder to for all these files.<br><br>
+         Start by creating a folder named <code>static</code> in your Django project, in same place where you created a<br>
+         <code>templates</code> folder:  
+         <br><br>
+         Name of folder has to be <code>static</code> . 
+      </p>
+
+      {# <img src="{% static 'django_static/images/static_folder.png' %}"> #}
+
+      <p>Add a CSS file in <code>static</code> folder and as it is our first css file an appropriate could be 
+         <code>myfirst.css</code>, but it is your choice for a name.</p>
+
+      {# <img src="{% static 'django_static/images/first_css_file.png' %}"> #}
+
+      <p>Open your first new CSS file and insert following code:</p>
+
+      {# <img src="{% static 'django_static/images/first_css_code.png' %}"> #}
+      
+      <h3 id="mod_template">Modify HTML Template</h3>
+
+      <p>Now you have a CSS file, with some styling.<br>
+         Next step is to include this CSS file in an HTML template:<br><br>
+         Open HTML template file and add following:
+      </p>   
+           
+      {# <img src="{% static 'django_static/images/HTML_CSS_Link.png' %}"> #}  
+        
+      <p>We also want to let HTML template know that we are dealing with a static file, by typing following code 
+         before HTML:
+      </p>
+
+      {# <img src="{% static 'django_static/images/load_static.png' %}"> #}
+
+      <h4>First CSS Example</h4>
+
+      {# <img src="{% static 'django_static/images/first_css_example_code.png' %}"> #}
+
+      <p>Restart localhost server for changes to take effect:</p>
+
+      {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}
+
+      <p>And check out result in your own browser: <a href="/django_static/files/first_css_example">
+         127.0.0.1:8000/django_static/files/first_css_example</a>.
+      </p>
+
+      <h4>First CSS Example Didn't Work</h4>
+
+      <p><b>Just testing ?</b> If you want to play around and not deploy your work, you can set <code>DEBUG=TRUE</code><br>
+         in <code>settings.py</code> file and example aboce will work.<br><br>
+         
+         <b>Plan to deploy ?</b> If you plan to deploy your work, you should set <code>DEBUG=FALSE</code> in 
+         <code>settings.py</code> file.<br>
+         Example above will fail because Django has no built-in solution for serving static files, but there are other ways<br>
+         to serve static files. You will understand how this is done with <a href="/django_static/whitenoise">Whitenoise</a> 
+         on next page. 
+      </p>
+
+
+      <h4>Debug Example (in development)</h4>
+
+      <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
+
+      {# <img src="{% static 'django_static/images/debug_development.png' %}"> #}
+
+      <p>This will make example work, but we want you to choose <code>DEBUG = FALSE</code>, because that is best way to 
+         learn<br> how to wotk with Django.   
+      </p>
+
+      <hr>
+
+      <h3 id="debug_false">Choose Debug = False</h3>
+
+      <p>For rest of this Django project, we will run with <code>DEBUG = FALSE</code>, even in development, because that <br>  
+         is best way to learn how to work with Django.
+      </p>
+
+      <h4>DEBUG = False Example:</h4>
+
+      <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
+
+      {# <img src="{% static 'django_static/images/debug_false_example.png' %}"> #}
+
+      <p>ALLOWED_HOSTS<br><br>
+         When using <code>DEBUG = False</code> you have to specify which host name(s) are allowed to host your work.<br>
+         You choose <code>'*'</code> , which means <i>any</i> address are allowed to host this site. This should be changed 
+         into<br> a real domain name when you deploy your project to a public server.
+      </p> 
+      
+      <h4>Still Does Not Work ?</h4>
+
+      <p>That is right, first css example still does not work.<br><br>
+         You will have to install a third-party library in order to handle static files.<br><br>
+         There are many alternatives and next we will show you how to use a Python library called 
+         <a href="/django_static/whitenoise">Whitenoise</a>  
+      </p>
+
+    </body>
+</html>

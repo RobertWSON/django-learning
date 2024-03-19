@@ -1,0 +1,50 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>django.config</title>
+   </head> 
+
+   <body>
+
+         <h1><center>Create Django Config</center></h1>
+
+         <h3>Provider-Specific Settings</h3>
+
+         <p>We have chosen Amazon Web Services as a hosting provider and Elastic Beanstalk as a service to deploy
+            this Django project. <br>Elastic Beanstalk has some specific requirements.  
+         </p>
+
+         <h3>.ebextension Folder</h3>
+
+         <p>It requires that you create a folder on root level of your project called <code>.ebextensions</code> :
+         </p>
+
+         {# <img src="{% static 'django_deploy/images/ebextensions.png' %}"> #}
+
+         <h3 id="create">Create django.config File</h3>
+
+         <p>In <code>.ebextensions</code> folder, create a file called <code>django.config</code> :
+         </p>
+
+        {# <img src="{% static 'django_deploy/images/create_django_config.png' %}"> #}
+
+        <p>Open file and insert these settings:</p>
+
+        {# <img src="{% static 'django_deploy/images/django_config_settings.png' %}"> #}
+
+        <p><b>Note:</b> These steps are specific for Amazon Web Services and Elastic Beanstalk, but every
+            provider<br> has some provider-specific settings.
+        </p>
+
+         <p>Next step is to wrap all dependencies into one .zip file, which will be shown in 
+            {# <a href="/django_deploy/django_zip">next section</a> #}
+            {# should be /django_deploy/zip #}
+            <a href="/django_deploy/zip">next section</a>
+         </p>
+
+    </body>
+</html>   

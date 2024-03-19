@@ -1,0 +1,103 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Database in RDS </title>
+    </head> 
+
+    <body>
+
+        <h1><center>Connect to PostgreSQL Database</center></h1>
+
+        <h3>Modify Settings for PostgreSQL</h3>
+
+        <p>To make Django able to connect to your database, you have to specify it in <code>Databases</code> tuple in <br> 
+           settings.py file.<br><br>
+           Before with SQLite, it looked like this:  
+        </p>
+
+        <h4>SQLite</h4>
+
+        <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
+
+        {# <img src="{% static 'django_postgresql/images/settings_with_sqlite.png' %}"> #}
+
+        <p>Now, you should change <code>settings.py</code>, so that it includes <code>PostgreSQL</code> :
+           <br><br>
+           <b>Note:</b> Values will be different for your Django project.
+        </p>
+
+        <h4>PostgreSQL</h4>
+
+        {# <img src="{% static 'django_postgresql/images/settings_with_postgresql.png' %}"> #}
+
+        <hr>
+
+        <h3>Engine ?</h3>
+
+        <p>As you can see in <code>settings.py</code> file, we insert <code>postgreSQL</code> instead of 
+           <code>sqlite</code> .
+        </p>
+        
+        <hr>
+
+        <h3>Name ?</h3>
+
+        <p>Database does not have a name, but you have to assign one (give it a name) in order to access database.<br><br>
+           If no database name is given, provider accepts <code>'postgres'</code> as name of database.  
+        </p>
+
+        <hr>
+
+        <h3>Username and Password ?</h3>
+
+        <p>Insert same username and password that you specified when you created database.<p>
+
+        <hr>
+
+        <h3>Host ? Port ?</h3>
+
+        <p>As you can see in <code>settings.py</code> file, we inserted <code>postgresql</code> instead of 
+           <code>sqlite</code> <br>and same username and password that we used, when we created database.<br><br>
+           <code>HOST</code> and <code>PORT</code> can be found under "Connectivity & Security" section in<br> 
+            RDS instance and they are described as "Endpoint" and "Port":
+        </p>
+
+        {# <img src="{% static 'django_postgresql/images/database_host_and_port.png' %}"> #}
+
+        <p>Which for my project is this:<br>
+           <code>'HOST' : ''</code><br>
+           <code>'PORT' : '' 
+        </p>
+
+        <hr>
+
+        <h3 id="migrate">Migrate</h3>
+
+        <p>Once we have changes in <code>settings.py</code>, we must run a migration in our virtual environment, before 
+            changes take place:
+        </p>
+
+        {# <img src="{% static 'django_postgresql/images/migrate_postgresql_changes.png' %}"> #}  
+        
+        <p>Which will give you this result:</p>
+
+        {# <img src="{% static 'django_postgresql/images/run_postgresql_migration_changes.png' %}"> #}
+
+        <p>Now if you run Django project on your local host server:</p>
+
+        {# <img src="{% static 'django_postgresql/images/run_localhost_server.png' %}"> #}
+
+        <p>And view it in your browser: <code>127.0.0.1:8000/</code>, you will still get a home page of this Django project.<br><br>
+           If you click on "members" link <code>127.0.0.1:8000/members/</code>, you will see that there are no members.<br>
+           This is because database is empty, so next we will fill database with 
+           <a href="/django_postgreSQL/members">members</a>.       
+        </p>
+
+        {# <img src="{% static 'django_postgresql/images/empty_database_no_members.png' %}"> #}
+
+    </body>
+</html>

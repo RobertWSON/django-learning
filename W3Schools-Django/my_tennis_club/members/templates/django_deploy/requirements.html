@@ -1,0 +1,49 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>requirements</title>
+   </head> 
+
+   <body>
+
+        <h1><center>Create Requirements</center></h1>
+
+        <h3>Lock in Dependencies</h3>
+
+        <p>When you create a Django application, there are some Python packages that your project depends on.
+           <br><br>
+           Django itself is a Python package and we have to make sure that server where we deploy our project to,
+           <br> also has a Django package installed as well as all other packages your project requires.<br><br>  
+           Django has a command for handling this, just run this in command line:  
+        </p>
+
+        {# <img src="{% static 'django_deploy/images/packages.png' %}"> #}
+
+        <p>Above command results in a file called <code>requirements.txt</code> created in a project:</p>
+
+        {# <img src="{% static 'django_deploy/images/requirements_file_shows.png' %}"> #}
+
+        <p>File contains all packages that this project depends on: with this content:</p>
+
+        <p><code>my_tennis_club/requirements.txt</code> :</p>
+
+        {# <img src="{% static 'django_deploy/images/requirements_content.png' %}"> #}
+
+        <p><b>Note:</b> You can create this file on your own and insert packages manually, it is very important
+            <br> though to get all packages your project depends on and file must be named 
+            <code>requirements.txt</code> .
+            <br><br>
+            Now hosting provider (Amazon web Services) knows which packages to install when we deploy this 
+            project.<br><br>
+            Elastic Beanstalk needs more information, so we will create an 
+            {% comment %}<a href = "/django_deploy/django_config">"Elastic Beanstalk" config file</a>.  
+            should be "/django_deploy/config" {% endcomment %}
+            <a href = "/django_deploy/config">"Elastic Beanstalk" config file</a>.
+        </p>
+        
+    </body>
+</html>   

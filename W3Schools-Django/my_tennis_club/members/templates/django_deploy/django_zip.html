@@ -1,0 +1,37 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>Zip File</title>
+   </head> 
+
+   <body>
+
+         <h1><center>Create zip File</center></h1>
+
+         <h3>Zip your Django Project</h3>
+
+         <p>To wrap your django project into a .zip file, you cannot zip entire project folder, but choose files
+           and<br> folders manually.<br><br>
+           Files to include in .zip file are highlighted (blue) and are shown below:
+         </p>
+
+         {# <img src="{% static 'django_deploy/images/zip_project.png' %}"> #}    
+
+         <p>With Mac Finder, navigate to project folder, select these files and folders, right-click and<br>
+           choose to create a zip file.
+         </p>
+
+         <hr>
+
+         <h3>Zip File</h3>
+
+         <p>Now you have a .zip file of your project which you can upload to Elastic Beanstalk:</p>
+
+         {# <img src="{% static 'django_deploy/images/project_zipped.png' %}"> #} 
+
+   </body>
+</html>   

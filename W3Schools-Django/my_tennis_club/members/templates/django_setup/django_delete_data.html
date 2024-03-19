@@ -1,0 +1,52 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Delete Data</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django Delete Data</center></h1>
+
+        <h3>Delete Records</h3>
+
+        <p>To delete a record in a table, start by getting a record you want to delete:</p>
+
+        {# Put image in here #}
+
+        <p><code>x</code> will now represent a member at index 5, which is "Jane Doe", but to make sure, let us see if that 
+           is correct : 
+        </p>
+
+        {# Put image in here #}
+
+        <p>This should give you this result :</p>
+
+        {# Put image in here #}
+
+        <p>Now we can delete a record by using this command below :</p>
+
+        {# Image showing command to delete a record #}
+
+        <p>Now when we see result below, we can see how many items are deleted and from which Model. 
+
+        {# Image showing that 1 item is deleted and 1 item is from Member model #}
+
+        <p>We can see that 1 item is deleted and this 1 item is deleted from Member model.<br><br>
+           Now if we use <code>Member.objects.all().values()</code> command, we can see that id 6, which had <b>Jane Doe</b> 
+           is removed from Member Model : 
+        </p>
+
+        {# Member Model QuerySet shows id 6 with Jane Doe removed #}
+
+
+        <p>Next we will look at how we can <a href="/django_setup/update_model">update our model</a> (table).</p>
+
+        {# <img src="{% static 'django_setup/images/.png' %}"> #}
+
+    </body>
+</html>

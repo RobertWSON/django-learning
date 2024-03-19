@@ -1,0 +1,110 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>Django Update Model</title>
+   </head> 
+
+   <body>
+
+         <h1><center>Django Update Model</center></h1>
+
+         <h3>Add Fields in a Model</h3>
+
+         <p>Open your <code>models.py</code> file and you will see that it currently looks like this :<br><br>
+            <code>my_tennis_club/members/models.py</code>
+         </p>
+
+         {# Insert image of models.py file here #}
+
+         <p>Now we can add a field or many fields to our table we created.<br>
+            Add <code>phone</code> and <code>joined_date</code> fields to our Member Model and it should like like this :
+            <br><br> 
+            <code>my_tennis_club/members/models.py</code> : 
+         </p>
+
+         {# Insert image of models.py file here with added phone and joined_date fields #}
+
+         <p>This is a change in Model's structure, so we have to make a migration to tell Django that it has to update 
+            database :
+         </p>
+
+         {# Insert image for migration of this app #}
+
+         <p><b>Note:</b> In our migration we have used members, as this is name of our application and this updates everything
+             including our member table.<br><br>
+             During migration process you will get a prompt, because we are trying to add fields that are not allowed to be
+             null, to a <code>member</code> table <br>that already has records.<br>
+             As you can see, Django asks if you want to provide fields with a specific value, or if you want to stop 
+             (Quit) migration and fix it in model :  
+         </p>
+
+         {# Insert image for migration prompt messages #}
+
+         <p>I will select option 2 (Quit).<br>
+            Open <code>models.py</code> file again, if it is not open and allow NULL values for two new fields by using 
+            <code>(null=true)</code> .<br><br> 
+            <code>my_tennis_club/members/models.py</code> :
+         </p>
+
+         {# Insert image for null=true to 2 new fields in member table of models.py file #}
+
+         <p>Make a migration once again :</p>
+
+         {# Insert image for migration of this app once again #}
+
+         <p>Now we can see that migration is recognizing 2 new fields added to our member table, with this result :</p>
+
+         {# Insert image showing that member table now recognizes 2 new fields as a commit #}
+
+         <p>So far with our migration process, we have used makemigrations for getting individual files 
+            (like a commit process on command line), <br>but we have not applied these changes to database.<br>
+            Now we can run migrate command to apply these changes :
+         </p>
+
+         {# Insert image for running migrate command to apply changes to database #}
+
+         <p>This will show that migrations have been applied to member table in members database application :</p>
+
+         {# Insert image shwoing that migration have been appplied to member table in members database application #}
+
+         <hr> 
+
+         <h3 id="insert">Insert Data</h3>
+
+         <p>We can insert data to new fields with same approach that we did in 
+           <a href="/django_setup/update_data">Updata Data page</a><br>
+           First we enter Python shell using this command :
+         </p>
+
+         {# Image showing Python Shell Command #}
+
+         <p>Now we are in Python Shell, we should see a result like this :</p>
+
+         {# Image showing what it should look like in Python Shell #}
+
+         <p>At bottom, after three <code>>>></code> write following and hit <code>enter</code> for each line :</p>
+
+         {# Image showing how to insert data for new fields #}
+
+         <p>This will insert a phone number and a date in Member Model for first record.<br>
+           For now we will leave four remaining records empty, as we will add data to them later.<br><br>
+           Execute this command to see if Member table got updated :
+         </p>
+
+         {# Image showing command that checks if Member table got updated #}
+
+         <p>Now QuerySet should look like this :<br><br>
+            You will notice that id 1 only has has values for joined_date and phone fields.
+         </p>
+
+         {# Image showing QuerySet with new fields that have values for id 1 only #}
+
+         <p>Next we will look at how we can we can display data with Django and we will first look at how we can 
+            <a href="/testing/prepare_template">prepare a template and view</a> .</p>
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>PostgeSQL </title>
+   </head> 
+
+   <body>
+
+      <h1><center>Introduction to PostgreSQL</center></h1>
+
+      {#<h3 id="database_engines">Database Engines</h3>#}
+      <h3>Database Engines</h3>
+
+      <p>Django comes with SQLite database which is great for testing and debugging at beginning of a project.
+         <br><br>However, it is not very suitable for production.<br><br>
+         Django supports these database engines. 
+      </p>
+
+      <ul>
+         <li>PostgeSQL</li>
+         <li>MariaDB</li>
+         <li>MySQL</li>
+         <li>Oracle</li>
+      </ul>
+
+      <p>We will take a closer look at PostgreSQL database engine.</p>
+
+      <hr>
+
+      <h3 id="postgreSQL">PostgreSQL</h3>
+
+      <p>PostgreSQL database is an open source relational database, which should cover most demands you have 
+         when creating<br> a database for a Django project.<br><br>
+         PostgreSQL has a good reputation, is reliable and performs well under most circumstances.<br><br>
+         We will add a PostgreSQL database to our Django project.
+      </p>
+
+      <hr>
+
+      <h3 id="install_psycopg2">Install psycopg2</h3>
+
+      <p>To be able to use PostgreSQL in Django we have to install a package called <b>psycopg2</b> .<br>
+         Make sure that you are still in your virtual environment and type this in command line to install<br> 
+         this psycopg2 package: 
+      </p>
+
+      {# <img src="{% static 'django_postgresql/images/install_psycopg2.png' %}"> #}
+
+      <p>For my Mac, downloading process looks like this:</p>
+
+      {# <img src="{% static 'django_postgresql/images/psycopg2_downloading.png' %}"> #}   
+         
+      <p>psycopg2 package is a driver that is necessary for PostgreSQL to work in Python.<br><br>
+         We also need a server where we can host this database and in 
+         <a href="/django_postgreSQL/AWS">next section</a> we will understand how to<br>
+         setup our chosen Amazon Web Services (AWS) platform.  
+      </p>
+
+   </body>
+</html>   

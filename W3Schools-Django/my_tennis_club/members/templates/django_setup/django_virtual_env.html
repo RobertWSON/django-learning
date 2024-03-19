@@ -1,0 +1,93 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Virtual Environment</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django - Create Virtual Environment</center></h1>
+
+        <h2>Virtual Environment</h2>
+
+        <p>It is suggested to have a dedicated <b>virtual environment</b> for each Django project because it helps to manage
+           dependencies<br> and avoid conflicts with system-level Python installations.<br> 
+           {# found from google search "why is a virtual environment needed in django" #}
+           <b>Virtual environments</b> are useful ways of ensuring that correct package/ library versions are consistently used<br> 
+           every time software runs.<br>
+           {# found from builtin.com/data-science/python-virtual-environment #}
+           One way of managing a virtual environment is <b>venv</b> and documentation (included in python) can be found from<br>
+           <code>docs.python.org/3/tutorial/venv.html</code> .<br><br>
+           On this Django learning website we will call our <b>virtual environment</b> <code>myworld</code>, but you can 
+           decide<br> on a name you want to give it, it is your choice.<br><br> 
+           Navigate to where you want to create your project  
+        </p>
+
+        <p><b>Note:</b> As an example for where you want to create your virtual environment. On my Mac have I have created<br> 
+            a repository on GitHub named django-learning and within that I have a folder named W3Schools-Django. This gives me<br> 
+            flexibility for creating more than one Django project within same repository.<br> 
+            I also have a workspace main folder that holds all my web development projects, so on my Mac I use 
+            <code>cd workspace/django_learning/W3Schools-Django</code><br> to get to folder, for where I want to start 
+            setting up this Django project.<br><br>  
+            Once you are happy with where you want to setup up Django, type following command below in command prompt :
+        
+        <p><b>Windows:</b></p>
+
+        {# <img src="{% static 'django_setup/images/venv_name_on_windows.png' %}"> #}        
+
+        <b>Mac/ Unix:</b>
+
+        {# <img src="{% static 'django_setup/images/venv_name_on_mac_or_unix.png' %}"> #}
+
+        {# I should show my own way of creating a venv below on my Mac blow, rather than W3Schools way #}
+        {# <img src="{% static 'django_setup/images/Django - Create myworld venv.png' %}"> #}
+           
+         <p>Note: On my Mac I have had to use python3 within this command because I have Python version 3 installed and<br>
+            same applies on Unix as well.<br><br> 
+            This will set up a virtual environment and create a folder named <b>myworld</b> with <b>subfolders and files</b>
+            , like this :
+         </p>
+
+        {# <img src="{% static 'django_setup/images/venv_folder_with_subfolders_and_files.png' %}"> #}
+
+        {# I should show my own way of how venv is setup with folders and subfolders on my Mac below, rather than W3Schools way #}
+        {# <img src="{% static 'django_setup/images/Django - Create myworld venv.png' %}"> #}
+
+        <p>You can now activate environment (make it available for use) by typing this on command line :</p> 
+
+        <p><b>Windows:</b></p>
+
+        {# <img src="{% static 'django_setup/images/activate_venv_windows.png' %}"> #}
+
+        <p><b>Mac/ Unix:</b></p>
+
+        {# <img src="{% static 'django_setup/images/activate_venv_mac_and_unix.png' %}"> #}
+
+        {# I should show my own way of creating activating a venv below on my Mac below, rather than W3Schools way #}
+        {# <img src="{% static 'django_setup/images/Django - Activate Environment.png' %}"> #}
+
+        <p>Once environment is activated, you will see this result in comman prompt:</p>
+
+        <p><b>Windows:</b></p>
+
+        {# <img src="{% static 'django_setup/images/venv_activated_windows.png' %}"> #}
+
+        <p><b>Mac/ Unix:</b></p>
+
+        {# <img src="{% static 'django_setup/images/venv_activated_mac_and_unix.png' %}"> #}
+
+        {# I should show my own way of how an activated venv looks on my Mac below, rather than W3Schools way #}
+        {# <img src="{% static 'django_setup/images/Django - My Mac Activated Environment Result.png' %}"> #}
+
+        <p><b>Note:</b> You must activate a virtual environment every time you open a command prompt to work on your
+           Django project.
+        </p>
+
+        <p>In next section we will finally learn how to <a href="/django_setup/install">install Django</a></p>
+
+    </body>
+</html>        

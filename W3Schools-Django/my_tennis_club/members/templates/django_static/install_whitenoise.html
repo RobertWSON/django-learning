@@ -1,0 +1,54 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>Whitenoise</title>
+   </head> 
+
+   <body>
+
+        <h1><center>Django - Installing Whitenoise</center></h1>
+
+        <h3>Whitenoise</h3>
+
+        <p>Django does not have a built-in solution for serving (handling) static files, at least not in production when 
+        <code>DEBUG</code> has to be <code>False</code> .<br><br>
+
+        We have to use a third-party solution to accomplish this and we will use Whitenoise, a Python library, built for 
+        serving static files.
+        </p>
+        
+        <h3>Install Whitenoise</h3>
+
+        <p>To install Whitenoise in your virtual environment, type this command below, in your command line.</p>
+      
+        {# <img src="{% static 'django_static/images/install_whitenoise.png' %}"> #}
+
+        <p>The downloading result should look like this:</p>
+
+        {# <img src="{% static 'django_static/images/whitenoise_downloading.png' %}"> #}
+
+        <h3 id="mod_settings">Modify Settings</h3>
+
+        <p>To make Django aware of you wanting to run Whitenoise, you have to specify it in <code>MIDDLEWARE</code> list
+           in <code>settings.py</code> file:
+        </p>
+
+        <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
+
+        {# <img src="{% static 'django_static/images/whitenoise_in_settings.png' %}"> #}
+
+        <h3>Collect Static Files</h3>
+
+        <p>There is one more action you have to perform before you can serve a static file from CSS example in 
+           <a href="/django_static/files">previous page</a>. <br>
+           Now you have to collect all static files and put them into one specified folder. This will be shown on 
+           <a href="/django_static/collect">next page</a>.    
+
+        </p>
+
+   </body>
+</html>

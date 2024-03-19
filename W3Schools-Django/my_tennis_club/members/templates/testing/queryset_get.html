@@ -1,0 +1,47 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Queryset Get</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django QuerySet - Get Data</center></h1>
+
+        <h3>Get Django Data</h2>
+
+        <p>There are different methods to get data from a model into a QuerySet.</p>
+
+
+        <h3>values() Method</h3>
+
+        <p><code>values()</code> method allows you to return each object as a Python dictionary, with names and values as 
+            key/ value pairs :
+        </p>
+
+        {# <img src="{% static 'testing/images/values_method.png' %}"> #}
+        
+        <hr>
+
+        <h3 id="columns">Display Specific Columns</h3>
+
+        <p><code>values_list()</code> method allows you to return only columns that you specify.</p>
+
+        {# <img src="{% static 'testing/images/display_specific_columns.png' %}"> #}
+
+        <hr>
+
+        <h3 id="rows">Display Specific Rows</h3>
+
+        <p>You can filter a search to only display specific rows/ records, by using <code>filter()</code> method.</p>
+
+        {# <img src="{% static 'testing/images/display_specific_rows.png' %}"> #}
+
+        <p>You can learn more about filter() method next with <a href="/testing/queryset_filter">QuerySet Filter</a> .</p>
+
+    </body>
+</html>

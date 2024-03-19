@@ -1,0 +1,62 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Get Started</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django getting Started</center></h1>
+
+        <h3>Django Requires Python</h3>
+
+        <p>To install Django you must have Python installed and a package manager like PIP .<br>
+           To check if your system ahs python installed, run this command in your command prompt:
+        </p>
+
+        {# <img src="{% static 'django_setup/images/check_if_python_installed.png' %}"> #}
+
+        <p>If python is installed, you will gat a result with a version number shown, like this</p>
+
+        {# <img src="{% static 'django_setup/images/python_installed_version_number.png' %}"> #}
+
+        <p>If you find that you do not have Python installed on your computer, you can download it for free from
+           <code>https://www.python.org/</code></p>
+        {# HAVE TO FIGURE OUT HOW TO DO A LINK TO AN EXTERNAL WEBSITE #}
+
+        <hr>
+
+        <h3 id="pip">PIP</h3>
+        
+        <p>To install Django, you must use a package manager like PIP (a Python Install Package Manager), which is included in 
+           Python from version 3.4 .<br><br>
+           To check if your system has PIP installed, run this command in command prompt :
+        </p>
+
+        {# <img src="{% static 'django_setup/images/check_if_pip_installed.png' %}"> #}        
+
+        <p>If PIP is installed, you will get a result with a version number.<br><br>
+           For me, on my Mac Laptop, result looks like this :
+        </p>
+
+        {# <img src="{% static 'django_setup/images/pip_version.png' %}"> #}        
+
+        <p>If you do not have PIP installed, you can download and install it from <code>https:/pypi.org/project/pip/</code>
+        </p>
+        {# HAVE TO FIGURE OUT HOW TO DO A LINK TO AN EXTERNAL WEBSITE #}
+
+        <hr>
+
+        <h3 id="ve">Virtual Environment</h3>
+
+        <p>It is suggested to have a dedicated virtual environment for each Django project and in 
+           <a href="/django_setup/virtual_environment">next section</a> we will learn how to create a<br>
+           virtual environment and then install Django in it.   
+        </p>
+
+    </body>
+</html>

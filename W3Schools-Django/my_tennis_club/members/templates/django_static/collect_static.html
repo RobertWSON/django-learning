@@ -1,0 +1,79 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>Collect Static Files</title>
+   </head> 
+
+   <body>
+
+      <h1><center>Django - Collect Static Files</center></h1>
+
+      <h3>Handle Static Files</h3>
+
+      <p>Static files in your project, like stylesheets, JavaScripts and images are not handled automatically by Django<br> 
+         when <code>DEBUG = False</code>.<br><br>
+         When <code>DEBUG = True</code>, this worked fine, all we had to do was to put them in a <code>static</code>
+         folder of members application.<br><br>
+         When <code>DEBUG = False</code>, static files have to be collected and put in a specified folder before we can 
+         use it.
+      </p>
+
+      <h3 id="collect_static">Collect Static Files</h3>
+
+      <p>To collect all necessary static files for your Django project, start by specifying a <code>STATIC_ROOT</code>
+         property in <code>settings.py</code>.<br><br>
+         This specifies a folder where you want to collect your static files.<br><br>
+         We will called this folder <code>productionfiles</code>, as it is a suitable name for what we are doing :<br><br>
+         
+         <code>my_tennis_club/my_tennis_club/settings.py</code> :
+      </p>
+
+      {# <img src="{% static 'django_static/images/settings_static_root.png' %}"> #}
+
+      <p>You could manually create this folder and collect and put all static files of your Django project into this
+         folder.<br> Django has a command that can do this for you: 
+      </p>
+
+      {# <img src="{% static 'django_static/images/collect_static.png' %}"> #}
+
+      <p>This collectstatic command will produce this result:</p>
+
+      {# <img src="{% static 'django_static/images/collect_static_result.png' %}"> #}
+
+      <p>131 files ? Why so many ? Well this is because of files stored with admin user interface, that comes built-in with 
+         Django.<br>
+         We want to keep this admin user interface feature in production, as it comes with a whole bunch of files including<br>
+         stylesheets, fonts, images and JavaScripts. 
+      </p>
+
+      {# <img src="{% static 'django_static/images/collected_static_files.png' %}"> #}      
+
+      <h4>CSS Example Should Work Now</h4>
+
+      <p>Now you have collected static files of you project and <a href="/django_static/whitenoise">installed whitenoise</a>
+         , so first CSS example from <a href="/django_static/files">Add Static File page</a><br> will finally work. <br><br>
+         If your localhost server is not running, start it up again with your command line by typing this command below:
+      </p>
+
+      {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}  
+
+      <p>And check out result in your own browser: <a href="/django_static/files/first_css_example">
+         127.0.0.1:8000/django_static/files/first_css_example</a>.
+      </p>
+
+      <p>This is same code below, from before on <a href="/django_static/files#mod_template">Add Static File page</a> 
+         , that now works. 
+      </p>
+
+      {# <img src="{% static 'django_static/images/first_css_example_code.png' %}"> #}
+
+      <p>Next we will look at <a href="/django_static/global">Global Static Files</a>
+
+      </p>
+
+   </body>
+</html>

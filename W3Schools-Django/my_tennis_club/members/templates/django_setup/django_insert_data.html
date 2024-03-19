@@ -1,0 +1,100 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+    <head><title>Django Insert Data</title>
+    </head> 
+
+    <body>
+
+        <h1><center>Django Insert Data</center></h1>
+
+        <h3>Add Records</h3>
+
+        <p>A table record is within a row of a table (model).<br> 
+           It is shown as a heading on left side of a table row and it has values to right of this for each column within 
+           this row.<br>
+           Remember think of records as rows and columns as fields of a table (model).<br><br>
+
+           Member table created in <a href="/django_setup/model">Django Model</a> page is empty.<br><br>
+           We will use a Python Interpreter (commonly known as a Python Shell) to add members to our Django Model.<br><br>
+           To open a Python shell, type this command :<br><br> 
+           <b>Windows:</b> Use <code>py manage.py shell</code><br>
+           <b>Mac / Unix:</b> Use <code>python manage.py shell</code>
+        </p>
+
+        {# Image showing how to open Python Shell #}
+
+        <p>You will notice that Python Shell shows your Python Version and has an Interative Console, so that you can use 
+            python commands.<br><br>
+           At bottom, after three<code> >>></code> firstly, we want to prepare our Member Model (Table) for adding a
+           record.<br>
+           To do this we import Member Model (Table) from models that we have (in this case just one) within our members 
+           database application by<br> using following code <code>from members.models import Member</code> :<br>
+           and hit <code>enter</code> 
+        </p>            
+
+        {# Image shows that we get are now preparing to import (get) a Member Model from members app, so that we can add a record to it  #} 
+
+        <p>Now we want to look at our empty Member Table.<br>
+           For us to do this, we want to see that all objects (either it be a record or field) are empty within our Member 
+           model (table).<br> 
+           In interactive console<code> >>><code> , execute this command <code>Member.objects.all()</code> . 
+        </p>
+
+        {# Image showing code used to check that we have an empty Member table #}
+
+        <p>This should give you an empty QuerySet object, like this :</p>
+
+        {# Image showing Empty QuerySet Object #}
+
+        <p>A QuerySet is a collection of data from a database.<br>
+           We will cover this in more detail on <a href="/testing/queryset_intro">Django QuerySet Introduction</a> page.
+           <br><br>
+           Add a record to our table, by executing two lines below :<br>
+           <b>Note:</b> Your interactive console should have just one<code> >>></code> , mine has two <code>>>> >>></code>
+           and <br>this was because I accidentally hit <code>enter</code> twice, while looking at empty member table.
+        </p>
+
+        {# Image showing two lines of code to add a record in our table #}
+
+        <p>Next we will see if Member table (model) got a member record.<br>
+           For us to do this, we want to see that all objects (both an added record and field) have values within our Member
+           model (table).<br>
+           In interactive console<code >>><code> , execute this command <code>Member.objects.all().values</code> .
+        </p>
+
+        {# Image showing code used to check that we have a record with values in our Member table #}
+
+        <p>We can now see below that we have an added record, with an identifier (id of 1).<br> 
+           This record is a member of a tennis club that has firstname and lastname fields with values.<br> 
+           <b>Note:</b> When we have more than one record, we can say that the records are called members, meaning that we 
+           &bnsp;&nbsp;&bnsp;have so<br> many members in a tennis club. 
+        </p>
+
+        {# image showing QuerySet that now has a record with values #}
+
+        <hr>
+
+        <h3 id="multiple">Add Multiple Records</h3>
+
+        <p>You can add multiple records by making a list of <code>Member</code> objects and execute <code>.save()</code> on 
+            each entry : 
+        </p>
+
+        {# Images showing multiple records being added to Member Model (table) #}
+
+        <p>We can now see that there are 6 records for tennis club members in Member table (model) :</p>
+
+        {# Image showing that we now have 6 Members in Member Table #}
+
+        <p>Next we will look at how we can <a href="/django_setup/update_data">update data</a> in a model (table).</p>        
+
+        {# Example for Static image #}
+        {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}
+
+    </body>
+</html>

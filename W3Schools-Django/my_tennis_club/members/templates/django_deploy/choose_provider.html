@@ -1,0 +1,65 @@
+
+{# Handles images and videos from static folder #}
+{# {% load static %} #}
+
+<!DOCTYPE html>
+
+<html>
+   <head><title>Choose Provider</title>
+   </head> 
+
+   <body>
+
+      <h1><center>Choose Provider</center></h1>
+
+      <h3>Deploy to the World</h3>
+
+      <p>So far a Django poject has been made that runs locally on your computer and this is often <br>
+         called "in development".<br><br>
+         To deploy a project, means to make it visible for other people on internet.<br><br>
+         The process leading up to making a deploy is called deployment.<br><br>
+         When a deploy has been done it is said that a project has been deployed and we call it<br>
+         "in production".<br><br>
+         This can also commonly be referred to as modes, with in "development mode" and in "production mode". 
+      </p>
+
+      <h3>Where to Deploy ?</h3>
+
+      <p>There are many providers out there that offer servers for Django projects. We will use <br>
+         Amazon Web Services (AWS) platform, maily because it offers a free solution that only requires you <br>  
+         to create an AWS account.<br><br>
+
+         <b>Note:</b> You can choose whatever server provider you like, they all give same result, but they <br>
+         will have some provider-specific settings that you should be aware of.  
+      </p>
+
+      <h3 id="aws">AWS</h3>
+
+      <p>log into your AWS account that was <a href="/django_postgreSQL/AWS">created earlier</a> .</p>
+
+      {# <img src="{% static 'django_deploy/images/aws_login.png' %}"> #}
+
+      <h3>AWS Console</h3>
+      
+      <p>Once you have signed in, you should be dircted to AWS Console Home Page:</p>
+
+      {# <img src="{% static 'django_deploy/images/aws_console.png' %}"> #}
+
+      <h3 id="eb">Elastic Beanstalk</h3>
+
+      <p>We will be using a service called "Elastic Beanstalk" to deploy our Django project.<br><br>
+         <b>Follow Demo below</b> by using search field at top, searching for "elastic beanstalk"<br>
+         and click on "Elastic Beanstalk" to start it's service.
+      </p>
+
+      {# <img src="{% static 'django_deploy/images/start_eb.png' %}"> #}
+
+      <h3>Lock in Dependencies</h3>
+
+      <p>Once you have started "Elastic Beanstalk" service, we need to lock in some dependencies, <br>
+         which means to make your local Django project ready for deployment before we actually make a 
+         deployment. <a href="/django_deploy/requirements">Lock in Dependencies</a> is covered next.
+      </p>
+
+    </body>
+</html>   
