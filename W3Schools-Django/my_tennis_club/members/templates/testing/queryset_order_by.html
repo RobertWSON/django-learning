@@ -14,28 +14,115 @@
 
         <h3>QuerySet Order By</h2>
 
-        <p>To sort QuerySets, Django uses an order_by() method :
-        </p>
+        <p>To sort QuerySets order, Django uses an <code>order_by()</code> method :</p>
 
+        <h4>QuerySet Order By Method Example</h4>
 
+        <p>Order a result alphabetically by firstname :</p>
 
+        <p>Queryset object :</p>
+
+        {{ mymembers_order }} 
+        
+        <p>Loop through items :</p>
+
+        <table border='1'>
+            <tr>
+               <th>ID</th>
+               <th>Firstname</th>
+               <th>Lastname</th>
+            </tr>
+            {% for x in mymembers_order %} 
+               <tr>
+                  <td>{{ x.id }}</td>
+                  <td>{{ x.firstname }}</td>
+                  <td>{{ x.lastname }}</td>
+               </tr>
+            {% endfor %}
+        </table>
+
+        {# <img src="{% static 'testing/queryset/images/queryset_order_by_method_example.png' %}"> #}
+
+        <p>In SQL, above order_by() method statement can be written like this :</p>
+
+        {# <img src="{% static 'testing/queryset/images/sql_eqivalent_queryset_order_by_method.png' %}"> #}
+
+        <hr>
 
 
         <h3 id="descend">QuerySet Descending Order</h3>
 
-        {# <img src="{% static 'testing/images/display_specific_columns.png' %}"> #}
+        <p>By default, a result is sorted ascending (lowest value first).<br>
+           To change direction to descending (highest value first), use minus sign <code>-</code> in front of a field name :
+        </p>
+
+        <h4>QuerySet Order By Method with Descending Order Example</h4>
+
+        <p>Display firstname field in descending order :</p>
+
+        <p>Queryset object :</p>
+
+         {{ mymembers_descend }} 
+
+         <p>Loop through items :</p>
+
+         <table border='1'>
+            <tr>
+               <th>ID</th>
+               <th>Firstname</th>
+               <th>Lastname</th>
+            </tr>
+            {% for x in mymembers_descend %} 
+               <tr>
+                  <td>{{ x.id }}</td>
+                  <td>{{ x.firstname }}</td>
+                  <td>{{ x.lastname }}</td>
+               </tr>
+            {% endfor %}
+         </table>
         
+        {# <img src="{% static 'testing/queryset/images/queryset_order_by_method with_descending_order_example.png' %}"> #}
+
+        <p>In SQL, above order_by method() with descending order can be written like this :</p>
+
+        {# <img src="{% static 'testing/queryset/images/sql_eqivalent_queryset_orderby_descend_example.png' %}"> #}
+
         <hr>
-
-
-        
+      
 
         <h3 id="multiple">Multiple Order Bys</h3>
 
-        <p>To order by more than one field, seperate fieldnames with a comma in <code>order_by()</code> method :
-        </p>
+        <p>To order by more than one field, seperate fieldnames with a comma in <code>order_by()</code> method :</p>
 
-       
+        <h4>QuerySet Order By Method with Multiple Order Bys Example</h4>
+
+        <p>Order a result first by lastname ascending and then descending on id :</p>
+
+         <p>The queryset object:</p>
+
+         {{ mymembers_multiple }}
+
+         <p>Loop through items:</p>
+
+         <table border='1'>
+            <tr>
+               <th>ID</th>
+               <th>Firstname</th>
+               <th>Lastname</th>
+            </tr>
+            {% for x in mymembers_multiple %}
+               <tr>
+                  <td>{{ x.id }}</td>
+                  <td>{{ x.firstname }}</td>
+                  <td>{{ x.lastname }}</td>
+               </tr>
+            {% endfor %}
+         </table>
+
+
+         <p>In SQL, above multiple order bys statement can be written like this :</p>
+
+         {# <img src="{% static 'testing/queryset/images/sql_eqivalent_queryset_multiple_orderbys_example.png' %}"> #}
 
         <p>If you want to learn more about Field Lookups, you can check out a whole list of keywords in  
            <a href="/field">reference section</a> .</p>

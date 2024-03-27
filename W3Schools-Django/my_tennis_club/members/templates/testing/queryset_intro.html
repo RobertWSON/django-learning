@@ -25,11 +25,67 @@
 
         <h3 id="query_data">Querying Django Data</h3>
 
-        <p>In <code>views.py</code>, we have a view for testing a Django data query called <code>django_query</code> where 
-            we will test a data query.<br><br>
-            With Member table, we can use .all() method to get all records and fields in example below 
+        {#<p>In <code>views.py</code>, we have a view for testing a Django data query called <code>django_query</code> #}
+           {# where we will test a data query.<br><br> #}
+        <p>In <code>views.py</code>, we will use same view for this page as testing example below.<br><br>
+           
+           With Member model (table), we can use .all() method to get all records and fields in example below :
         </p>
 
-        
+        <h5>View</h5>
+
+        <p><code>views.py</code> :</p>
+
+        {# Image of view for this page and this .all() method for all records and fields in table example #}
+        {# <img src="{% static 'testing/images/method_for_all_records_and_fields_example.png' %}"> #}
+
+        <p>An object is placed in a variable called <code>mydata_query</code>, and is sent to a template through a 
+           <code>context</code> object as <code>mymembers_query</code> .<br>
+           <code>Object</code> for <code>mydata_query</code> variable will have a QuerySet that looks like this :   
+        </p>
+
+        {# image of QuerySet for object that is placed in mydata_query variable  #}
+        {# <img src="{% static 'testing/images/queryset_for_object_with_mydata_query.png' %}"> #}
+
+        <p>As you can see, our <code>Member</code> model (table) contains 5 records and are listed inside a QuerySet as 
+           5 objects.<br><br>
+           
+        </p>
+
+        <h5>Template</h5>
+
+        <p>In our template you can use <code>mymembers_query</code> object to create content :<br><br>
+           <b>Note:</b> As I mentioned before, I have this example in same template that I am using to produce this page.<br>
+           This makes it easier for me to explain whole process, but you may want to have this example in it's own template,
+           it is whatever suites you best.<br><br>
+           <code>templates/testing/queryset_intro.html</code> :</p>
+
+        {# image showing HTML template for this all() methods example, that uses an object to get all records and fields #} 
+        {# from a table.  #}
+        {# <img src="{% static 'testing/images/all_records_and_fields_from_member_table.png' %}"> #}
+
+        <h4>Display All Records and Fields of a Model (Table) Example</h4>
+
+        <table border='1'>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+            {% for x in mymembers_query %}
+                <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.firstname }}</td>
+                    <td>{{ x.lastname }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <p>In views.py you can see how to import and fetch members from a database.</p>
+
+        <p>You can learn more about how to get data from a model (table) with 
+           <a href="/testing/queryset_get">QuerySet - Get Data</a> .
+        </p>
+
     </body>
 </html>

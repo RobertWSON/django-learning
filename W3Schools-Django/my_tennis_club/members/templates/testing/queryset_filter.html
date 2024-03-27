@@ -5,52 +5,208 @@
 <!DOCTYPE html>
 
 <html>
-    <head><title>Django Queryset Get</title>
-    </head> 
+   <head><title>Django Queryset Get</title>
+   </head> 
 
-    <body>
+   <body>
 
-        <h1><center>Django QuerySet - Filter</center></h1>
+      <h1><center>Django QuerySet - Filter</center></h1>
 
-        <h3>QuerySet Filter</h2>
+      <h3>QuerySet Filter</h2>
 
-        <p>filter() method is used to filter your search and allows you to display only rows that match a search item.
-           <br><br>
-           As we learned in previous QuerySet Get page, we can filter on field names like this :
-        </p>
+      <p>A <code>filter()</code> method is used to filter your search and allows you to display only rows that match a 
+         search item.<br><br>
+         As we learned in previous QuerySet Get page, we can filter on field names like this example below :
+      </p>
+
+      <h4>QuerySet Filter Method Example</h4>
+
+      <p>Display only records where firstname is 'Emil' :</p>
+
+      <p>Queryset object :</p>
+
+      {{ mymembers_filter }} 
+      {# {{ mymembers}} #}
+
+      <p>Loop through items :</p>
+
+      <table border='1'>
+         <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+         </tr>
+         {% for x in mymembers_filter %} 
+         {# {% for x in mymembers %} #}
+            <tr>
+               <td>{{ x.id }}</td>
+               <td>{{ x.firstname }}</td>
+               <td>{{ x.lastname }}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      {# Image of filter() method example code #}
+      {# <img src="{% static 'testing/images/queryset_filter_method_example.png' %}"> #}
+
+      <p>In SQL, above filter() method statement can be written like this :</p>
+
+      {# <img src="{% static 'testing/images/sql_eqivalent_queryset_filter_method_example.png' %}"> #}
 
 
+      <h3 id="and">AND</h3>
 
-
-
-        <h3 id="and">AND</h3>
-
+      <p>A <code>filter()</code> method takes arguments as keyword arguments (**kwargs), so you can filter on more than one
+         field by seperating them with a comma.
+      </p>
         
+      <h4>QuerySet Filter Method with And Example</h4>
+
+      <p>Display records where lastname is "Refsnes" and id is 2 :</p>
+
+      <p>Queryset object :</p>
+
+      {# {{ mymembers }} #}
+      {{ mymembers_filterand}} 
+
+      <p>Loop through items :</p>
+
+      <table border='1'>
+         <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+         </tr>
+         {# {% for x in mymembers.mydata2 %} #}
+         {% for x in mymembers_filterand %}
+            <tr>
+               <td>{{ x.id }}</td>
+               <td>{{ x.firstname }}</td>
+               <td>{{ x.lastname }}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      {# Image of filter() method with and example #}
+      {# <img src="{% static 'testing/images/queryset_filter_method_with_and_example.png' %}"> #}
+
+      <p>In SQL, above AND filter() method statement can be written like this :</p>
+
+      {# <img src="{% static 'testing/images/sql_eqivalent_queryset_filter_method_with_and_example.png' %}"> #}
+
+
+      <hr>
+
+      <h3 id="or">OR</h3>
+
+      <p>To display records where firstname is Emil or firstname is Tobias (meaning: displaying records that matches either
+         query, not necessarily both)<br> is not as easy as AND example above.<br><br>
+         To get around this, we can use multiple <code>filter()</code> methods, separated by a pipe <code>|</code>
+         character<br> and results will merge into one model (table).
+      </p>
         
-        <hr>
+      <h4>QuerySet Filter Method with OR Example</h4>
 
-        <h3 id="or">OR</h3>
+      <p>Display records where firstname is either "Emil" or "Tobias" :</p>
 
-        
+      <p>Queryset object :</p>
 
-        {# <img src="{% static 'testing/images/display_specific_columns.png' %}"> #}
+      {{ mymembers_filteror}} 
 
-        <hr>
+      <p>Loop through items :</p>
 
-        <h3 id="field_lookups">Field Lookups</h3>
+      <table border='1'>
+         <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+         </tr>
+         {% for x in mymembers_filteror %} 
+            <tr>
+               <td>{{ x.id }}</td>
+               <td>{{ x.firstname }}</td>
+               <td>{{ x.lastname }}</td>
+            </tr>
+         {% endfor %}
+      </table>
 
-        <p>Django has its own way of specifying SQL statements and WHERE clauses.<br><br>
-           To make specific where clauses in Django we use "Field Lookups".<br><br>
-           Field lookups are keywords that represent specific SQL keywords.<br><br>
-           All field lookup keywords must be specified with a fieldname, followed by two underscore characters and a keyword.
-        </p>
+      {# <img src="{% static 'testing/querysets/images/queryset_filter_or method.png' %}"> #}
 
+      <p>Another common method is to import and use Q expressions :</p>
+
+      <h4>QuerySet Filter Method with OR and Q Expessions Example</h4>
+
+      <p>Display records where firstname is either "Emil" or "Tobias" :</p>
+      
+      <p>Queryset object :</p>
+
+      {{ mymembers_filterorq}}
+
+      <p>Loop through items :</p>
+
+      <table border='1'>
+         <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+         </tr>
+         {% for x in mymembers_filterorq %} 
+            <tr>
+               <td>{{ x.id }}</td>
+               <td>{{ x.firstname }}</td>
+               <td>{{ x.lastname }}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <p>In SQL, above or filter() method with Q Expression can be written like this :</p>
+
+      {# <img src="{% static 'testing/queryset/images/sql_eqivalent_queryset_filter_or_method_with_q_expression_example.png' %}"> #}
+
+      <hr>
+
+      <h3 id="field_lookups">Field Lookups</h3>
+
+      <p>Django has its own way of specifying SQL statements and WHERE clauses.<br><br>
+         To make specific where clauses in Django we use "Field Lookups".<br><br>
+         Field lookups are keywords that represent specific SQL keywords.<br><br>
+         All field lookup keywords must be specified with a fieldname, followed by two underscore characters and a keyword.
+         <br><br>
+         In our <code>Member</code> model (table), a statement would be written like shown in example below : 
+      </p>
+
+      <h4>Field Lookup Statement Example</h4>
        
+      <p>Display records where <code>firstname</code> starts with letter 'L' :</p>
 
-        <p>If you want to learn more about Field Lookups, you can check out a whole list of keywords in  
-           <a href="/field">reference section</a> .</p>
+      <p>Queryset object :</p>
 
-        <p>You can learn more about filter() method next with <a href="/testing/queryset_filter">QuerySet Filter</a> .</p>
+      {{ mymembers_fieldlookup}} 
 
-    </body>
+      <p>Loop through items :</p>
+
+      <table border='1'>
+         <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+         </tr>
+         {% for x in mymembers_fieldlookup %} 
+            <tr>
+               <td>{{ x.id }}</td>
+               <td>{{ x.firstname }}</td>
+               <td>{{ x.lastname }}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      {# <img src="{% static 'testing/queryset/images/feld_lookup_with _statement_example.png' %}"> #}
+
+      <p>If you want to learn more about Field Lookups, you can check out a whole list of keywords in  
+         <a href="/field">reference section</a> .
+      </p>
+
+      <p>You can learn more about filter() method next with <a href="/testing/queryset_filter">QuerySet Filter</a> .</p>
+
+   </body>
 </html>

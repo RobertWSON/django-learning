@@ -1165,23 +1165,123 @@ def include_tested(request):
 
 # Create a view that will show 35 Django QuerySet - Intro section
 def queryset_intro(request):
+  # mydata = Member.objects.all()
+  #change to mydata_query because it is for Querying Data.
+  mydata_query = Member.objects.all()
   template = loader.get_template('testing/queryset_intro.html')
-  return HttpResponse(template.render())
+  context = {
+    #'mymembers': mydata,
+    #change to mymembers_query
+    'mymembers_query': mydata_query,
+  }
+  return HttpResponse(template.render(context, request))
 
 # Create a view that will show 36 Django QuerySet - Get section
+#def queryset_get(request):
+  #template = loader.get_template('testing/queryset_get.html')
+  #return HttpResponse(template.render())
+
+#Change queryset_get view, so that we have examples all with this view
 def queryset_get(request):
+  # Queryset get data values() method
+  #mydata = Member.objects.all().values()
+  # more suitable variable name below for getting data values
+  mydata_getvals = Member.objects.all().values()
+  # Get Data Display Specific Columns
+  #mydata2 = Member.objects.values_list('firstname')
+  # more suitable variable name for getting specific columns displayed
+  #mydata_cols = Member.objects.values_list('firstname')
+  mydata_cols = Member.objects.values_list('firstname')
+  # Get Data Display Specific Columns
+  #mydata3 = Member.objects.filter(firstname='Emil').values()
+  # more suitable variable name for getting specific rows displayed
+  mydata_rows = Member.objects.filter(firstname='Emil').values()
+
   template = loader.get_template('testing/queryset_get.html')
-  return HttpResponse(template.render())
+  context = { 
+    # Get Data values() method
+    #'mymembers': mydata,
+    # more suitable object followed by variable name below for getting data values
+    'mymembers_getvals': mydata_getvals,
+    # Get Data Display Specific Columns 
+    #mydata2, 
+    # more suitable object followed by variable name below for displaying specific columns
+    'mymembers_getcols': mydata_cols,
+    # Get Data Display Specific Rows
+    #mydata3,
+    # more suitable object followed by variable name below for displaying specific rows
+    'mymembers_getrows': mydata_rows, 
+  }
+
+  return HttpResponse(template.render(context, request))
+  #return HttpResponse(template.render())
+
 
 # Create a view that will show 37 Django QuerySet - Filter section
 def queryset_filter(request):
+  #Use this import with or filter method that uses Q Expressions
+  from django.db .models import Q
+
+  # Queryset straight filter method
+  #mydata = Member.objects.filter(firstname='Emil').values()
+  mydata_filter = Member.objects.filter(firstname='Emil').values()
+  # Queryset filter and method
+  #mydata2 = Member.objects.filter(lastname='Refsnes', id=2).values()
+  mydata_filterand = Member.objects.filter(lastname='Refsnes', id=2).values()
+  # Queryset filter or method
+  #mydata3 = Member.objects.filter(firstname='Emil').values() | Member.objects.filter(firstname='Tobias').values()
+  mydata_filteror = Member.objects.filter(firstname='Emil').values() | Member.objects.filter(firstname='Tobias').values()
+  # Queryset filter or method with Q Expressions
+  #mydata4 = Member.objects.filter(firstname='Emil').values() | Member.objects.filter(firstname='Tobias').values()
+  #mydata_filterorq = Member.objects.filter(Q(firstname='Emil').values() | Member.objects.filter(Q(firstname='Tobias').values()
+  #correct filter or method with Q statement
+  mydata_filterorq = Member.objects.filter(Q(firstname='Emil') | Q(firstname='Tobias')).values()
+  # Queryset field lookup statement 
+  mydata_fieldlookup = Member.objects.filter(firstname__startswith='L').values()
+
   template = loader.get_template('testing/queryset_filter.html')
-  return HttpResponse(template.render())
+  context = {
+    # Queryset straight filter method
+    #'mymembers': mydata,
+    'mymembers_filter': mydata_filter,
+    # Queryset filter and method
+    #'mymembers': mydata2,
+    'mymembers_filterand': mydata_filterand,
+    # Queryset filter or method
+    'mymembers_filteror': mydata_filteror,
+    #'mymembers': mydata3,
+    # Queryset filter or method with Q Expressions
+    'mymembers_filterorq': mydata_filterorq,
+    #'mymembers': mydata4,
+    # Queryset field lookup statement
+    'mymembers_fieldlookup': mydata_fieldlookup,
+  }
+  return HttpResponse(template.render(context, request))
+
 
 # Create a view that will show 38 QuerySet - Order By section
 def queryset_order_by(request):
+  # Queryset straight orderby method
+  mydata_order = Member.objects.all().order_by('firstname').values()
+  # Queryser orderby method with descending order
+  mydata_descend = Member.objects.all().order_by('-firstname').values()
+  # Queryset orderby method with multiple order bys (order by more than one field)
+  mydata_multiple = Member.objects.all().order_by('lastname', '-id').values()
+
   template = loader.get_template('testing/queryset_order_by.html')
-  return HttpResponse(template.render())
+  context = {
+    'mymembers_order': mydata_order,
+    'mymembers_descend': mydata_descend,
+    'mymembers_multiple': mydata_multiple,
+  }
+
+  return HttpResponse(template.render(context, request))
+
+
+
+
+
+
 
 
 

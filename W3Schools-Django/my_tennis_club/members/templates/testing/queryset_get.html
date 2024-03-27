@@ -16,6 +16,7 @@
 
         <p>There are different methods to get data from a model into a QuerySet.</p>
 
+        <hr>
 
         <h3>values() Method</h3>
 
@@ -23,7 +24,34 @@
             key/ value pairs :
         </p>
 
-        {# <img src="{% static 'testing/images/values_method.png' %}"> #}
+        <h4>values() Method Example</h4>
+
+        <p>Queryset object :</p>
+        {# {{ mymembers.mydata }} #}
+        {# {{ mymembers }} #} 
+        {{ mymembers_getvals }}
+
+        <p>Loop through items :</p>
+
+        <table border='1'>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+            {# {% for x in mymembers.mydata %} #}
+            {# {% for x in mymembers %} #}
+            {% for x in mymembers_getvals %}
+                <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.firstname }}</td>
+                    <td>{{ x.lastname }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+         
+        {# Have image/s showing code for this example. I have an image name that relates to this example #}
+        {# <img src="{% static 'testing/queryset/images/queryset_get_values_method.png' %}"> #}
         
         <hr>
 
@@ -31,7 +59,30 @@
 
         <p><code>values_list()</code> method allows you to return only columns that you specify.</p>
 
-        {# <img src="{% static 'testing/images/display_specific_columns.png' %}"> #}
+        <h4>Display Specific Columns Example</h4> 
+        
+        <p>Return only <code>firstname</code> columns :</p>
+
+        <p>Queryset object :</p>
+        {#{{ mymembers.mydata2 }}#}
+        {# {{ mymembers }} #}
+        {{ mymembers_getcols }}
+        
+        <p>Loop through items :</p>
+
+        <table border='1'>
+            {# {% for x in mymembers.mydata2 %} #}
+            {% for x in mymembers_getcols %}
+                <tr>
+                    <td>{{ x }}</td>
+                    {#<td>{{ x.firstname }}</td>#}
+                </tr>
+            {% endfor %}
+        </table> 
+
+        {# Have image/s showing code for this example. I have named image name that relates to this example #}
+        {# this example #}
+        {# <img src="{% static 'testing/queryset/images/queryset_get_display_specific_columns.png' %}"> #}
 
         <hr>
 
@@ -39,6 +90,35 @@
 
         <p>You can filter a search to only display specific rows/ records, by using <code>filter()</code> method.</p>
 
+        <h4>Display Specific Rows Example</h4>
+
+        <p>Returns only records where <code>firstname</code> is 'Emil'</p>
+
+        <p>Queryset object :</p>
+        
+        {# {{ mymembers.mydata3 }} #}
+        {{ mymembers_getrows }}
+
+        <p>Loop through items :</p>
+
+        <table border='1'>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+            </tr>
+            {# {% for x in mymembers.mydata3 %} #}
+            {% for x in mymembers_getrows %}
+                <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.firstname }}</td>
+                    <td>{{ x.lastname }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        {# Have image/s showing code for this example. I have named image display_specific_rows because it relates to #}
+        {# this example #}
         {# <img src="{% static 'testing/images/display_specific_rows.png' %}"> #}
 
         <p>You can learn more about filter() method next with <a href="/testing/queryset_filter">QuerySet Filter</a> .</p>
