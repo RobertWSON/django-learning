@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Details Link</title>
+    </head> 
+
+<body>
+    <h1><center>Display Data<center></h1>
+
+    <h2>Django Add Link to Details</h2>
+
+    <h3>Details Template</h3>
+
+    <p>Next step in our web page will be to add a Details page, where more details can be listed about a 
+       specific member.<br>
+    Start by creating a new template called <code>details.html</code> :
+    <br><br>
+    <code>my_tennis_club/members/templates/details.html</code> :
+    </p>
+
+    {# Screenshot image of details.html code for template  #}
+
+    <hr>
+
+    <h3>Add Link in all-members Template</h3>
+
+    <p>List in <code>all_members.html</code> should be clickable and take you to details page with an id
+       of a member you clicked on:<br><br>
+    <code>my_tennis_club/members/templates/all_members.html</code> :
+    </p> 
+    
+    {# Screenshot image of details link in all_members.html file #}
+    {# ./tested_images/all_members_details_link.html #}
+    
+    <hr>
+
+    <h3 id="details_view">Create new Details View</h3>
+
+    <p>Create a new view in <code>views.py</code> file, that will handle incoming requests to 
+       <code>/details/</code> url:<br><br>
+       <code>my_tennis_club/members/views.py</code> :
+    </p>
+
+    {# Screenshot image of details link in all_members.html file #}
+    {# ./tested_images/details_views.html #}
+
+    <p><code>Details</code> view does following:<p>
+
+    <ul>
+        <li>Gets an <code>id</code> as an argument.</li>
+        <li>Uses an <code>id</code> to locate a correct record in Member table.</li>
+        <li>Loads <code>details.html</code> template.</li>
+        <li>Creates an object containing a member.</li>
+        <li>Sends an object to <code>details.html</code> template</li>
+        <li>Outputs (Displays result of) HTML that is rendered by <code>details.html</code> template.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Add URLS</h3>
+
+    <p>Now we need to make sure that <code>/detail/</code> url points to correct view, with <code>id</code> 
+       as a parameter.<br><br>
+       Open <code>urls.py</code> file and add a <code>details view</code> to <code>urlpatterns</code> list:
+       <br><br>
+       <code>my_tennis_club/members/urls.py</code> :
+    </p>
+
+    {# Screenshot image of details link in all_members.html file #}
+    {# ./tested_images/urls_details_path.html #}
+
+    <p>You may already be in <code>/my_tennis_club/</code> folder, but if you are not, just type 
+        <code>cd my_tennis_club</code> as shown in image below.
+     </p>
+ 
+     {# Screenshot image showing how to get into my_tennis_club folder  #}   
+ 
+     <p>Now we can start Django built-in local host server, by typing following command shown below.</p> 
+ 
+     {# Screenshot image showing command to run django built-in local host server #}
+ 
+     <p>In browser window, type <code>127.0.0.1:8000/members/</code> in web address bar and you should get a 
+        result<br> shown in image below or you can click on this <a href="/members">Members Page Link</a> 
+        to see also how it is displayed.</p> 
+ 
+     {# Screenshot image showing Members page run with django built-in local host server #}
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Admin</title>
+    </head> 
+
+<body>
+    <h1><center>Django Admin<center></h1>
+
+    <h2>Django Admin</h2>
+
+    <p>Django admin is is a great tool in Django that uses CRUD as a user interface for all models.<br><br>
+       <b>CRUD</b> stands for Create Read Update Delete<br>
+       This means that we can create a record within a model using a user interface (Django Admin), which is 
+       a built-in program that helps manage records within models for our database.<br> 
+       A record can be read for data that it has, updated through changes and deleted if needed all through 
+       Django Admin.<br><br>
+       Django Admin is free and comes ready-to-use with Django:
+    </p>
+
+    {# image showing Django Admin Page with Members (Records) we have create before with sqlite database #}
+    {# <img src="{% static 'django_setup/images/django_admin_records_page_with_members.png' %}"> #}
+
+    <hr>
+
+    <h2 id="get_started">Getting Started with Django Admin</h2>
+
+    <p>You may already be in <code>/my_tennis_club</code> folder, but if you are not, just type 
+        <code>cd my_tennis_club</code> as shown in image below.
+     </p>
+
+    {# Screenshot image showing how to get into my_tennis_club folder  #} 
+
+    <p>To enter Django Admin user interface, start Django built-in local host server, by typing following 
+       command shown below. 
+    </p>
+
+    {# Screenshot image showing command to run django built-in local host server #}
+
+    <p>In browser window, click or type <a href="/admin">127.0.0.1:8000/admin</a> in web address bar and you 
+       should get a result like this:
+    </p> 
+
+    {# Screenshot image showing opening login page for Django Admin when you are new to it #}
+    {# <img src="{% static 'django_setup/images/Django Admin Login Page.png' %}"> #}
+    
+    {# <img src="{% static 'django_setup/images/w3schools_django_admin_login_page.png' %}"> #}
+
+    <p>URL goes to Django Admin log in page because of path shown below in <code>urls.py</code> file of your 
+       Django project:<br><br>
+       <code>my_tennis_club/my_tennis_club/urls.py</code>
+    </p>
+
+    {#  <img src="{% static 'django_setup/images/Why it goes to Django Admin.png' %}"> #}
+
+    <p><code>urlpatterns[]</code> list takes requests going to <code>admin/</code> path and sends them to
+       <code>admin.site.urls</code>, which is part of a built-in application that comes with django.<br>
+       This Django built-in application contains a lot of functionality and user interfaces, with one of them 
+       being a log-in user interface.  
+    </p>
+
+    <p>Now that we have gone into opening Django Admin page, we now have to work out how to login, so we will 
+       learn next how to <a href="/django_admin/create_user">Create a User</a>.  
+    </p>
+ 
+</body>
+</html>

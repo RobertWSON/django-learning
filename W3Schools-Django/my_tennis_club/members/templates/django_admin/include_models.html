@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Admin</title>
+    </head> 
+
+<body>
+    <h1><center>Django Admin<center></h1>
+
+    <h2>Include Django Models</h2>
+
+    <h3>Include Member Model in Django Admin Interface</h3>
+
+    <p>To include Member model, we have to tell Django that this model should show in Django admin interface.<br><br>
+       This is done in a file called <code>admin.py</code>, which is located in your <code>members</code> app 
+       folder.  
+       Open <code>admin.py</code> and it should originally look like this:<br><br>
+       my_tennis_club/members/admin.py</code> :
+    </p>
+
+    {# Image showing original admin.py file with no model from Django Setup #}
+    {#  <img src="{% static 'django_admin/images/Original Admin File - No Models.png' %}"> #}
+
+    <p>With original admin.py setup we are using a django.contrib library to import admin for this Django 
+       Admin interface.<br><br>
+       Insert a couple of lines to make Member model show in Django Admin page:<br><br>
+       <code>my_tennis_club/members/admin.py</code> :
+    </p>
+
+    {# Image showing Admin file with Member model added #}
+    {# <img src="{% static 'django_admin/images/Admin File - Member Model.png' %}"> #}    
+
+    <p>Here we are <code>importing</code> our <code>Member model</code> so we can use it, from 
+       <code>my_tennis_club/members/models.py</code> file.<br><br>
+       We are also registering (using with our login) our Member model with admin, so that it can show in 
+       Django Admin Interface.<br><br>
+       Now go back to Django Admin in browser and you should see members database name show.    
+    </p>
+
+    {# Image showing that members database now shows in Django Admin #}
+    {# <img src="{% static 'django_admin/images/Django Admin - Members Appears.png' %}"> #}
+
+    <p>Click <code>members</code> database name and we can now see five records we created earlier.</p>
+
+    {# Image showing that when we click on members database name, we can see five records #}
+    {# <img src="{% static 'django_admin/images/Django - Member Model pg 1.png' %}"> #}
+    {# <img src="{% static 'django_admin/images/Django - Member Model pg 2.png' %}"> #}
+
+    <hr>
+
+    <h3 id="change_display">Change Model Display</h3>
+
+    <p>In screenshot list above, we see Django default with <b>Member object (1)</b>, <b>Member object (2)</b>,
+       up to <b>Member object (5)</b>.<br><br>
+       This is not how we want to display our data in a list, as it would be better to have a more relevant 
+       <b>firstname</b> and <b>lastname</b> to show instead.<br><br>    
+       This can be done by changing some settings in <code>models.py</code> and <code>admin.py</code> files 
+       and we will do this next with <a href="/django_admin/list_display">setting fields to display</a>. 
+    </p>
+
+</body>
+</html>

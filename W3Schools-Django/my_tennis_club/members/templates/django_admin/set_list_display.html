@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Admin</title>
+    </head> 
+
+<body>
+    <h1><center>Django Admin<center></h1>
+
+    <h2>Set Model Fields to Display</h2>
+
+    <h3>Make Model List Display More Reader-Friendly</h3>
+
+    <p>As mentioned on include models page, when you display a Django Model, by default it shows each record 
+        as a string representation<br> of a record object, with <b>Member object (1)</b> and so on. :  
+    </p>
+
+    {# Image showing Django Admin default with each record as a string representation of an object #}
+    {# <img src="{% static 'django_admin/images/Django - Member Model pg 1.png' %}"> #}
+    {# <img src="{% static 'django_admin/images/Django - Member Model pg 2.png' %}"> #}
+    
+    <p>To change this Django default beaviour to a more reader-friendly format, we can do following:</p> 
+
+    <ol>
+        <Li>Change string representation function, <code>__str__()</code> of Member model</li>
+        <li>Set <code>list_display</code> property of Member model</li>
+    </ol>
+
+    <hr>
+
+    <h3 id="string_rep">Change Model String Representation Function</h3>
+
+    <p>To change string representation, we have to define <code>__str__()</code> function of Member model in 
+       <code>models.py</code> like this :<br><br>
+       <code>my_tennis_club/members/models.py</code> :
+    </p>
+
+    {# Image showing how to use string representation function for showing members #}
+    {# <img src="{% static 'django_admin/images/Change Member Object String.png' %}"> #}
+
+    <p><code>def __str__(self):</code> as well as defining a special string function method for a member class 
+        also uses<br> <code>(self)</code> to get an object, which is a record with ours being a member.<br><br>
+        It calls a method with <code>:</code> and uses <code>return</code> to print or show what we want on 
+        our web page.<br><br> 
+        Return uses an f-string formatting technique, it has a character with <code>f or F</code> and a string
+        that we want to format.<br> String is within single, double or triple quotes and we have used double 
+        quotes here with <code>f "string"</code>.<br>
+        Within double quotes "string", we are using <code>{self.firstname}</code> and {self.lastname} to show   
+        <code>firstname</code><br> and <code>lastname</code> strings of an object <code>(self)</code> which is
+        a member or record.<br><br>  
+        You nay have noticed that we do not have a comma <code>,</code> between <code>{self.firstname}</code> and 
+        <code>{self.lastname}</code>,<br> that is because function shows what you return, so we do not need 
+        to see a comma <code>,</code> showing on web page.<br><br> 
+
+    {# See https://www.datacamp.com/tutorial/f-string-formatting-in-python to understand Python f-string #}
+
+       Now we can see members names showing below :
+    </p>
+
+    {# image showing member names now showing in Django Admin #}
+    {# <img src="{% static 'django_admin/images/Member String Rep Changed.png' %}"> #}
+
+    <p>Defining <code>__str__()</code> function is not a Django feature, it is how to change string 
+       representation of objects with Python.
+    </p>
+
+    <hr>
+
+    <h3 id="list">Set List Display</h3>
+
+    <p>We can control the fields to display by specifying them in in a <code>list_display</code> property in 
+       <code>admin.py</code> file.<br><br>
+       Create a <code>MemberAdmin()</code> class that is used to represent a model in Django Admin interface.<br>
+       {# See https://docs.djangoproject.com/en/5.0/ref/contrib/admin/ under ModelAdmin objects for an #}
+       {# explanation on this #}
+       Within <code>MemberAdmin()</code> class, use a list_display property to specify a tuple.<br>
+       A tuple is a data structure with an ordered set of values that store multiple data types like this:  
+       {# See google search for what is a tuple with programming #}
+       {# or what is a tuple with python #https://blog.hubspot.com/website/python-tuple#:~:text=Python%20tuples%20are%20a%20type,modified%2C%20such%20as%20database%20records.#}
+    </p>
+
+    {# admin.py file with MemberAdmin class and list_diplay tuple #}
+    {# <img src="{% static 'django_admin/images/Admin With Set List Display.png' %}"> #}
+
+   <p>Within parenthesis () of our tuple we have "firstname", "lastname", "joined_date" as data types 
+      (fields) within our model.<br>  
+      {# See https://docs.djangoproject.com/en/5.0/ref/contrib/admin/ under ModelAdmin.list_display for an #}
+      {# explanation on how list_display works with Django #}
+      Fields are within double quotes <code>""</code> seperated by a comma <code>,</code> and use ModelAdmin 
+      as a subclass of <code>MemberAdmin()</code> class.<br>
+      <code>ModelAdmin</code> is an object for each member in our Django Admin page.<br><br>   
+      On last line, remember to add <code>MemberAdmin</code> as an argument in 
+      <code>admin.site.register(Member, MemberAdmin)</code>.<br>  
+      Here we are using admin module, imported with django.contrib, which is a main library for showing a 
+      Django Admin page.<br>
+      admin.site.register is a built in feature for Django Admin  and we are using it to pick up imported 
+      Member model and use<br> MemberAdmin class within that model.<br><br>   
+      Now go back to browser and you should see selected fields (firstname, lastname and joined_date) 
+      showing for each member :
+   </p>
+        
+   {# Image showing that all members firstname and lastname are showing, but only one joined_date for Emil #}    
+   {# <img src="{% static 'django_admin/images/Member Set List Display Changed.png' %}"> #}    
+        
+   <p>You will notice so far that we only have all field values for Emil Refsnes member.<br> 
+      Next we will <a href="/django_admin/update_members">update members</a>, so that remaining members will 
+      have all values for their fields.
+   </p>
+
+</body>
+</html>

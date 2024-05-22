@@ -106,6 +106,9 @@ urlpatterns = [
     # This is for Django Prepare Template (16 Prepare Template & View) of Display Data Section.
     path('testing/prepare_template', views.prepare_template, name='prepare_template'),
     
+    # For handling Adding Link to Details Page I will use a testing/details_link url
+    # This is for Django Add Link to Details (17 Django - Add Link to Details) of Display Data Section.
+    path('testing/details_link', views.details_link, name='details_link'), 
     
     # comment code for now    
     path('members/', views.members, name='members'),
@@ -123,12 +126,40 @@ urlpatterns = [
     path('members/details/<int:id>', views.details, name='details'), 
     
     
+    # For handling Adding Master Template Page I will use a testing/master_template url
+    # This is for Django Add Master Template (18 Django - Add Master Template) of Display Data Section.
+    path('testing/master_template', views.master_template, name='master_template'), 
+    
+    
+    # For handling Adding Main Index Page I will use a testing/main_index url
+    # This is for Django Add Main Index Page (19 Django - Add Main Index Page) of Display Data Section.
+    path('testing/main_page', views.main_index, name='main_index'),
+    
+    
+    # For handling Django 404 Template Page I will use a testing/django_404 url
+    # This is for Django 404 Template Page (20 Django 404 Template) of Display Data Section.
+    path('testing/django_404', views.django_404, name='django_404'),
+    
+    # Create a url for my Add Test View page that discusses how to test some Django Code. 
+    # I will use a testing/add_test url for Django Add Test View (21 Django - Add Test View) 
+    # of Display Data Section.
+    path('testing/add_test_view', views.add_test_view, name='add_test'), 
+    
+    # Create an example url that actually shows how a test view works as a link from add_test_view page.
+    # Again this is for Django Add Test View (21 Django - Add Test View) 
+    # of Display Data Section.
+    #path('testing/test_view', views.test_view, name='test_view')
+    
     # URLs, within Django Add Test View (21 Django - Add Test View) of Django Display Data Section
     # When testing different aspects of Django, it can be a good idea to have somewhere to test code 
     # without destroying main project. URL path below is only used for testing purposes. 
     # We have to make sure that incoming urls to /testing/ will be redirected to testing view
     # Here 'testing/' is url path, views.testing a function_name (is testing within views.py file)
     # and name has testing as a url name. 
+    
+   
+   
+   
    
     
     # comment code for now
@@ -136,10 +167,34 @@ urlpatterns = [
     path('testing/', views.testing, name='testing'),
     
     
-    # Django admin section at beginning. W3Schools has this as a Admin section covering 
-    # 22 Django Admin to 28 Delete Members sections. 
-    path('django_admin/', views.django_admin, name="django_admin"),
     
+    
+    
+    # Django admin section at beginning. W3Schools has this as an Admin section covering 
+    # 22 Django Admin to 28 Delete Members sections. 
+    #path('django_admin/', views.django_admin, name="django_admin"),
+    path('django_admin/', views.django_admin_refs, name='django_admin_refs'),
+    
+    # Create a url for a page that will show 22 Django Admin section
+    path('django_admin/admin', views.django_admin, name='django_admin'),
+    
+    # Create a url for a page that will show 23 Django Admin - Create User section
+    path('django_admin/create_user', views.create_user, name='create_user'),
+    
+    # Create a url for a page that will show 24 Django Admin - Include Models section
+    path('django_admin/include_models', views.include_models, name='include_models'),
+    
+    # Create a url for a page that will show 25 Django Admin - Set List Display section
+    path('django_admin/list_display', views.list_display, name='list_display'),
+    
+    # Create a url for a page that will show 26 Django Admin- Update Members section
+    path('django_admin/update_members', views.update_members, name='update_members'),
+    
+    # Create a url for a page that will show 27 Django Admin - Add Members section
+    path('django_admin/add_members', views.add_admin_members, name='add_members'),
+    
+    # Create a url for a page that will show 28 Django Admin - Delete Members section
+    path('django_admin/delete_members', views.delete_members, name='delete_members'),
     
     
     

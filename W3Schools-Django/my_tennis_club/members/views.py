@@ -192,8 +192,14 @@ def prepare_template(request):
 #from django.template import loader
 #from .models import Member
 
-# View that makes member model data in members folder, available from a template
+# Create a view for handling Add a Link to Details Page. This will be for testing/details_link url
+# and Django Add Link to Details (17 Django - Add Link to Details ) of Display Data Section. 
+def details_link(request):
+  template = loader.get_template('testing/details_link.html')
+  return HttpResponse(template.render())
 
+
+# View that makes member model data in members folder, available from a template
 def members(request):
     # Add this to create an object with all values of Member model to update Member Table
     mymembers = Member.objects.all().values() 
@@ -236,13 +242,47 @@ def details(request, id):
     return HttpResponse(template.render(context, request))
 
 
+# Create a view for handling Add a Master Template Page. This will be for testing/master_template url
+# and Django Add Master Template (18 Django - Add Master Template) of Display Data Section. 
+def master_template(request):
+  template = loader.get_template('testing/master_template.html')
+  return HttpResponse(template.render())
 
 
 # Create new View within Django Add Main Index Page (19 Django - Add Main Index Page) of Display Data Section 
-# View for dealing with incoming requests to root / of the project (main home landing page)
+# View for dealing with incoming requests to root / of the project (main home landing page).
+# This view will be using testing/main_page url to explain how this is done.
 #from django.http import HttpResponse
 #from django.template import loader
 #from .models import Member
+
+def main_index(request):
+  template = loader.get_template('testing/main_index.html')
+  return HttpResponse(template.render())
+
+# Create a view for handling Django 404 Page. This will be for testing/django_404 url
+# and Django 404 Template Page (20 Django 404 Template) of Display Data Section. 
+def django_404(request):
+  template = loader.get_template('testing/django_404.html')
+  return HttpResponse(template.render())
+
+# Create a view for my Add Test Views page that discusses how to test some Django Code. 
+# I will use a testing/add_test url for Django Add Test View (21 Django - Add Test View) 
+# of Display Data Section.   
+def add_test_view(request): 
+  template = loader.get_template('testing/add_test_view.html')
+  return HttpResponse(template.render())
+  
+# Create an example view that actually shows how a test view works as a link from add_test_view page.
+# Again this is for Django Add Test View (21 Django - Add Test View) 
+# of Display Data Section.
+# def test_view(request):
+  #template = loader.get_template('testing/test_view.html')  
+  #context = {
+      #'fruits': ['Apple', 'Banana', 'Cherry'] 
+  #}
+  #return HttpResponse(template.render(context, request))
+
 
 # This view is used for members page (/all_members.html url), which has all_members.html template
 #def members(request):
@@ -262,7 +302,7 @@ def details(request, id):
     #'mymember': mymember,
   #}
   #return HttpResponse(template.render(context, request))
-
+  
 # This view is used for main home page (/ url), which has main.html template 
 def main(request):
     # HTML main Template to be used with loader (Load main html template)
@@ -339,12 +379,54 @@ def testing(request):
   #return HttpResponse(template.render(context, request))
 
 
-# Django admin section at beginning. W3Schools has this as a Admin section
-# covering 1 Django Tutorial Home to 15 Django Update model sections.
-def django_admin(request): 
+# Django admin section at beginning. W3Schools has this as an Admin section covering 
+# 22 Django Admin to 28 Delete Members sections. 
+#def django_admin(request): 
+def django_admin_refs(request):  
   template = loader.get_template('django_admin/django_admin_refs.html')
   return HttpResponse(template.render())
 
+# Create a view for handling Django Admin Page. This will be for django_admin/admin url
+# and Django Admin Page (22 Django Admin) of Admin Section. 
+def django_admin(request):
+  template = loader.get_template('django_admin/django_admin.html')
+  return HttpResponse(template.render())
+
+# Create a view for handling Create User Page. This will be for django_admin/create_user url
+# and Create User Page (23 Django Admin - Create User) of Admin Section.
+def create_user(request):
+  template = loader.get_template('django_admin/create_user.html')
+  return HttpResponse(template.render())
+
+# Create a view for handling Include Models Page. This will be for django_admin/include_models url 
+# and Include Models Page (24 Django Admin - Include Models) of Admin Section.
+def include_models(request):
+  template = loader.get_template('django_admin/include_models.html')
+  return HttpResponse(template.render())
+  
+# Create a view for handling Set Fields to Display Page. This will be for django_admin/list_display url
+# and Set List Display Page (25 Django Admin - Set List Display) of Admin Section.
+def list_display(request):
+  template = loader.get_template('django_admin/set_list_display.html')
+  return HttpResponse(template.render())
+
+# Create a view for handling Update Members Page. This will be for django_admin/update_members url
+# and Update Members Page (26 Django Admin- Update Members) of Admin Section.
+def update_members(request):
+  template = loader.get_template('django_admin/update_members.html')
+  return HttpResponse(template.render())
+  
+# Create a view for handling Add Members Page. This will be for django_admin/add_members url   
+# and Add Members Page (27 Django Admin - Add Members) of Admin Section.  
+def add_admin_members(request):
+  template = loader.get_template('django_admin/add_members.html')
+  return HttpResponse(template.render())
+  
+# Create a view for handling Delete Members Page. This will be for django_admin/delete_members url
+# and Delete Members Page (28 Django Admin - Delete Members) of Admin Section.
+def delete_members(request):
+  template = loader.get_template('django_admin/delete_members.html')  
+  return HttpResponse(template.render())
 
 
 # Create Variables in Template within Django Variables (29 Django Syntax - Variables) 
@@ -724,7 +806,44 @@ def if_tested(request):
 
 # We will do a view that handles all views from examples within seperate contexts
 def for_loop_tested(request):
-  template = loader.get_template('testing/for_loop_tested.html')
+    #template = loader.get_template('testing/for_loop_tested.html')
+    mymembers = Member.objects.all().values()
+    fruits_array = ['Apple', 'Banana', 'Cherry']  
+    cars_array = [
+      {
+        'brand': 'Ford',
+        'model': 'Mustang',
+        'year': '1964'
+      },
+      {
+        'brand': 'Ford',
+        'model': 'Bronco',
+        'year': '1970' 
+      },
+      {
+        'brand': 'Volvo',
+        'model': 'P1800',
+        'year': '1964'
+      }
+    ],
+    fruits_loop_array = ['Apple', 'Banana', 'Cherry', 'Oranges', 'Kiwi']
+    cars_parent_array = ['Ford', 'Volvo', 'BMW']
+    colors_parent_array = ['Red', 'Green', 'Blue']
+    
+    context = {
+      'fruits': fruits_array,
+      'cars': cars_array,
+      'members': mymembers,
+      'emptytestobject': [],
+      'fruits_loop': fruits_loop_array,
+      'cars_parent': cars_parent_array,
+      'colors_parent': colors_parent_array
+    }
+    
+    #return HttpResponse(template.render(context, request))
+    return render(request, 'testing/for_loop_tested.html', context)
+    
+    
     #context = {}
     #context['fruits'] = ['Apple', 'Banana', 'Cherry'],
     #context['cars'] = [
@@ -744,26 +863,26 @@ def for_loop_tested(request):
       #'year': '1964',
     #}]
 # Older way of doing this with one context below  
-  context = {
-    'cars': [
-      {
-        'brand': 'Ford',
-        'model': 'Mustang',
-        'year': '1964',
-      },
-      {
-        'brand': 'Ford',
-        'model': 'Bronco',
-        'year': '1970',
-      },
-      {
-        'brand': 'Volvo',
-        'model': 'P1800',
-        'year': '1964',
-      }]
-    }
+  #context = {
+    #'cars': [
+      #{
+        #'brand': 'Ford',
+        #'model': 'Mustang',
+        #'year': '1964',
+      #},
+      #{
+        #'brand': 'Ford',
+        #'model': 'Bronco',
+        #'year': '1970',
+      #},
+      #{
+        #'brand': 'Volvo',
+        #'model': 'P1800',
+        #'year': '1964',
+      #}]
+    #}
 
-  return HttpResponse(template.render(context, request))
+  #return HttpResponse(template.render(context, request))
 
 
 

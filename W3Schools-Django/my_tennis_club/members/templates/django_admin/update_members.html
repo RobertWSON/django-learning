@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Admin</title>
+    </head> 
+
+<body>
+    <h1><center>Django Admin<center></h1>
+
+    <h2>Update Model Members (Records in Django Admin)</h2>
+
+    <p>Now we are ready to create, update and delete members (records) in Django Admin for our database and 
+      we start by giving them all<br> a date for when they became members.<br><br>
+       Click first member, <code>Stalikken</code> to open this record for editing and in new 
+       <code>joined_date</code> field give him a joined date value :
+    </p>
+
+    {# Image showing how to edit record (Stalikken) with more details for new joined date field  #}
+    {# <img src="{% static 'django_admin/images/stalikken_member_with_new_joined_date_field_detail.png' %}"> #}
+
+    <p>If you have more CSS styling in Django Admin, filling in new detail for <code>joined_date</code> 
+       field in Stalikken member could look like this.
+    </p>  
+
+    {# Image showing how to edit record (Stalikken) with detail for new joined date field when Django Admin #}
+    {# has more styling #}
+    {# <img src="{% static 'django_admin/images/stalikken_member_new_joined_date_field_detail_more_styling.png' %}"> #}
+
+    <p>While we are editing Stalikken member, let us fill in new detail for <code>phone</code> field as well, 
+       with his phone number.
+    </p>
+
+    {# Image showing how to edit Stalikken record with more detail for phone field #}
+    {# <img src="{% static 'django_admin/images/stalikken_member_with_new_phone_field_detail.png' %}"> #}
+
+   {# I have since noticed that I did save a file that shows new field values for 1st member below #}
+   {# <img src="{% static 'django_admin/images/Edit 1st Member with all Details.png' %}"> #}
+
+
+    <p>If you have more CSS styling in Django Admin, filling in new detail for <code>phone</code> 
+        field in a member could look like this.
+     </p>  
+
+    {# Image showing how to edit record with more detail for phone field when Django Admin has more styling #}
+    {# <img src="{% static 'django_admin/images/stalikken_member_phone_field_detail_more_styling.png' %}"> #}
+
+    <p>Click <b>SAVE</b> and go  back to list of all members:<br><br>
+       Now we can see that Stalikken member has been updated with a new phone number.  
+    </p>
+
+    {# Image showing all members with updated phone number for Stalikken member (record) #}
+    {# <img src="{% static 'django_admin/images/Updated First Member.png' %}"> #}
+
+    <p>If you have more CSS styling in Django Admin, Stalikken updated member could look like this.
+    </p>
+
+    {# Image showing all members with updated Stalikken phone number when Django Admin has more Styling #}
+    {# <img src="{% static 'django_admin/images/updated_first_member_with_more_styling.png' %}"> #}
+
+    <p>Repeat these steps for rest of members (records), giving them a date and phone number and you should 
+      end up with a list like this:<br><br>
+      <b>Note:</b> List does not show phone field, you have to click on a member to see those details.
+    </p>
+
+   {# Image showing all members with details #}
+   {# <img src="{% static 'django_admin/images/Updated Fourth Member.png' %}"> #}
+
+   {# Image showing all members with details when Django Admin has more Styling #}
+   {# <img src="{% static 'django_admin/images/all_members_with_more_css_styling.png' %}"> #}
+
+   <p>Let's fill out rest of these details for remaining members (records).<br><br>
+      Click second member, <code>Lene</code> to open this record for editing. 
+   </p>   
+
+   {# Image showing that second member Lene now needs to have values for new fields. #}
+   {#  <img src="{% static 'django_admin/images/Updated First Member.png' %}"> #}
+      
+   <p>In Lene, for new <code>joined_date</code> and <code>phone</code> fields give him following values and 
+      click save :
+   </p>
+
+   {# Image showing second member Lene with new values for new fields. #}
+   {# <img src="{% static 'django_admin/images/second_member_new_field_values.png' %}"> #}
+
+   {# I have since noticed that I did save a file that shows new field values for 2nd member below #}
+   {# <img src="{% static 'django_admin/images/Edit 2nd Member with all Details.png' %}"> #}
+
+
+   <p>Click third member, <code>Linus</code> to open this record for editing.</p> 
+   
+   {# Image showing that third member Linus now needs to have values for new fields. #}
+   {#  <img src="{% static 'django_admin/images/Updated Second Member.png' %}"> #}
+   
+
+   <p>In Linus, for new <code>joined_date</code> and <code>phone</code> fields<br> give him following values 
+      and click save :
+   </p> 
+
+   {# Image showing that third member Linus will now have values for new fields. #}
+   {# <img src="{% static 'django_admin/images/third_member_new_field_values.png' %}"> #}
+
+   {# I have since noticed that I did save a file that shows new field values for 3rd member below #}
+   {# <img src="{% static 'django_admin/images/Edit 3rd Member with all Details.png' %}"> #}
+
+
+   <p>Click fourth member, <code>Tobias</code> to open this record for editing.</p>
+   
+   {# Image showing that fourth member Tobias now needs to have values for new fields. #}
+   {#  <img src="{% static 'django_admin/images/Updated Third Member.png' %}"> #}
+
+   <p>In Tobias, for new <code>joined_date</code> and <code>phone</code> fields<br> give him following values 
+      and click save :
+   </p>
+
+   {# Image showing that fourth member Tobias will now have values for new fields. #}
+   {#  <img src="{% static 'django_admin/images/fourth_member_new_field_values.png' %}"> #}
+
+   {# I have since noticed that I did save a file that shows new field values for 4th member below #}
+   {# <img src="{% static 'django_admin/images/Edit 4th Member with all Details.png' %}"> #}
+
+   {# Image showing that after doing this process, all members (records) now have details for their fields #}
+   {# <img src="{% static 'django_admin/images/Updated Fourth Member.png' %}"> #}
+
+   {# Image showing all members with details when Django Admin has more Styling #}
+   {# <img src="{% static 'django_admin/images/all_members_with_more_css_styling.png' %}"> #}
+
+   <p>Now we have updated all django members (records) with data for their fields using Django Admin for our
+      database.<br>
+      In next section we will see how we can <a href="/django_admin/add_members">add a member</a> 
+      using Django Admin.
+   </p>
+
+</body>
+</html>

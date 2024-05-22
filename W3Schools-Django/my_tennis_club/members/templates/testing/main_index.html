@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Main Index</title>
+    </head> 
+
+<body>
+    <h1><center>Display Data<center></h1>
+
+    <h2>Django Add Main Index Page</h2>
+
+    <h3>Main Index Page</h3>
+
+    <p>Our project needs a main page.<br><br>
+       Main page (usually referred to as a home page) will be a landing page when someone visits root 
+       (main) folder of project.<br>
+       Now, you can see below that there is an error when visting root folder <code>127.0.0.1:8000</code> of 
+       this project: 
+    </p>
+
+    {# Screenshot image of error on main (home page) #}
+    {# ./tested_images/Project Root Error - Main Page.png #}
+
+    <p>This error is happening because we have not created a main page yet and debug is not set to true, which 
+       will be discussed on next<br> <a href="/testing/django_404">Django 404 Template page</a>. 
+    </p>
+
+    <h4>Main</h4>
+    <p><code>my_tennis_club/members/templates/main.html</code> :</p>
+
+    {# Screenshot image of code for main.html template setup #}
+    {# ./tested_images/main_template.png #}
+
+    <hr>
+
+    <h3>Create new View</h3>
+
+    <p>Create a new view called <code>main</code>, that will handle incoming requests to root of project:
+       <br><br>
+       <code>my_tennis_club/members/views.py</code> :
+    </p>
+
+    {# Screenshot image of code for main view setup #}
+    {# ./tested_images/main_view.png #}
+
+    <p><code>Main</code> view does following:</p>
+
+    <ul>
+        <li>loads <code>main.html</code> template.</li>
+        <li>Outputs HTML that is rendered by <code>main.html</code> template.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Add URL</h3>
+
+    <p>Now  we need to make sure that a root url points to correct view.<br><br>
+       Open <code>urls.py</code> file and add a main view to <code>urlpatterns</code> list: <br><br>
+       <code>my_tennis_club/members/urls.py</code> :
+    </p>
+
+    {# Screenshot image of main view in members urls file #}
+    {# ./tested_images/main_view_in_members_urls_file.png #}
+
+    <h3>Add Link back to Main</h3>
+
+    <p>Members page is missing a link back to main page, so let us add that in <code>all_members.html</code>
+       template, in <code>content</code> block:<br><br>
+       <code>my_tennis_club/members/templates/all_members.html</code> :
+    </p>
+
+    {# screenshot image showing code in all_members.html template with link back to main (home) page #}
+    {# ./tested_images/link_back_to_main_in_all_members.png #}
+
+    <p>You may already be in <code>/my_tennis_club/</code> folder, but if you are not, just type 
+       <code>cd my_tennis_club</code> as shown in image below.
+    </p>
+    
+    {# Screenshot image showing how to get into my_tennis_club folder  #}   
+    
+    <p>Start Django built-in local host server, by typing following command shown below.</p> 
+    
+    {# Screenshot image showing command to run django built-in local host server #}
+    
+   <p>Now we can see how updated members page looks.<br><br> 
+      In browser window, click or type <a href="/members">127.0.0.1:8000/members</a> in web address bar and 
+      you should see an added link back to main (home) page.<br>
+      You can also click on <a href="/members">Members Page Link</a> to see how added Home link is 
+      displayed at top of members page.
+      
+   {# Screenshot showing Members page with added link back to main (home) page #}   
+   {# ./tested_images/members_page_with_link_to_home.png #}
+
+   <p>We can now finally see how main (home) page looks, since we have put a main.html template in place.<br> 
+      In browser window, click or type <a href="/">127.0.0.1:8000</a> in web address bar and 
+      you should get a result shown in image below<br> or you can click on 
+      <a href="/">Home Page Link</a> to also see how it is displayed.
+   </p> 
+    
+    {# Screenshot image showing what main (home) page now likes like #}
+    {# ./tested_images/Home (Main) Page Shows.png #}
+
+</body>
+</html>

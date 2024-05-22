@@ -35,6 +35,8 @@
 
     <h4>For Loop List Dictionaries Example</h4>
 
+    <p>Loop through a list of dictionaries:</p>
+
     {# {% include 'testing/for_loop_dict.html' %} #}
    
     {# with cars=("x.brand", "x.model","x.year") %} #}
@@ -83,19 +85,30 @@
         </tr>
     </table>    
 
-    <p>When we fetch data from a model, it comes as a QuerySet object, with a similar format as cars example above:<br>
-       a list with dictionaries:</p>
+    <p>When we fetch data from a model, it comes as a QuerySet object, with a similar format as cars example 
+       above: a list with dictionaries:</p>
        
     {# Screenshot W3Schools QuerySet example as an Image #} 
     {# <img src="my_tennis_club/members/templates/testing/tested_images/Model_Data_QuerySet.png"> #}
+    {# easier to do <img src="../tested_images/Model_Data_QuerySet.png"> #}
     {# <img src="../tested_images/Model Data QuerySet.png"> #}
     
     <h4>Model Data Example</h4>
 
     {# This p tag below is in include file #}
-    {#<p>Loop through items fetched from a database:</p>#}
+    <p>Loop through items fetched from a database:</p>
 
     {# {% include 'testing/for_loop_modeldata.html' %} #}
+
+    {% for x in members %}
+        <h1>{{ x.id }}</h1>
+        <p>
+            {{ x.firstname }}
+            {{ x.lastname }}
+        </p>
+    {% endfor %}
+
+    <p>In views.py you can see how to import and fetch members from a database.</p>
 
     <hr>
 
@@ -107,6 +120,16 @@
 
     {# {% include 'testing/for_loop_reversed.html' %} #} 
 
+    {% for x in members reversed %}
+        <h1>{{ x.id }}</h1>
+        <p>
+            {{ x.firstname }}
+            {{ x.lastname }}
+        </p>
+    {% endfor %}
+
+    <p>In views.py you can see how to import and fetch members from a database for revesed keyword method.</p>
+
     <hr>
 
     <h3 id="empty">Empty</h3>
@@ -115,11 +138,31 @@
 
     <h4>For with Empty Object Example</h4>
 
+    <ul>
+        {% for x in emptytestobject %}
+            <li>{{ x.firstname }}</li>
+        {% empty %}
+            <li>No members</li>
+        {% endfor %}    
+    </ul>
+
+    <p>In views.py you can see an emptytestobject.</p>
+ 
     {# {% include 'testing/for_emptyobject.html' %} #} 
 
     <p>The <code>empty</code> keyword can also be used if an object does not exist:</p>
 
-    <h4 id="empty_noobject">For with Empty on Non Existing Object Example<h4>
+    <h4 id="empty_noobject">For with Empty on Non Existing Object Example</h4>
+
+    <ul>
+        {% for x in myobject %}
+            <li>{{ x.firstname }}</li>
+        {% empty %}
+            <li>No Members</li>
+        {% endfor %}
+    </ul>
+    
+    <p>In views.py you can see that there is no myobject variable.</p>
 
     <hr>
 
@@ -143,6 +186,14 @@
 
     <h4>For Loop Counter Example</h4>
 
+    <ul>
+        {% for x in fruits_loop %}
+            <li>{{ forloop.counter }}</li>
+        {% endfor %}   
+    </ul>
+
+    <p>In views.py you can see what fruits_loop object looks like.</p>
+
     {# {% include 'testing/for_loop_counter.html' %} #}
 
     <h3 id="counter0">forloop.counter0</h4>
@@ -150,6 +201,14 @@
     <p>The current iteration, starting at 0</p>
 
     <h4>For Loop Counter0 Example</h4>
+
+    <ul>
+        {% for x in fruits_loop %}
+            <li>{{ forloop.counter0 }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>In views.py you can that we can still use same fruits_loop object.</p>
 
     {# {% include 'testing/for_loop_counter0.html' %} #}
 
@@ -161,6 +220,18 @@
 
     <p>Draw a blue background for first iteration of a loop:</p>
 
+    <ul>
+        {% for x in fruits_loop %}
+            <li
+                {% if forloop.first %}
+                    style='background-color: lightblue;'
+                {% endif %}
+            >{{ x }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>In views.py you can that we can still use same fruits_loop object.</p> 
+
     {# {% include 'testing/for_loop_first.html' %} #}
 
     <h3 id="last">forloop.last</h4>
@@ -171,6 +242,18 @@
 
     <p>Draw a blue background for last iteration of a loop:</p>
 
+    <ul>
+        {% for x in fruits_loop %}
+            <li
+                {% if forloop.last %}
+                    style='background-color: lightblue;'
+                {% endif %}
+            >{{ x }}</li>
+        {% endfor %}        
+    </ul>
+
+    <p>In views.py you can that we can still use same fruits_loop object.</p>
+
     {# {% include 'testing/for_loop_last.html' %} #}
 
     <h3 id="parent">forloop.parentloop</h4>
@@ -178,6 +261,23 @@
     <p>Sets up a parent loop for a child.</p>
 
     <h4>For Loop Parent Example</h4>
+
+    <ul>
+        {% for x in cars_parent %}
+            <li>{{ x }}:
+                <ul>
+                    {% for y in colors_parent %}
+                        <li>
+                            {{ forloop.parentloop.counter }}
+                            {{ y }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>In views.py you can see what cars_parent and colors_parent objects look like.</p> 
 
     {# {% include 'testing/for_loop_parent.html' %} #}
 
@@ -187,6 +287,14 @@
 
     <h4>For Loop Reverse Counter Example</h4>
 
+    <ul>
+        {% for x in fruits_loop %}
+            <li>{{ forloop.revcounter }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>In views.py you can that we can still use same fruits_loop object.</p>
+
     {# {% include 'testing/for_loop_revcounter.html' %} #}
 
     <h3 id="revcounter0">forloop.revcounter0</h4>
@@ -195,7 +303,19 @@
 
     <h4>For Loop Reverse Counter0 Example</h4> 
 
+    <ul>
+        {% for x in fruits_loop %}
+            <li>{{ forloop.revcounter0 }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>In views.py you can that we can still use same fruits_loop object.</p>
+
     {# {% include 'testing/for_loop_revcounter0.html' %} #}
+
+    <p>These for loop examples should now give you a good insight into what is possible with arrays and 
+        getting data from a database,<br> from a Django perspective.
+    </p>
 
 </body>
 </html> 

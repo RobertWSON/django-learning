@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django 404</title>
+    </head> 
+
+<body>
+    <h1><center>Display Data<center></h1>
+
+    <h2>Django 404 (page not found)</h2>
+
+    <h3>Page Not Found</h3>
+
+    <p>A 404 error is a message that appears on a web page when it cannot be found.
+       If you try to access a page that does not exist, Django directs you to a built-in view that handles 
+       404 errors and show a 404 error on a web page.<br><br>
+       You will learn how to customize this 404 later on this page, but for now just try to request a page 
+       that does not exist.<br><br>  
+       In browser window, type <a href="/masfdfg">127.0.0.1:8000/masfdfg</a> in address bar.<br><br>
+       You will get one of two results:
+    </p>
+
+    <ul>
+        <li>1:</li>
+
+        {# Screenshot showing what is displayed when you get directed to Django built-in 404 error page #}
+        {# <img src="{% static './tested_images/Localhost Shows Built in 404 Error.png' %}"> #}
+
+        <li>2:</li>
+
+        {# Screenshot showing no 404 error page because debug needs to be set to false for this to work #}
+        {# <img src="{% static './tested_images/Second Result - Non Existing page.png' %}"> #}
+
+    </ul>
+
+    <p>If you got first result, you got directed to Django built-in 404 template.<br><br>
+       If you got second result, then <code>DEBUG</code> is set to <code>True</code> in your settings and it 
+       must be set to <code>False</code> to get directed to 404 template:<br><br>
+       This is done in <code>settings.py</code> file, where you can specify hsot name from where your project 
+       runs from.<br>
+       <code>settings.py</code> is located in <code>my_tennis_club/my_tennis_club</code> project folder.
+       <br><br>
+       In <code>settings.py</code> set debug property to <cdoe>False</code> and allow project to run from 
+       your local host:<br><br>
+       <code>my_tennis_club/my_tennis_club/settings.py</code> : 
+    </p>
+
+    {# Screenshot showing DEBUG set to False and use * for local host in settings.py #}
+    {# <img src="{% static './tested_images/Settings Needs Debug Set False.png' %}"> #}
+
+    <p><b>Important:</b> When DEBUG = False, Django requires you to specify hosts you will allow your Django
+       project to run from.<br><br>
+       In production, a specified host should be replaced with a proper domain name like this:<br><br>
+       ALLOWED_HOSTS = ['yourdomain.com'] 
+    </p>
+
+    <p>In browser window, click or type <a href="/masfdfg">127.0.0.1:8000/masfdfg</a> in web address bar
+       and you will now get a Django built-in 404 template shown below:
+    </p>
+
+    {# Screenshot showing that I (Robert) have now got Django built-in 404 error page showing #}
+    {# <img src="{% static './tested_images/Localhost Shows Built in 404 Error.png' %}"> #}
+
+    <p>You can also see on command line that before, it was showing a <code>red CommandError</code>, <br>but 
+       now it is recognizing Django built-in 404 error with <code>"GET /masfdfg/ HTTP/1.1" 404 179</code>, 
+       so it is now working how we want it to.
+    </p>
+
+    {# Screenshot showing that command line is now recognizing Django built-in 404 Template #}    
+    {# <img src="{% static './tested_images/Runserver now reads built in 404.png' %}"> #}
+
+    <hr>
+
+    <h3>Customize Django 404 Page</h3>
+
+    <p>As we have seen, Django has a built-in template that only shows "Not Found" on a web page when it 
+       cannot find a file for a web page.<br>
+       Showing "Not Found" is a default behaviour of Django, where it looks for a file named 
+       <code>404.html</code> in a <code>templates</code> folder <br>
+       and shows a 404 error with "Not Found" when a page is not found or does not exist.<br><br>
+       However, we can customize a 404 error message to have it show what we want on a page that has not been 
+       found or does not exist.<br>
+       To do this we have to create a file in <code>templates</code> folder, name it <code>404.html</code> 
+       and fill it with what you want to show on a web page as an error.<br><br>
+       Here is an example below of what you could show as an error, but you could show a different message 
+       if you want, that you feel is suitable:<br><br>
+       <code>my_tennis_club/members/templates/404.html</code> :
+    </p>
+
+    {# Screenshot showing my code for a new customized 404 error template when a web page is not found #}
+    {# <img src="{% static './tested_images/My Own New 404 Template.png' %}"> #}
+
+    <p>In browser window, click or type <a href="/masfdfg">127.0.0.1:8000/masfdfg</a> in web address bar
+        and you will now see your Django customized 404 template.<br> I have shown my example below:
+    </p>
+
+    {# Screenshot showing my customized 404 error on a web page that cannot be found #}
+    {# <img src="{% static './tested_images/My Customized 404 Pg Template.png' %}"> #}
+
+</body>
+</html>
