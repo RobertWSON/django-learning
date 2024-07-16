@@ -1,4 +1,7 @@
 
+{#{% load static %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
 
@@ -8,75 +11,252 @@
 
 <body>
 
-  <h2>Django Template Tag Reference</h2>
+  {#<h2>Django Template Tag Reference</h2> try larger heading#}
+  <h1><center>Django Template Tag Reference</center></h1>
 
-  <h3>Autoescape Template Tag</h3>  
+  {# try larger heading and specify Template Tag Reference #}  
+  <h2>Template Tag - Autoescape</h2>
 
-<h4>Autoescape Off</h4>
+  {#<h4>Autoescape Off</h4> try larger heading#}
+  <h3>Autoescape Off</h3>
 
-<p>Autoescape Off Example</p>
+  {#<p>Autoescape Off Example</p> better to have a heading I think#}
+  <h3>Autoescape Off Example</h3>
 
-<p>Escape variables that contain HTML Tags </p>
+  <p>Escape variables that contain HTML Tags </p>
 
-{% autoescape off %}
-  <h2>{{ heading }}</h2>
-{% endautoescape %}
+  {% autoescape off %} 
+    <h2>{{ heading }}</h2> 
+  {% endautoescape %} 
 
-<p>Check out views.py to see what the heading variable looks like.</p>
+  {# Show image of views.py and urls.py file for Autoescape Off #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_off_example.png' %}"> #}
 
-<hr>
+  {#<p>Check out views.py to see what the heading variable looks like for both examples.</p>#}
+  <p>Check out views.py to see what heading variable with HTML code looks like for Autoescape off example.<br>
+     <b>Note:</b> We will use same heading variable for both Autoescape off and on examples.<br><br>    
+     For this Autoescape Off example we are using <b>Hello &lt;i&gt;my&lt;i&gt; World!</b> as a heading variable, which 
+     you can see has italics html within it. 
+  </p>
 
-<h3>Definition and Usage</h3>
+  {# Show image of Django code in HTML Template file #}
+  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_off_example.png' %}"> #}
 
-<p>The autoescape tag is used to specify if autoescape is on or off</p>
-<p>If autoescape is on, which is default, HTML code in variables will be escaped.</p>
-<p>When escape is on, these characters are escaped:</p>
+  {# Explain Django code in HTML Template file for autoescape Off #}
+  <p>In HTML Template we are using autoescape off django command to display an HTML h2 heading, which are taken from 
+     heading variable in views.py file.<br><br>
+     <b>Django Autoescape off</b> shows string exactly as it normally would with HTML, without escaping any HTML tags.<br> 
+     When our &lt;i&gt;<b>my</b>&lt;i&gt; Italics HTML tag is not Escaped it will show <b>my</b> in <b>italics</b>.<br>
+     Rest of heading that does not have italics tag, will be shown as an <b>h2 heading</b>.<br> 
+     This is normal HTML behaviour, which happens when Django Autoescape off is used.
+  </p>
 
-<ul>
-  <li>< is converted to & lt;</li>
-  <li>< is converted to & lt; </li>
-  <li>' is converted to '</li>
-  <li>" is converted to "</li>
-  <li>& is converted to & amp;</li>
-</ul>  
+  <p>You can also view this autoescape off example on a separate page, through link below.</p>
 
-<h4>Autoescape On</h4>
-
-<p>Autoescape On Example</p>
-
-</p>With autoescape on, any HTML elements inside variables will be converted according to the list above.</p>
-
-{% autoescape on %}
-  {# <h2>{{ heading_on }}</h2>{% endcomment #}
-  {% comment %}should be just heading no need to use heading_on for autoescape on{% endcomment %}
-  <h2>{{ heading }}</h2>
-{% endautoescape %}
-
-<hr>
-
-<h3>Syntax</h3>
-
-<p>autoescape on | off {with % % inside brackets}</p>
-<p>  ... </p>
-</p>endautoescape  {with % % inside brackets}</p>
+  <a href="/template/autoescape_off">Autoescape Off Example</a>
 
 
-<h3>Parameters</h3>
+  <h3>Autoescape Off with Characters Example</h3>
 
-<table border='3'>
-  <tr>
+  <p>Escape variables that contain Characters with a Heading</p>
+
+  {% autoescape off %} 
+    <h2>{{ heading_chars }}</h2> 
+  {% endautoescape %} 
+
+  {# Show image of views.py and urls.py file for Autoescape Off with Characters #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_off_with_chars_example.png' %}"> #}
+
+  <p>Check out views.py to see what a heading variable that has characters looks like for Autoescape off example.<br>
+    <b>Note:</b> We will use same heading_chars variable for both Autoescape off and on with characters examples.<br><br> 
+    For this Autoescape Off with Characters example we are using <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!</b> 
+    <br> as a heading variable, which you can see has characters within it.<br><br> 
+    For heading_chars variable in this autoescape off example, most characters in it are known as HTML entities.<br>
+    An HTML entity is a string used to represent characters like <b>&amp;lt;</b> that have a special significance, as 
+    they are used within HTML tags.<br> 
+    An HTML entity starts with an ampersand <b>&amp;</b> and ends with a semicolon <b>;</b> and in between these entities
+    we have<br> characters (<b>lt</b> for less than and <b>gt</b> for greater than).<br>
+    <b>Note: /i</b> character cannot not be broken down any further, so it is not recognised as an entity and instead it 
+    is used<br> between HTML entities to make a closing italics HTML tag.<br><br>
+    We can see examples of how these HTML entities are converted in Definition and Usage section, later on this page.      
+ </p>
+
+
+  {# Show image of Django code in HTML Template file #}
+  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_off_with_chars_example.png' %}"> #}
+
+  {# Explain Django code in HTML Template file for autoescape Off with Characters #}
+  <p>In HTML Template we are using autoescape off django command to display an HTML h2 heading with characters, which are 
+     taken from<br> heading_cars variable in views.py file.<br><br>
+     
+     <b>Django Autoescape off with characters</b> converts HTML identities in heading_chars variable string, to character 
+     equivalents and do not<br> escape any HTML tags.<br>
+     With our <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!</b> heading, it works like this, <b>&amp;lt;</b> gets 
+     converted to <b>&lt;</b> and <b>&amp;gt;</b> to <b>&gt;</b>, which are shown as text literals.<br> 
+     Rest of heading variable that does not have characters, will be shown as an H2 heading.<br>
+     Now we have Hello &lt;i&gt;<b>my</b>&lt;/i&gt; World! with italics HTML tags &lt;i&gt; and &lt;/i&gt; that do not get 
+     escaped, so this is what gets shown on web page.<br>
+     This is how Django Autoescape Off should behave for HTML identities with characters, when it does not recognise
+     them as HTML tags<br> and is prevented from showing HTML result. 
+  </p>
+
+  <p>You can also view this autoescape off with characters example on a separate page, through link below.</p>
+
+  <a href="/template/autoescape_off_with_chars">Autoescape Off with Characters Example</a>
+
+  <hr>
+
+  <h3>Definition and Usage</h3>
+
+  <p>The autoescape tag is used to specify if autoescape is on or off</p>
+  <p>If autoescape is on, which is default, HTML code in variables will be escaped.</p>
+  <p>When escape is on, these characters are escaped:</p>
+
+  <ul>
+    {#<li>< is converted to & lt;</li> original #}
+    {#present it like this text, to get it dsiplayed as text#}
+
+    <li><b>&lt;</b> is converted to <b>&amp;lt;</b></li>
+
+    {#<li>< is converted to & lt; </li> original #}
+    <li><b>&gt;</b> is converted to <b>&amp;gt;</b></li> 
+
+    <li><b>'</b> is converted to <b>'</b></li>
+    {#<li>&#39; is converted to &apos;</li>#}
+
+    <li><b>"</b> is converted to <b>"</b></li>
+    
+    {#<li>& is converted to & amp;</li> original #}
+    <li><b>&amp;</b> is converted to <b>&amp;amp;</b></li>
+  </ul>  
+
+  {#<h4>Autoescape On</h4> try larger heading#}
+  <h3>Autoescape On</h3>
+
+  {#<p>Autoescape On Example</p> better to have a heading I think#}
+  <h3>Autoescape On Example</h3>
+
+  <p>With autoescape on, any HTML elements inside variables will be converted according to list above.</p>
+
+  {% autoescape on %} 
+    {# <h2>{{ heading_on }}</h2>{% endcomment #}
+    {% comment %}should be just heading no need to use heading_on for autoescape on{% endcomment %}
+    <h2>{{ heading }}</h2> 
+  {% endautoescape %} 
+
+  {# Show image of views.py and urls.py file for Autoescape On #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_on_example.png' %}"> #}
+
+  <p>In views.py, we are using same heading variable with italics HTML tags 
+     <b>Hello &lt;i&gt;my&lt;i&gt; World!</b> for autoescape on,<br> as was done with Autoescape off example, 
+     that was noted before.
+  </p> 
+ 
+  {# Show image of Django code in HTML Template file #}
+  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_on_example.png' %}"> #}
+
+  {# Explain Django code in HTML Template file for autoescape On #}
+  <p>In HTML Template we are using autoescape on django command to display an HTML h2 heading, which are taken from<br>
+     heading variable in views.py.<br><br>
+     <b>Django Autoescape on</b> escapes any HTML tags in a string and shows them as text on a web page.<br> 
+     When our <b>&lt;i&gt;my&lt;i&gt;</b> Italics HTML tag is escaped, <b>&lt;</b> , it is prevented from showing 
+     HTML result.<br>
+     Autoescape on converts <b>&lt;</b> to <b>&amp;lt;</b> and <b>&gt;</b> to <b>&amp;gt;</b> and these conversions
+     <b>&amp;lt;</b> and <b>&amp;gt;</b> are used to show characters <b>&lt;</b> and <b>&gt;</b> as text on web page,  
+     <br>instead of <b>my</b> in <b>italics</b>.<br>
+     Rest of heading that does not have italics tag, will be shown as an h2 heading with this.<br> 
+     This is normal HTML behaviour for displaying an italics tag, when Django Autoescape on is used.<br>
+     Autoescape on is a security feature designed to prevent cross-site scripting attacks (XSS).<br>
+     XSS are virus attacks where links are sent to a trusted website or application with malicious executable script in 
+     code.  
+  </p>
+
+  <p>You can also view this autoescape on example on a separate page, through link below.</p>
+
+  <a href="/template/autoescape_on">Autoescape On Example</a>
+
+
+  <h3>Autoescape On with Characters Example</h3>
+
+  <p>With autoescape on with characters, any HTML elements inside variables will be treated as plain text.</p>
+
+  {% autoescape on %} 
+    <h2>{{ heading_chars }}</h2> 
+  {% endautoescape %} 
+
+  {# Show image of views.py and urls.py file for Autoescape On #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_on_with_chars_example.png' %}"> #}
+
+  <p>In views.py, we are using same heading variable with characters.<br> 
+     <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!'</b> for autoescape on<br> 
+     as was done for Autoescape off with characters example, that was noted before.     
+  </p>
+
+  {# Show image of Django code in HTML Template file #}
+  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_on_with_chars_example.png' %}"> #}
+
+  {# Explain Django code in HTML Template file for autoescape On with Characters #}
+  <p>In HTML Template we are using autoescape on django command to display an HTML h2 heading with characters, which is 
+    taken from<br> heading_chars variable in views.py file.<br><br>
+    
+    <b>Django Autoescape on with characters</b> heading_chars variable
+
+    {% comment %}
+    <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!</b><br> shows same variable on web page and I will 
+    explain why.<br>{% endcomment %}
+
+    <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!</b> is an HTML escaped string.<br>    
+
+    {# Need to complete rest of description on what autoescape on is doing with characters example #}
+    This is because within heading_chars, it has HTML entities <b>&amp;lt;</b> and <b>&amp;gt</b> that are conversions of 
+    <b>&lt;</b> and <b>&gt;</b> ,<br> so they cannot be escaped any further and are treated as plain text.<br>  
+    
+    {#shows string exactly as it normally would with HTML, without escaping any HTML tags.<br> #} 
+    As we have an HTML escaped string, it will show on our web page as an h2 heading showing 
+    <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!</b>.<br>
+
+    This is how Django Autoescape should behave for HTML identities with characters and a heading, when a 
+    string variable<br> is displayed exactly like it is as plain text, as it cannot be escaped any further.
+
+  </p>
+
+  <p>You can also view this autoescape on with characters example on a separate page, through link below.</p>
+
+  <a href="/template/autoescape_on_with_chars">Autoescape On with Characters Example</a>
+
+  <hr>
+
+  <h3>Syntax</h3>
+
+  {#<p>autoescape on | off {with % % inside brackets}</p>#}
+  {#<p>  ... </p>#}
+  {#</p>endautoescape  {with % % inside brackets}</p>#}
+
+  <p>
+    &#123;% autoescape <code>on|off</code> %&#125;<br>
+            ...<br>
+    &#123;% endautoescape %&#125; 
+  </p>
+
+
+  <h3>Parameters</h3>
+
+  <table border='3'>
+    <tr>
       <th>Value</th>
       <th>Description</th>
-  </tr>
-  <tr>
-      <td>on</td>
+    </tr>
+    <tr>
+      {#<td>on</td>#}
+      <td><code>on</code></td>
       <td>Default. Specifies that the block will be escaped.</td>
-  </tr>
-  <tr>
-    <td>off</td>
-    <td>Specifies that the block will not be escaped.</td>
-</tr>
-</table>   
+    </tr>
+    <tr>
+      {#<td>off</td>#}
+      <td><code>off</code></td>
+      <td>Specifies that the block will not be escaped.</td>
+    </tr>
+  </table>   
 
 </body>
 </html>

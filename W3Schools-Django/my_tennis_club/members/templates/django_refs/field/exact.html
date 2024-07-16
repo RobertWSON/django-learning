@@ -7,14 +7,18 @@
  
 <body>
 
-    <h2>Django Field Lookup Tag Reference</h2>
+    {#<h2><center>Django Field Lookup Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Field Lookup Tag Reference</center></h1>
 
-    <h3>Field Lookups - exact</h3>  
-  
-    <p><b>Exact Example</b></p>
+    {#<h3>Field Lookups - exact</h3> try larger heading#}   
+    <h2>Field Lookups - exact</h2>
+
+    {#<p><b>Exact Example</b></p> better to have larger heading I think#}
+    <h3>Exact Example</h3>
 
     <p>Get all records where firstname is exactly "Emil":</p>
 
+    {# Exacts Example starts here #}
     <p>The queryset object:</p>
 
     {{ mymembers }}
@@ -35,29 +39,57 @@
         </tr>
         {% endfor %}
     </table>
+    {# Exact Example ends here #}
+
+    {# Image showing views.py file, so we can see how exact filter works with data for this exact example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers variable, which is an object and we are using this with a name of mydata, outside of 
+       context.<br>
+       After defining our view, we are using mydata to access Member table to get all objects (records).<br>
+       For all records, we are getting all values for fields and using an exact filter to show a record or records 
+       that have an exact matching firstname field.
+    </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this exact example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #} 
+
+    <p>In HTML Template we are using a for loop with mymembers object from views.py file.<br> 
+       After using exact filter within views.py, we are showing field values that we want, for records with a 
+       firstname field that matches our exact filter.<br>
+       We are using mymembers, surrounded by double curly braces, to show a queryset on page with details of 
+       our filtered record.<br>  
+       You will notice in queryset, that joined_date field uses a datetime function to show date that a member 
+       joined tennis club.
+    </p>
 
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The exact lookup is used to get records with a specified value.</p>
-
-    <p>The exact lookup is case sensitive.</p>
-
-    <p>For a case insensitive search, use the iexact lookup.</p>  
+    <p>The <code>exact</code> lookup is used to get records with a specified value.<br><br>
+       The <code>exact</code> lookup is case sensitive.<br><br>
+       For a case insensitive search, use the <a href="/field/iexact">iexact</a> lookup.
+    </p>  
     
     <hr>
 
     <h3>SQL Equivalent</h3>
 
-    <p>The SQL equivalent to the example above will be:</p>
+    <p>The SQL equivalent to the example above will be:<br><br>
 
-    <p>WHERE firstname = 'Emil';</p>
+       <code>WHERE firstname = 'Emil';</code>
+    </p>
 
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
+    <p>All Field lookup keywords must be specified with fieldname, followed by two underscore characters 
+       <code>__ </code> and a keyword:<br><br>
+       
+       fieldname__exact='value'
+    </p>
 
-    <p>fieldname__exact='value'</p>
+</body>
+</html>

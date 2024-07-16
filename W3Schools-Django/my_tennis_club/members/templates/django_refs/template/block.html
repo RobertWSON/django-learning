@@ -7,70 +7,139 @@
   
 <body>
 
-  <h2>Django Template Tag Reference</h2>
+  {#<h2>Django Template Tag Reference</h2> try larger heading#}
+  <h1><center>Django Template Tag Reference</center></h1>
 
-  <h3>Block Template Tag</h3>  
+  {#<h3>Block Template Tag</h3> try larger heading and specify Template Tag Reference #}  
+  <h2>Template Tag - Block</h2>
 
-<p>Block Example</p>
+  {#<p>Block Example</p> better to have a heading I think#}
+  <h3>Block Example</h3>
 
-</p>Define a section in a master template that should be replaced by a section in a child template.</p>
+  {#</p>Define a section in a master template that should be replaced by a section in a child template.</p>#}
+  <p>Define a section in a master (parent) template that should be replaced by a section in a child template.</p>
 
-<h1>Welcome</h1>
+  <a href="/template/block_example">Block Example</a>
 
-{% block userinfo %}
-  <h2>Not registered yet</h2>
-{% endblock %}
+  {# Show image of Block example web page on local host #}
+  {# <img src="{% static 'images/django_refs/template/block_example_on_localhost_web_page.png' %}"> #}
 
-<p>Check out two templates to see what they look like and views.py to see reference to child template.</p>
+  {# Briefly explain web page we will create with block #}
+  <p>You can see web page we will be working towards for our block example.</p>
 
-<hr>
+  {# Show image of Parent HTML template code that will be used in a Child HTML template  #}
+  {# <img src="{% static 'images/django_refs/template/extends_example_parent_html_template.png' %}"> #}
 
-<h3>Definition and Usage</h3>
+  {#<h1>Welcome</h1>#}
 
-<p>The block tag has two functions:</p>
+  {# {% block userinfo %} #}
+      {#<h2>Not registered yet</h2>#}
+  {# {% endblock %} #}
 
-<ol>
-  <li>It is a placeholder for content.</li>
-  <li>It is content that will replace placeholder.</li>
-</ol>  
-
-<p>In master templates the block tag is a placeholder that will be replaced by a block in a child template with the same name.</p>
-<p>In child templates the block tag is content that will replace the placeholder in the master template with the same name.</p>
-<p>In the example above you see the content of a master template, it has a block called userinfo. This block will be replaced with a block called userinfo in a child template:</p>
-
-<h4>Block Child Template Example</h4>
-
-<p>This is a child template that refers to a master template via extend tag:</p>
-
-<p>extends "mymaster.html" {with % % inside brackets}</p>
-
-<p>block userinfo {with % % inside brackets}</p>
-   <h2>John Doe</h2>
-   <p>Explorer of life.</p>
-<p>endblock {with % % inside brackets}</p>
-
-<hr>
-
-<h3>Syntax</h3>
-
-<p>block name {with % % inside brackets}</p>
-<p>  ... </p>
-</p>endblock  {with % % inside brackets}</p> 
+  {# Explain code in mymaster.html Parent Template file #}
+  <p>A parent or as it can sometimes called master HTML template, holds overall structure of a web page.<br>
+     You can see that<code>block_example</code> parent template has a Django <code>block</code> tag with a name of 
+     userinfo.<br> 
+     This userinfo block is a placeholder, which allows us to define sections in an HTML template that will be 
+     filled with content.<br>  
+     Our block initially has an h2 heading that says not registered, meaning that we need a persons name for that 
+     heading.<br>
+     We will discover further down this page how we can do that with a block in our child template. 
+  </p>
 
 
-<h3>Parameters</h3>
+  {#<p>You can see that <code>mymaster.html</code> parent template has Django blocks for child template to use.<br>#}
+    {#You will see that <code>mymaster.html</code> parent template has <code>No name</code> and #}
+    {#<code>No cars</code> within Django block tags.<br>#}
+    {#We initally have to specify this because this is a Django way for allowing our child template to fill#}
+    {#out these details.<br> #}
+    {#The rest of our <code>mymaster.html</code> template file uses HTML code that will only be used in our parent #}
+    {#template. #}     
+  {#</p>#}
 
-<table border='3'>
-  <tr>
+
+  {# Show image of views.py and urls.py file #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_block_example.png' %}"> #}
+
+  {# Explain code in views.py file #}
+  <p>In views.py, you can see that we are using our child HTML template to get all code we need to create 
+    our web page.
+  </p>
+
+  <hr>
+
+  <h3>Definition and Usage</h3>
+
+  <p>Django block tag has two functions:</p>
+
+  <ol>
+    <li>It is a placeholder for content.</li>
+    <li>It is content that will replace placeholder.</li>
+  </ol>  
+
+  <p>In a master (parent) template the block tag is a placeholder that will be replaced by a block in a child
+     template with the same name.
+  </p>
+  <p>In child templates the block tag is content that will replace the placeholder in the master (parent) template 
+     with the same name.
+  </p>
+  <p>In the example above you see the content of a master template, it has a block called userinfo.<br> 
+     This block will be replaced with a block called userinfo in a child template:</p>
+
+  <h4>Block Child Template Example</h4>
+
+  <p>This is a child template that refers to a master (parent) template through extends tag:</p>
+
+  {#<p>extends "mymaster.html" {with % % inside brackets}</p>#}
+
+  {#<p>block userinfo {with % % inside brackets}</p>#}
+    {#<h2>John Doe</h2>#}
+    {#<p>Explorer of life.</p>#}
+  {#<p>endblock {with % % inside brackets}</p>#}
+
+
+  {# Show image of blockchild.html Child Template file for this block example #}
+  {# <img src="{% static 'images/django_refs/template/block_example_child_html_template.png' %}"> #}
+
+  {# Explain code in blockchild.html Child Template file #}
+  <p>In our child template you can see that we are using 
+    &#123;% extends "django_refs/template/block_example.html" %&#125; to get <br>parent template for our overall 
+    structure of our web page.<br>
+    A Django block tag is used here to replace contents of block tag in parent template.<br>
+    You can see that heading &lt;h2&gt;Not registered yet&lt;/h2&gt; gets replaced with 
+    <code>&lt;h2&gt;John Doe&lt;/h2&gt;</code><br> and paragraph tag 
+    <code>&lt;p&gt;Explorer of life&lt;/p&gt;</code> gets added.<br><br>
+    <b>Note:</b> As well as replacing, we can also add an HTML tag in child template block.   
+  </p>
+
+  <hr>
+
+  <h3>Syntax</h3>
+
+  {# <p>block name {with % % inside brackets}</p> #}
+  {#<p>  ... </p>#}
+  {#</p>endblock  {with % % inside brackets}</p>#} 
+
+  <p>
+    &#123;% block <code>name</code> %&#125;<br>
+            ...<br>
+    &#123;% endblock %&#125;
+  </p>
+ 
+  <h3>Parameters</h3>
+
+  <table border='3'>
+    <tr>
       <th>Value</th>
       <th>Description</th>
-  </tr>
-  <tr>
-      <td>name</td>
+    </tr>
+    <tr>
+      {#<td>name</td>#}
+      <td><code>name</code></td>
       <td>Specifies that name of the block.</td>
-  </tr>
+    </tr>
   
-</table>   
+  </table>   
 
 </body>
 </html>

@@ -6,11 +6,14 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - first</h3>  
-  
-    <p><b>First item in a list Example</b></p> 
+    {#<h3>Template Filter - first</h3> try larger heading#}  
+    <h2>Template Filter - first</h2>
+
+    {#<p><b>First item in a list Example</b></p> better to have a heading I think#}   
+    <h3>First item in a list Example</h3>
 
     <p>Returns first item in a list:</p>
 
@@ -21,7 +24,7 @@
 
     <p>In views.py you can see what fruits variable looks like.</p>
      
-
+    
     <h3>Definition and Usage</h3>
  
     <p>The <code>first</code> filter returns first item of an object
@@ -33,16 +36,19 @@
 
     <p>Return first character of a string:</p>
 
-    {% include 'django_refs/filter/first_example2.html' %}
+    {#{% include 'django_refs/filter/first_example2.html' %} Do not need to use this because example is #} 
+    {# within same HTML Template page #}
+    <h1>{{ firstname|first }}</h1>
 
-    <p>Use <a href="filter/last"><code>last</code></a> filter to return last item.</p>
+    <p>In views.py you can see what firstname variable looks like.</p>
+
+    <p>Use <a href="/filter/last"><code>last</code></a> filter to return last item.</p>
 
     <h3>Syntax</h3>
 
     <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
 
-    { { value|first } }
-
+    <code>{ { value|first } }</code>
     
     
 

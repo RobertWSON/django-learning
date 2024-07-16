@@ -6,25 +6,28 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - center</h3>  
+    {#<h3>Template Filter - center</h3> try larger heading#} 
+    <h2>Template Filter - center</h2>
   
-    <p><b>Center Example</b></p> 
+    {#<p><b>Center Example</b></p> better to have a heading I think#} 
+    <h3>Center Example</h3>
 
-    </p>Write name in middle of a 20 characters field:</p>
-
+    <p>Write name in middle of a 20 characters field:</p>
 
     {#<h1>{{ name:center:20 }}</h1>  center:20 not working #}  
-    <h1>{{ name }}</h1>
+    <h1>{{ name|center:20 }}</h1>
 
-    <p>In HTML, display does not show more than one space, but if you view page source you will see that there are
-       20 characters between &lt;h1&gt; and &lt;/h1&gt;.</p>
+    <p>In HTML, display does not show more than one space, but if you view page source you will see<br> that there 
+       are 20 characters between &lt;h1&gt; and &lt;/h1&gt;.
+    </p>
 
     <p>Or, to demonstrate we can use a textarea to see that "Tobias" is center aligned:</p>     
      
     {#<textarea>{{ name|center:20 }}</textarea>  center:20 not working #}
-    <textarea>{{ name }}</textarea>
+    <textarea>{{ name|center:20 }}</textarea>
 
     <p> As you can see from this center example, we are using a django center command, to display 
         and center a string name variable from an object inside an HTML textarea.</p>
@@ -41,9 +44,9 @@
 
     <h3>Syntax</h3>
 
-    { { <code>value|center:length</code> } }
+    <p>{ { <code>value|center:length</code> } }</p>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
     
     <p>Arguments are defined by using a colon : character followed by argument value.</p>
 
@@ -57,7 +60,8 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td>length</td>
+        {#<td>length</td>#}
+        <td><code>length</code></td>
         <td>Required. A number specifying length of field where value will be in center.</td>
       </tr>
     </table>   

@@ -6,13 +6,16 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - linebreaksbr</h3>  
+    {#<h3>Template Filter - linebreaksbr</h3> try larger heading#}
+    <h2>Template Filter - linebreaksbr</h2>
   
-    <p><b>Linebreaksbr Example</b></p> 
+    {#<p><b>Linebreaksbr Example</b></p> better to have a heading I think#}  
+    <h3>Linebreaksbr Example</h3>
 
-    <p>Convert any line breaks into <br>:</p>
+    <p>Convert any line breaks into &lt;br&gt;:</p>
 
     <h3>Without linebreaksbr filter:</h3>
 
@@ -31,18 +34,20 @@
 
     <h3>Definition and Usage</h3>
      
-    <p>The <code>linebreaksbr</code> filter replaces line breaks with < br> elements.</p>
+    <p>The <code>linebreaksbr</code> filter replaces line breaks with &lt;br&gt; elements.</p>
 
-    <p>The difference between this filter and the linebreaks filter is that this filter replaces double line breaks with two < br>
-       elements, but the linebreaks filter replaces double line breaks with a <p> element.</p>
+    <p>The difference between this filter and <a href="/filter/linebreaks">linebreaks</a> filter is that this filter
+       replaces double line breaks with two &lt;br&gt;<br> elements, but the linebreaks filter replaces double line
+       breaks with a &lt;p&gt; element.
+    </p>
 
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>{ { value|linebreaksbr } }</p>
+    <p>{ { <code>value|linebreaksbr</code> } }</p>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
 
 </body>
 </html>

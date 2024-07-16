@@ -8,20 +8,25 @@
 
 <body>
 
-    <h2>Django Template Tag Reference</h2>
+    {#<h2>Django Template Tag Reference</h2> try larger heading#}
+    <h1><center>Django Template Tag Reference</center></h1>
 
-    <h3>Template Filter - length_is</h3>  
+    {#<h3>Template Filter - length_is</h3> try slightly larger heading#} 
+    <h2>Template Filter - length_is</h2>
 
-    <h4>length_is for list items Example</h4>
+    {#<h4>length_is for list items Example</h4> better to have slightly larger heading I think#} 
+    <h3>length_is for list items Example</h3>
 
     <p>Check if there are 3 items in a list:</p>
 
     <h1>{{ fruits|length_is:3 }}</h1>
 
-    <p> As you can see from this length_is example, we are using a django command, which acts 
-        like a boolean, to determine if it is true that an object has 3 list items in an array.</p>
-
     <p>In views.py you can see what fruits variable look like.</p>
+
+    <p> As you can see from this length_is example, we are using a django command, which acts 
+        like a boolean, to determine if it is true that an object has 3 list items in an array.
+    </p>
+
     
 
     <hr>
@@ -32,12 +37,19 @@
     
     <p>This can be useful when you are dealing with if statements:</p>
 
-    <h4>length_is with Django If Statement Example</h4>
+    {#<h4>length_is with Django If Statement Example</h4> better to have slightly larger heading I think#} 
+    <h3>length_is with Django If Statement Example</h3>
     
     <p>Write "Hello" if <code>firstname</code> has 5 characters:</p>
 
     {# Example 2 Not displaying #}
-    {% include 'django_refs/filter/length_is_example2.html' %} 
+    {#{% include 'django_refs/filter/length_is_example2.html' %} Do not need to use this because example is #} 
+    {# within same HTML Template page #} 
+    {% if firstname|length_is:5 %}
+        <h1>Hello</h1>
+    {% endif %}
+
+    <p>In views.py you can see what fruits variable looks like.</p>
 
     {# Image below for showing code for this example #}
     {# <img src=""> #}
@@ -47,9 +59,10 @@
 
     <h3>Syntax</h3>
 
-    { { <code>value|length_is:len</code> } }
+    {#{ { <code>value|length_is:len</code> } }#}
+    <code>{ { value|length_is:len } }</code>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
     
     <p>Arguments are defined by using a colon : character followed by argument value.</p>
 

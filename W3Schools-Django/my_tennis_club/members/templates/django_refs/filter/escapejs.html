@@ -6,11 +6,14 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - escapejs</h3>  
-  
-    <p><b>Escapejs Example</b></p> 
+    {#<h3>Template Filter - escapejs</h3> try larger heading#}
+    <h2>Template Filter - escapejs</h2>
+
+    {#<p><b>Escapejs Example</b></p> better to have a heading I think#}
+    <h3>Escapejs Example</h3>
  
     </p>Escape a text to use in JavaScript:</p>
 
@@ -21,20 +24,20 @@
     <h3>With escapejs:</h3>
     <button onclick="alert('{{ var1|escapejs }}')">Click me</button>
 
-    <p>Try clicking both buttons. The JavaScript without escapejs filter will raise an error.</p>
+    <p>Try clicking both buttons. JavaScript without escapejs filter will raise an error.</p>
     <p>In views.py you can see what var1 variable looks like.</p>
 
     
     <h3>Definition and Usage</h3>
  
-    <p>The escapejs filter escapes text to be used in JavaScript strings.</p>
+    <p>The <code>escapejs</code> filter escapes text to be used in JavaScript strings.</p>
 
 
     <h3>Syntax</h3>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
    
-    { { value|escapejs } }
+    <code>{ { value|escapejs } }</code>
     
 </body>
 </html>

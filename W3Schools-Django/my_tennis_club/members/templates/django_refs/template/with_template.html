@@ -1,3 +1,7 @@
+
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
   
@@ -7,15 +11,30 @@
 
 <body>
 
-    <h2>Django Template Tag Reference</h2>
+    {#<h2>Django Template Tag Reference</h2> try larger heading#}
+    <h1><center>Django Template Tag Reference</center></h1>
   
-    <h3>With Template Tag</h3>  
+    {#<h3>With Template Tag</h3> try larger heading and specify Template Tag Reference #} 
+    <h2>Template Tag - with </h2>
   
-    <h4>With for a variable in a template Example </h4>
+    {#<h4>With for a variable in a template Example</h4> try larger heading#}
+    <h3>With for a variable in a template Example</h3>
 
     <p>Create a variable in a template and use it:<p>
 
-    {% include "django_refs/template/with_example1.html"%}  
+    {# {% include "django_refs/template/with_example1.html"%} #} 
+    {# I have found that we cannot use include for this example and it is better to use one view with #}
+    
+    {% with firstname="Stalikken" %}
+      <h1>Hello{{ firstname }}</h1>
+    {% endwith %}
+
+    {# Image showing code in HTML Template file for this example #}  
+
+    {# Explain Django code in HTML file #}
+    <p>You can see, instead of using firstname variable from views.py, we are actually using firstname variable
+       within this HTML templates.
+    </p>
 
     <hr>
 
@@ -25,17 +44,68 @@
 
     <p>This can be useful when you need to ask for same variable many times, like in a loop.</p>
 
-    <h4>With in a a For Loop Example</h4>
+    <h4>With in a For Loop Example</h4>
 
-    <p>Use the <code>with</code> tag to get length of <code>fruits</code> only one time:</p>
+    <p>Use <code>with</code> tag to get length of <code>fruits</code> only one time:</p>
 
-    {% include "django_refs/template/with_example2.html" %}
+    {# {% include "django_refs/template/with_example2.html" %} #}
+    {# I have found that we cannot use include for this example and it is better to use one view with #}
+    {# Django code in this HTML Template File. #}
+    {% with var=fruits|length %}
+      {% for x in fruits %}
+        <p>{{ x }} is one of {{ var }} fruits.</p>
+      {% endfor %}
+    {% endwith %}
 
+    {# Show image of views.py file #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what fruits list looks like.<br>
+      You can see that within our context we are using an array with a list of fruit items.<br><br> 
+
+      <b>Note:</b> Our object <code>fruits</code> here holds an array which holds all fruit items.<br>
+       <br>
+
+      If you want to have this example within a web page that you are creating like I have, then within context, 
+      you can have <br>fruits object pickup a fruits array. Outside context you can show the array with its item 
+      names.<br>
+      With this newer return method we are are using render to pickup request, template and context. 
+    </p>
+
+    {# Show image of Django code in HTML file #}
+
+    {# Explain Django code in HTML file #}
+    <p>In HTML Template, first line of code is creating a variable var for an object and naming it fruits. <br>
+       A length filter is then used for number of items within this object, which is 4.<br>
+       Next we are using a for loop for fruits variable (object), where x represents an item in this object.<br>
+       A looped Paragraph tag is used to show each item name using x and it shows var (total number of items in 
+       fruits array)<br> using a length filter for array length.<br>
+    </p>   
+    
     <hr>
 
     <h3>Syntax</h3>
     
+    <p>
+      { % with var1=val1 var2=val2 var3=val3 var4=val4 etc. % }<br>
+          <code>write code inside this tag here</code> <br>
+      { % endwith % }
+    </p> 
     
+
+    <h3>Parameters</h3>
+
+    <table border='3'>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        {#<td><i>var1=val1 var2=val2 var3 = val3 etc.</i></td>#}
+        <td>var1=val1 var2=val2 var3 = val3 etc.</td>
+        <td>Required. Declaring variable(s) and their value(s).</td>
+      </tr>
+    </table>   
 
 </body>
 

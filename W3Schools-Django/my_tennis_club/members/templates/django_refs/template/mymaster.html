@@ -2,8 +2,13 @@
 <!DOCTYPE html>
 <html>
 <body>
+
+    <h1><center>Extends Template Example</center></h1>
     
-    <h1>Welcome</h1>
+    {# Extends Example starts here #}
+    {#<h1>Welcome</h1> may be better to use slightly smaller heading to seperate this from main page heading #}
+    <h2>Welcome</h2>
+
     <hr>
     
     {% block heading %}
@@ -18,7 +23,11 @@
         {% endblock %}
     </ul>
     
-<p>Check out two templates to see what they look like <br>
-   and views.py to see reference to child template</p>    
+    <p>Check out two templates to see what they look like <br>
+       and views.py to see reference to child template
+    </p>    
 
+    {# Extends Example ends here #}
+
+</body>   
 </html>

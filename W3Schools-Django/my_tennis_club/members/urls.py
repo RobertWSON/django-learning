@@ -396,10 +396,19 @@ urlpatterns = [
     # Only need one route for autoescape because it can be used for both examples in same page.
     path('template/autoescape', views.autoescape, name="autoescape"),
 
-    # Django Template Block Tag Page
+    # Autoescape examples for when it it on or off on a seperate page
+    path('template/autoescape_off', views.autoescape_off, name='autoescape_off'),
+    path('template/autoescape_on', views.autoescape_on, name='autoescape_on'),
+    # Autoescape examples for when a heading variable is combined with a heading and characters
+    path('template/autoescape_off_with_chars', views.autoescape_off_chars, name='autoescape_off_chars'),
+    path('template/autoescape_on_with_chars', views.autoescape_on_chars, name='autoescape_on_chars'),
+
+    # Django Template Block Tag Page that explains example
     path('template/block', views.block, name='block'),
+    
     # Need to use blockchild view for using child template
-    path('template/block', views.blockchild, name='blockchild'),
+    #path('template/block', views.blockchild, name='blockchild'),
+    path('template/block_example', views.block_example, name='block_example'),
     
     # Page with Comment Examples
     path('template/comment', views.comment, name='comment'),
@@ -415,11 +424,11 @@ urlpatterns = [
     
     path('template/firstof', views.firstof, name='firstof'),    
     
-    #path('template/for', views.for, name='for'),    
+    path('template/for', views.for_template, name='for'),    
     
-    #path('template/if', views.if, name='if'),
+    path('template/if', views.if_template, name='if'),
     
-    #path('template/ifchanged', views.ifchanged, name='ifchanged'),   
+    path('template/ifchanged', views.ifchanged, name='ifchanged'),   
     
     path('template/include', views.include, name='include'),
     
@@ -430,6 +439,7 @@ urlpatterns = [
     path('template/now', views.now, name='now'),
     
     path('template/regroup', views.regroup, name='regroup'),
+    
     
     path('template/resetcycle', views.resetcycle, name='resetcycle'),
     
@@ -449,13 +459,14 @@ urlpatterns = [
     # Filter Reference
     path('filter/', views.filter, name='filter'),
     
+    
     # Temporary Route, to see if I can get Tag reference along with its example showing on a page.  #
     path('filter/add', views.add, name='add'),
     # Add Check not working just yet
     #path('filter/add', views.addcheck, name='addcheck'),
-    path('filter/add', views.add_example2, name='add_example2'),
+    #path('filter/add', views.add_example2, name='add_example2'),
     
-    path('filter/add', views.add_example3, name='add_example3'),
+    #path('filter/add', views.add_example3, name='add_example3'),
     
     
     path('filter/addslashes', views.addslashes, name='addslashes'),
@@ -486,15 +497,15 @@ urlpatterns = [
     path('filter/first', views.first, name='first'),
     
     # Also use first for displaying first character of a string in an object
-    path('filter/first', views.first_example2, name='first_example2'),
+    #path('filter/first', views.first_example2, name='first_example2'),
     
     path('filter/floatformat', views.floatformat, name='floatformat'),
     
-    path('filter/floatformat', views.floatformat_example2, name='floatformat_example2'),
+    #path('filter/floatformat', views.floatformat_example2, name='floatformat_example2'),
     
-    path('filter/floatformat', views.floatformat_example3, name='floatformat_example3'),
+    #path('filter/floatformat', views.floatformat_example3, name='floatformat_example3'),
     
-    path('filter/floatformat', views.floatformat_example4, name='floatformat_example4'),
+    #path('filter/floatformat', views.floatformat_example4, name='floatformat_example4'),
     
     path('filter/get_digit', views.get_digit, name='get_digit'),
     
@@ -505,18 +516,18 @@ urlpatterns = [
     path('filter/last', views.last, name='last'),
     
     # This is used with include for example 2
-    path('filter/last', views.last_example2, name='last_example2'),
+    #path('filter/last', views.last_example2, name='last_example2'),
     
     path('filter/length', views.length, name='length'),
 
-    path('filter/length', views.length_example2, name='length_example2'),
+    #path('filter/length', views.length_example2, name='length_example2'),
 
     # This is used with include for example 2
-    path('filter/length', views.length_example2, name='length_example2'),
+    #path('filter/length', views.length_example2, name='length_example2'),
 
     path('filter/length_is', views.length_is, name='length_is'),
     
-    path('filter/length_is', views.length_is_example2, name='length_is_example2'),
+    #path('filter/length_is', views.length_is_example2, name='length_is_example2'),
     
     path('filter/linebreaks', views.linebreaks, name='linebreaks'),
     
@@ -543,7 +554,7 @@ urlpatterns = [
     path('filter/slugify', views.slugify, name='slugify'),
     
     # This is used with include for example 2
-    path('filter/slugify', views.slugify_example2, name='slugify_example2'),
+    #path('filter/slugify', views.slugify_example2, name='slugify_example2'),
     
     path('filter/striptags', views.striptags, name='striptags'),
     
@@ -553,10 +564,10 @@ urlpatterns = [
     path('filter/timesince', views.timesince, name='timesince'),
     
     # This is used with include for example 2
-    path('filter/timesince', views.timesince_example2, name='timesince_example2'),
+    #path('filter/timesince', views.timesince_example2, name='timesince_example2'),
     
     # This is used with include for example 3
-    path('filter/timesince', views.timesince_example3, name='timesince_example3'),
+    #path('filter/timesince', views.timesince_example3, name='timesince_example3'),
     
     # Use timeuntil for displaying difference between two date times. 
     path('filter/timeuntil', views.timeuntil, name='timeuntil'),
@@ -580,7 +591,7 @@ urlpatterns = [
     
     path('filter/unordered_list', views.unordered_list, name='unordered_list'),
     
-    path('filter/unordered_list', views.unordered_list_nested, name='unordered_nested'),
+    #path('filter/unordered_list', views.unordered_list_nested, name='unordered_nested'),
     
     path('filter/upper', views.upper, name='upper'),
     
@@ -601,7 +612,7 @@ urlpatterns = [
     
     path('field/iexact', views.iexact, name='iexact'),
     
-    #path('field/in', views.in, name='in'),
+    path('field/in', views.in_filter, name='in'),
     
     path('field/gt', views.gt, name='gt'),
     
@@ -611,7 +622,7 @@ urlpatterns = [
     
     path('field/lte', views.lte, name='lte'),
     
-    #path('field/range', views.range, name='range'),
+    path('field/range', views.range, name='range'),
     
     
     path('field/startswith', views.startswith, name='startswith'),

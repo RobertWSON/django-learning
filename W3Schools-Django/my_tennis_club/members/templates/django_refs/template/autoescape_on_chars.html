@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1><center>Autoescape On with Characters Example</center></h1>
+
+    <p><br>Here we are demonstrating how Django Autoescape On works for a heading variable that has characters 
+        with HTML entities.<br>
+        In our views.py, just like we did with Autoescape Off, we have same heading_chars variable 
+        <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!</b><br> and this is how it shows on our web page 
+        below.
+     </p>
+
+    {% autoescape on %}
+        <h2>{{ heading_chars }}</h2>
+    {% endautoescape %}
+
+    <p>When Django Autoescape was off with same heading_chars variable, we saw that it showed italic tags as 
+       text with heading.<br><br>  
+       Now with Django Autoescape on with characters, you can see that it shows same heading_chars variable 
+       from our views.py file,<br> as it does on our web page.<br>
+       This is because HTML entities in our variable are already escaped and do not need to be converted
+       or changed to text characters.<br>   
+       This is how Django Autoescape On behaves when we have a variable with HTML entities. 
+    </p>
+
+</body>
+</html>

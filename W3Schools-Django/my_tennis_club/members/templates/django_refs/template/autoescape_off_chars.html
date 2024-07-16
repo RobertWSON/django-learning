@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1><center>Autoescape Off with Characters Example</center></h1>
+
+    <p><br>Here we are demonstrating how Django Autoescape Off works for a heading variable that has characters 
+        with HTML entities.<br>
+       In our views.py we have a heading_chars variable <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!</b> 
+       and this is how it shows on<br> our web page below.
+    </p>
+
+    {% autoescape off %}
+        <h2>{{ heading_chars }}</h2>
+    {% endautoescape %}
+
+    <p>You can see how italics HTML tags get shown as text and are not recognised as HTML, when autoescape off 
+       is used in this way. 
+    </p>
+
+</body>
+</html>

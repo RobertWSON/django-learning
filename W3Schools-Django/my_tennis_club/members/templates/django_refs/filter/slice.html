@@ -1,4 +1,7 @@
 
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
     <head><title>Django Filter Tag Reference</title>
@@ -6,18 +9,29 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - slice</h3>  
-  
-    <p><b>Slice Example</b></p> 
+    {#<h3>Template Filter - slice</h3> try larger heading#}  
+    <h2>Template Filter - slice</h2>
+
+    {#<p><b>Slice Example</b></p> better to have a heading I think#} 
+    <h3>Slice Example</h3>
 
     <p>Get items 1, 2 and 3 from a list (first item is 0):</p>
 
     <h1>{{ fruits|slice:"1:4" }}</h1>
 
-    <p>In views.py you can see what name variable looks like.</p>
-     
+    {# Show image of views.py file #}
+
+    {# Explain code in views.py file #}
+    <p>In views.py you can see what fruits variable looks like.</p>
+    
+    {# Show image of Django code in HTML file #}
+
+    {# Explain Django code in HTML file #}
+    
+
     <hr>
 
     <h3>Definition and Usage</h3>
@@ -27,17 +41,18 @@
     <p>You can define from (included) and to (not included) indexes.</p>
   
     <p>If you use negative indexes, it means slicing from end of a list, <code>-1</code> refers to last item, 
-       <code>-2</code> refers to second last item etc.</p>
+       <code>-2</code> refers<br> to second last item etc.</p>
 
 
     <hr>   
 
     <h3>Syntax</h3>
 
-    { { <code>list</code> | <code>slice</code><em>"from:to"</em> } }
+    {#{ { <code>list</code> | <code>slice</code><em>"from:to"</em> } }#}
+    <p>{ { <code>list|slice:"from:to"</code> } }</p>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
-    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon <b>:</b> character followed by argument value.</p>
 
     <h3>Arguments</h3>
 
@@ -48,12 +63,13 @@
       </tr>
       <tr>
         {#<td><em>from</em></td>#}
-        <td><em>from</em></td>
-        <td>Optional. Index to start slicing. If omitted, default value is 0 and slicing will start at first item.</td>
+        <td><code>from</code></td>
+        <td>Optional. Index to start slicing. If omitted, default value is 0 and slicing will start at first item.
+        </td>
       </tr>
       <tr>
-        {#<td><em>to</em><td>#}
-        <td><em>to</em></td>    
+        {#<td><em>to</em></td>#} 
+        <td><code>to</code></td>
         <td>Optional. Index to end slicing. If omitted, slicing will end at last item.</td>    
       </tr>  
     </table>

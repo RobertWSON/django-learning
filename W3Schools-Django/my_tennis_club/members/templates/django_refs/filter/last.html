@@ -8,21 +8,33 @@
 
 <body>
 
-    <h2>Django Template Tag Reference</h2>
+    {#<h2><center>Django Template Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Template Tag Reference</center></h1>
 
-    <h3>Template Filter - last</h3>  
+    {#<h3>Template Filter - last</h3>try slightly larger heading#} 
+    <h2>Template Filter - last</h2>
 
-    <h4>Last for an Object Example</h4>
+    {#<h4>Last for an Object Example</h4> better to have larger heading I think#} 
+    <h3>Last for an Object Example</h3>
 
-    <p>Return number of items in a list:</p>
+    {#<p>Return number of items in a list:</p>#}
+    <p>Return last item in a list:</p>
 
     <h1>{{ fruits|last }}</h1>
 
-    <p> As you can see from this last example, we are using a django command, to display 
-        the last fruit item taken from a list in an array for an object.</p>
-
     <p>In views.py you can see what fruits variable look like.</p>
+
+    <p> As you can see from this last example, we are using a django command, to display 
+        the last fruit item taken from a list in an array for an object.
+    </p>
+
+    {# Image showing last filter code in HTML Template #}
+    {# <img src="{% static 'images/django_admin/last_filter_code_in_html_template.png' %}"> #}
+
+    {#<p>In views.py you can see what fruits variable look like.</p> put this at finish of example #}
     
+    {# Image showing fruits array for last_filter to use #}
+    {# <img src="{% static 'images/django_admin/last_filter_fruits_array_in_views_file.png' %}"> #}
 
     <hr>
 
@@ -37,21 +49,45 @@
     <p>Return last character of a string:</p>
 
     {# Example 2 Not displaying #}
-    {% include 'django_refs/filter/last_example2.html' %} 
+    {# Do not needs this as both example on same page {% include 'django_refs/filter/last_example2.html' %} #} 
 
-    {# Image below for showing code for this example #}
-    {# <img src=""> #}
+    <h1>{{ firstname|last }}</h1>
 
-    <p>Use <code><a href="filter/first.html">first</a></code> to return first item. </p>
+    <p>In views.py you can see what firstname variable looks like.</p>
+
+    <p> As you can see from this last example, we are using a django last command, to display 
+        last character of firstname string variable in a list of an array for an object.
+    </p>
+
+    
+
+    {# Image below for showing code for this last character for firstname example #}
+    {# <img src="images/django_admin/last_char_first_name_example.png' %}"> #}
+
+    <h1>{{ lastname|last }}</h1>
+
+    <p>In views.py you can see what lastname variable looks like.</p>
+
+    <p> As you can see from this last example, we are using a django last command, to display 
+        last character of lastname string variable in a list of an array for an object.
+    </p>
+
+    {#<p>In views.py you can see what lastname variable looks like.</p> put this at finish of example #}
+    
+    {# Image below for showing code for this last character for firstname this example #}
+    {# <img src="images/django_admin/last_char_last_name_example.png' %}"> #}
+
+
+    <p>Use <code><a href="filter/first.html">first</a></code> filter to return first item. </p>
 
 
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
 
-    { { <code>value|last</code> } }
+    <p>{ { <code>value|last</code> } }</p>
 
 
 </body>

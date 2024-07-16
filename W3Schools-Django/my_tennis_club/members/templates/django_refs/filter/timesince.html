@@ -1,4 +1,7 @@
 
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
 
@@ -8,21 +11,30 @@
 
 <body>
 
-    <h2>Django Template Tag Reference</h2>
+    {#<h2>Django Template Tag Reference</h2> try larger heading#}
+    <h1><center>Django Template Tag Reference</center></h1>
 
-    <h3>Template Filter - timesince</h3>  
+    {#<h3>Template Filter - timesince</h3> try larger heading#} 
+    <h2>Template Filter - timesince</h2>
 
-    <h4>Timesince between datetimes Example</h4>
+    {#<h4>Timesince between datetimes Example</h4> try larger heading#}
+    <h3>Timesince between datetimes Example</h3>
 
     <p>Return difference between two datetimes:</p>
 
     <h1>{{ mybirthdate|timesince:mydate }}</h1>
 
-    <p> As you can see from this timesince example, we are using a django command to take time
-        difference between a birth date and current date.</p>
+    {# Show image of views.py file #}
 
+    {# Explain code in views.py file #}
     <p>In views.py you can see what mybirthdate and mydate variables look like.</p>
-    
+
+    {# Show image of Django code in HTML file #}
+
+    {# Explain Django code in HTML file #}
+    <p> As you can see from this timesince example, we are using a django command to take time
+        difference between a birth date and current date.
+    </p>
 
     <hr>
 
@@ -32,35 +44,59 @@
     
     <p>If you leave out date in argument, current date (now) will be used:</p>
 
-    <h4>Time since Birthday and Now Example</h4>
-    
+    {#<h4>Time since Birthday and Now Example</h4> try larger heading#}
+    <h3>Time since Birthday and Now Example</h3>
+
     <p>Return difference between now and mybirthday:</p>
 
-    {% include 'django_refs/filter/timesince_example2.html' %} 
+    {#{% include 'django_refs/filter/timesince_example2.html' %} Do not need to use this because example is #} 
+    {# within same HTML Template page #} 
+    <h1>{{ mybirthdate|timesince }}</h1>
 
-    {# Image below for showing code for this example #}
-    {# <img src=""> #}
+    {# Show image of views.py file #}
+
+    {# Explain code in views.py file #}
+    <p>In views.py we are using same mybirthdate variable that we did with previous example.<br> 
+       Note: we are not using mydate variable though that was used in previous example.
+
+    </p>
+  
+    {# Show image of Django code in HTML file #}
+
+    {# Explain Django code in HTML file #}
 
     <p>You can also get difference between two times, in hours and minutes:</p>
 
-    <h4>Timesince in Hours and Minutes Example</h4>
+    {#<h4>Timesince in Hours and Minutes Example</h4> try larger heading#}
+    <h3>Timesince in Hours and Minutes Example</h3>
 
     <p>Return difference between 13:45 and 9:30:</p>
 
-    {#{% include 'django_refs/filter/timesince_example3.html' %}#}
+    {#{% include 'django_refs/filter/timesince_example3.html' %} Do not need to use this because example is #} 
+    {# within same HTML Template page #} 
+    <h1>{{ date1|timesince:date2 }}</h1>
 
-    <p>See also <code><a href="filter/timeuntil.html">timeuntil</a></code> filter.</p>
+    {# Show image of views.py file #}
 
+    {# Explain code in views.py file #}
+    <p>In views.py you can see what date1 and date2 variables look like.</p>
+
+    {# Show image of Django code in HTML file #}
+
+    {# Explain Django code in HTML file #}
+
+    {#<p>See also <code><a href="filter/timeuntil.html">timeuntil</a></code> filter.</p> take out code below for link.#}
+    <p>See also <a href="filter/timeuntil.html">timeuntil</a> filter.</p>
 
     <hr>
 
     <h3>Syntax</h3>
 
-    { { <code>datetime|timesince:comparedate</code> } }
+    <p>{ { <code>datetime|timesince:comparedate</code> } }</p>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
     
-    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+    <p>Arguments are defined by using a colon <b>:</b> character followed by argument value.</p>
 
     <hr>
 
@@ -72,8 +108,9 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td><em>comparedate</em></td>
-        <td>Optional. A datetime you want to conmpare with. Default value is datetime now.</td>
+        {#<td><em>comparedate</em></td>#}
+        <td><code>comparedate</code></td>
+        <td>Optional. A datetime you want to compare with. Default value is datetime now.</td>
       </tr>
     </table>   
 

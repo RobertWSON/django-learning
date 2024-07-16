@@ -6,14 +6,18 @@
  
 <body>
 
-    <h2>Django Field Lookup Tag Reference</h2>
+    {#<h2><center>Django Field Lookup Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Field Lookup Tag Reference</center></h1>
 
-    <h3>Field Lookups - iexact</h3>  
-  
-    <p><b>Iexact Example</b></p>
+    {#<h3>Field Lookups - iexact</h3> try larger heading#}  
+    <h2>Field Lookups - iexact</h2>
+
+    {#<p><b>Iexact Example</b></p> better to have larger heading I think#}
+    <h3>Iexact Example</h3>
 
     <p>Get all records where firstname is exactly "emil":</p>
 
+    {# Iexact Example starts here #}
     <p>The queryset object:</p>
 
     {{ mymembers }}
@@ -34,29 +38,58 @@
         </tr>
         {% endfor %}
     </table>
+    {# Iexact Example ends here #}
+
+    {# Image showing views.py file, so we can see how iexact filter works with data for this iexact example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers variable, which is an object and we are using this with a name of mydata, outside of 
+       context.<br>
+       After defining our view, we are using mydata to access Member table to get all objects (records).<br>
+       For all records, we are getting all values for fields and using an iexact filter to show a record that 
+       has a matching<br> firstname (not case sensitive ) starting with either e or E .
+    </p> 
+    
+    {# Image showing HTML Template code, so we can see how data is used for this iexact example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>In HTML Template we are using a for loop with mymembers object from views.py file.<br> 
+        After using iexact filter within views.py, we are showing field values that we want, for records with a 
+        firstname field that matches our iexact filter.<br>
+        We are using mymembers, surrounded by double curly braces, to show a queryset on page with details of 
+        our filtered record.<br>  
+        You will notice in queryset, that joined_date field uses a datetime function to show date that a member 
+        joined tennis club.
+     </p>
 
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The iexact lookup is used to get records with a specified value.</p>
-
-    <p>The iexact lookup is case insensitive.</p>
-
-    <p>For a case sensitive search, use the exact lookup.</p>  
+    <p>The <code>iexact</code> lookup is used to get records with a specified value.<br><br>
+       The <code>iexact</code> lookup is case insensitive, so this means that it does not matter if a name
+       starts with a lower case or upper case letter.<br><br>
+       For a case sensitive search, use the <a href="/field/exact">exact</a> lookup.
+    </p>  
     
     <hr>
 
     <h3>SQL Equivalent</h3>
 
-    <p>The SQL equivalent to the example above will be:</p>
+    <p>The SQL equivalent to the example above will be:<br><br>
 
-    <p>WHERE firstname = 'Emil';</p>
+       <code>WHERE firstname = 'Emil';</code>
+    </p>
 
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
+    <p>All Field lookup keywords must be specified with fieldname, followed by two underscore characters 
+       <code>__</code> and a keyword:<br><br>
 
-    <p>fieldname__iexact='value'</p>
+       fieldname__iexact='value'
+    </p>
+
+</body>
+</html>

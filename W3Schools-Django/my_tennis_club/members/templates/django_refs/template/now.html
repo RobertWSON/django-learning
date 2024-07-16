@@ -7,70 +7,278 @@
 
 <body>
 
-  <h2>Django Template Tag Reference</h2>
+  {#<h2>Django Template Tag Reference</h2> try larger heading#}
+  <h1><center>Django Template Tag Reference</center></h1>
 
-  <h3>Now Template Tag</h3>  
+  {#<h3>Now Template Tag</h3> try larger heading and specify Template Tag Reference #}  
+  <h2>Template Tag - Now</h2>
 
-<h4>Now - Current Date</h4>
+  {#<h4>Now - Current Date</h4> try larger heading#}
+  {#<h4>Now for Current Date</h4>#}
+  <h3>Now - Current Date</h3>
 
-<p>Now - Current Date Example</p>
+  {#<p>Now - Current Date Example</p> better to have a heading I think#}
+  <h3>Now - Current Date Example</h3>
 
-<p>Add current date:</p>
+  <p>Add current date:</p>
 
-<h1>{% now "Y-m-d "%}</h1>
+  <h1>{% now "Y-m-d "%}</h1>
 
-<hr>
+  {# Show image of views.py file #}
 
-<h3>Definition and Usage</h3>
+  {# Explain code in views.py file #}
 
-<p>The now tag inserts current date and/or time, according to specified format.</p>
+  {# Show image of Django code in HTML file #}
 
-<h4>Now - Current Date and Time</h4>
+  {# Explain Django code in HTML file #}
 
-<p>Now - Current Date and Time Example</p>
+  <hr>
 
-<p>Add current date and time:</p>
+  <h3>Definition and Usage</h3>
 
-<h1>{% now "Y-m-d G:i:s" %}</h1>
+  <p>The <code>now</code> tag inserts current date and/or time, according to specified format.</p>
 
-<hr>
+  {#<h4>Now - Current Date and Time</h4> try larger heading#}
+  <h3>Now - Current Date and Time</h3>
 
-<h3>Syntax</h3>
+  {#<p>Now - Current Date and Time Example</p> better to have a heading I think#}
+  <h3>Now - Current Date and Time Example</h3>
 
-{ %  now format % }
+  <p>Add current date and time:</p>
 
-<hr>
+  <h1>{% now "Y-m-d G:i:s" %}</h1>
 
-<h3>Parameters</h3>
+  {# Show image of views.py file #}
 
-<table border='3'>
+  {# Explain code in views.py file #}
+
+  {# Show image of Django code in HTML file #}
+
+  {# Explain Django code in HTML file #}
+
+  <hr>
+
+  <h3>Syntax</h3>
+
+  <p>{ % now <code>format</code> % }</p>
+
+  <hr>
+
+  <h3>Parameters</h3>
+
+  <table border='3'>
     <tr>
-        <th>Value</th>
-        <th>Description</th>
+      <th>Value</th>
+      <th>Description</th>
     </tr>
+
     <tr>
-        <td><em>count</em></td>
-        <td>Optional. The number of words or paragraphs to display.
-            Default 1.
-        </td>
-    </tr>    
-    <tr>    
-        <td><em>method</em></td>
-        <td>"Optional. Specifies whether to display blocks, words or HTML paragraphs."
-        <br>
-        <code>b</code>"for blocks of text"
-        <br>
-        <code>p</code>"for HTML Paragraphs"
-        <br>
-        <code>p</code>"for words"
-        <br>
-        "Default "<code>b</code>
-        </td>
-    </tr>
-    <tr>
-        <td>random</td> 
-        <td>"Optional. If specified, random text start at a random word of "lorum ipsum" text"</td>   
-    </tr>
+      {#<td><em>count</em></td>#}
+      <td><code>format</code></td>
+      <td>Required. A string with any combination of these characters:<br><br>
+        <table border='1'>   
+            <tr>
+              <th>Character</th>
+              <th>Description</th>
+            </tr>
+
+            <tr>
+              <td>y</td>
+              <td>Year, 2 digits (00 - 99)</td>
+            </tr>
+
+            <tr>
+              <td>y</td>
+              <td>Year, 4 digits (0001 - 9999)</td>
+            </tr>
+
+            <tr>
+              <td>L</td>
+              <td>Returns whether now is a leap year or not (True - False)</td>
+            </tr>
+
+            <tr>
+              <td>m</td>
+              <td>Month, 2 digits (01 - 12)</td>
+            </tr>
+
+            <tr>
+              <td>n</td>
+              <td>Month, 1 or 2 digits (1 - 12)</td>
+            </tr>
+
+            <tr>
+              <td>M</td>
+              <td>Month, 3 letters (Jan - Dec)</td>
+            </tr>
+
+            <tr>
+              <td>b</td>
+              <td>Month, 3 lower case letters (jan - dec)</td>
+            </tr>
+
+            <tr>
+              <td>E</td>
+              <td>Month, text in local language</td>
+            </tr>
+
+            <tr>
+              <td>F</td>
+              <td>Month, full text (January - December)</td>
+            </tr>
+
+            <tr>
+              <td>N</td>
+              <td>Month, max 5 letters, if month name has more, use<br> proper abbreviation (Jan. Dec.)</td>
+            </tr>
+
+            <tr>
+              <td>t</td>
+              <td>Number of days in month (28 - 31)</td>
+            </tr>
+
+            <tr>
+              <td>d</td>
+              <td>Day of month (01 - 31)</td>
+            </tr>
+
+            <tr>
+              <td>D</td>
+              <td>Day of week (Sun - Sat)</td>
+            </tr>
+
+            <tr>
+              <td>j</td>
+              <td>Day of month (1 - 31)</td>
+            </tr>
+
+            <tr>
+              <td>l</td>
+              <td>Day of week (Sunday - Saturday)</td>
+            </tr>
+
+            <tr>
+              <td>S</td>
+              <td>Ending of number (st - nd - rd - th)</td>
+            </tr>
+
+            <tr>
+              <td>w</td>
+              <td>Day of week (0 - 6)</td>
+            </tr>
+
+            <tr>
+              <td>z</td>
+              <td>Day of year (1 - 366)</td>
+            </tr>
+
+            <tr>
+              <td>W</td>
+              <td>Week of year (ISO - 8601) (1 - 53)</td>
+            </tr>
+
+            <tr>
+              <td>g</td>
+              <td>Hour (1 - 12)</td>
+            </tr>
+
+            <tr>
+              <td>G</td>
+              <td>Hour (0 - 23)</td>
+            </tr>
+
+            <tr>
+              <td>h</td>
+              <td>Hour (01 - 12)</td>
+            </tr>
+
+            <tr>
+              <td>H</td>
+              <td>Hour (00 - 23)</td>
+            </tr>
+
+            <tr>
+              <td>i</td>
+              <td>Minutes (00 - 69)</td>
+            </tr>
+
+            <tr>
+              <td>s</td>
+              <td>Seconds (00 - 59)</td>
+            </tr>
+
+            <tr>
+              <td>u</td>
+              <td>Microseconds (000000 - 999999)</td>
+            </tr>
+
+            <tr>
+              <td>a</td>
+              <td>Meridiem (a.m. or p.m.)</td>
+            </tr>
+
+            <tr>
+              <td>A</td>
+              <td>Meridiem (A.M. or P.M.)</td>
+            </tr>
+
+            <tr>
+              <td>f</td>
+              <td>The Time (9:45). If the time is precisely (on the<br> minute) nine, it returns only the hour (9)
+              </td>
+            </tr>
+
+            <tr>
+              <td>P</td>
+              <td>The Time (9:45 p.m.). If the time is precisely (on <br>the minute) nine, it returns (9 p.m.). 
+                  If the time is <br>precisely 0:00, it returns (midnight). If the time is <br>
+                  precisely 12:00 it returns (noon).
+              </td>
+            </tr>
+
+            <tr>
+              <td>e</td>
+              <td>Name of time zone, like (GMT) or (UTC)</td>
+            </tr>
+
+            <tr>
+              <td>I</td>
+              <td>Returns whether we are in daylight saving time or <br>not (1 or 0)</td>
+            </tr>
+
+            <tr>
+              <td>O</td>
+              <td>The difference to GMT (+0500)</td>
+            </tr>
+
+            <tr>
+              <td>T</td>
+              <td>Local time zone, like (UTC) or (EST)</td>
+            </tr>
+
+            <tr>
+              <td>Z</td>
+              <td>Difference to GMT, in seconds (3600)</td>
+            </tr>
+
+            <tr>
+              <td>c</td>
+              <td>Current date in ISO 8601 format (2022-04<br>-05T12:38:30.797643+00:00)</td>
+            </tr>
+
+            <tr>
+              <td>r</td>
+              <td>Current date in RFC 5322 format (Tue, 05 Apr 2022 <br>12:39:24 +0000)</td>
+            </tr>
+
+            <tr>
+              <td>U</td>
+              <td>Seconds since January 1 1970 00:00:00</td>
+            </tr>
+
+        </table>
+      </td>
+    </tr>  
   </table>
 
 </body>

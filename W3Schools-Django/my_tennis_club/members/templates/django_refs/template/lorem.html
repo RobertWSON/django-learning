@@ -8,59 +8,84 @@
 
 <body>
 
-  <h2>Django Template Tag Reference</h2>
+  {#<h2>Django Template Tag Reference</h2> try larger heading#}
+  <h1><center>Django Template Tag Reference</center></h1>
 
-  <h3>Lorem Template Tag</h3>  
+  {#<h3>Lorem Template Tag</h3>try larger heading and specify Template Tag Reference #}
+  <h2>Template Tag - Lorem</h2>
 
-<h4>Lorem Random Text</h4>
+  {#<h4>Lorem Random Text</h4> try larger heading#}
+  <h3>Lorem Random Text</h3>
 
-<p>Lorem Random Text Example</p>
+  {#<p>Lorem Random Text Example</p> better to have a heading I think#}
+  <h3>Lorem Random Text Example</h3>
 
-<p>Insert 50 words of random text:</p>
+  <p>Insert 50 words of random text:</p>
 
-{% lorem 50 w %}
+  {% lorem 50 w %}
 
-<p>Check out views.py to see what the heading variable looks like.</p>
+  {# Show image of views.py file #}
 
-<hr>
+  {# Explain code in views.py file #}
+  <p>Check out views.py, we are just using same template for both examples, that has Django Code for displaying 
+     this text.
+  </p>
 
-<h3>Definition and Usage</h3>
+  {# Show image of Django code in HTML file #}
 
-<p>The lorem tag iserts a specified amount of random text.</p>
-<p>The "random" text is famous "Lorem ipsum" text, in lower case letters.</p>
+  {# Explain Django code in HTML file #}
 
-<h4>Lorem Paragraphs</h4>
 
-<p>Lorem Paragraphs Example</p>
+  <hr>
 
-<p>Insert 5 paragraphs of random text:</p>
+  {#<h3>Definition and Usage</h3> try larger heading#}
+  <h2>Definition and Usage</h2>
 
-{% lorem 5 p %}
+  <p>The lorem tag iserts a specified amount of random text.</p>
+  <p>The "random" text is famous "Lorem ipsum" text, in lower case letters.</p>
 
-<hr>
+  {#<h4>Lorem Paragraphs</h4> try larger heading#}
+  <h3>Lorem Paragraphs</h3>
 
-<h3>Syntax</h3>
+  {#<p>Lorem Paragraphs Example</p> better to have a heading I think#}
+  <h3>Lorem Paragraphs Example</h3>
 
-{# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
-{ % lorem count method random % }
+  <p>Insert 5 paragraphs of random text:</p>
 
-<hr>
+  {% lorem 5 p %}
 
-<h3>Parameters</h3>
+  {# Show image of Django code in HTML file #}
 
-<table border='3'>
-  <tr>
+  {# Explain Django code in HTML file #}
+
+  <hr>
+
+  {#<h3>Syntax</h3> try larger heading#}
+  <h2>Syntax</h2>
+
+  {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+  <p>{ % lorem <code>count method</code> random % }</p>
+
+  <hr>
+
+  {#<h3>Parameters</h3> try larger heading#}
+  <h2>Parameters</h2>
+
+  <table border='3'>
+    <tr>
       <th>Value</th>
       <th>Description</th>
-  </tr>
-  <tr>
-      <td><em>count</em></td>
+    </tr>
+    <tr>
+      {#<td><em>count</em></td>#}
+      <td><code>count</code></td>
       <td>Optional. The number of words or paragraphs to display.
           Default 1.
       </td>
-  </tr>    
-  <tr>    
-      <td><em>method</em></td>
+    </tr>    
+    <tr>    
+      {#<td><em>method</em></td>#}
+      <td><code>method</code></td>
       <td>"Optional. Specifies whether to display blocks, words or HTML paragraphs."
       <br>
       <code>b</code>"for blocks of text"
@@ -71,12 +96,13 @@
       <br>
       "Default "<code>b</code>
       </td>
-  </tr>
-  <tr>
-      <td>random</td> 
+    </tr>
+    <tr>
+      {#<td>random</td>#}
+      <td><code>random</code></td>
       <td>"Optional. If specified, random text start at a random word of "lorum ipsum" text"</td>   
-  </tr>
-</table>   
+    </tr>
+  </table>   
 
 </body>
 </html>

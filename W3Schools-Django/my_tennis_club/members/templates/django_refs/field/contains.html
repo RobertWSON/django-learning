@@ -6,11 +6,14 @@
  
 <body>
 
-    <h2>Django Field Lookup Tag Reference</h2>
+    {#<h2><center>Django Field Lookup Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Field Lookup Tag Reference</center></h1>
 
-    <h3>Field Lookups - contains</h3>  
-  
-    <p><b>Contains Example</b></p>
+    {#<h3>Field Lookups - contains</h3> try larger heading#}  
+    <h2>Field Lookups - contains</h2>
+
+    {#<p><b>Contains Example</b></p> better to use heading than paragraph tag #}
+    <h3>Contains Example</h3>
 
     <p>Get all records that have the value "bias" in the firstname column:</p>
 
@@ -37,31 +40,56 @@
     </table>
     {# Contains Example ends here #}
 
+    {# Image showing views.py file, so we can see how contains filter works with data for this iendswith example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers variable, which is an object and we are using this with a name of mydata, outside of 
+       context.<br>
+       After defining our view, we are using mydata to access Member table to get all objects (records).<br>
+       For all records, we are getting all values for fields and using a contains filter to show records that
+       have a firstname field value containing bias.
+    </p> 
+    
+    {# Image showing HTML Template code, so we can see how data is used for this contains example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #} 
+
+    <p>In HTML Template we are using a for loop with mymembers object from views.py file.<br>
+        After using contains filter in views.py, we are showing field name values we want for records that
+        have a firstname containing bias.<br>
+        We are using mymembers, surrounded by double curly braces, to show a queryset on page with details of 
+        our filtered record.<br>  
+        You will notice in queryset, that joined_date field uses a datetime function to show date that a member 
+        joined tennis club.
+    </p>
+
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The contains lookup is used to get records that contain a specified value.</p>
-
-    <p>The contains lookup is case sensitive.</p>
-
-    <p>For a case insensitive search, use the icontains lookup.</p>
+    <p>The <code>contains</code> lookup is used to get records that contain a specified value.<br><br>
+       The <code>contains</code> lookup is case sensitive, so this means that if a filter specifies lower case, 
+       then it will only show a lower case letter.<br><br>
+       For a case insensitive search, use the <a href="/field/icontains">icontains</a> lookup.
+    </p>
 
     <hr>
-
+ 
     <h3>SQL Equivalent</h3>
 
-    <p>The SQL equivalent to the example above will be:</p>
+    <p>The SQL equivalent to the example above will be:<br><br>
 
-    <p>WHERE firstname LIKE '%bias%';</p>
+       <code>WHERE firstname LIKE '%bias%';</code>
+    </p>
 
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>All Field lookup keywords must be specified with the fieldname, followed by two(!) underscore characters __ and the keyword:</p>
-
-    <p>fieldname__contains='value'</p>
+    <p>All Field lookup keywords must be specified with the fieldname, followed by two underscore characters 
+       <code>__</code> and a keyword:<br><br>
+       
+       fieldname__contains='value'
+    </p>
 
 </body>
 </html>        

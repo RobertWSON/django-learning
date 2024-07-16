@@ -6,13 +6,16 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - cut</h3>  
-  
-    <p><b>Cut Example to Remove Several Letters</b></p> 
+    {#<h3>Template Filter - cut</h3> try larger heading#}  
+    <h2>Template Filter - cut</h2>
 
-    </p>Remove phrase "snes" from name "Emil Refsnes":</p>
+    {#<p><b>Cut Example to Remove Several Letters</b></p> better to have a heading I think#}
+    <h3>Cut Example to Remove Several Letters</h3>
+
+    <p>Remove phrase "snes" from name "Emil Refsnes":</p>
 
     <h1>{{ name|cut:"snes" }}</h1>
 
@@ -22,13 +25,14 @@
 
     <h3>Definition and Usage</h3>
  
-    <p>The cut filter removes specified phrase from a value.</p>
+    <p>The <code>cut</code> filter removes specified phrase from a value.</p>
 
-    <p>The cut filter is case sensitive.</p>
+    <p>The <code>cut</code> filter is case sensitive.</p>
 
     <p>All occurences of specified phrase/ character are removed.</p>
 
-    <p><b>Cut Example to remove one letter</b></p>
+    {#<p><b>Cut Example to remove one letter</b></p> better to have a heading I think#}
+    <h3>Cut Example to remove one letter</h3>
 
     <h1>{{ name|cut:"e" }}</h1>
 
@@ -36,7 +40,7 @@
 
     <h3>Syntax</h3>
 
-    { { value|cut:phrase } }
+    <p>{ { <code>value|cut:phrase</code> } }</p>
 
     <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
     
@@ -52,7 +56,8 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td>phrase</td>
+        {#<td>phrase</td>#}s
+        <td><code>phrase</code></td>
         <td>Required. A string specifying part to remove from a value.</td>
       </tr>
     </table>   

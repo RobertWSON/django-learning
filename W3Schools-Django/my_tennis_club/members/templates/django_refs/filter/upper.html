@@ -6,35 +6,54 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - upper</h3>  
-  
-    <p><b>Upper Example</b></p> 
+    {#<h3>Template Filter - upper</h3> try larger heading#}  
+    <h2>Template Filter - upper</h2>
 
-    <p>Display firstname with all upper case letters:</p>
+    {#<p><b>Upper Example</b></p> better to have larger heading I think#} 
+    <h3>Upper Example</h3>
+
+    {# Upper Example starts here #}
+    <p>Display (or Show) firstname with all upper case letters:</p>
 
     <h1>{{ firstname|upper }}</h1>
 
-    <p>In views.py you can see what firstname variable looks like.</p>
+    {# Upper Example ends here #}
 
+    {# Image showing views.py file, so we can see how upper filter works with data for this upper example #}
+    {# <img src="{% static 'images/django_refs/filter/.png' %}"> #}
+
+    <p>In views.py you can see what firstname variable looks like.<br>
+       Here we have firstname variable within context, which is a field name and we are using Tobias as a property 
+       from this field name.  
+    </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this upper example #}
+    {# <img src="{% static 'images/django_refs/filter/.png' %}"> #}   
+    
+    {# Explain Django code in HTML template file #}
+    <p>In HTML Template we are using an upper filter on firstname variable to show a value as an H1 heading.
+    </p>
     
     <hr>
 
     <h3>Definition and Usage</h3>
  
-    <p>The <code>upper</code> filter returns a value in all upper case letters.</p> 
-   
-    <p>See also <a href = "/filter/lower.html">lower</a> filter</p>
+    <p>The <code>upper</code> filter returns a value in all upper case letters.<br><br> 
+       See also <a href = "/filter/lower.html">lower</a> filter for showing lower case letters. 
+    </p>
 
 
     <hr>   
 
     <h3>Syntax</h3>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.<br><br>
+       
+       {#<code>{ { <em>value</em>|upper } }</code>#}
+       { { <code>value|upper</code> } }
+    </p>
 
-    { { <em>value</em>|upper } }
-
-</body>
-</html>
+</body> 

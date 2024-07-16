@@ -6,48 +6,53 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - addslashes</h3>  
-  
-    <p>Addslashes Example</p>
+    {#<h3>Template Filter - addslashes</h3> try larger heading#}   
+    <h2>Template Filter - addslashes</h2>
+
+    {#<p>Addslashes Example</p> better to have a heading I think#} 
+    <h3>Addslashes Example</h3>
 
     <p>Escape the quote in the name variable:</p>
 
     <h1>{{ name|addslashes }}</h1>
 
-    <p>In views.py you can see what the name variable looks like.</p>
+    <p>In views.py you can see what the name variable looks like for both examples.</p>
 
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The addslashes filter adds a slash \ character before any quotes.</p>
+    <p>The <code>addslashes</code> filter adds a slash <code>\</code> character before any quotes.</p>
 
-    <p>This can be helpful when you are dealing with JavaScript, and you have to escape quote characters.</p>
+    <p>This can be helpful when you are dealing with JavaScript and you have to escape quote characters.</p>
 
-    <h4>Addslashes Filter Example with Button and Alert Message</h4>
+    <h3>Addslashes Filter Example with Button and Alert Message</h3>
 
-    </p>Escape the name, or else you will get an error when alerting it:</p>
+    </p>Escape the <code>name</code>, or else you will get an error when alerting it:</p>
 
-    {% comment%}
     <button onclick="alert('{{ name|addslashes }}')">Click me!</button>
 
     <p>This example would return an error when someone clicked the button,
-    if we did not escape the quote in the name variable.</p>
+       if we did not escape the quote in the name variable.
+    </p>
 
     <p>In views.py you can see what the name variable looks like.</p>
-    {% endcomment%}
+
     
-    <p>Without the addslashes filter in the example above, the page would get an error when someone clicked the button.</p>
+    <p>Without <code>addslashes</code> filter in example above, the page would get an error when someone clicked  
+       button.
+    </p>
     
     <hr>        
 
     <h3>Syntax</h3>
     
-    <p>Template filters are defined by using a pipe | character followed by the name of the filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
 
-    </p>{{ value|addslashes }}</p>
+    </p>{ { <code>value|addslashes</code> } }</p>
 
 </body>
 </html>    

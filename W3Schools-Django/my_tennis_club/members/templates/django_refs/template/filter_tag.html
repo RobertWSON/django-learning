@@ -6,11 +6,14 @@
  
 <body>
 
-    <h2>Django Template Tag Reference</h2>
+    {#<h2>Django Template Tag Reference</h2> try larger heading#}
+    <h1><center>Django Template Tag Reference</center></h1>
 
-    <h3>Template Tag - filter</h3>  
-  
-    <p><b>Filter Example</b></p>
+    {#<h3>Template Tag - filter</h3> try larger heading#}  
+    <h2>Template Tag - filter</h2>
+
+    {#<p><b>Filter Example</b></p> try heading instead #}
+    <h3>Filter Example</h3>
 
     <p>Output text in upper case:</p>
 
@@ -18,19 +21,48 @@
 
     {% filter upper %}
         <p>Have a great day!</p>
-    {% endfilter %}    
+    {% endfilter %} 
+    
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/filter_upper_example.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>In views.py we are just using our HTML template to get Django code needed for filter.<br>
+       To get our template we are using a loader, imported from a Django template library.    
+    </p>
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/html_template_file_code_filter_upper_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+    <p>In our HTML template file we are using a Django filter command on our paragraph tag.<br>
+       The filter we are using is upper, which is used here to show all paragraph text in upper case
+       letters.<br>
+       Finally we can use &#123;% endfilter %&#125; to close off our filter tag.
+    </p>
 
     <h3>Definition and Usage</h3>
 
-    <p>The filter tag allows you to run section of code through a filter and return it according to filter keyword(s).</p>
+    <p>The filter tag allows you to run section of code through a filter and return it according to filter 
+       keyword(s).
+    </p>
 
     <p>To add multiple filters, separate keywords with pipe | character.</p>
 
     <h3>Syntax</h3>
 
-    { % filter keyword % }
-      ...
-    { % endfilter % } 
-      
+    <p>
+        &#123;% filter <code>keyword</code> %&#125;<br>
+               ...<br>
+        &#123;% endfilter %&#125;
+    </p>
+
+    <h3>Parameters</h3>
+
+    <p>The <code>filter</code> tag takes any of keywords discussed in <a href="/filter">filter section</a> as 
+       parameter(s).<br>
+       You can click on each tag to find out how they work. 
+    </p>
+
 </body>
 </html>

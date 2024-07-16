@@ -6,11 +6,14 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - default</h3>  
-  
-    <p><b>Default Example</b></p> 
+    {#<h3>Template Filter - default</h3> try larger heading#}   
+    <h2>Template Filter - default</h2>
+
+    {#<p><b>Default Example</b></p> better to have a heading I think#} 
+    <h3>Default Example</h3>
 
     </p>Write color names, but write "nocolor" if value is empty:</p>
 
@@ -23,22 +26,22 @@
 
     <h3>Definition and Usage</h3>
  
-    <p>The default filter allows you to specify a default value to use if value evaluates to False.</p>
+    <p>The <code>default</code> filter allows you to specify a default value to use if a value evaluates to False.</p>
 
     <p>Values that evaluate to False are:</p>
     <ul>
-        <li>Empty Strings ""</li>
-        <li>Any numeric 0</li>
-        <li>Any empty object [], (), {}, set(), range(0)</li>
-        <li>None</li>
-        <li>False</li>
+        <li>Empty Strings <b>""</b></li>
+        <li>Any numeric <b>0</b></li>
+        <li>Any empty object <b> [], (), {}, set(), range(0)</b></li>
+        <li><b>None</b></li>
+        <li><b>False</b></li>
     </ul>
 
     <h3>Syntax</h3>
 
-    { { value|default:defaultvalue } }
+    <code>{ { value|default:defaultvalue } }</code>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
     <p>Arguments are defined by using a colon : character followed by argument value.</p>
 
     <h3>Arguments</h3>
@@ -49,8 +52,9 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td>defaultvalue</td>
-        <td>Required. The value to return if value is None.</td>
+        {#<td>defaultvalue</td>#}
+        <td><code>defaultvalue</code></td>
+        <td>Required. The value to return if value is <code>False</code>.</td>
       </tr>
     </table>   
 

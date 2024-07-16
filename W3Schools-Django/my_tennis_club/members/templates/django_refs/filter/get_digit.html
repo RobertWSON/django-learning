@@ -1,4 +1,8 @@
 
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
+
 <!DOCTYPE html>
 <html>
     <head><title>Django Filter Tag Reference</title>
@@ -6,20 +10,25 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2><center>Django Filter Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - get_digit</h3>  
-  
-    <p><b>Get_digit Example</b></p> 
+    {#<h3>Template Filter - get_digit</h3> try larger heading#}   
+    <h2>Template Filter - get_digit</h2>
+
+    {#<p><b>Get_digit Example</b></p> better to have a heading I think#} 
+    <h3>Get_digit Example</h3>
 
     <p>Return second digit, counting from end:</p>
 
     <h1>{{ mynumber|get_digit:2 }}</h1>
 
+    <p>In views.py you can see what mynumber variable looks like.</p>
+
     <p> As you can see from this get_digit example, we are are using a django command,
         to get second number digit from end for a variable in an object.</p>
 
-    <p>In views.py you can see what mynumber variable looks like.</p>
+    {#<p>In views.py you can see what mynumber variable looks like.</p>#}
 
     
     <hr>
@@ -27,7 +36,6 @@
     <h3>Definition and Usage</h3>
  
     <p>The <code>get_digit</code> filter returns specified digit from a number, counting from end of a number.</p> 
-
    
     <hr>   
 
@@ -36,7 +44,7 @@
     {# { { <em>value</em>|get_digit<em>:digit</em> } } #}
     { { <code>value|get_digit:digit</code> } }   
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
     <p>Arguments are defined by using a colon : character followed by argument value(s).</p>
 
     <hr>
@@ -49,9 +57,11 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td><em>digit</em></td>
+        {#<td><em>digit</em></td>#}
+        <td><code>digit</code></td>
         {#<td>digit</td>#}
-        <td>Required. A number specifying what digit to return. 1 returns last number, 2 returns second to last etc.</td>
+        <td>Required. A number specifying what digit to return. 1 returns last number, 2 returns second to last etc.
+        </td>
       </tr>
     </table>
 

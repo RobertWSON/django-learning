@@ -1,0 +1,142 @@
+
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
+<!DOCTYPE html>
+<html>
+    <head><title>Django range Reference</title>
+    </head>    
+ 
+<body>
+
+    <h1><center>Django Field Lookup Tag Reference</center></h1>
+
+    <h2>Field Lookups - range</h2>
+
+    <h3>Range Example with Numbers</h3>
+
+    <p>Get all records where id is between 2 and 4 :</p>    
+
+    {# Range filter Example with numbers, starts here #}
+    <p>The queryset object:</p>
+
+    {{ mymembers_numeric }}
+
+    <p>Loop through the items:</p>
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers_numeric %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {# Range filter Example with numbers, ends here #}
+
+    {# Image showing views.py file, so we can see how range works with data for this numeric range example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers_numeric variable, which is an object and we are using this with a name of
+       mydata_numeric outside of context.<br>
+       After defining our view, we are using mydata_numeric to access Member table to get all objects (records).<br>
+       For all records, we are getting all values for fields and using a numeric range filter to show only records 
+       that have an id from 2 to 4.<br>
+       id has a numeric value for identifying a record and this is why we call it a numeric range filter.     
+    </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this numeric range example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>In HTML Template we are using a for loop with mymembers_numeric object from views.py file.<br> 
+       After using numeric range filter in views.py, we are showing all field values that we want, for records 
+       with an id from 2 to 4.<br>
+       We are using mymember_numeric surrounded by double curly braces, to show a queryset on page with details of 
+       those filtered records.<br>  
+       You will notice in queryset, that filtering by id, shows all field values and joined_date field uses a 
+       datetime function to show date that <br>a member joined tennis club.       
+    </p>
+
+    <hr>
+
+    <h3>Definition and Usage</h3>
+
+    <p>The <code>range</code> lookup is used to get records that are between two values.<br><br>
+       A field can be of any type, that can either be numeric, string or dates.
+    </p>
+
+    <h3>Range Example with Alphanumeric</h3>
+     
+    <p>Alphanumeric means that this range filter can be used on strings, numbers and dates.</p>
+
+    {# Range filter Example with alphanumeric characters, starts here #}
+    <p>The queryset object:</p>
+
+    {{ mymembers_alphanum }}
+
+    <p>Loop through the items:</p>
+
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        {% for x in mymembers_alphanum %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {# Range filter Example with alphanumeric characters, ends here #}
+
+    {# Image showing views.py file, so we can see how range works with data for this alphanumeric range example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers_alphnum variable, which is an object and we are using this with a name of
+       mydata_alphanum outside of context.<br>
+       After defining our view, we are using mydata_alphanum to access Member table to get all objects (records).<br>
+       For all records, we are getting all values for fields and using a alpha numeric range filter to show only 
+       records that <br>have a firstname starting with upper case letter, from G to M range.
+    </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this alphanumeric range example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}    
+
+    <p>In HTML Template we are using a for loop with mymembers_alphanum object from views.py file.<br> 
+       After using alphanumeric range filter in views.py, we are showing all field values that we want, for records 
+       that have a firstname starting with G to M.<br>
+       We are using mymembers_alphanum surrounded by double curly braces to show a queryset on page with details 
+       of filtered records.<br>
+       You will notice in queryset that joined_date field uses a datetime function to show date that a member joined 
+       tennis club.<br><br>
+
+       <b>Note:</b> When searching in text fields, remember that 'G' has a lower alphanumeric value than 'g' .
+    </p>
+
+    <h3>SQL Equivalent</h3>
+
+    <p>An SQL Equivalent for two examples above will be :<br><br>
+       <b>Numeric example</b><br>
+       <code>WHERE id BETWEEN 2 AND 4</code><br><br>
+       <b>Alphanumeric example</b><br>
+       <code>WHERE id BETWEEN 'G' and 'M'</code>
+    </p>
+
+    <h3>Syntax</h3>
+
+    <p>All Field lookup keywords must be specified with fieldname, followed by two underscore characters 
+       <code>__</code> and a keyword:</p>
+
+    <p>fieldname__range=value</p>
+
+</body>    
+</html> 

@@ -8,19 +8,46 @@
 
 <body>
 
-    <h2>Django Template Tag Reference</h2>    
+    {#<h2>Django Template Tag Reference</h2> try larger heading#}
+    <h1><center>Django Template Tag Reference</center></h1>
 
-    <h3>Extends Template Tag</h3>
+    {#<h3>Extends Template Tag</h3> try larger heading and specify Template Tag Reference #} 
+    <h2>Template Tag - Extends</h2>
 
     <p>Use extends in Child Template to get data for parent template</p>
 
     <p>Specify that this template relies on a parent template:</p>
 
     {#<h4>#}
-      <a href="template/extends_example">Extends Example</a>
+      <a href="/template/extends_example">Extends Example</a>
     {#</h4>#}
 
-    {#Need to create screenshot for this first 1st example <img src="">#}
+    {# Show image of Extends example web page on local host #}
+    {# <img src="{% static 'images/django_refs/template/extends_example_on_localhost_web_page.png' %}"> #}
+
+    {# Briefly explain web page we will create with extends #}
+    <p>You can see web page we will be working towards for our extends example.</p>
+
+    {# Show image of child HTML template code that will take a parent HTML template  #}
+    {# <img src="{% static 'images/django_refs/template/extends_example_child_html_template.png' %}"> #}
+
+    {# Explain code in childtemplate.html Child Template file #}
+    <p>This is our specified template that relies on a parent template.<br>
+       Our specified template has a role as a child template, which uses an extends tag to take
+       overall structure<br> of web page from a parent template and fill that web page with content from
+       child template.<br>
+       <b>Note:</b> Content from our child template is used to fill Django code part of our parent template.      
+    </p>
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/url_and_views_file_extends_example.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>In views.py, you can see that we are using our child HTML template to get all code we need to create 
+       our web page.
+    </p>
+
+    <hr>
 
     <h3>Definition and Usage</h3>
 
@@ -28,7 +55,7 @@
 
     <p>The <code>extends</code> tag takes one argument, which is name of parent template.</p>
 
-    <p>When a child template with a parent template is requested, django uses parent template as a "skeleton" 
+    <p>When a child template with a parent template is requested, django uses parent template as a "skeleton"<br> 
        and fills it with content from child template, according to match block tags.</p>
 
     <h4>Above Example from a Parent Template Perspective</h4>
@@ -36,15 +63,30 @@
     <p>The parent template has blocks that fit the child template's blocks.</p>
     <code>mymaster.html</code>    
 
-    {#Need to create screenshot of mymaster.html file for this example <img src="">#}
+    {# Show image of mymaster.html parent template file for this extends example #}
+    {# <img src="{% static 'images/django_refs/template/extends_example_parent_html_template.png' %}"> #}
 
-       <hr>
+    {# Explain code in mymaster.html Parent Template file #}
+    <p>A parent or as it can sometimes be called master HTML template, holds overall structure of a web page.<br>
+       You can see that <code>mymaster.html</code> parent template has Django blocks for child template to use.<br>
+       <code>mymaster.html</code> parent template has <code>No name</code> and <code>No cars</code> 
+       within Django block tags.<br>
+       We initally have to specify this because this is a Django way for allowing our child template to fill
+       out these details.<br> 
+       The rest of our <code>mymaster.html</code> template file uses HTML code that will only be used in our parent 
+       template.     
+    </p>
 
-       <h3>Syntax</h3>
+    <hr>
+
+    <h3>Syntax</h3>
        
-       {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
-       { % extends <em>parenttemplate</em> % }
-       
+    {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it #}     
+    {# is code  { % extends <em>parenttemplate</em> % } #}
+    <p>
+       &#123;% extends <code>parenttemplate</code> %&#125;
+    <p>
+
     <hr>
        
     <h3>Parameters</h3>
@@ -55,8 +97,9 @@
             <th>Description</th>
         </tr>
         <tr>
-            <td><em>parenttemplate</em></td>
-            <td>Required. The name of parent template.<br> Either a string or a variable.</td>
+            {#<td><em>parenttemplate</em></td>#}
+            <td><code>parenttemplate</code></td>
+            <td>Required. The name of parent template. Either a string or a variable.</td>
         </tr>    
     </table>     
 

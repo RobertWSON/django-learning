@@ -1,4 +1,7 @@
 
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
     <head><title>Django Filter Tag Reference</title>
@@ -6,30 +9,39 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2><center>Django Filter Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - join</h3>  
-  
-    <p><b>Join Example</b></p> 
+    {#<h3>Template Filter - join</h3> try larger heading#}  
+    <h2>Template Filter - join</h2>
+
+    {#<p><b>Join Example</b></p> better to have a heading I think#}
+    <h3>Join Example</h3>
 
     <p>Join all items in a list into a string, using a hash character as a separator:</p>
 
     <h1>{{ fruits|join:"#" }}</h1>
 
-    <p> As you can see from this join example, we are using a django command that has a seperator. 
-        The seperator here is in the form of a # character and is used to join strings items.<br> 
-        These string items are taken from a list in an array for an object.</p>
+    <p>In views.py you can see what fruits variable looks like.<br><br>
+      These string items are taken from a list in an array for an object.
+     </p>
 
-    <p>In views.py you can see what fruits variable looks like.</p>
+    <p> As you can see from this join example, we are using a django command that has a seperator. 
+        The seperator here is in the form of a # character and is used to join string items.<br> 
+        {#These string items are taken from a list in an array for an object.#}
+    </p>
+
+    {#<p>In views.py you can see what fruits variable looks like.<br><br>#}
+    {# These string items are taken from a list in an array for an object.</p>#}
 
     
     <hr>
 
     <h3>Definition and Usage</h3>
  
-    <p>The <code>join</code> filter takes all items in an iterable and joins them into one string.</p> 
-
-    <p>A string must be specified as a separator.</p>
+    <p>The <code>join</code> filter takes all items in an iterable and joins them into one string.<br><br>
+       A string must be specified as a separator.
+    </p>
    
     <hr>   
 
@@ -38,8 +50,8 @@
     {# { { <em>value</em>|join<em>:separator</em> } } #}
     { { <code>value|join:separator</code> } } 
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
-    <p>Arguments are defined by using a colon : character followed by argument value(s).</p>
+    <p>Template filters are defined by using a pipe <b>|</b> character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon <b>:</b> character followed by argument value(s).</p>
 
     <hr>
 
@@ -51,7 +63,8 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td><em>separator</em></td>
+        {#<td><em>separator</em></td>#}
+        <td><code>separator</code></td>
         {#<td>digit</td>#}
         <td>Required. A string representing a separator.</td>
       </tr>

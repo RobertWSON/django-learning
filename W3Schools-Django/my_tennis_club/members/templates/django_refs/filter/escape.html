@@ -6,31 +6,37 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - escape</h3>  
-  
-    <p><b>Escape Example</b></p> 
- 
+    {#<h3>Template Filter - escape</h3> try larger heading#}  
+    <h2>Template Filter - escape</h2>
+
+    {#<p><b>Escape Example</b></p> better to have a heading I think#} 
+    <h3>Escape Example</h3>
+
     </p>Display a text containing HTML, with and without escape:</p>
 
     {% autoescape off %}
-        <h1>{{ heading|escape}}</h1>
-        <h1>{{ heading}}</h1>
+        <h1>{{ heading|escape }}</h1>
+        <h1>{{ heading }}</h1>
     {% endautoescape %}
 
     <p>In views.py you can see what heading variable looks like.</p>
      
     <p>
     <strong>Note:</strong> 
-    Escaping HTML characters is a default setting in DJango, so we have to turn off autoescape in example to see difference.    
+      Escaping HTML characters is a default setting in DJango, so we have to turn off autoescape in example to see 
+      difference.    
     </p>    
 
     <h3>Definition and Usage</h3>
  
-    <p>The escape filter escapes HTML characters from a value.</p>
+    <p>The <code>escape</code> filter escapes HTML characters from a value.</p>
 
-    <p><b>Note:</b> Escaping HTML characters is a default setting in Django, so we have to turn off autoescape in example to be able to see difference.</p>
+    <p><b>Note:</b> Escaping HTML characters is a default setting in Django, so we have to turn off autoescape in 
+        example to be able to see difference.
+    </p>
 
     <p>These characters are escaped:</p>
     <ul>
@@ -43,9 +49,9 @@
 
     <h3>Syntax</h3>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
    
-    { { value|default:defaultvalue } }
+    <code>{ { value|default:defaultvalue } }</code>
     
 </body>
 </html>

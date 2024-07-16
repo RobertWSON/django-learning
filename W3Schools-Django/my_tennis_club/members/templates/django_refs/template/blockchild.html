@@ -1,5 +1,6 @@
-{# This is use with block template, which is master template for this block example. #}
-{% extends "block.html" %}
+{# This is use with block_example template, which is master template for this block example. #}
+{# {% extends "block.html" %} #}
+{% extends "django_refs/template/block_example.html" %} 
 
 {% block userinfo %}
     <h2>John Doe</h2>

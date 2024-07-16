@@ -6,14 +6,18 @@
  
 <body>
 
-    <h2>Django Field Lookup Tag Reference</h2>
+    {#<h2>Django Field Lookup Tag Reference</h2> try larger heading#}
+    <h1><center>Django Field Lookup Tag Reference</center></h1>
 
-    <h3>Field Lookups - in</h3>  
-  
-    <p><b>In Example</b></p>
+    {#<h3>Field Lookups - in</h3> try larger heading#}  
+    <h2>Field Lookups - in</h2>
 
-    <p>Get all records where firstname is one of values in a list:</p>    
+    {#<p><b>In Example</b></p> better to have larger heading I think#}
+    <h3>In Example</h3>
 
+    <p>Get all records where firstname is one of values in a list:</p> 
+
+    {# In filter Example starts here #}
     <p>The queryset object:</p>
 
     {{ mymembers }}
@@ -34,30 +38,57 @@
         </tr>
         {% endfor %}
     </table>
+    {# In filter Example ends here #}
+
+    {# Image showing views.py file, so we can see how in filter works with data for this in example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers variable, which is an object and we are using this with a name of mydata, outside of 
+       context.<br>
+       After defining our view, we are using mydata to access Member table to get all objects (records).<br>
+       For all records, we are getting all values for fields and using an in filter to show only records that have 
+       a matching<br> firstname field value, from a list.
+    </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this in example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}    
+
+    <p>In HTML Template we are using a for loop with mymembers object from views.py file.<br> 
+       After using in filter within views.py, we are showing field values that we want, for records with a 
+       firstname field that matches our in filter.<br>
+       We are using mymembers, surrounded by double curly braces, to show a queryset on page with details of 
+       those filtered records.<br>  
+       You will notice in queryset, that joined_date field uses a datetime function to show date that a member 
+       joined tennis club.
+    </p>
 
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The in lookup is used to get records where a value is one of values in an iterable (list, tuple, string, queryset).</p>
-
-    <p>The in lookup is case sensitive.</p>  
+    <p>The <code>in</code> lookup is used to get records, where a value is one of values in an iterable.<br> 
+       An iterable can be a list, tuple, string or queryset.<br><br>
+       The <code>in</code> lookup is case sensitive.
+    </p>  
     
     <hr>
 
     <h3>SQL Equivalent</h3>
 
-    <p>The SQL equivalent to the example above will be:</p>
+    <p>The SQL equivalent to the example above will be:<br><br>
 
-    <p>WHERE firstname IN ('Tobias', 'Linus', 'John');</p>
-
+       <code>WHERE firstname IN ('Tobias', 'Linus', 'John');</code>
+    </p>
+    
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
-
-    <p>fieldname__in=[value1, value2, value3, ...]</p>
+    <p>All Field lookup keywords must be specified with fieldname, followed by two underscore characters 
+       <code>__</code> and a keyword:<br><br>
+       
+       fieldname__in=[value1, value2, value3, ...]
+    </p>
     
 </body>    
 </html>    

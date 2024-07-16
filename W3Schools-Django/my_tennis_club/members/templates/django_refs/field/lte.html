@@ -1,4 +1,7 @@
 
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
     <head><title>Django less than or equal to Reference</title>
@@ -6,19 +9,23 @@
  
 <body>
 
-    <h2>Django Field Lookup Tag Reference</h2>
+    {#<h2><center>Django Field Lookup Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Field Lookup Tag Reference</center></h1>
 
-    <h3>Field Lookups - lte (less than, or equal to)</h3>  
-  
-    <p><b>Less Than or Equal to Example</b></p>
+    {#<h3>Field Lookups - lte (less than or equal to)</h3> try larger heading#}  
+    <h2>Field Lookups - lte (less than or equal to)</h2>
+
+    {#<p><b>Less Than or Equal to Example</b></p> better to have larger heading I think#}
+    <h3>Less Than or Equal to Example</h3>
 
     <p>Get all records where id is 3 or less:</p>    
 
+    {# Less than, or equal to (lte) Example ends here #}
     <p>The queryset object:</p>
 
     {{ mymembers }}
 
-    <p>Loop through the items:</p>
+    <p>Loop through items:</p>
 
     <table border='1'>
         <tr>
@@ -34,30 +41,57 @@
         </tr>
         {% endfor %}
     </table>
+    {# Less than, or equal to (lte) Example ends here #}
+
+    {# Image showing views.py file, so we can see how less then or equal to (lte) works with data for this lte #}
+    {# example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers variable, which is an object and we are using this with a name of mydata outside of 
+       context.<br>
+       After defining our view, we are using mydata to access Member table to get all objects (records).<br>
+       For all records, we are getting all values for fields and using a less than or equal to (lte) filter to show 
+       only records that have an id equal to 3 or less.<br>  
+     </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this less than or equal to example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #} 
+
+    <p>In HTML Template we are using a for loop with mymembers object from views.py file.<br> 
+       After using lte filter in views.py, we are showing all field values that we want, for records 
+       with an id of 1, 2 and 3.<br>
+       We are using mymembers, surrounded by double curly braces, to show a queryset on page with details of 
+       those filtered records.<br>  
+       You will notice in queryset, that joined_date field uses a datetime function to show date that a member 
+       joined tennis club.       
+    </p>
 
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The lte lookup is used to get records that are less than, or equal to, a specified value.</p>
-
-    <p>For a less than, but not equal to search, use the lt lookup.</p>  
+    <p>The <b>lte</b> lookup is used to get records that are less than, or equal to, a specified value.<br><br>
+       For a less than, but not or equal to search, use <a href="/field/lt">lt</a> lookup.
+    </p>  
     
     <hr>
 
     <h3>SQL Equivalent</h3>
 
-    <p>The SQL equivalent to the example above will be:</p>
-
-    <p>WHERE id <= 3;</p>
-
+    <p>SQL equivalent to example above will be:<br><br>
+       
+       <code>WHERE id <= 3;</code>
+    </p>
+    
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
-
-    <p>fieldname__lte=value</p>
+    <p>All Field lookup keywords must be specified with fieldname, followed by two underscore characters 
+       <code>__</code> and a keyword:<br><br>
+       
+       fieldname__lte=value
+    </p>
     
 </body>    
 </html>    

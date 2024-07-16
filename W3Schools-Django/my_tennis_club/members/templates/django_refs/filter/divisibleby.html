@@ -6,11 +6,14 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - divisibleby</h3>  
-  
-    <p><b>Divisibleby 5 Example</b></p> 
+    {#<h3>Template Filter - divisibleby</h3> try larger heading#}  
+    <h2>Template Filter - divisibleby</h2>
+
+    {#<p><b>Divisibleby 5 Example</b></p> better to have a heading I think#} 
+    <h3>Divisibleby 5 Example</h3>
 
     <p>Check if a value is divisible by 5:</p>
 
@@ -24,9 +27,10 @@
     <h3>Definition and Usage</h3>
  
     <p>The <code>divisibleby</code> filter returns <code>True</code> if a value is divisible by an argument, 
-       otherwise it returns <code>False</code>.</p>
+       otherwise it<br> returns <code>False</code>.</p>
     
-    <p><b>Divisibleby 3 Example</b></p> 
+    {#<p><b>Divisibleby 3 Example</b></p> better to have a heading I think#} 
+    <h3>Divisibleby 3 Example</h3>
 
     <p>Display an answer, is <code>totalsum</code> divisibleby 3:</p>
 
@@ -34,9 +38,9 @@
 
     <h3>Syntax</h3>
 
-    { { value|divisibleby:num } }
+    <code>{ { value|divisibleby:num } }</code>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
     <p>Arguments are defined by using a colon : character followed by argument value.</p>
 
     <h3>Arguments</h3>
@@ -47,7 +51,8 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td>num</td>
+        {#<td>num</td>#}
+        <td><code>num</code></td>
         <td>Required. A number to try to divide a value with.</td>
       </tr>
     </table>   

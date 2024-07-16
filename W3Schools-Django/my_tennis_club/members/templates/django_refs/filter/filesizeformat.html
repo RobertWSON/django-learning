@@ -6,17 +6,20 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - filesizeformat</h3>  
+    {#<h3>Template Filter - filesizeformat</h3> try larger heading#}
+    <h2>Template Filter - filesizeformat</h2>
   
-    <p><b>Filesizeformat Example</b></p> 
+    {#<p><b>Filesizeformat Example</b></p> better to have a heading I think#} 
+    <h3>Filesizeformat Example</h3>
 
     <p>Display file size in a more readable format:</p>
 
     <h1>{{ size|filesizeformat }}</h1>
 
-    <p>In views.py you can see what the size variable looks like.</p>
+    <p>In views.py you can see what size variable looks like.</p>
 
 
     <hr>    
@@ -39,7 +42,8 @@
 
     <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
 
-    <p>{ { value|filesizeformat } }</p>
+    {#<p>{ { value|filesizeformat } }</p>#}
+    <code>{ { value|filesizeformat } }</code>
 
 
 </body>

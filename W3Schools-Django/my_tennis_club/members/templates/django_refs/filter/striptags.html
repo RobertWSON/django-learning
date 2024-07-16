@@ -1,5 +1,7 @@
 
-
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
 
@@ -9,11 +11,14 @@
 
 <body>
 
-    <h2>Django Template Tag Reference</h2>
+    {#<h2>Django Template Tag Reference</h2> try larger heading#}
+    <h1><center>Django Template Tag Reference</center></h1>
 
-    <h3>Striptags Template Tag</h3>  
+    {#<h3>Striptags Template Tag</h3>try larger heading and should be Template Filter - striptags#}  
+    <h1>Template Filter - striptags</h1>  
 
-    <h4>Striptag Example</h4>
+    {#<h4>Striptag Example</h4> try larger heading#}
+    <h2>Striptag Example</h2>
 
     <p>Remove HTML from text:</p>
 
@@ -25,29 +30,41 @@
 
     {{ mytext|striptags }}
 
-  <p> As you can see from this text example, without striptags you have html tags shown with text
-      and with striptags, html tags are not shown, so just text is shown.</p>
-
-  <p>In views.py you can see what mytext variable looks like.</p>
+    <p>As you can see from this text example, <b>without striptags</b> has html tags shown with text
+       and<br> <b>striptags</b> has no html tags shown, so just text is shown.
+    </p>
 
   {# Image below for showing code for this example #}
   {# <img src=""> #}
 
+  {# Show image of views.py file #}
+
+  {#<p>Check out views.py to see what text variable looks like.</p>#}
+  <p>In views.py you can see what mytext variable looks like.</p>
+
+  {# Show image of Django code in HTML file #}
+
+  {# Explain Django code in HTML file #}
+
   <hr>
 
-  <h3>Definition and Usage</h3>
+  {#<h3>Definition and Usage</h3> try larger heading#}
+  <h2>Definition and Usage</h2>
 
   <p>The <code>striptags</code> filter removes any html tags from a value.</p>
 
   
   <hr>
 
-  <h3>Syntax</h3>
+  {#<h3>Syntax</h3> try larger heading#}
+  <h2>Syntax</h2>
 
   {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
-  { % value|<em>striptags</em> % } 
+  {#{ % value|<em>striptags</em> % }#}
+  <p>{ { <code>value|striptags</code> } }</p> 
 
-  <p>template filters are defined by using a pipe | character followed by name of filter.</p>
+
+  <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
 
 </body>
 </html>

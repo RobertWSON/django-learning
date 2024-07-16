@@ -1,0 +1,118 @@
+
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h1><center>Django Template Tag Reference</center></h1>
+
+    <h2>Template Tag - For</h2>
+
+    <h3>For List Example</h3>
+
+    <p>Loop through a list and display values</p>
+
+    <ul>
+        {% for x in fruits %}    
+            <li>{{ x }}</li>
+        {% endfor %}
+    </ul>
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/url_and_views_file_list_example_with_for.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what fruits variable looks like.<br>
+       You can see in context that we are using an array with a list of fruits. 
+    </p>
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_for_list_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+    <p>In out HTML template we are using a Django for command with our list array.<br>
+       The for loop will loop through each element of our list array. In our for loop Each element will be called 
+       <b>x</b> <br>and will be shown in a list on our page.<br>
+       Finally we can use &#123;% endfor %&#125; to close off our for loop. 
+    </p>
+
+    <hr>
+
+    <h2>Definition and Usage</h2>
+
+
+    {% for x, y in mycar.items %}
+        <p>The {{ x }} is {{ y }}.</p>
+    {% endfor %}
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/url_and_views_file_dict_example_with_for.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what mycar dictionary looks like.<br>
+       You can see in context that we have an array called mycar and we are using a dictionary with a property 
+       like<br> <b>brand</b> and a value like <b>Ford</b>. 
+    </p>
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_for_dict_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+    <p>In our HTML template file we are using a Django for command with our dictionary.<br>
+       A Dictionary is different from an array in that they have key-value pairs, which can be called items.<br><br>
+       The for loop will loop through key-value pairs for our properties of our dictionary.<br> 
+       We will show a <b>property name</b> like <b>brand</b> and <b>property value</b> like <b>Ford</b> where 
+       needed.<br>
+       In our for loop, <b>property name</b> will be called <b>x</b> and <b>property value</b> will be called 
+       <b>y</b>.<br>
+       To access each of our items within mycar dictionary, we can use <code>mycar.items</code>.<br>
+       Finally we can use &#123;% endfor %&#125; to close off our for loop.  
+    </p>
+
+    <hr>
+
+    <h2>Syntax</h2>
+
+    <p>
+        &#123;% for item in object %&#125;<br>
+        ...<br>
+        &#123;% endfor %&#125;
+    </p>
+
+    <hr>
+
+    <h2>Parameters</h2>
+
+    <table border='3'>
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>item</code></td>
+            <td>Required. Variable name(s) that represent item(s) of<br> an iterable object.</td>
+        </tr>
+        <tr>
+            <td><code>object</code></td>
+            <td>Required. An iterable object.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Built-in <i>for</i> Variables</h2>
+
+    <p>There are built-in variables you can use inside <code>for</code> loops, that can be found in
+       <a href="/testing">Django For Loop Section</a>.<br><br>
+       You can click on each tag to find out how they work.
+    </p>
+
+</body>
+</html>

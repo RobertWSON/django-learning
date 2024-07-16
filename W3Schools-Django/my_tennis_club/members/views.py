@@ -15,7 +15,6 @@
 #   HttpResponse is a class used for HttpResponse() function for displaying text on a page. 
 #    See pytutorial.com/fjango-httpresponse/
 
-
 # from django.http import HttpResponse, HttpResponseRedirect
 # - 
 
@@ -26,7 +25,6 @@
 # - 
 
   
-
 # Create your views here.
 
  
@@ -44,15 +42,6 @@ from django.http import HttpResponseRedirect
 from .models import Member
 from django.template import loader
 # loader is a class that is in django.template module and is used for loading data from a template
-
-
-
-
-
-
-
-
-
 
 
 from django.shortcuts import render 
@@ -1582,10 +1571,57 @@ def template(request):
 # Autoescap#e view can be use for both examples (on and off) on autoescape page.
 def autoescape(request):
   template = loader.get_template('django_refs/template/autoescape.html')
+  # Use context for each of Autoescape examples.
   context = {
-    'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!',
+    #'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!',
+    'heading': 'Hello <i>my</i> World!',
+    'heading_chars': 'Hello &lt;i&gt;my&lt;/i&gt; World!'
   }
   return HttpResponse(template.render(context, request))
+  #Remove return below as I have decided to include example on autoescape main page as well as link pages 
+  #return HttpResponse(template.render())
+
+# Seperate Autoescape examples from autoescape main web page that explains what it is. 
+def autoescape_off(request):
+  template = loader.get_template('django_refs/template/autoescape_off.html')
+  context = {
+    # W3Schools has variable setup like this below for showing italics within Hello my World!  
+    #'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!',
+    # However when I use this heading above, my localhost shows Hello <i>my</i> World!
+    # I have looked into this on Chatgpt and found using this variable below should be used for italics not escaped
+    # like what W3Schools has. W3Schools should have this heading below.   
+    'heading': 'Hello <i>my</i> World!',
+  }
+  return HttpResponse(template.render(context, request))
+
+
+def autoescape_on(request):
+  template = loader.get_template('django_refs/template/autoescape_on.html')
+  context = {
+    # W3Schools has variable setup like this below for showing Hello <i>my</i> World! 
+    #'heading': 'Hello &lt;i&gt;my&lt;/i&gt; World!',
+    # However when I use this heading above, my localhost shows Hello &lt;i&gt;my&lt;/i&gt; World!
+    # I have looked into this on Chatgpt and found using this variable below should be used for italics escaped
+    # like what W3Schools has. W3Schools should have this heading below.   
+    'heading': 'Hello <i>my</i> World!',
+  }
+  return HttpResponse(template.render(context, request))
+
+# Examples for Autoescape when a heading is combined with characters
+def autoescape_off_chars(request):
+  template = loader.get_template('django_refs/template/autoescape_off_chars.html')
+  context = {
+    'heading_chars': 'Hello &lt;i&gt;my&lt;/i&gt; World!'
+  }
+  return HttpResponse(template.render(context, request))
+
+def autoescape_on_chars(request):
+  template = loader.get_template('django_refs/template/autoescape_on_chars.html')
+  context = {
+    'heading_chars': 'Hello &lt;i&gt;my&lt;/i&gt; World!'
+  }
+  return HttpResponse(template.render(context, request))
+
 
 # Block Template Tag Specifies a block section
 def block(request):
@@ -1593,9 +1629,15 @@ def block(request):
   return HttpResponse(template.render())  
 
 # Using block child template to replace block userinfo
-def blockchild(request):
+#def blockchild(request):
+  #template = loader.get_template('django_refs/template/blockchild.html')
+  #return HttpResponse(template.render())
+  
+# For block example we have a block as a placeholder in a parent template to use as a replaced block in a child 
+# template.
+def block_example(request):  
   template = loader.get_template('django_refs/template/blockchild.html')
-  return HttpResponse(template.render())
+  return HttpResponse(template.render())  
 
 # USe comment to specify a comment section.
 def comment(request):
@@ -1630,25 +1672,90 @@ def filter_tag(request):
 def firstof(request):
   template = loader.get_template('django_refs/template/firstof.html')
   context = {
-    'x': 'Volvo', 'y': 'Ford', 'z': 'BMW',
+    'x': 'Volvo', 'x_empty': '', 'y': 'Ford', 'z': 'BMW'
   }
   return HttpResponse(template.render(context, request))
 
 #This firstof_empty view is for 2nd example that has an 1 empty variable.
 #def firstof_empty(request):
   #template = loader.get_template('django_refs/template/firstof_empty.html')
-  #context = {
+  #context = { 
     #'x': '', 'y': 'Ford', 'z': 'BMW',
   #}
   #return HttpResponse(template.render(context, request))
 
+
 # Use for to specify a for loop.
+def for_template(request):
+  fruits_array = ['Apple', 'Banana', 'Cherry', 'Orange']
+  mycar_dict = {
+    'brand': 'Ford',
+    'model': 'Mustang',
+    'year': 1964
+  }
+  context = {
+    'fruits': fruits_array, 
+    'mycar': mycar_dict
+  }
+  return render(request, 'django_refs/template/for.html', context)
 
-
+# could also do it this way
+#def for_template(request):
+  #template = loader.get_template('django_refs/template/for.html')
+  #context = {
+  # 'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
+  # 'mycar': {
+    # 'brand': 'Ford',
+    # 'model': 'Mustang',
+    # 'year': '1964',   
+      #} 
+    #}
+  #return HttpResponse(template.render(context, request)) 
+ 
+ 
 # Use if to specify an if statement.
-
+def if_template(request):
+  template = loader.get_template('django_refs/template/if.html')
+  context = {
+    'myvar_header': 1,
+    'myvar_elseheader': 2,
+    'myvar_elifheader': 2
+  }
+  return HttpResponse(template.render(context, request))
 
 # Use ifchanged in for loops. Outputs a block only if a value has changed since last iteration.
+def ifchanged(request):
+  mylist_array = [1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 5]
+  cars_array= [{
+        'brand': 'Ford',
+        'model': 'Mustang',
+        'year': '1964',
+      },
+      {
+        'brand': 'Ford',
+        'model': 'Bronco',
+        'year': '1970',
+      },
+      {
+        'brand': 'Ford',
+        'model': 'Sierra',
+        'year': '1981',
+      },
+      {
+        'brand': 'Volvo',
+        'model': 'XC90',
+        'year': '2016',
+      },
+      {
+        'brand': 'Volvo',
+        'model': 'P1800',
+        'year': '1964',
+      }]
+  context= {
+    'mylist': mylist_array,
+    'cars': cars_array
+  }
+  return render(request, 'django_refs/template/ifchanged.html', context)
 
 
 # Use include to specify included content/template. 
@@ -1717,21 +1824,30 @@ def verbatim(request):
 # For displaying with page link
 # Use with to specify a variable to use in a block
 def with_template(request):
-  template = loader.get_template('django_refs/template/with_template.html')
-  return HttpResponse(template.render())
+  #template = loader.get_template('django_refs/template/with_template.html')
+  fruits_array = ['Apple', 'Banana', 'Cherry', 'Orange']
+  context = { 
+    #'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']  
+    'fruits': fruits_array
+  }
+  #return HttpResponse(template.render())
+  return render(request, 'django_refs/template/with_template.html', context)
+
+
+
 
 # Use with to create a variable to use
-def with_example1(request):
-  template = loader.get_template('django_refs/template/with_example1.html')
-  return HttpResponse(template.render())
+#def with_example1(request):
+  #template = loader.get_template('django_refs/template/with_example1.html')
+  #return HttpResponse(template.render())
 
 # Use with on a for loop method (length) on an array
-def with_example2(request):
-  template = loader.get_template('django_refs/template/with_example2.html')
-  context = {
-    'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
-  }
-  return HttpResponse(template.render(context, request))
+#def with_example2(request):
+  #template = loader.get_template('django_refs/template/with_example2.html')
+  #context = {
+    #'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
+  #}
+  #return HttpResponse(template.render(context, request))
 
 
 
@@ -1747,17 +1863,21 @@ def filter(request):
 def add(request):
   template = loader.get_template('django_refs/filter/add.html')
   context = {
-    'prices': [70, 35, 52],   
+    'prices': [70, 35, 52], 
+    # Use example 2 with fruits array within this context below.
+    'fruits': ['Apple', 'Banana', 'Cherry'],
+    # Use example 3 with vegeatbles array within this context below.
+    'vegetables': ['Asparagus', 'Broccoli', 'Carrot']
   }
   return HttpResponse(template.render(context, request))
 
 # Use Add filter with a -CHECK phrase in a heading
-def add_example2(request):
-  template = loader.get_template('django_refs/filter/add_example2.html')
-  context = {
-    'fruits': ['Apple', 'Banana', 'Cherry'],
-  }
-  return HttpResponse(template.render(context, request))
+#def add_example2(request):
+  #template = loader.get_template('django_refs/filter/add_example2.html')
+  #context = {
+    #'fruits': ['Apple', 'Banana', 'Cherry'],
+  #}
+  #return HttpResponse(template.render(context, request))
 
 # def addcheck is not working just yet
 #def addcheck(request):
@@ -1767,13 +1887,13 @@ def add_example2(request):
   #}
 #return HttpResponse(template.render(context, request))
 
-def add_example3(request):
-  template = loader.get_template('django_refs/filter/add_example3.html')
-  context = {
-    'fruits': ['Apple', 'Banana', 'Cherry'],
-    'vegetables': ['Asparagus', 'Broccoli', 'Carrot'],
-  }
-  return HttpResponse(template.render(context, request))
+#def add_example3(request):
+  #template = loader.get_template('django_refs/filter/add_example3.html')
+  #context = {
+    #'fruits': ['Apple', 'Banana', 'Cherry'],
+    #'vegetables': ['Asparagus', 'Broccoli', 'Carrot'],
+  #}
+  #return HttpResponse(template.render(context, request))
 
 
 # Addslashes Filter Tag Adds a slash before any quote characters, to escape strings.
@@ -1804,7 +1924,7 @@ def center(request):
 def cut(request):
   template = loader.get_template('django_refs/filter/cut.html')
   context = {
-    'name': 'Emil Refsnes',
+    'name': 'Emil Refsnes'
   }
   return HttpResponse(template.render(context, request))
 
@@ -1832,7 +1952,7 @@ def dictsort(request):
       {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
       {'brand': 'Volvo', 'model': 'XC90', 'year': 2022},
       {'brand': 'Volvo', 'model': 'P1800', 'year': 1962},
-      {'brand': 'Ford', 'model': 'Focus', 'year': 2004},
+      {'brand': 'Ford', 'model': 'Focus', 'year': 2004}
     ]
   }
   return HttpResponse(template.render(context, request))
@@ -1845,7 +1965,7 @@ def dictsortreversed(request):
       {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
       {'brand': 'Volvo', 'model': 'XC90', 'year': 2022},
       {'brand': 'Volvo', 'model': 'P1800', 'year': 1962},
-      {'brand': 'Ford', 'model': 'Focus', 'year': 2004},
+      {'brand': 'Ford', 'model': 'Focus', 'year': 2004}
     ]
   }
   return HttpResponse(template.render(context, request))
@@ -1887,18 +2007,21 @@ def filesizeformat(request):
 def first(request):
   template = loader.get_template('django_refs/filter/first.html')
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
+    'fruits': ['Apple', 'Banana', 'Cherry', 'Orange'],
+    # Use firstname and lastname  for second first example within this same context below 
+    'firstname': 'Emil',
+    'lastname': 'Refsnes'
   }
   return HttpResponse(template.render(context, request))
 
 # Also use first filter on strings for displaying first character
-def first_example2(request):
-  template = loader.get_template('django_refs/filter/first_example2.html')
-  context = {
-    'firstname': 'Emil',
-    'lastname': 'Refsnes',
-  }
-  return HttpResponse(template.render(context, request))
+#def first_example2(request):
+  #template = loader.get_template('django_refs/filter/first_example2.html')
+  #context = {
+    #'firstname': 'Emil',
+    #'lastname': 'Refsnes',
+  #}
+  #return HttpResponse(template.render(context, request))
 
 # Use floatformat to round floating numbers to a specified number of decimal places. 
 # Round a number to only two decimal places
@@ -1906,26 +2029,28 @@ def floatformat(request):
   template = loader.get_template('django_refs/filter/floatformat.html')
   context = {
     'mynumber': 7.122489,
+    # Use firstname and lastname  for last (fourth) length_is example within this same context below
+    'mynumber_2g': 981358286 
   }
   return HttpResponse(template.render(context, request))
 
 # Use Floatformat with Positive Decimal Number
-def floatformat_example2(request):
-  template = loader.get_template('django_refs/filter/floatformat_example2.html')
-  return HttpResponse(template.render())
+#def floatformat_example2(request):
+  #template = loader.get_template('django_refs/filter/floatformat_example2.html')
+  #return HttpResponse(template.render())
 
 # Use Floatformat with Negative Decimal Number
-def floatformat_example3(request):
-  template = loader.get_template('django_refs/filter/floatformat_example3.html')
-  return HttpResponse(template.render())
+#def floatformat_example3(request):
+  #template = loader.get_template('django_refs/filter/floatformat_example3.html')
+  #return HttpResponse(template.render())
 
 # Use Floatformat with g Argument
-def floatformat_example4(request):
-  template = loader.get_template('django_refs/filter/floatformat_example4.html')
-  context = {
-    'mynumber': 981358286,
-  }
-  return HttpResponse(template.render(context, request))
+#def floatformat_example4(request):
+  #template = loader.get_template('django_refs/filter/floatformat_example4.html')
+  #context = {
+    #'mynumber': 981358286,
+  #}
+  #return HttpResponse(template.render(context, request))
 
 # Use get_digit to display a specific digit of a number.
 def get_digit(request):
@@ -1948,61 +2073,82 @@ def json_script(request):
   template = loader.get_template('django_refs/filter/json_script.html')
   context = {
     'cars': [
-      {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
+      {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
     ]
   }
   return HttpResponse(template.render(context, request))
 
 # Use last filter to display last item of an object (for strings last character is displayed).
+# Lets include both examples in same view for last filter 
 def last(request):
-  template = loader.get_template('django_refs/filter/last.html')
+  fruits_array = ['Apple', 'Banana', 'Cherry', 'Orange']
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
+    'fruits': fruits_array,
+    'firstname': 'Emil',
+    'lastname': 'Refsnes'
   }
-  return HttpResponse(template.render(context, request))
+  return render(request, 'django_refs/filter/last.html', context)
+  
+#def last(request):
+  #template = loader.get_template('django_refs/filter/last.html')
+  #context = {
+    #'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
+  #}
+  #return HttpResponse(template.render(context, request))
+
+
+
 
 # Also use last filter on strings for displaying last character
-def last_example2(request):
-  template = loader.get_template('django_refs/filter/last_example2.html')
-  context = {
-    'firstname': 'Emil',
-    'lastname': 'Refsnes',
-  }
-  return HttpResponse(template.render(context, request))
+#def last_example2(request):
+  #template = loader.get_template('django_refs/filter/last_example2.html')
+  #context = {
+    #'firstname': 'Emil',
+    #'lastname': 'Refsnes',
+  #}
+  #return HttpResponse(template.render(context, request))
 
 # Use length filter for displaying number of items in an object
 def length(request):
   template = loader.get_template('django_refs/filter/length.html')
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry', 'Orange']
+    'fruits': ['Apple', 'Banana', 'Cherry', 'Orange'],
+    # Use firstname and lastname  for second length_is example within this same context below
+    'firstname': 'Linus',
+    'lastname': 'Refsnes'
   }
   return HttpResponse(template.render(context, request))
 
+# I do not need a separate view for second length filter example
 # Also use length filter on strings for displaying number of characters
-def length_example2(request):
-  template=loader.get_template('django_refs/filter/length_example2.html')
-  context = {
-    'firstname': 'Emil',
-    'lastname': 'Refsnes',
-  }
-  return HttpResponse(template.render(context, request))
+#def length_example2(request):
+  #template=loader.get_template('django_refs/filter/length_example2.html')
+  #context = {
+    #'firstname': 'Emil',
+    #'lastname': 'Refsnes',
+  #}
+  #return HttpResponse(template.render(context, request))
 
 # Use length_is filter like a boolean to determine if an object has a specified length.
 def length_is(request):
   template = loader.get_template('django_refs/filter/length_is.html')
   context = {
     'fruits': ['Apple', 'Banana', 'Cherry'],
+    # Use firstname and lastname  for second length_is example within this same context below
+    'firstname': 'Linus',
+    'lastname': 'Refsnes'
   }
   return HttpResponse(template.render(context, request))
 
+# I do not need a separate view for second length_is filter example
 # Use length_is filter with a Django If Statement to display something, like a heading.
-def length_is_example2(request):
-  template = loader.get_template('django_refs/filter/length_is_example2.html')
-  context = {
-    'firstname': 'Linus',
-    'lastname': 'Refsnes',
-  }
-  return HttpResponse(template.render(context, request))
+#def length_is_example2(request):
+  #template = loader.get_template('django_refs/filter/length_is_example2.html')
+  #context = {
+    #'firstname': 'Linus',
+    #'lastname': 'Refsnes',
+  #}
+  #return HttpResponse(template.render(context, request))
 
 # Use linebreaks filter to create linebreaks, which would normally be done with < br > tag.
 # linebreaks filter can also be used to create a paragraph with double line breaks. 
@@ -2089,7 +2235,7 @@ def rjust(request):
 def slice(request):
   template = loader.get_template('django_refs/filter/slice.html')
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry', 'Kiwi', 'Orange'],
+    'fruits': ['Apple', 'Banana', 'Cherry', 'Kiwi', 'Orange']
   }
   return HttpResponse(template.render(context, request))
 
@@ -2103,9 +2249,9 @@ def slugify(request):
   return HttpResponse(template.render(context, request))
 
 # Use slugify on non alphanumeric characters
-def slugify_example2(request):
-  template = loader.get_template('django_refs/filter/slugify_example2.html')
-  return HttpResponse(template.render())
+#def slugify_example2(request):
+  #template = loader.get_template('django_refs/filter/slugify_example2.html')
+  #return HttpResponse(template.render())
 
 
 # Use striptags filter to remove any HTML tags from a value
@@ -2132,35 +2278,46 @@ import datetime
 def timesince(request):
   template= loader.get_template('django_refs/filter/timesince.html')
   context = {
+    # Use both mybirthdate and mydate for first example and mybirthdate for second example 
+    # within this same context below
     'mybirthdate': datetime.datetime(1975, 4, 21),
-    'mydate': datetime.datetime(2024, 1, 15)
-  }
-  return HttpResponse(template.render(context, request))
-
-# Using timesince for difference between two date times and leaving out date in argument. 
-def timesince_example2(request):
-  template = loader.get_template('django_refs/filter/timesince_example2.html')
-  context = {
-    'mybirthdate': datetime.datetime(1975, 4, 21),
-  }
-  return HttpResponse(template.render(context, request))
-
-# Use timesince for difference between two times, in hours and minutes
-def timesince_example3(request):
-  template = loader.get_template('django_refs/filter/timesince_example3.html')
-  context = {
+    'mydate': datetime.datetime(2024, 1, 15),
+    # Use date1 and date2 for third example within this same context below
     'date1': datetime.datetime(2022, 6, 8, 9, 30),
     'date2': datetime.datetime(2022, 6, 8, 13, 45),
   }
   return HttpResponse(template.render(context, request))
 
+# Using timesince for difference between two date times and leaving out date in argument. 
+#def timesince_example2(request):
+  #template = loader.get_template('django_refs/filter/timesince_example2.html')
+  #context = {
+    #'mybirthdate': datetime.datetime(1975, 4, 21),
+  #}
+  #return HttpResponse(template.render(context, request))
+
+# Use timesince for difference between two times, in hours and minutes
+#def timesince_example3(request):
+  #template = loader.get_template('django_refs/filter/timesince_example3.html')
+  #context = {
+    #'date1': datetime.datetime(2022, 6, 8, 9, 30),
+    #'date2': datetime.datetime(2022, 6, 8, 13, 45),
+  #}
+  #return HttpResponse(template.render(context, request))
+ 
 # Use timeuntil filter to display difference between 2 date times from current date now.
-import datetime
+# We are using import datetime for this timeuntil example from previous timesince example 
 
 def timeuntil(request):
   template = loader.get_template('django_refs/filter/timeuntil.html')
   context = {
-    'marslanding': datetime.datetime(2050, 5, 17)
+    #Use marslanding for first example within this same context below
+    'marslanding': datetime.datetime(2050, 5, 17),
+    #Use moonlanding, as well as marslanding for second example within this same context below 
+    'moonlanding': datetime.datetime(1969, 7, 20),
+    #Use both date1 and date2 for third example within this same context 
+    'date1': datetime.datetime(2022, 6, 8, 17, 39),
+    'date2': datetime.datetime(2022, 6, 8, 8, 13),
   }
   return HttpResponse(template.render(context, request))
 
@@ -2226,23 +2383,34 @@ def truncatewords_html(request):
 
 
 # Use unordered_list to convert django or python list from an object array into an HTML list
+#def unordered_list(request):
+  #template = loader.get_template('django_refs/filter/unordered_list.html')
+  #context = {
+    #'fruits': ['Apple', 'Banana', 'Cherry', 'Kiwi', 'Orange'],
+  #}
+  #return HttpResponse(template.render(context, request))
+
+# Combine both arrays in same unordered_list view for both examples
 def unordered_list(request):
-  template = loader.get_template('django_refs/filter/unordered_list.html')
+  fruits_array = ['Apple', 'Banana', 'Cherry', 'Kiwi', 'Orange']
+  food_array = ['Seafood', ['Fish', 'lobster'], 'Vegetables', ['Carrots', 'Broccoli']]
   context = {
-    'fruits': ['Apple', 'Banana', 'Cherry', 'Kiwi', 'Orange'],
+      'fruits': fruits_array,
+      'food': food_array
   }
-  return HttpResponse(template.render(context, request))
+  
+  return render(request, 'django_refs/filter/unordered_list.html', context)
 
 # Use unordered_list for nested list as well to convert into HTML list
-def unordered_list_nested(request):
-  template = loader.get_template('django_refs/filter/unordered_list_nested.html')
-  context = {
-    'food': ['Seafood', 
-             ['Fish', 'Lobster'], 
-                'Vegetables', 
-                ['Carrots', 'Broccoli']],
-  }
-  return HttpResponse(template.render(context, request))
+#def unordered_list_nested(request):
+  #template = loader.get_template('django_refs/filter/unordered_list_nested.html')
+  #context = {
+    #'food': ['Seafood', 
+             #['Fish', 'Lobster'], 
+                #'Vegetables', 
+                #['Carrots', 'Broccoli']],
+  #}
+  #return HttpResponse(template.render(context, request))
 
 # Use upper filter to display text in upper case letters. 
 def upper(request):
@@ -2345,13 +2513,14 @@ def iexact(request):
 # Check out templates/django_refs/field/iexact.html to see how mymembers object was used in HTML code.  
 
 # in lookup is used to get records where a value is one of values in an iterable (list, tuple, string, queryset).
-#def in(request):
-  #mydata = Member.objects.filter(firstname__in)=['Tobias', 'Linus', 'John']
-  #template = loader.get_template('django_refs/field/in.html')
-  #context = {
-    #'mymembers': mydata,
-  #}
-  #return HttpResponse(template.render(context, request)) 
+def in_filter(request):
+  #mydata = Member.objects.filter(firstname__in)=['Tobias', 'Linus', 'John'] fix this code below
+  mydata = Member.objects.filter(firstname__in=['Tobias', 'Linus', 'John']).values()
+  template = loader.get_template('django_refs/field/in.html')
+  context = {
+    'mymembers': mydata,
+  }
+  return HttpResponse(template.render(context, request)) 
 
 # Check out templates/django_refs/field/in.html to see how mymembers object was used in HTML code.
 
@@ -2398,6 +2567,18 @@ def lte(request):
   return HttpResponse(template.render(context, request))
 
 # Check out templates/django_refs/field/lte.html to see how mymembers object was used in HTML code.
+
+def range(request):
+  mydata_numeric = Member.objects.filter(id__range=(2, 4)).values()
+  mydata_alphanum = Member.objects.filter(firstname__range=('G', 'M')).values()
+  template = loader.get_template('django_refs/field/range.html')
+  context = {
+    'mymembers_numeric': mydata_numeric,
+    'mymembers_alphanum': mydata_alphanum,
+  }
+  return HttpResponse(template.render(context, request))
+
+# Check out templates/django_refs/field/range.html to see how object is used in HTML code.
 
 def startswith(request):
   mydata = Member.objects.filter(firstname__startswith='S').values()

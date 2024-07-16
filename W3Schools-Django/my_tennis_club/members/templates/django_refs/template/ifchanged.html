@@ -1,0 +1,121 @@
+
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h1><center>Django Template Tag Reference</center></h1>
+
+    <h2>Template Tag - Ifchanged</h2>
+
+    <h3>Ifchanged List Example</h3>
+
+    <p>Loop through a list, but show value only if it has changed since last iteration:</p>
+
+    <ul>
+        {% for x in mylist %}
+            {% ifchanged %}
+                <li>{{ x }}</li>
+            {% endifchanged %}
+        {% endfor %}
+    </ul>
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/list_in_views_file_and_url_for_both_examples.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what mylist object looks like for this and third example below.</p>
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/django_ifchanged_html_template_file_for_list_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+
+    <hr>
+
+    <h2>Definition and Usage</h2>
+
+    <p>The <code>ifchanged</code> tag allows you to check a value in a loop and output code if a value has 
+       changed <br>since last iteration. <bt><br>
+       If an iteration object has many values per iteration, you can specify which value to check and a block of
+       code <br> will only display if a value has changed since last iteration:
+    </p>
+
+    <h3>Ifchanged Array Property Example</h3>
+
+    <p>Loop through members object and check if a <code>brand</code> property has changed:</p>
+
+    {% for x in cars %}
+        {% ifchanged x.brand %}
+            <h1>{{ x.brand }}</h1>
+        {% endifchanged %}
+        <p>{{ x.model }}, {{ x.year }}</p>
+    {% endfor %}
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/url_and_views_file_for_if_example.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what cars object looks like.</p>
+    
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/django_ifchanged_html_template_file_for_array_prop_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+
+
+    <p>You can also define a { % else % } clause for content that should be displayed if a value has not changed:
+    </p>
+
+    <h3>Ifchanged List Messages Example</h3>
+
+    <p>Loop through a list and write different messages if a value has changed or not:</p>
+
+    {% for x in mylist %}
+        {% ifchanged %}
+            <p>New value: {{ x }}</p>
+        {% else %}
+            <p>Same value: {{ x }}</p>
+        {% endifchanged %}
+    {% endfor %}
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/django_ifchanged_html_template_file_for_list_message_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+
+    <hr>
+
+    <h2>Syntax</h2>
+
+    <p>
+      { % ifchanged <code>property</code> % }<br>
+      ...<br>
+      { % endifchanged % }
+    </p>
+
+    <hr>
+
+    <h2>Parameters</h2>
+
+    <table border='3'>
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          {#<td><em>comparedate</em></td>#}
+          <td><code>property</code></td>
+          <td>Optional. Specifies which property that needs to have changed to <br>display content.</td>
+        </tr>
+      </table>
+
+</body>
+</html>

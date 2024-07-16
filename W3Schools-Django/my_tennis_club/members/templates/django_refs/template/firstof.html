@@ -8,63 +8,94 @@
 
 <body>
 
-  <h2>Django Template Tag Reference</h2>
+  {#<h2>Django Template Tag Reference</h2> try larger heading#}
+  <h1><center>Django Template Tag Reference</center></h1>
 
-  <h3>Firstof Template Tag</h3>  
+  {#<h3>Firstof Template Tag</h3> try larger heading#}
+  <h2>Template Tag - Firstof</h2>
 
-  <p>Use firstof when there is no empty values in an object</p>
+  {#<p>Use firstof when there is no empty values in an object</p> better to have a heading I think#}
+  <h3>Use firstof when there is no empty values in an object</h3>
 
-<h4>Firstof with no empty values Example</h4>
+  {#<h4>Firstof with no empty values Example</h4> try larger heading#}
+  <h3>Firstof with no empty values Example</h3>
 
-<p>Return first of three variables (x, y, z), whose value is not empty or false:</p>
+  <p>Return first of three variables (x, y, z), whose value is not empty or false:</p>
 
-<h1>{% firstof x y z %}</h1>    
+  <h1>{% firstof x y z %}</h1>    
 
-<p> As you can see from this object example, all variables have a value.<br> 
-    As we are looking for first variable of object, it will be for x and that is Volvo.
-</p>
+  {# Show image of views.py and urls.py file #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_firstof_example.png' %}"> #}
 
-<p>Check out views.py to see content of x, y and z variables, for both examples.</p>
+  {# Explain code in views.py file #}
+  <p>Check out views.py to see content of x, y and z variables.</p>
 
-{#Need to create screenshot for this first 1st example <img src="">#}
+  {# Show image of Django code in HTML Template file #}
+  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_firstof_example.png' %}"> #}
 
-<hr>
+  {# Explain Django code in HTML file #}
+  <p>As you can see from this object example, all variables have a value.<br> 
+     As we are looking for first variable of object, it will be for x and that is Volvo.
+  </p>
 
-<h3>Definition and Usage</h3>
+  <hr>
 
-<p>The <code>firstof</code> tag returns first argument that is not an empty variable.</p>
+  <h3>Definition and Usage</h3>
 
-<p>Empty variables can be an empty string <code>""</code>, or a zero number <code>0</code>, 
-   or a boolean <code>false</code>.</p>
+  <p>The <code>firstof</code> tag returns first argument that is not an empty variable.</p>
 
-<h4>Firstof in an object that has an empty variable</h4>
+  <p>Empty variables can be an empty string <code>""</code>, or a zero number <code>0</code>, 
+     or a boolean <code>false</code>.</p>
 
-<p>Firstof with empty variable Example</p>
+  {#<h4>Firstof in an object that has an empty variable</h4> try larger heading#}
+  <h3>Firstof in an object that has an empty variable</h3>
 
-<p>First value is now empty, see what happens:</p>
+  {#<p>Firstof with empty variable Example</p> better to have a heading I think#}
+  <h3>Firstof with empty variable Example</h3>
+
+  <p>First value is now empty, see what happens:</p>
  
-{#Use include tag below for this code to include it in another HTML file#}
-{# {% include firstof_empty.html %} #}
-{# Cannot get include working yet, I think #}
-{# <h1>{% firstof x y z %}</h1> #}
+  {#Use include tag below for this code to include it in another HTML file#}
+  {# {% include firstof_empty.html %} #}
+  {# Cannot get include working yet, I think #}
+  {# <h1>{% firstof x y z %}</h1> #}
+
+  <h1>{% firstof x_empty y z %}</h1>
 
 
+  {# Show image of views.py and urls.py file #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_firstof_example.png' %}"> #}
 
-<p> As you can see from this object example, first variable x is an empty variable with no value.
-    The next variable y has a value, so that is first variable of object that has a value, which is Volvo. 
-</p>
+  {# Explain code in views.py file #}
+  <p>Check out views.py to see content of variables.<br>
+     For this firstof empty example you will notice that we now have a new variable x_empty and we are using<br>
+     y and z variables that we used before with firstof example.<br>
+     As you can see from this object example, first variable x is an empty variable with no value.<br>
+     The next variable y has a value. 
+     {#,so that is first variable of object that has a value, which is Ford. #}
+  </p>
 
-{#Need to create screenshot for this second 2nd example <img src="">#}
+  {# Show image of Django code in HTML Template file #}
+  {# <img src="{% static 'images/django_refs/template/django_ifchanged_html_template_file_for_list_example.png' %}"> #}
 
+  {# Explain Django code in HTML file #}
 
+  <p>In our HTML template file we are using a Django firstof command with our .<br>
+     Django firstof can be put inside an HTML tag and then we have to type variables <code>x_empty y z</code><br> 
+     with spaces between from our object.<br> 
+     x_empty has no variable (it is empty), so we choose next variable (firstof) in list, which is y<br> and this
+     shows Ford as an h1 heading. 
+  </p>
 
+  <hr>
 
-<hr>
+  <h3>Syntax</h3>
 
-<h3>Syntax</h3>
+  {# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
+  {# { % firstof <em>var1</em> <em>var2</em> <em>var3</em> <em>etc</em>. % } #}
 
-{# Need space below between a curly brace { and %, so that it can be displayed as text and does not think it is code #} 
-{ % firstof <em>var1</em> <em>var2</em> <em>var3</em> <em>etc</em>. % }
+  <p>&#123;% firstof <code>var1 var2 var3 etc.</code> %&#125;
+  </p>
 
 <hr>
 
@@ -76,9 +107,10 @@
       <th>Description</th>
   </tr>
   <tr>
-      <td><em>var1</em> <em>var2</em> <em>var3</em> .</td>
-      <td>Variables. The first variable that is not empty, 0, or false is returned.<br> 
-        If all variables are empty, then nothing is returned.</td>
+      {#<td><em>var1</em> <em>var2</em> <em>var3</em> .</td>#}
+      <td><code>var1  var2  var3 etc.</code></td>
+      <td>Variables of any type. The first variable that is not empty, 0, or false is returned.<br> 
+          If all variables are empty, then nothing is returned.</td>
   </tr>    
 </table>   
 

@@ -6,13 +6,16 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1>Django Filter Tag Reference</h1>
 
-    <h3>Template Filter - make_list</h3>  
-  
-    <p><b>Make_list Example</b></p> 
+    {#<h3>Template Filter - make_list</h3> try larger heading#}  
+    <h2>Template Filter - make_list</h2>
+
+    {#<p><b>Make_list Example</b></p> better to have a heading I think#}
+    <h3>Make_list Example</h3>
  
-    </p>Convert a string into a list:</p>
+    <p>Convert a string into a list:</p>
 
 
     <h1>{{ name|make_list }}</h1>
@@ -23,7 +26,7 @@
     
     <h3>Definition and Usage</h3>
  
-    <p>The make_list filter converts a value into a list.</p>
+    <p>The <code>make_list</code> filter converts a value into a list.</p>
 
     <p>Each character in original value becomes a list item.</p>
 
@@ -31,9 +34,9 @@
 
     <h3>Syntax</h3>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
    
-    <p>{ {value|make_list} }</p>
+    <p>{ { <code>value|make_list</code> } }</p>
     
 </body>
 </html>

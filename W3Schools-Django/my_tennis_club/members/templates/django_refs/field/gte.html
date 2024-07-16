@@ -1,4 +1,7 @@
 
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
     <head><title>Django greater than Reference</title>
@@ -6,14 +9,18 @@
  
 <body>
 
-    <h2>Django Field Lookup Tag Reference</h2>
+    {#<h2><center>Django Field Lookup Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Field Lookup Tag Reference</center></h1>
 
-    <h3>Field Lookups - gte (greater than, or equal to)</h3>  
-  
-    <p><b>Greater Than or Equal To Example</b></p>
+    {#<h3>Field Lookups - gte (greater than, or equal to)</h3> try larger heading#}    
+    <h2>Field Lookups - gte (greater than, or equal to)</h2>
+
+    {#<p><b>Greater Than or Equal To Example</b></p> better to have larger heading I think#}
+    <h3>Greater Than or Equal To Example</h3>
 
     <p>Get all records where id is 3 or larger:</p>    
 
+    {# Gte filter Example starts here #}
     <p>The queryset object:</p>
 
     {{ mymembers }}
@@ -34,30 +41,58 @@
         </tr>
         {% endfor %}
     </table>
+    {# Gte filter Example ends here #}
+
+    {# Image showing views.py file, so we can see how greater then or equal to (gte) works with data for this gte #}
+    {# example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers variable, which is an object and we are using this with a name of mydata outside of 
+        context.<br>
+        After defining our view, we are using mydata to access Member table to get all objects (records).<br>
+        For all records, we are getting all values for fields and using a greater than or equal to (gte) filter to 
+        show only records that have an id equal to 3 or greater.<br>  
+    </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this greater than or equal to example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>In HTML Template we are using a for loop with mymembers object from views.py file.<br> 
+       After using gte filter in views.py, we are showing all field values that we want, for records 
+       with an id of 3, 4 and 5.<br>
+       We are using mymembers, surrounded by double curly braces, to show a queryset on page with details of 
+       those filtered records.<br>  
+       You will notice in queryset, that joined_date field uses a datetime function to show date that a member 
+       joined tennis club.       
+    </p>
 
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The gte lookup is used to get records that are larger than, or equal to, a specified value.</p>
-
-    <p>For a greater than, but not equal to search, use the gt lookup.</p>  
+    <p>The <code>gte</code> lookup is used to get records that are greater than, or equal to, a specified value.
+       <br><br>
+       For a greater than, but not equal to search, use <a href="/field/gt">gt</a> lookup.
+    </p>  
     
     <hr>
 
     <h3>SQL Equivalent</h3>
 
-    <p>The SQL equivalent to the example above will be:</p>
-
-    <p>WHERE id >= 3;</p>
+    <p>The SQL equivalent to the example above will be:<br><br>
+       
+       <code>WHERE id >= 3;</code>
+    </p>
 
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
+    <p>All Field lookup keywords must be specified with fieldname, followed by two underscore characters 
+       <code>__</code> and a keyword:<br><br>
 
-    <p>fieldname__gte=value</p>
+       fieldname__gte=value
+    </p>
     
 </body>    
 </html>    

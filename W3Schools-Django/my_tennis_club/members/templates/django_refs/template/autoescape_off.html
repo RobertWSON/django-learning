@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1><center>Autoescape Off Template Example</center></h1>
+
+    <p><br>Here we are demonstrating how Django Autoescape Off works for a variable that has an italics HTML 
+        tag with a heading.<br>
+        In our views.py file, we have this heading variable <b>Hello &lt;i&gt;my&lt;i&gt; World!</b> and this 
+        is how it shows on our web page below.
+     </p>
+
+    {% autoescape off %}
+        <h2>{{ heading }}</h2>
+    {% endautoescape %}
+
+    <p>With Django Autoescape off, you can see how italics HTML tags does not get escaped (converted back to 
+       text) and gets shown<br> as result of italics HTML tags.<br><br>
+       This means that heading <b>Hello my World!</b> has <b>my</b> shown in italics.    
+    </p>
+
+</body>
+</html>

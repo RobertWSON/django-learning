@@ -1,0 +1,161 @@
+
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Django Template Tag Reference</title>
+  </head>  
+
+<body>
+
+    <h1><center>Django Template Tag Reference</center></h1>
+
+    <h2>Template Tag - If</h2>
+
+    <h3>If Single Heading Example</h3>
+
+    <p>Display a header if a value of myvar_head variable is 1:</p>
+
+    {% if myvar_header == 1 %}
+        <h1>Hello!</h1>
+    {% endif %}
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/url_and_myvar_header_in_views_file.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what myvar_header variable looks like.<br>
+       You can see in context that myvar_header variable has been given a value of 1.
+    </p>
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/html_template_file_django_if_code_for_if_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+    <p>In our HTML template file we are using a Django if command to ask if our myvar_header variable has a 
+       value of 1. <br><br>
+       A loose equality comparison operator == to compare a variable of 
+       automatic number data type with a given data type value is used.<br><br>
+       As myvar_header having a value of 1, then we can show Hello! heading and use <code>{ % endif % }</code> to close off 
+       Django if statement.
+    </p>
+
+    <hr>
+
+    <h2>Definition and Usage</h2>
+
+    <p>The <code>if</code> tag allows you to write conditional statements.<br><br>
+       Use <code>if</code> statements to output a block of code if a condition is true.<br><br>
+       You can use <code>else</code> or <code>elif</code> (short for "else if") to specify what to do when an 
+       <code>if</code> condition is false.   
+    </p>
+
+    <h3>If using else for a Heading Example</h3>
+
+    <p>Display a heading if <code>myvar_elseheader</code> is 1 or another if <code>myvar_elseheader</code> is 2:
+    </p>
+
+    {% if myvar_elseheader == 1 %}
+        <h1>Hello!</h1>
+    {% else %}
+        <h1>Greetings!</h1>
+    {% endif %} 
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/url_and_myvar_elseheader_in_views_file.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what myvar_elseheader variable looks like.<br>
+        You can see in context that myvar_elseheader variable has been given a value of 2.
+    </p>
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/html_template_file_django_if_else_code_for_if_else_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+    <p>In our HTML template file we are using a Django if command to ask if our myvar_elseheader variable has a 
+       value of 1. <br><br>
+       This is false as our myvar_elseheader variable does not have a value of 1, so now we can use an else condition 
+       to show next available heading,<br> which is Greetings! .<br><br> 
+       We use <code>{ % endif % }</code> to close off Django if statement.
+    </p>
+
+
+    <h3>If using elif for a Heading Example</h3>
+
+    <p>Display a third heading if none of conditions are true:
+    </p>
+
+    {% if myvar_elifheader == 1 %}
+        <h1>Hello!</h1>
+    {% elif myvar_elifheader == 2 %}
+        <h1>Welcome!</h1>
+    {% else %}
+        <h1>Greetings!</h1>
+    {% endif %}
+
+    {# Show image of views.py and urls.py file #}
+    {# <img src="{% static 'images/django_refs/template/url_and_myvar_elseheader_in_views_file.png' %}"> #}
+
+    {# Explain code in views.py file #}
+    <p>Check out views.py to see what myvar_elifheader variable looks like.<br>
+       You can see in context that myvar_elifheader variable has been given a value of 2.
+    </p>
+
+    {# Show image of Django code in HTML Template file #}
+    {# <img src="{% static 'images/django_refs/template/html_template_file_django_elif_code_for_elif_example.png' %}"> #}
+
+    {# Explain Django code in HTML file #}
+    <p>In our HTML template file we are using a Django if command to ask if our myvar_elifheader variable has a 
+       value of 1. <br><br>
+       Our myvar_elifheader variable does not have a value of 1, so now we can use an elif condition.<br>
+       This elif condition starts off with an else part that creates a new condition for myvar_elifheader variable 
+       with an if part,<br> for checking if value is 2.<br>
+       For this example myvar_elifheader variable does have a value of 2, so this means that we display Welcome!
+       heading.<br><br>
+       Say our example did not have a myvar_elifheader variable value of 1 or 2, then we have to use last else 
+       condition<br> and display Greetings! heading.<br><br>   
+       Finally we use <code>{ % endif % }</code> to close off whole Django if statement.
+     </p>
+
+    <hr>
+
+    <h2>Syntax</h2>
+
+    <p>
+        { % ifchanged <code>condition</code> % }<br>
+        ...<br>
+        { % endif % }
+        </p>
+
+        {# 123 and 125  #}
+        {#<p>#}
+           {# &#123;% resetcycle name %&#125; #}
+        {#</p>#}
+
+    <h2>Parameters</h2>
+
+    <table border='3'>
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          {#<td><em>comparedate</em></td>#}
+          <td><code>condition</code></td>
+          <td>Required. Anything that evaluates to either true or false.</td>
+        </tr>
+    </table>
+
+    <h2>Operators</h2>
+
+    <p>There are built-in operators you can use when evaluating <code>if</code> statements, that can be found in
+       <a href="/testing">Django If Section</a>.<br><br>
+       You can click on each tag to find out how they work.
+    </p>
+
+</body>
+</html> 

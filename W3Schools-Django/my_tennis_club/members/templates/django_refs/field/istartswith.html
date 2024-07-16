@@ -1,19 +1,26 @@
 
+{#{% load static% %}#}
+{# Written Content is in #}
+{# Just need images for code on this page now #}
 <!DOCTYPE html>
 <html>
     <head><title>Django startswith Reference</title>
     </head>    
  
 <body>
+    
+    {#<h2><center>Django Field Lookup Tag Reference</center></h2> try larger heading#}
+    <h1><center>Django Field Lookup Tag Reference</center></h1> 
 
-    <h2>Django Field Lookup Tag Reference</h2>
-
-    <h3>Field Lookups - istartswith</h3>  
-  
-    <p><b>Istartswith Example</b></p>
+    {#<h3>Field Lookups - istartswith</h3> try larger heading#}  
+    <h2>Field Lookups - istartswith</h2>  
+ 
+    {#<p><b>Istartswith Example</b></p> better to have larger heading I think#}
+    <h3>Istartswith Example</h3> 
 
     <p>Get all records where firstname starts with letter "s":</p>    
 
+    {# Istartswith Example starts here #}
     <p>The queryset object:</p>
 
     {{ mymembers }}
@@ -34,32 +41,58 @@
         </tr>
         {% endfor %}
     </table>
+    {# Istartswith Example ends here #}
+
+    {# Image showing views.py file, so we can see how istartswith works with data for this istartswith example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>Here we have mymembers variable, which is an object and we are using this with a name of mydata outside of 
+       context.<br>
+       After defining our view, we are using mydata to access Member table to get all objects (records).<br>
+       For all records we are getting all values for firstname field and then using a startswith filter to show all 
+       records that have a firstname field starting with s .
+     </p>
+
+    {# Image showing HTML Template code, so we can see how data is used for this istartswith example #}
+    {# <img src="{% static 'images/django_refs/field/.png' %}"> #}
+
+    <p>In HTML Template we are using a for loop with mymembers object from views.py file.<br>
+       After using istartswith filter in views.py, we are just showing all field name values for a record or records 
+       that have a firstname starting with s or S.<br>
+       We are using mymembers surrounded by double curly braces to show a queryset on page with details on that 
+       filtered record.<br> 
+       You will notice in queryset that joined_date field uses a datetime function to show date that member joined 
+       tennis club.         
+    </p>
 
     <hr>
 
     <h3>Definition and Usage</h3>
 
-    <p>The istartswith lookup is used to get records that start with a specified value.</p>
-
-    <p>The istartswith lookup is case insensitive.</p>
-
-    <p>For a case sensitive search, use startswith lookup.</p>  
+    <p>The <code>istartswith</code> lookup is used to get records that start with a specified value.<br><br>
+       The <code>istartswith</code> lookup is case insensitive, so this means that it does not matter if a name
+       starts with a lower case or upper case letter.<br><br>
+       For a case sensitive search, use <a href="/field/startswith">startswith</a> lookup.
+    </p>  
     
     <hr>
 
     <h3>SQL Equivalent</h3>
 
-    <p>The SQL equivalent to the example above will be:</p>
-
-    <p>WHERE firstname LIKE 's%';</p>
+    <p>The SQL equivalent to the example above will be:<br><br>
+       
+       <code>WHERE firstname LIKE 's%';</code>
+    </p>
 
     <hr>
 
     <h3>Syntax</h3>
 
-    <p>All Field lookup keywords must be specified with fieldname, followed by two(!) underscore characters __ and a keyword:</p>
-
-    <p>fieldname__istartswith='value'</p>
+    <p>All Field lookup keywords must be specified with fieldname, followed by two underscore characters 
+       <code>__</code> and a keyword:<br><br>
+       
+       fieldname__istartswith='value'
+    </p>
     
 </body>    
 </html>  

@@ -6,11 +6,14 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</h1>
+    
+    {#<h3>Template Filter - pluralize</h3> try larger heading#}  
+    <h2>Template Filter - pluralize</h2>
 
-    <h3>Template Filter - pluralize</h3>  
-  
-    <p><b>Pluralize number with 's' Example</b></p> 
+    {#<p><b>Pluralize number with 's' Example</b></p> better to have a heading I think#} 
+    <h3>Pluralize number with 's' Example</h3>
 
     <p>Add a 's' at end of number, if number is not 1:</p>
 
@@ -28,7 +31,8 @@
     <p>You can specify another suffix with suffix argument:</p> 
 
 
-    <p><b>Pluralize with another suffix Example</b></p> 
+    {#<p><b>Pluralize with another suffix Example</b></p> better to have a heading I think#}
+    <h3>Pluralize with another suffix Example</h3>
 
     {% for x in arr %}
         <h1>You have {{ x }} kiss{{ x|pluralize:'es' }} left.</h1>
@@ -37,7 +41,8 @@
 
     <p>For words with different single and plural endings, you can add both by seperating them by a comma:</p>
 
-    <p><b>Pluralize for words with single and plural endings Example</b></p>
+    {#<p><b>Pluralize for words with single and plural endings Example</b></p>#}
+    <h3>Pluralize with another suffix Example</h3>
 
     {% for x in arr %}
         <h1>You have {{ x }} butterfl{{ x|pluralize:'y,ies' }} left.</h1>
@@ -45,10 +50,11 @@
 
     <h3>Syntax</h3>
 
-    { { <em>value</em>|pluralize:<em>suffix</em> } }
+    {#{ { <em>value</em>|pluralize:<em>suffix</em> } }#}
+    <p>{ { <code>value|pluralize:suffix</code> } }</p>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
-    <p>Arguments are defined by using a colon : character followed by argument value.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
+    <p>Arguments are defined by using a colon <b>:</b> character followed by argument value.</p>
 
     <h3>Arguments</h3>
 
@@ -58,7 +64,8 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td><em>suffix</em></td>
+        {#<td><em>suffix</em></td>#}
+        <td><code>suffix</code></td>
         <td>Optional. The suffix to add to a value.
             <br>Default 's'.
             <br>For words with different single and plural endings, you can add both by seperating them by a comma.

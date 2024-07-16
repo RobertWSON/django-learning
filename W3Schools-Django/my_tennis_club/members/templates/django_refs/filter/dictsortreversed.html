@@ -6,11 +6,14 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - dictsortreversed</h3>  
-  
-    <p><b>Dictsortreversed Example</b></p> 
+    {#<h3>Template Filter - dictsortreversed</h3> try larger heading#}  
+    <h2>Template Filter - dictsortreversed</h2>
+
+    {#<p><b>Dictsortreversed Example</b></p> better to have a heading I think#} 
+    <h3>Dictsortreversed Example</h3>
 
     </p>Sort a dictionary descending by year:</p>
 
@@ -23,15 +26,15 @@
 
     <h3>Definition and Usage</h3>
  
-    <p>The dictsortreversed filter sorts a dictionary by a specified field, descending.</p>
+    <p>The <code>dictsortreversed</code> filter sorts a dictionary by a specified field, descending.</p>
     
-    <p>Use dictsort filter to sort ascending.</p>
+    <p>Use <a href="/filter/dictsort">dictsort</a> filter to sort ascending.</p>
 
     <h3>Syntax</h3>
 
-    { { value|dictsortreversed:fieldname } }
+    <code>{ { value|dictsortreversed:fieldname } }</code>
 
-    <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
+    <p>Template filters are defined by using a pipe <code>|</code> character followed by name of filter.</p>
     <p>Arguments are defined by using a colon : character followed by argument value.</p>
 
     <h3>Arguments</h3>
@@ -42,7 +45,8 @@
         <th>Description</th>
       </tr>
       <tr>
-        <td>fieldname</td>
+        {#<td>fieldname</td>#}
+        <td><code>fieldname</code></td>
         <td>Required. The name of the field to be sorted on.</td>
       </tr>
     </table>   

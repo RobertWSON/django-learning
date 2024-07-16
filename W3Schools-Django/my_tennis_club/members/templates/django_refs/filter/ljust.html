@@ -6,19 +6,23 @@
 
 <body>
 
-    <h2>Django Filter Tag Reference</h2>
+    {#<h2>Django Filter Tag Reference</h2> try larger heading#}
+    <h1><center>Django Filter Tag Reference</center></h1>
 
-    <h3>Template Filter - ljust</h3>  
+    {#<h3>Template Filter - ljust</h3> try larger heading#}
+    <h2>Template Filter - ljust</h2>
   
-    <p><b>Ljust Example</b></p> 
+    {#<p><b>Ljust Example</b></p> better to have a heading I think#}
+    <h3>Ljust Example</h3>
 
-    </p>Write a name, justified to left of a character field:</p>
+    <p>Write a name, justified to left of a character field:</p>
 
 
     <h1>{{ name|ljust:20 }}</h1>
 
-    <p>In HTML display does not show more than one space, but if you view page source you will see that there are
-       20 characters between &lt;h1&gt; and &lt;/h1&gt; .</p> 
+    <p>In HTML display does not show more than one space, but if you view page source you will see that there are<br>
+       20 characters between &lt;h1&gt; and &lt;/h1&gt; .
+    </p> 
 
     <p>Or, to demonstrate we can use a PRE element to see that "Tobias" is left aligned:</p>
     
@@ -36,7 +40,7 @@
 
     <h3>Syntax</h3>
 
-    <p>{ { value|ljust:length } }</p>
+    <p>{ { <code>value|ljust:length</code> } }</p>
 
     <p>Template filters are defined by using a pipe | character followed by name of filter.</p>
 
@@ -51,6 +55,7 @@
       </tr>
       <tr>
         <td>length</td>
+        <td><code>length</code></td>
         <td>Required. A number specifying length of a field where a value will be left justified in.</td>
       </tr>
     </table>   
