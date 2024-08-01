@@ -1,3 +1,7 @@
+
+{# Handles images and videos from static folder #}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     
@@ -14,18 +18,18 @@
     </p>
 
     {# Image showing how to add a member with Django Admin #}
-    {# <img src="{% static 'django_setup/images/Click Add member.png' %}"> #}
+    <img src="{% static 'django_admin/images/add_members/Click Add member.png' %}">
 
     <p>If you have more CSS styling in Django Admin, you can add a new member, by clicking on 
         <b>ADD MEMBER</b> button in top right corner.</p>
 
     {# Image showing how to add a new member when Django Admin has more styling #}
-    {# <img src="{% static 'django_setup/images/Click_Add_member_top_corner.png' %}"> #}
+    {# <img src="{% static 'django_admin/images/add_members/Click_Add_member_top_corner.png' %}"> #}
 
     <p>You will get an empty form where you can fill in fields for a new member:</p>
 
     {# Image showing where to fill in details for fields of a new member #}
-    {# <img src="{% static 'django_setup/images/Ready to Fill in New Member.png' %}"> #}
+    <img src="{% static 'django_admin/images/add_members/Ready to Fill in New Member.png' %}"> 
 
     <p>With more CSS styling in Django Admin, empty form for filling in fields for a new member could look 
        like this:
@@ -37,7 +41,7 @@
     <p>Fill in form fields and click <b>SAVE:</b></p>
 
     {# Image showing fields filled in form for a new member #}
-    {# <img src="{% static 'django_setup/images/New Jane Doe Member Details.png' %}"> #}
+    <img src="{% static 'django_setup/images/New Jane Doe Member Details.png' %}"> 
 
     <p>With more CSS styling in Django Admin, filling in form fields and clicking <b>SAVE</b> could look like 
        this:
@@ -49,7 +53,7 @@
     <p>Now Member Model has 6 members with a new Jane Doe member added:</p>
 
     {# Image showing that a member is added and we now have 6 members #}
-    {# <img src="{% static 'django_setup/images/New Member Jane Doe Added.png' %}"> #}
+    <img src="{% static 'django_setup/images/New Member Jane Doe Added.png' %}"> 
 
     <p>With more styling in Django Admin, 6 members (including added member) could look like this:</p>
     

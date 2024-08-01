@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -20,19 +20,25 @@
            located at <code>my_tennis_club/members/templates</code>
         </p>
 
-        {# <img src="{% static 'django_setup/images/Create New Templates Folder.png' %}"> #}
+        {# I think that I have not got an image screenshot of file structure with new myfirst.html #}
+        {# template  without code in it #}
+        {# <img src="{% static 'django_setup/images/Create New Templates Folder.png' %}"> #} 
         {# <img src="{% static 'django_setup/images/Create my First HTML File.png' %}"> #}
+        {# <img src="{% static 'django_setup/images/.png' %}"> #}
 
         <p>Now that we have created a <code>templates folder</code>, we can create an HTML Template file named 
            <code>myfirst.html</code> :<br>
            located at <code>my_tennis_club/members/templates/myfirst.html</code>
         </p>
 
-        {# <img src="{% static 'django_setup/images/New myfirst HTML File.png' %}"> #}
+        {# Image showing HTML code used to make first HTML template #}
+        {# Note: Django code has not been used in HTML Template yet, but will later #}
+        <img src="{% static 'images/django_setup/django_template/New myfirst HTML File.png' %}"> 
 
         <p>I have explained in more detail below what is going on with this <code>myfirst.html</code> file.</p>
 
-        {# <img src="{% static 'django_setup/images/myfirst Template Explained.png' %}"> #}
+        {# Image showing code in HTML Template with comments explaining what code does #}
+        <img src="{% static 'django_setup/images/myfirst Template Explained.png' %}"> 
 
         <b>Note:</b> You can use <code>myfirst.html</code> template to replace your original hello world message on 
            <code>127.0.0.1:8000/members/</code> page<br> or create a new page with this template.<br>
@@ -47,14 +53,17 @@
            <code>my_tennis_club/members/views.py</code>
         </p>
 
-        {# <img src="{% static 'django_setup/images/Modified View with Template.png' %}"> #}
+        {# Image showing that members view has now been changed to take first HTML Template #}
+        {# that can temporarily replace hello world. We can use a view for Hello World later #}
+        <img src="{% static 'django_setup/images/Modified View with Template.png' %}"> 
 
-        <p>Now, if we decided not to use members view before and want to keep original hello world page, then we should 
-            create a new view<br> with a name of your choice.<br> 
+        <p>Now, if we decided not to use members view before and want to keep original hello world page, 
+           then we should create a new view<br> with a name of your choice.<br> 
            As an example I have used first_django_page as my choice for a view shown below:   
         </p>
 
-        {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}        
+        {# Image showing my own choice of a view to use with first HTML Template #}
+        <img src="{% static 'django_setup/images/Initial Django Views File.png' %}">        
 
         <hr>
 
@@ -67,34 +76,52 @@
            <code>my_tennis_club/my_tennis_club/settings.py</code>
         </p>
 
-        {# <img src="{% static 'django_setup/images/Installed Apps with members.png' %}"> #} 
+        {# Image showing members added as an app within INSTALLED_APPS of settings.py file #}
+        <img src="{% static 'images/django_setup/django_template/Installed Apps with members.png' %}">
 
          <p>As we have made a change in settings for this application, we need to bring in tools needed to help setup this 
             application.<br>
-            For us to do this, we need to make a migration by running a command :<br><br>
+            For us to do this, we need to make a migration by running a migrate command :<br><br>
             On <b>Windows</b> use <code>py manage.py migrate</code><br>
             On my <b>Mac</b> or <b>Unix</b> use <code>python manage.py migrate</code> and you should see output like this:  
          </p>
 
-        {# <img src="{% static 'django_setup/images/First Migration in Tennis Club.png' %}"> #}
+        {# Image showing my first migration for my_tennis_club Project using migrate command  #} 
+        {# Note: migrate command has to be run in main my_tennis_club project folder #}
+        <img src="{% static 'django_setup/images/First Migration in Tennis Club.png' %}"> 
 
-         <p>If localhost server is not running, navigate to the <code>my_tennis_club</code> folder with 
-            <code>cd my_tennis_club</code> and execute your normal<br> runserver command in command prompt:
+         <p><b>Note:</b> Migrate command has to be run in Django project folder, which is 
+            <code>my_tennis_club</code> because it uses manage.py file.<br>
+            You can see in image above, that when I initially ran migrate command in 
+            <code>W3Schools-Django</code> folder<br>, it could not find manage.py file to run this command.    
+            <br><br>
+            {# If localhost server is not running, navigate to <code>my_tennis_club</code> folder with #} 
+            {#<code>cd my_tennis_club</code> and execute your normal<br> runserver command in command prompt: #}
+            Stay in your <code>my_tennis_club</code> folder or if you have left your command line, navigate
+            to it with <code>cd my_tennis_club</code>.<br>
+            Run your localhost server by executing your normal runserver command in command prompt shown 
+            below: 
          </p>
 
+         {# Image showing how to run normal Django localhost server #}
          {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}
 
-         <p>If you have kept <code>members/</code> in your <code>my_tennis_club/members/urls.py</code> file, then when you
-            type <br><code>127.0.0.1:8000/members/</code> in your browser window address bar, it should look like this:
+         <p>If you have kept <code>members/</code> in your <code>my_tennis_club/members/urls.py</code> 
+            file, then when you type <br><code>127.0.0.1:8000/members/</code> in your browser window 
+            address bar, it should look like this:
          </p>
 
-         {# <img src="{% static 'django_setup/images/Run Server - Members Page.png' %}"> #}
+         {# Image showing what members page looks like when you are using it temporarily to show #} 
+         {# Hello World with a message about first Django project #}
+         <img src="{% static 'django_setup/images/Run Server - Members Page.png' %}">
 
-         <p>If you have changed to a different url, that will not conflict with tennis club members later, then as my example
-            shows, url and content could look like this : 
+         <p>If you have changed to a different url, that will not conflict with tennis club members later, 
+            then as my example shows,<br> url and content could look like this : 
          </p>         
 
-         {# <img src="{% static 'django_setup/images/first_django_template_on_page.png' %}"> #}
+         {# Image showing what Hello World with a message about first Django project looks like on #}
+         {# its own permanent /first_django_page url #}
+         <img src="{% static 'django_setup/images/first_django_template_on_page.png' %}"> 
         
          <p>Now that we have created our first <code>template</code> with Django, we are now ready to create a 
             <a href="/django_setup/model">Model</a> that we can use with a database.

@@ -1,6 +1,6 @@
 
-{# Handles images and videos from static folder #}
-{# {% load static %} #}
+{# Handles images from static folder #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -15,39 +15,111 @@
         <h3>Django Requires Python</h3>
 
         <p>To install Django you must have Python installed and a package manager like PIP .<br>
-           To check if your system ahs python installed, run this command in your command prompt:
+           To check if your system has python installed, run this command in your command prompt:
         </p>
 
+        {# Image showing how to check if python is installed on my Mac computer #}
         {# <img src="{% static 'django_setup/images/check_if_python_installed.png' %}"> #}
+        <img src="{% static 'images/django_setup/django_get_started/check_if_python_installed.png' %}">
 
-        <p>If python is installed, you will gat a result with a version number shown, like this</p>
+        <p><b>Note:</b> If You are using a Windows computer, <code>py --version</code> can also be used as
+           well as <code>python --version</code><br> to check python version.<br> 
+           This command uses a python launcher <code>py</code> for Windows, which is a utility used to 
+           help manage multiple verisons of python<br> and it shows default version of Python interpreter 
+           set by launcher.<br><br> 
+           If python is installed, you will get a result with a version number, like this shown on my 
+           Mac.
+         </p>
 
-        {# <img src="{% static 'django_setup/images/python_installed_version_number.png' %}"> #}
+        {# Image showing that my Mac has python version 2 installed with Mac operating system #}   
+        <img src="{% static 'images/django_setup/django_get_started/python_installed_version_number.png' %}"> 
 
-        <p>If you find that you do not have Python installed on your computer, you can download it for free from
-           <code>https://www.python.org/</code></p>
-        {# HAVE TO FIGURE OUT HOW TO DO A LINK TO AN EXTERNAL WEBSITE #}
+        <p><b>Note:</b> On my Mac laptop it shows a python 2 version because a Mac comes with a default 
+           built-in python 2 version.<br>
+           You can also check to see if a python 3 version is installed by running following command: 
+        </p>
 
+        {# Image showing how to check if python 3 is installed on my Mac computer #}
+        <img src="{% static 'images/django_setup/django_get_started/check_if_python_3_installed.png' %}">        
+
+        <p><b>Note:</b> If you are using Windows, <code>py -3 --version</code> can also be used to 
+           check python 3 version.<br> 
+           This command uses a python launcher <code>py</code> for Windows, just like before and a 
+           <code>-3</code> option<br> to check for python 3 version of default interpreter.<br><br> 
+           It is important to know if python 3 is installed, because it is needed later for Django 
+           installation with PIP. 
+        </p>  
+        
+        {# Image showing python 3 version number installed on my Mac computer #}
+        <img src="{% static 'images/django_setup/django_get_started/python_3_installed_version_number.png' %}">
+
+        <p><b>Note:</b> To find a python version we can also use a <b>-V</b> flag with an upper case V.<br>
+           This is a shortcut for <b>--version</b> option in <b>python --version</b> or 
+           <b>python3 --version</b> commands.<br>
+           With this shortcut option we can find python versions through either <b>python -V</b> or 
+           <b>python3 -V</b> .<br> 
+           Currently we have needed to use <b>python3 --version</b> or <b>python3 -V</b> to check python 3 
+           version.<br>
+           You will be able to see though, that once you have a virtual environment up and running with 
+           Django,<br> then <br><b>python --version</b>, <b>python -V</b> or <b>py -V</b> can be used.<br>
+           This is because our virtual environment will have Django installed with PIP, through a Python 3 
+           interpreter,<br> allowing it to use Python 3 as a default.
+           <br><br>    
+           If you find that you do not have Python installed on your computer, you can download it for 
+           free from
+           {# HAVE TO FIGURE OUT HOW TO DO A LINK TO AN EXTERNAL WEBSITE. External Link working now #}
+           <a href="https://www.python.org/" target="_blank">https://www.python.org/</a>
+        </p> 
+           
         <hr>
 
         <h3 id="pip">PIP</h3>
         
-        <p>To install Django, you must use a package manager like PIP (a Python Install Package Manager), which is included in 
-           Python from version 3.4 .<br><br>
+        <p>To install Django, you must use a package manager like PIP (a Python Install Package Manager), 
+           which is included in<br> Python from version 3.4 .<br><br>
            To check if your system has PIP installed, run this command in command prompt :
         </p>
 
-        {# <img src="{% static 'django_setup/images/check_if_pip_installed.png' %}"> #}        
+        {# Image showing how to check if pip is installed on my Mac computer #}
+        {# Note: We can see later that pip is not installed with my Mac Python 2 version #}
+        <img src="{% static 'images/django_setup/django_get_started/check_if_pip_installed.png' %}"> 
+
+        {# Image showing how to check if pip is installed with my python 3 on my Mac computer #}
+        {# Note: We can see later that pip is installed my python 3 version #}
+        <img src="{% static 'images/django_setup/django_get_started/check_if_pip3_installed.png' %}">
 
         <p>If PIP is installed, you will get a result with a version number.<br><br>
-           For me, on my Mac Laptop, result looks like this :
+           <b>Note:</b> As you will see in image below, <code>pip --version</code> on my Mac did not work
+           because it is not matched with<br> default python 2 version, as it either not installed or not 
+           accessible from a PATH.<br>
+           PIP is used with python 3.4, so because I have python 3 installed then using 
+           <code>pip3 --version</code> will allow me to find a PIP version.<br><br>
+           A <code>-V flag</code> can also be used for finding PIP version with either<br>  
+           <code>pip -V</code>showing version of pip and python interpreter it uses.<br>  
+           or <code>pip3 -V</code>showing version of pip and python 3 interpreter it uses.<br>
+      
+           On my Mac Laptop, result looks like this, with PIP version 23.0.1 and Python 3.11 Interpreter 
+           found :
         </p>
 
-        {# <img src="{% static 'django_setup/images/pip_version.png' %}"> #}        
+        {# Image showing pip version when pip3 --version is used and not working with pip --version #}     
+        <img src="{% static 'images/django_setup/django_get_started/pip_version.png' %}">
 
-        <p>If you do not have PIP installed, you can download and install it from <code>https:/pypi.org/project/pip/</code>
+        <p>It was mentioned before, that when Django is installed with PIP in a virtual environment, then 
+           Python 3 will be used as a default.<br> This means that running <code>pip --version</code> or
+           <code>pip -V</code> in a Django project will work, as python 3 is a default in a virtual 
+           environment.<br>
+           You can see an example of this below. 
         </p>
-        {# HAVE TO FIGURE OUT HOW TO DO A LINK TO AN EXTERNAL WEBSITE #}
+
+        {# Image showing that pip uses python version 3, while in Django Virtual Environment #}
+        <img src="{% static 'images/django_setup/django_get_started/pip_version_in_django_venv.png' %}">
+
+        <p>If you do not have PIP installed, you can download and install it from PIP installation website
+           {# HAVE TO FIGURE OUT HOW TO DO A LINK TO AN EXTERNAL WEBSITE. External Link working now #}
+           {# instead of code tag, use Django variable for a url link with context in get_started view #}
+           <a href="{{ pip_install_url }}" target="_blank">https:/pypi.org/project/pip/</a>
+        </p>
 
         <hr>
 

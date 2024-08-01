@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -14,38 +14,61 @@
 
         <h3>Update Records</h3>
 
-        <p>To update records that are already in database, we first have to get a record we want to update :</p>
+        <p>To update records that are already in database, we first have to get a record we want to 
+           update :</p>
 
         {# Put image in here #}
+        {# Image showing how you can get a record that you want to update #}
+        <img src="{% static 'images/django_setup/django_update_data/Get_Record_To_Update.png' %}">
 
-        <p><code>x</code> will now represent a member at index 4, which is "Stale Refsnes", but to make sure, let us see if 
-            that is correct : 
+        <p><code>x</code> will now represent a member record at index 4 of our object array for our member
+            model table.<br><br> 
+            <b>Note:</b> An array starts with index 0, so index 4 will be our 5th record at id 5.<br> 
+            This is "Stale Refsnes", but to make sure, let us see if that is correct : 
         </p>
 
         {# Put image in here #}
+        {# Image showing command to use for checking if you have correct record to update #}
+        <img src="{% static 'images/django_setup/django_update_data/Check_Correct_Record_To-Update.png' %}">
 
         <p>This should give you this result :</p>
 
         {# Put image in here #}
+        {# Image showing if you have correct record that you want to update #}
+        <img src="{% static 'images/django_setup/django_update_data/Correct_Record_To_Update.png' %}">
 
-        <p>Now we can change values of this record by using this command below :</p>
+        <p>Now we can change values of this record by using this command below :<br><br>
+           <b>Note:</b> One field value is being changed here, but you can change as many as you like. 
+        </p>
 
         {# Put image in here #}
+        {# Image showing how to update a record by changing a value of a field. Just for firstname here  #}
+        {# Note: You can change value for more than one field if you want, in this case lastname as well #}
+        <img src="{% static 'images/django_setup/django_update_data/Update_Record.png' %}">
 
         <p>Execute this command to see if Member table got updated :</p>
 
         {# Put image in here #}
+        {# Image showing how to check if a record has been updated in a model (table) of a database #}
+        <img src="{% static 'images/django_setup/django_update_data/Check_Member_Model_Updated.png' %}">
 
-        <p>Now if we show all records, we can see that id 5 has been updated with its firstname changed from Stale to 
-           Stalikken :</p>
+        <p>Now if we show all records, we can see that id 5 has been updated with its firstname changed 
+           from Stale to Stalikken :</p>
 
         {# Put image in here #}
+        {# Image showing all records with updated firstname for a record that has an id of 5 taken #}
+        {# from our object array index of 4 #}
+        <img src="{% static 'images/django_setup/django_update_data/Updated_Member_Model_id5.png' %}">
 
+        <p>To recap, all commands we have used, are shown below to help understand how a record is 
+           updated from our model (table) of our database.
+        </p>
+
+        {# Image showing all commands that have been used to update a record.#}
+        {# This of course is a record from Member Model (Table) of a database #}
+        <img src="{% static 'images/django_setup/django_update_data/Updated Index 4 (id 5) firstname.png' %}">
 
         <p>Next we will look at how we can <a href="/django_setup/delete_data">delete data</a> in a model (table).</p>
-
-        {# Example for Static image #}
-        {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}
 
     </body>
 </html>

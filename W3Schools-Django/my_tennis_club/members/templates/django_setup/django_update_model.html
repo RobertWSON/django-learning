@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -19,6 +19,9 @@
          </p>
 
          {# Insert image of models.py file here #}
+         {# Image showing original models.py file setup with firstname and lastname fields #}
+         {# for Member model (table) of database. #}
+         <img src="{% static 'images/django_setup/dango_update_model/Model Before Added Fields.png' %}">
 
          <p>Now we can add a field or many fields to our table we created.<br>
             Add <code>phone</code> and <code>joined_date</code> fields to our Member Model and it should like like this :
@@ -27,12 +30,18 @@
          </p>
 
          {# Insert image of models.py file here with added phone and joined_date fields #}
+         {# Image showing models.py file with added phone and joined date fields for Member model #}
+         {# (table) of database. #}
+         <img src="{% static 'images/django_setup/dango_update_model/Added Fields in Model.png' %}">
 
          <p>This is a change in Model's structure, so we have to make a migration to tell Django that it has to update 
             database :
          </p>
 
          {# Insert image for migration of this app #}
+         {# Image showing a migration command to use to tell Django that it has to update database for #}
+         {# a changed model structure. This is only for added phone and joined_date fields #}
+         <img src="{% static 'images/django_setup/dango_update_model/make_first_migration.png' %}">
 
          <p><b>Note:</b> In our migration we have used members, as this is name of our application and this updates everything
              including our member table.<br><br>
@@ -43,22 +52,27 @@
          </p>
 
          {# Insert image for migration prompt messages #}
+         {# Image showing  #}
+         <img src="{% static 'images/django_setup/dango_update_model/Migration needs Option 2 for Null.png' %}">
 
-         <p>I will select option 2 (Quit).<br>
+         <p>I will select option 2 (Quit). To do this type 2 and this will stop your migration.<br>
             Open <code>models.py</code> file again, if it is not open and allow NULL values for two new fields by using 
             <code>(null=true)</code> .<br><br> 
             <code>my_tennis_club/members/models.py</code> :
          </p>
 
          {# Insert image for null=true to 2 new fields in member table of models.py file #}
+         <img src="{% static 'images/django_setup/dango_update_model/Models File with Null.png' %}">
 
          <p>Make a migration once again :</p>
 
          {# Insert image for migration of this app once again #}
+         <img src="{% static 'images/django_setup/dango_update_model/apply_migration_new_null_fields.png' %}">
 
          <p>Now we can see that migration is recognizing 2 new fields added to our member table, with this result :</p>
 
-         {# Insert image showing that member table now recognizes 2 new fields as a commit #}
+         {# Insert image for makemigration result for 2 new null fields #}         
+         <img src="{% static 'images/django_setup/dango_update_model/Migration_2_new_null_fields.png' %}">
 
          <p>So far with our migration process, we have used makemigrations for getting individual files 
             (like a commit process on command line), <br>but we have not applied these changes to database.<br>
@@ -66,29 +80,35 @@
          </p>
 
          {# Insert image for running migrate command to apply changes to database #}
+         <img src="{% static 'images/django_setup/dango_update_model/migrate_new_fields_for_database.png' %}">
 
          <p>This will show that migrations have been applied to member table in members database application :</p>
 
          {# Insert image showing that migration have been appplied to member table in members database application #}
-
+         <img src="{% static 'images/django_setup/dango_update_model/Migration now works with Null.png' %}">
+         
          <hr> 
 
          <h3 id="insert">Insert Data</h3>
 
          <p>We can insert data to two new fields with same approach that we did in 
            <a href="/django_setup/update_data">Updata Data page</a><br>
-           First we enter Python shell using this command :
+           First we enter Python shell using this command :<br>
          </p>
 
-         {# Image showing Python Shell Command #}
+         {# Image showing Python Shell Command #} 
+         <img src="{% static 'images/django_setup/dango_update_model/enter_python_shell_for_data_insert.png' %}">
 
-         <p>Now we are in Python Shell, we should see a result like this :</p>
+         <p>Note: Windows uses py instead of python, so <b>python manage.py shell</b> for entering shell.<br>
+            Now we are in Python Shell, we should see a result like this :</p>
 
          {# Image showing what it should look like in Python Shell #}
+         <img src="{% static 'images/django_setup/dango_update_model/python_shell_result_insert_ready.png' %}">
 
          <p>At bottom, after three <code>>>></code> write following and hit <code>enter</code> for each line :</p>
 
          {# Image showing how to insert data for new fields #}
+         <img src="{% static 'images/django_setup/dango_update_model/python_shell_insert_2_new_fields.png' %}">
 
          <p>This will insert a phone number and a date in Member Model for first record.<br>
            For now we will leave four remaining records empty, as we will add data to them later.<br><br>
@@ -96,15 +116,27 @@
          </p>
 
          {# Image showing command that checks if Member table got updated #}
+         <img src="{% static 'images/django_setup/dango_update_model/python_shell_member_table_insert.png' %}">
 
          <p>Now QuerySet should look like this :<br><br>
             You will notice that id 1 only has has values for joined_date and phone fields.
          </p>
 
          {# Image showing QuerySet with new fields that have values for id 1 only #}
+         <img src="{% static 'images/django_setup/dango_update_model/queryset_2_new_fields_inserted.png' %}">
 
+         <p>To recap, all commands we have used, are shown below to help understand how data is inserted 
+            for our database.<br> To exit python shell I have used <b>control D</b> on my Mac and Linux 
+            also uses this or <b>control z</b> can be used on Windows.<br>
+            An exit function with <b>exit()</b> can also be used for all computers.
+         </p>
+         
+         {# Image showing all commands used for insert data process for a database #}
+         <img src="{% static 'images/django_setup/dango_update_model/Insert Data for 2 New Fields.png' %}">
+         
          <p>Next we will look at how we can we can display data with Django and we will first look at how we can 
-            <a href="/testing/prepare_template">prepare a template and view</a> .</p>
+            <a href="/testing/prepare_template">prepare a template and view</a> .
+         </p>
 
     </body>
 </html>

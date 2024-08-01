@@ -148,7 +148,7 @@ urlpatterns = [
     # Create an example url that actually shows how a test view works as a link from add_test_view page.
     # Again this is for Django Add Test View (21 Django - Add Test View) 
     # of Display Data Section.
-    #path('testing/test_view', views.test_view, name='test_view')
+    path('testing/test_view', views.test_view, name='test_view'),
     
     # URLs, within Django Add Test View (21 Django - Add Test View) of Django Display Data Section
     # When testing different aspects of Django, it can be a good idea to have somewhere to test code 

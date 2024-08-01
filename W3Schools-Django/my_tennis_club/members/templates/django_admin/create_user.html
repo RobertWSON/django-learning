@@ -1,3 +1,7 @@
+
+{# Handles images and videos from static folder #}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     
@@ -11,27 +15,27 @@
 
     <p>To be able to log into Django Admin Application, we need to create a user.<br><br>
        This is done by typing this command on command line.<br><br>
+
        <b>Windows:</b>
     </p>
 
     {# Image showing how to create a new Django Admin User using Windows #}
-    {#  <img src="{% static 'django_admin/images/create_django_admin_user_using_windows.png' %}"> #}
+    <img src="{% static 'images/django_admin/create_user/create_django_admin_user_using_windows.png' %}"> 
 
     <p><b>Mac/ Unix:</b></p>
 
     {# Image showing how to create a new Django Admin User using Mac or Unix #}
-    {#  <img src="{% static 'django_admin/images/Create Django Admin User - Mac.png.png' %}"> #}
+    <img src="{% static 'images/django_admin/create_user/Create Django Admin User - Mac.png.png' %}"> 
 
     <p>This will give you a username prompt :</p>
 
     {# Image showing username prompt for creating a user with Django Admin #}
-    {#  <img src="{% static 'django_admin/images/Username Prompt.png' %}"> #}
-
+    <img src="{% static 'images/django_admin/create_user/Username Prompt.png' %}"> 
 
     <p>Here you must enter: username, e-mail address and password :</p>
 
     {# Image showing username created successfully #}
-    {# <img src="{% static 'django_admin/images/Create Myself as a User.png' %}"> #}
+    <img src="{% static 'images/django_admin/create_user/Create Myself as a User.png' %}"> 
 
     <p>You should see that user is created with <code>Superuser created successfully</code> .</p>
 
@@ -40,7 +44,7 @@
     </p>
  
     {# Image showing command to run django built-in local host server after Django Admin user created #}
-    {# <img src="{% static 'django_admin/images/Run Server - User Admin Login.png' %}"> #}
+    <img src="{% static 'images/django_admin/create_user/Run Server - User Admin Login.png' %}">
 
     <p>In browser window, click or type <a href="/admin">127.0.0.1:8000/admin</a> in web address bar and you 
        should get a result like this:<br><br>
@@ -48,12 +52,12 @@
     </p>
 
     {# Image showing that you now have a username and password login #}
-    {# <img src="{% static 'django_admin/images/Login Django Admin as a User.png' %}"> #} 
+    <img src="{% static 'images/django_admin/create_user/Login Django Admin as a User.png' %}">  
 
     <p>In Django Admin you can now see users and groups</p>
 
     {# Image showing that you now have users and group, but a missing Model #}
-    {# <img src="{% static 'django_admin/images/Logged into Django Admin.png' %}"> #} 
+    <img src="{% static 'images/django_admin/create_user/Logged into Django Admin.png' %}">  
 
     <p>In Django Admin we can create, read, update and delete groups and users, but where is Members model ?
     </p>
@@ -63,7 +67,7 @@
     <h2 id="model_missing">Missing Django Model</h2>
 
     <p>We have logged into Django Admin with a user name, but now we have a missing Members model.<br><br>
-       There is nothing wrong with Members model missing at this stage, because we have tell Django which
+       There is nothing wrong with Members model missing at this stage, because we have to tell Django which
        models should show in Django admin interface.<br><br>
        We will learn next how to <a href="/django_admin/include_models">include Members model</a> in our 
        Django Admin.

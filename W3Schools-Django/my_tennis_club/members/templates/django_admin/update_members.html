@@ -1,3 +1,7 @@
+
+{# Handles images and videos from static folder #}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     
@@ -18,6 +22,7 @@
     {# Image showing how to edit record (Stalikken) with more details for new joined date field  #}
     {# <img src="{% static 'django_admin/images/stalikken_member_with_new_joined_date_field_detail.png' %}"> #}
 
+
     <p>If you have more CSS styling in Django Admin, filling in new detail for <code>joined_date</code> 
        field in Stalikken member could look like this.
     </p>  
@@ -34,7 +39,7 @@
     {# <img src="{% static 'django_admin/images/stalikken_member_with_new_phone_field_detail.png' %}"> #}
 
    {# I have since noticed that I did save a file that shows new field values for 1st member below #}
-   {# <img src="{% static 'django_admin/images/Edit 1st Member with all Details.png' %}"> #}
+   <img src="{% static 'django_admin/images/update_members/Edit 1st Member with all Details.png' %}"> 
 
 
     <p>If you have more CSS styling in Django Admin, filling in new detail for <code>phone</code> 
@@ -49,7 +54,7 @@
     </p>
 
     {# Image showing all members with updated phone number for Stalikken member (record) #}
-    {# <img src="{% static 'django_admin/images/Updated First Member.png' %}"> #}
+    <img src="{% static 'django_admin/images/update_members/Updated First Member.png' %}"> 
 
     <p>If you have more CSS styling in Django Admin, Stalikken updated member could look like this.
     </p>
@@ -63,7 +68,7 @@
     </p>
 
    {# Image showing all members with details #}
-   {# <img src="{% static 'django_admin/images/Updated Fourth Member.png' %}"> #}
+   <img src="{% static 'django_admin/images/update_members/Updated Fourth Member.png' %}"> 
 
    {# Image showing all members with details when Django Admin has more Styling #}
    {# <img src="{% static 'django_admin/images/all_members_with_more_css_styling.png' %}"> #}
@@ -73,7 +78,7 @@
    </p>   
 
    {# Image showing that second member Lene now needs to have values for new fields. #}
-   {#  <img src="{% static 'django_admin/images/Updated First Member.png' %}"> #}
+   <img src="{% static 'django_admin/images/Updated First Member.png' %}"> 
       
    <p>In Lene, for new <code>joined_date</code> and <code>phone</code> fields give him following values and 
       click save :
@@ -83,13 +88,13 @@
    {# <img src="{% static 'django_admin/images/second_member_new_field_values.png' %}"> #}
 
    {# I have since noticed that I did save a file that shows new field values for 2nd member below #}
-   {# <img src="{% static 'django_admin/images/Edit 2nd Member with all Details.png' %}"> #}
+   <img src="{% static 'django_admin/images/Edit 2nd Member with all Details.png' %}"> 
 
 
    <p>Click third member, <code>Linus</code> to open this record for editing.</p> 
    
    {# Image showing that third member Linus now needs to have values for new fields. #}
-   {#  <img src="{% static 'django_admin/images/Updated Second Member.png' %}"> #}
+   <img src="{% static 'django_admin/images/Updated Second Member.png' %}"> 
    
 
    <p>In Linus, for new <code>joined_date</code> and <code>phone</code> fields<br> give him following values 
@@ -100,13 +105,13 @@
    {# <img src="{% static 'django_admin/images/third_member_new_field_values.png' %}"> #}
 
    {# I have since noticed that I did save a file that shows new field values for 3rd member below #}
-   {# <img src="{% static 'django_admin/images/Edit 3rd Member with all Details.png' %}"> #}
+   <img src="{% static 'django_admin/images/Edit 3rd Member with all Details.png' %}"> 
 
 
    <p>Click fourth member, <code>Tobias</code> to open this record for editing.</p>
    
    {# Image showing that fourth member Tobias now needs to have values for new fields. #}
-   {#  <img src="{% static 'django_admin/images/Updated Third Member.png' %}"> #}
+   <img src="{% static 'django_admin/images/Updated Third Member.png' %}"> 
 
    <p>In Tobias, for new <code>joined_date</code> and <code>phone</code> fields<br> give him following values 
       and click save :
@@ -116,10 +121,10 @@
    {#  <img src="{% static 'django_admin/images/fourth_member_new_field_values.png' %}"> #}
 
    {# I have since noticed that I did save a file that shows new field values for 4th member below #}
-   {# <img src="{% static 'django_admin/images/Edit 4th Member with all Details.png' %}"> #}
+   <img src="{% static 'django_admin/images/Edit 4th Member with all Details.png' %}"> 
 
    {# Image showing that after doing this process, all members (records) now have details for their fields #}
-   {# <img src="{% static 'django_admin/images/Updated Fourth Member.png' %}"> #}
+   <img src="{% static 'django_admin/images/Updated Fourth Member.png' %}"> 
 
    {# Image showing all members with details when Django Admin has more Styling #}
    {# <img src="{% static 'django_admin/images/all_members_with_more_css_styling.png' %}"> #}

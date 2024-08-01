@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -24,7 +24,8 @@
            Django makes it easier to create websites because it takes care of difficult stuff, so that you can concentrate
            on<br> building your web applications. <br><br> 
            Django emphasizes reusability of components, which is referred to as DRY (Don't repeat yourself) and comes<br>
-           with ready-to-use features like login system, database connection and CRUD (Create Read Update Delete).<br><br>
+           with ready-to-use features like login system, database connection and CRUD operations (Create Read Update Delete).
+           <br><br>
            It must be remembered that Django is especially helpful for database driven websites, it is free and open source,
            so code is available to see for public.
         </p>
@@ -85,7 +86,8 @@
             Django uses standard HTML to describe layout, but uses Django tags to add logic, as can be seen below :
          </p>
 
-         {# <img src="{% static 'django_intro/images/template_code_example.png' %}"> #}
+         {# Show image of Django Code example in a template from W3Schools #}
+         <img src="{% static 'images/django_setup/django_intro/template_code_example.png' %}"> 
 
         <p>Templates of an application are located in a folder named <code>templates</code> .</p>
 
@@ -93,7 +95,7 @@
 
         <h3 id="django_url">Django URL</h3>
 
-        <p>Django provides a way to naviagte around different web pages in a website through a URL.<br><br>
+        <p>Django provides a way to navigate around different web pages in a website through a URL.<br><br>
            When a user requests a URL, Django decides which view it will send it to and this is done in a file called 
            <code>urls.py</code> .
         </p>
@@ -109,7 +111,7 @@
          <ol>
             <li>Django receives a url, checks <code>urls.py</code> file and calls a view that matches a URL .</li>
             <li>A view in <code>views.py</code> file checks for relevant models. </li>
-            <li>Models are imported from models.py file .</li>
+            <li>Models are imported from <code>models.py</code> file .</li>
             <li>A view sends data to a specified template in a <code>template</code> folder .</li>
             <li>A template contains HTML and Django tags and with data it returns finished HTML content back to a browser.</li>    
          </ol>
@@ -138,6 +140,9 @@
         <p>Here is a breakdown, below of Django learning process :</p>
 
         {# <img src="{% static 'django_setup/images/django_learning_process_breakdown.png' %}"> #}
+        {# Images showing what we will learn during Django learning process #}
+        <img src="{% static 'images/django_setup/django_intro/django_learning_process_breakdown_part1.png' %}">
+        <img src="{% static 'images/django_setup/django_intro/django_learning_process_breakdown_part2.png' %}">
 
     </body>
 </html>

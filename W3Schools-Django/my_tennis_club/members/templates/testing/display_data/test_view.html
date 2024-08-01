@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1><center>Test view Example</center></h1>
+
+        <p>This test view is demonstrating result of getting data from an array using Django</p>
+
+        {% comment %}{% for x in fruits %}{% endcomment %}
+        {# should be sports now #}
+        {% for x in sports %}
+            <h1>{{ x }}</h1>
+        {% endfor %}
+
+        {# <p>In views.py, on line 271 you can see what fruits variable looks like.</p> #}
+        <p>In views.py, on line 272 you can see what fruits variable looks like.</p>
+
+    </body>
+</html>

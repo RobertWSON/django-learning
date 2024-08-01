@@ -1,3 +1,7 @@
+
+{# Handles videos from static folder #}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     
@@ -21,6 +25,8 @@
 
     {# Image showing how to delete a member by opening for editing #}
     {# <img src="{% static 'django_admin/images/delete_member_using_editing.png' %}"> #}
+    {# I think it is better to use a video to demonstrate as only one video is needed rather than using multiple images #}
+    <img src="{% static 'images/django_admin/delete_members/20230814_220114.mp4' %}">
 
     <p>Next we will look at how we can we can use django code (syntax) within a template. 
        We will first look at how we can use <a href="/testing/template_variable">Django Variables</a> within 

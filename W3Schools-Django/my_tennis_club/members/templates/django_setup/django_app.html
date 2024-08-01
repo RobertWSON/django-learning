@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -17,7 +17,7 @@
         <p>An app is a web application that has a specific meaning in your project, like a home page, a contact form, or a 
            database.<br><br>
            In this Django learnining website we will create an App that allows us to list and register members in a database.<br>
-           The App will also take you through how to use Django, with lots of examples.<br><br>
+           This App will also take you through how to use Django, with lots of examples.<br><br>
            But first, let's just create a simple Django app that displays "Hello World!".
         </p>
 
@@ -30,19 +30,22 @@
            On <b>Windows</b> use <code>[control][break]</code> and on <b>Mac or Unix</b> use <code>[control][c]</code>.
            <br><br>  
            If you are not in <code>my_tennis_club</code> folder of your Django project, use <code>cd my_tennis_club</code>
-           to navigate to this folder where you want to store this app.<br><br>
-           Now we can run <code>py manage.py startapp members</code> command in command prompt to create out app.
+           to navigate to this folder<br> where you want to store this app.<br><br>
+           {# Now we can run <code>py manage.py startapp members</code> command in command prompt to create our app. #}
+           Now in our command line, on Windows we can run <code>py manage.py startapp members</code> command or on 
+           a Mac we can use<br><code>python manage.py startapp members</code> shown below: 
         </p>
 
-        {# <img src="{% static 'django_setup/images/Django - New Members App.png' %}"> #}
+        {# Image showing  #}
+        <img src="{% static 'images/django_setup/django_app/Django - New Members App.png' %}"> 
 
-        <p>Django creates a folder named <code>members</code> in a <code>my_tennis_club</code> Django project, with content.
-           <br> 
-           Notice that content has files and folders with a special meaning and you will learn about some of them later.
+        <p>Django creates a folder named <code>members</code> in a <code>my_tennis_club</code> Django project, with 
+           content.<br> 
+           Notice that content has files and folders with a special meaning and you will learn about most of them later.
            <br><br> 
            First, take a look at a file called <code>views.py</code> .<br>
-           <code>views.py</code> is where we gather information we need to send back a proper response and you will learn more about this
-           in next <a href="/django_setup/views">views</a> section.   
+           <code>views.py</code> is where we gather information we need to send back a proper response and you will 
+           learn more about this in next <a href="/django_setup/views">views</a> section.   
         </p>
 
     </body>

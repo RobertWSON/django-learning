@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -24,19 +24,20 @@
            First activate your virtual environment, just like before with following command :
         </p>
 
-        <p><b>My Mac example</b>, which has <b>same command as Unix:</b></p>
+        {# <p><b>My Mac example</b>, which has <b>same command as Unix:</b></p> #}
+        <p><b>My Mac example</b>, uses <b>same command as Linux:</b></p> 
 
-        {# <img src="{% static 'django_setup/images/Django - Activate myworld venv.png}"> #}
+        <img src="{% static 'images/django_setup/django_project/Django - Activate myworld venv.png' %}"> 
 
         <p><b>Windows:</b></p>
 
         {# <img src="{% static 'django_setup/images/activate_venv_windows.png' %}"> #}
-
+ 
         <p>Now that we are in our virtual environment and in file system where we want to store code, we can run this 
            command<br> in command prompt :  
         </p>
 
-        {# <img src="{% static 'django_setup/images/Django - Create Tennis Club Proj.png' %}"> #}
+        <img src="{% static 'images/django_setup/django_project/Django - Create Tennis Club Proj.png' %}"> 
     
          <p>Django creates a <code>my_tennis_club</code> folder on my Mac, with content.<br>
            Notice that content has files and folders with a special meaning, you will learn about some of them later,
@@ -47,7 +48,7 @@
 
          <hr>
         
-         <h3 id="run_it">Run a Django Project</h3>
+         <h3 id="run_it">Run a Django Project</h3> 
 
          <p>Now that you have a Django project in your virtual environment, you can run it and see what it looks like in a 
            browser.<br><br>
@@ -57,13 +58,13 @@
            Django Templates.         
          </p>
 
-         {# <img src="{% static 'django_setup/images/Django - Run Tennis Club Proj.png' %}"> #}
+         <img src="{% static 'images/django_setup/django_project/Django - Run Tennis Club Proj.png' %}"> 
       
          <p>Now when you open a new browser and type <code>127.0.0.1:8000</code> in address bar, you will see that Django is 
             now installed and ready to use. 
          </p>
 
-         {# <img src="{% static 'django_setup/images/Django Project Running on Server.png' %}"> #}         
+         <img src="{% static 'images/django_setup/django_project/Django Project Running on Server.png' %}">          
 
          <h3>What's Next</h3>
 

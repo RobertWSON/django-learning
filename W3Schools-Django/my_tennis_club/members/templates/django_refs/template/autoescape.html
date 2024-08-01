@@ -1,5 +1,5 @@
 
-{#{% load static %}#}
+{% load static %}
 {# Written Content is in #}
 {# Just need images for code on this page now #}
 <!DOCTYPE html>
@@ -31,17 +31,19 @@
 
   {# Show image of views.py and urls.py file for Autoescape Off #}
   {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_off_example.png' %}"> #}
+  {# or maybe better to use file with this shorter name below #}
+  <img src="{% static 'images/django_refs/template/autoescape_off_view.png' %}">
 
   {#<p>Check out views.py to see what the heading variable looks like for both examples.</p>#}
   <p>Check out views.py to see what heading variable with HTML code looks like for Autoescape off example.<br>
      <b>Note:</b> We will use same heading variable for both Autoescape off and on examples.<br><br>    
      For this Autoescape Off example we are using <b>Hello &lt;i&gt;my&lt;i&gt; World!</b> as a heading variable, which 
      you can see has italics html within it. 
-  </p>
+  </p> 
 
   {# Show image of Django code in HTML Template file #}
-  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_off_example.png' %}"> #}
-
+  <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_off_example.png' %}"> 
+  
   {# Explain Django code in HTML Template file for autoescape Off #}
   <p>In HTML Template we are using autoescape off django command to display an HTML h2 heading, which are taken from 
      heading variable in views.py file.<br><br>
@@ -66,6 +68,8 @@
 
   {# Show image of views.py and urls.py file for Autoescape Off with Characters #}
   {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_off_with_chars_example.png' %}"> #}
+  {# or maybe better to use file with this shorter name below #}
+  <img src="{% static 'images/django_refs/template/autoescape_off_chars_view.png' %}">
 
   <p>Check out views.py to see what a heading variable that has characters looks like for Autoescape off example.<br>
     <b>Note:</b> We will use same heading_chars variable for both Autoescape off and on with characters examples.<br><br> 
@@ -83,7 +87,7 @@
 
 
   {# Show image of Django code in HTML Template file #}
-  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_off_with_chars_example.png' %}"> #}
+  <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_off_with_chars_example.png' %}"> 
 
   {# Explain Django code in HTML Template file for autoescape Off with Characters #}
   <p>In HTML Template we are using autoescape off django command to display an HTML h2 heading with characters, which are 
@@ -133,7 +137,6 @@
   {#<h4>Autoescape On</h4> try larger heading#}
   <h3>Autoescape On</h3>
 
-  {#<p>Autoescape On Example</p> better to have a heading I think#}
   <h3>Autoescape On Example</h3>
 
   <p>With autoescape on, any HTML elements inside variables will be converted according to list above.</p>
@@ -146,6 +149,8 @@
 
   {# Show image of views.py and urls.py file for Autoescape On #}
   {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_on_example.png' %}"> #}
+  {# or maybe better to use file with this shorter name below #}
+  <img src="{% static 'images/django_refs/template/autoescape_on_view.png' %}">
 
   <p>In views.py, we are using same heading variable with italics HTML tags 
      <b>Hello &lt;i&gt;my&lt;i&gt; World!</b> for autoescape on,<br> as was done with Autoescape off example, 
@@ -153,7 +158,7 @@
   </p> 
  
   {# Show image of Django code in HTML Template file #}
-  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_on_example.png' %}"> #}
+  <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_on_example.png' %}"> 
 
   {# Explain Django code in HTML Template file for autoescape On #}
   <p>In HTML Template we are using autoescape on django command to display an HTML h2 heading, which are taken from<br>
@@ -185,15 +190,17 @@
   {% endautoescape %} 
 
   {# Show image of views.py and urls.py file for Autoescape On #}
-  {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_on_with_chars_example.png' %}"> #}
+  {# <img src="{% static 'images/django_refs/template/url_and_views_file_autoescape_on_with_chars_example.png' %}"> #} 
+  {# or maybe better to use file with this shorter name below #}
+  <img src="{% static 'images/django_refs/template/autoescape_off_chars_view.png' %}">
 
-  <p>In views.py, we are using same heading variable with characters.<br> 
-     <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!'</b> for autoescape on<br> 
+  <p>In views.py, we are using same heading_chars variable with characters<br> 
+     <b>Hello &amp;lt;i&amp;gt;my&amp;lt;/i&amp;gt; World!'</b> for autoescape on,<br> 
      as was done for Autoescape off with characters example, that was noted before.     
   </p>
 
   {# Show image of Django code in HTML Template file #}
-  {# <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_on_with_chars_example.png' %}"> #}
+  <img src="{% static 'images/django_refs/template/html_template_file_django_code_autoescape_on_with_chars_example.png' %}">
 
   {# Explain Django code in HTML Template file for autoescape On with Characters #}
   <p>In HTML Template we are using autoescape on django command to display an HTML h2 heading with characters, which is 

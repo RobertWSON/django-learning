@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -17,36 +17,55 @@
         <p>To delete a record in a table, start by getting a record you want to delete:</p>
 
         {# Put image in here #}
+        {# Image showing how you can get a record that you want to delete #}
+        <img src="{% static 'images/django_setup/django_delete_data/Get_Record_To_Delete.png' %}">
 
-        <p><code>x</code> will now represent a member at index 5, which is "Jane Doe", but to make sure, let us see if that 
-           is correct : 
+        <p><code>x</code> will now represent a member at index 5, which is "Jane Doe", but to make sure, 
+           let us see if that is correct : 
         </p>
 
         {# Put image in here #}
+        {# Image showing command to use for checking if you have correct record to delete #}
+        <img src="{% static 'images/django_setup/django_delete_data/Check_Correct_Record_To-Delete.png' %}">
 
         <p>This should give you this result :</p>
 
         {# Put image in here #}
+        {# Image showing if you have correct record that you want to delete #}
+        <img src="{% static 'images/django_setup/django_delete_data/Correct_Record_To_Delete.png' %}">
 
         <p>Now we can delete a record by using this command below :</p>
 
-        {# Image showing command to delete a record #}
+        {# Image showing command that is used to delete a record #}        
+        <img src="{% static 'images/django_setup/django_delete_data/Delete_Record.png' %}">
 
-        <p>Now when we see result below, we can see how many items are deleted and from which Model. 
+        <p>Now when we see result below, we can see how many items are deleted and from which Model.</p> 
 
-        {# Image showing that 1 item is deleted and 1 item is from Member model #}
+        {# Image showing that 1 item is deleted and 1 item is from Member model (table) of database #}
+        <img src="{% static 'images/django_setup/django_delete_data/Items_Deleted_and_Model.png' %}">
 
-        <p>We can see that 1 item is deleted and this 1 item is deleted from Member model.<br><br>
-           Now if we use <code>Member.objects.all().values()</code> command, we can see that id 6, which had <b>Jane Doe</b> 
-           is removed from Member Model : 
+        <p>We can see that 1 item is deleted and this 1 item is deleted from Member model (table)
+           of database.<br><br>
+           Now if we use <code>Member.objects.all().values()</code> command, we can see that id 6, which 
+           had <b>Jane Doe</b> is removed from Member Model : 
         </p>
 
-        {# Member Model QuerySet shows id 6 with Jane Doe removed #}
+        {# Member Model (table) QuerySet shows id 6 with Jane Doe removed #}
+        {#  #}        
+        <img src="{% static 'images/django_setup/django_delete_data/Last_Record_id_6_John_Doe_Deleted.png' %}">
 
+        <p>To recap, all commands we have used, are shown below to help understand how a record is 
+            deleted from our model (table) of our database.<br>
+            Ignore QuerySet at top of image because that was previous result when Member model (table) 
+            got updated.  
+        </p>
+
+        {# Image showing all commands used to delete a record from Member Model (Table of a Database) #}
+        {# Note: All commands for deleting a record are shown after previous queryset for updated #}
+        {# Member Model (table) in this same image #}
+        <img src="{% static 'images/django_setup/django_delete_data/Delete Last Record (id 6).png' %}">
 
         <p>Next we will look at how we can <a href="/django_setup/update_model">update our model</a> (table).</p>
-
-        {# <img src="{% static 'django_setup/images/.png' %}"> #}
 
     </body>
 </html>

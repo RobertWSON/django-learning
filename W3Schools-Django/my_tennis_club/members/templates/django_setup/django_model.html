@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -23,20 +23,24 @@
 
         <h3 id="create_model">Create Django Model (Table)</h3>
 
-        <p>To create a model (table in a databse), navigate to <code>models.py</code> file in <code>/members/</code> folder.<br>
+        <p>To create a model (table in a database), navigate to <code>models.py</code> file in <code>/members/</code> folder.<br>
            When you open <code>models.py</code> file it should look like this:
         </p>
 
+        {# Image showing initial models.py file for a model that we want to use with our database #}
         {# <img src="{% static 'django_setup/images/Initial Models File for Tables.png' %}"> #} 
+        <img src="{% static 'images/django_setup/django_model/Initial Models File for Tables.png' %}">
+
 
         <p>Now let's add a <code>Member</code> table to models.py file, by creating a <code>Member class</code> :<br>
            <b>Note:</b> We are are using a django.db module to import a models library for class to use with database. 
         </p>
 
-        {# <img src="{% static 'django_setup/images/Member Table in Models File.png' %}"> #}        
+        {# <img src="{% static 'django_setup/images/Member Table in Models File.png' %}"> #} 
+        <img src="{% static 'images/django_setup/django_model/Member Table in Models File.png' %}">       
 
         <p>A table field is within a column of a table (model).<br> 
-           It is shown as a heading at top of a table column and it has values below this for each row wtihin this column.<br>
+           It is shown as a heading at top of a table column and it has values below this for each row within this column.<br>
            Think of fields as columns and records as rows of a table (model).<br><br>  
            We will now describe these new table fields<br>
            First Field, <code>firstname</code>, is a Text Field and will contain first name of members.<br>
@@ -66,13 +70,16 @@
            <b>Mac / Unix:</b> Use <code>python manage.py makemigrations members</code>
         </p>
 
-        {# <img src="{% static 'testing/images/Setup Initial Migration.png' %}"> #}
+        {# Image showing setup for my first initial migration to allow for a new model in our database #}
+        <img src="{% static 'images/django_setup/django_model/Setup Initial Migration Mac.png' %}">
 
         <p>Django creates a migration file shown below, that describes changes to database in <code>/migrations</code> 
            folder :
         </p>
 
-        {# <img src="{% static 'testing/images/Initial Migration File.png' %}"> #}
+        {# Image showing our initial migration file (0001_initial.py). This file is used for making #}
+        {# changes to our model file when migration command is run. #}
+        <img src="{% static 'images/django_setup/django_model/Initial Migration File.png' %}">
 
          <p><b>Note:</b> Django inserts an id field for your table.<br>
             Django uses default behaviour for ids with an <code>auto increment number</code> 
@@ -89,6 +96,8 @@
          </p>
 
          {# <img src="{% static 'testing/images/Migrate to Create Member Table.png' %}"> #}
+         
+         <img src="{% static 'images/django_setup/django_model/Migrate to Create Member Table.png' %}">
         
          <p>Now you have a <code>Member</code> table in your database.</p>
 
@@ -102,9 +111,13 @@
             <b>Mac / Unix:</b> Use <code>python manage.py sqlmigrate members 0001</code><br>
          </p>
 
-         {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}
 
-         <p>This shows you how SQL (Structured Query Language) program handles same migration.<br><br>
+         {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}
+         {# Image showing how SQL would run this migration command with its SQL statement #}
+         <img src="{% static 'images/django_setup/django_model/View SQL - Member Migration.png' %}">
+
+         <p>This shows you how SQL (Structured Query Language) program handles same migration
+            by running its own<br> migration command within its SQL statement.<br><br>
             Next we will look at how we can <a href="/django_setup/insert_data">insert data</a> in a model (table).
          </p>
 

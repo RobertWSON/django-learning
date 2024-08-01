@@ -1,0 +1,137 @@
+
+{# Handles images from static folder #}
+{% load static %} 
+
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Main Index</title>
+    </head> 
+
+<body>
+    <h1><center>Display Data<center></h1>
+
+    <h2>Django Add Main Index Page</h2>
+
+    <h3>Main Index Page</h3>
+
+    <p>Our project needs a main page.<br><br>
+       Main page (usually referred to as a home page) will be a landing page when someone visits root 
+       (main) folder of project.<br>
+       Now, you can see below that there is an error when visting root folder <code>127.0.0.1:8000</code> of 
+       this project: 
+    </p>
+ 
+    {# Screenshot image of error on main (home page) #}
+    {# ./tested_images/Project Root Error - Main Page.png  replace with below #}
+    <img src="{% static 'images/testing/display_data/main_index/Project Root Error - Main Page.png' %}">
+
+    <p>This error is happening because we have not created a main page yet and debug is not set to true, which 
+       will be discussed on next<br> <a href="/testing/django_404">Django 404 Template page</a>. 
+    </p>
+
+    <h4>Main</h4>
+
+    <p>For our main page lets create a new template called <b>main.html</b><br><br>
+       <code>my_tennis_club/members/templates/main.html</code> :</p>
+
+    {# Screenshot image of code for main.html template setup #}
+    {# ./tested_images/main_template.png #}
+    {# <img src="{% static 'images/testing/main_index/main_template.png' %}"> #}
+    {% comment %}I could not find a file named main_template.html in 19 Django - Add Main Index Page
+    better to use this instead {% endcomment %}
+    <img src="{% static 'images/testing/display_data/main_index/Main Page HTML Child Template.png' %}">
+
+    <hr>
+
+    <h3>Create new View</h3>
+
+    <p>Create a new view called <code>main</code>, that will handle incoming requests to root of project:
+       <br><br>
+       <code>my_tennis_club/members/views.py</code> :
+    </p>
+
+    {# Screenshot image of code for main view setup #}
+    {# ./tested_images/main_view.png #}
+    {# Show imports code that we put in previously, needed for our view #}
+    <img src="{% static 'images/testing/display_data/main_index/views_imports_to_use.png' %}">
+    {# Shows code needed for our new main view #}
+    <img src="{% static 'images/testing/display_data/main_index/main_view_for_home_page.png' %}">
+
+    <p><code>Main</code> view does following:</p>
+
+    <ul>
+        <li>loads <code>main.html</code> template.</li>
+        <li>Outputs HTML that is rendered by <code>main.html</code> template.</li>
+    </ul>
+
+    <p>Now that we have a new <b>main</b> view, this is what all our views so far should like like in our 
+      <b>views.py</b> file.
+    </p>
+
+    {# Image showing code for all views so far, including our new main view  #}
+    <img src="{% static 'images/testing/display_data/main_index/Views - New Main Request.png' %}">
+
+    <hr>
+
+    <h3>Add URL</h3>
+
+    <p>Now we need to make sure that a root url points to correct view.<br><br>
+       Open <code>urls.py</code> file and add a <code>main view</code> to <code>urlpatterns</code> list: 
+       <br><br>
+       <code>my_tennis_club/members/urls.py</code> :
+    </p>
+
+    {# Screenshot image of main view in members urls file #}
+    {# ./tested_images/main_view_in_members_urls_file.png #}
+    {# Better to call screenshot image this below for an addded main url in urls.py file #}
+    <img src="{% static 'images/testing/display_data/main_index/URLS with Main Page Added.png' %}">
+
+    <h3>Add Link back to Main</h3>
+
+    <p>Members page is missing a link back to main page, so let us add that in <code>all_members.html</code>
+       template, in <code>content</code> block:<br><br>
+       <code>my_tennis_club/members/templates/all_members.html</code> :
+    </p>
+
+    {# screenshot image showing code in all_members.html template with link back to main (home) page #}
+    {# ./tested_images/link_back_to_main_in_all_members.png #}
+    {# Better to call screenshot image this below for an added link back to main page in all_members.html #}
+    <img src="{% static 'images/testing/display_data/main_index/Add Link Back to Main Page.png' %}">
+
+    <p>You may already be in <code>/my_tennis_club/</code> folder, but if you are not, just type 
+       <code>cd my_tennis_club</code> as shown in image below.
+    </p>
+    
+    {# Screenshot image showing how to get into my_tennis_club folder  #}   
+    {# <img src="{% static 'images/testing/main_index/.png' %}"> #}    
+
+    <p>Start Django built-in local host server, by typing following command shown below.</p> 
+    
+    {# Screenshot image showing command to run django built-in local host server #}
+    {# <img src="{% static 'images/testing/main_index/.png' %}"> #}
+
+   <p>Now we can see how updated members page looks.<br><br> 
+      In browser window, click or type <a href="/members">127.0.0.1:8000/members</a> in web address bar and 
+      you should see an added link back to main (home) page.<br>
+      You can also click on <a href="/members">Members Page Link</a> to see how added Home link is 
+      displayed at top of members page.
+      
+   {# Screenshot showing Members page with added link back to main (home) page #}   
+   {# ./tested_images/members_page_with_link_to_home.png #}
+   {# Screenshot image showing that we now have a link on members page back to main home page #}
+   <img src="{% static 'images/testing/display_data/main_index/Link to Home (Main) Page.png' %}">
+
+   <p>We can now finally see how main (home) page looks, since we have put a main.html template in place.<br> 
+      In browser window, click or type <a href="/">127.0.0.1:8000</a> in web address bar and 
+      you should get a result shown in image below<br> or you can click on 
+      <a href="/">Home Page Link</a> to also see how it is displayed.
+   </p> 
+    
+    {# Screenshot image showing what main (home) page now likes like #}
+    {# ./tested_images/Home (Main) Page Shows.png #}
+    {# Screenshot image showing that we now finally have main home page showing #}
+    <img src="{% static 'images/testing/display_data/main_index/Now Home (Main) Page Shows.png' %}">
+
+</body>
+</html>

@@ -1,3 +1,7 @@
+
+{# Handles images and videos from static folder #}
+{% load static %} 
+
 <!DOCTYPE html>
 <html>
     
@@ -42,7 +46,7 @@
     </p> 
 
     {# Screenshot image showing opening login page for Django Admin when you are new to it #}
-    {# <img src="{% static 'django_setup/images/Django Admin Login Page.png' %}"> #}
+    <img src="{% static 'images/django_admin/dango_admin/Django Admin Login Page.png' %}"> 
     
     {# <img src="{% static 'django_setup/images/w3schools_django_admin_login_page.png' %}"> #}
 
@@ -51,7 +55,7 @@
        <code>my_tennis_club/my_tennis_club/urls.py</code>
     </p>
 
-    {#  <img src="{% static 'django_setup/images/Why it goes to Django Admin.png' %}"> #}
+    <img src="{% static 'images/django_admin/dango_admin/Why it goes to Django Admin.png' %}"> 
 
     <p><code>urlpatterns[]</code> list takes requests going to <code>admin/</code> path and sends them to
        <code>admin.site.urls</code>, which is part of a built-in application that comes with django.<br>

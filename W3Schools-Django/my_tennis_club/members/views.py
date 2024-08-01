@@ -24,7 +24,7 @@
 # from .models import Member
 # - 
 
-  
+
 # Create your views here.
 
  
@@ -98,11 +98,25 @@ def django_intro(request):
  
 # Create a view for page that will show 3 Django Get Started section
 def get_started(request):
+  # Define external url to pip install website
+  pip_install_url="https:/pypi.org/project/pip/"
+  # Create a context dictionary, so that pip install url variable can be used in template
+  context = {
+      'pip_install_url': pip_install_url
+  }
+  # Load and render template with context
   template = loader.get_template('django_setup/django_get_started.html')
-  return HttpResponse(template.render())
+  return HttpResponse(template.render(context, request))
  
 # Create a view for page that will show 4 Django Create Virtual Environ section
 def virtual_env(request):
+  # Define external url to python venv website
+  venv_url = "docs.python.org/3/tutorial/venv.html"
+  # Create a context dictionary, so that venv url variable can be used in template
+  context = {
+      'venv_url': venv_url
+  }
+  # Load and render template with context
   template = loader.get_template('django_setup/django_virtual_env.html')
   return HttpResponse(template.render())
 
@@ -265,12 +279,13 @@ def add_test_view(request):
 # Create an example view that actually shows how a test view works as a link from add_test_view page.
 # Again this is for Django Add Test View (21 Django - Add Test View) 
 # of Display Data Section.
-# def test_view(request):
-  #template = loader.get_template('testing/test_view.html')  
-  #context = {
+def test_view(request):
+  template = loader.get_template('testing/test_view.html')  
+  context = {
       #'fruits': ['Apple', 'Banana', 'Cherry'] 
-  #}
-  #return HttpResponse(template.render(context, request))
+      'sports': ['Cricket', 'Car Racing', 'Basketball']
+  }
+  return HttpResponse(template.render(context, request))
 
 
 # This view is used for members page (/all_members.html url), which has all_members.html template
@@ -1578,6 +1593,7 @@ def autoescape(request):
     'heading_chars': 'Hello &lt;i&gt;my&lt;/i&gt; World!'
   }
   return HttpResponse(template.render(context, request))
+
   #Remove return below as I have decided to include example on autoescape main page as well as link pages 
   #return HttpResponse(template.render())
 

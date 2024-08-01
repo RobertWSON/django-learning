@@ -1,0 +1,85 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Test View</title>
+    </head> 
+
+<body>
+    <h1><center>Display Data<center></h1>
+
+    <h2>Django Add Test View</h2>
+    
+    <h3>Test View</h3>
+
+    <p>When testing different aspects of Django, it can be a good idea to have somewhere to test code without 
+       destroying main project.<br><br>
+       This is optional of course, but if you like to follow all steps in this Django Website, you should add
+       a test view that is like the one created below.<br><br>
+    </p>
+
+    <hr>
+
+    <h3>Add View</h3>
+
+    <p>Start by adding a view called "test_view" in <code>views.py</code> file<br><br>
+       <code>my_tennis_club/members/views.py</code> : 
+    </p>
+
+    {# Screenshot image of details new test_view in views.py file #}
+    {# ./tested_images/new_test_view.html #}
+
+    <hr>
+
+    <h3>URL</h3>
+
+    <p>We have to make sure that incoming url to /testing/test_view will be directed to test_view.<br><br>
+       This is done in <code>urls.py</code> file in <code>members</code> folder.<br><br>
+       <code>my_tennis_club/members/urls.py</code>
+    </p>
+
+   {# Screenshot image of details new test_view in views.py file #}
+   {# ./tested_images/test_view_url.html #}
+
+   <hr>
+
+   <h3>Test Template</h3>
+
+   <p>We need a template where we can play around with HTML and Django code.<br><br> 
+      You may have noticed that there was a reference to a template in testing view.<br><br>
+      We will now create a template called "template.html" in templates folder: 
+   </p>
+
+   {# Screenshot image showing where template.html file gets created #}
+   {# ./tested_images/template_file_location.html #}    
+
+   <p>Open template.html and insert following code in template below:<br><br>
+      <code>my_tennis_club/members/templates/template.html</code>
+   </p>
+
+   {# Screenshot image showing code for template.html file #}
+   {# ./tested_images/template_file_code.html #}
+
+   <p>You may already be in <code>/my_tennis_club</code> folder, but if you are not, just type 
+      <code>cd my_tennis_club</code> as shown in image below.
+   </p>
+ 
+   {# Screenshot image showing how to get into my_tennis_club folder  #}   
+ 
+   <p>Now we can start Django built-in local host server, by typing following command shown below.</p> 
+ 
+   {# Screenshot image showing command to run django built-in local host server #}
+ 
+   <p>In browser window, type <code>127.0.0.1:8000/testing/test_view</code> in web address bar and you 
+      should get a result<br> shown in image below
+   </p> 
+ 
+   {# Screenshot image showing test_view page for a testing view run with django built-in local host server #}
+   <img src="{% static 'images/django_refs/template/test_view_page_on_localhost.png' %}">
+
+   <p>or you can click on <a href="/testing/test_view">Test View Page Link</a> to also see how it is displayed.</p>
+
+</body>
+</html>

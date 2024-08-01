@@ -1,3 +1,7 @@
+
+{# Handles images and videos from static folder #}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     
@@ -19,7 +23,7 @@
     </p>
 
     {# Image showing original admin.py file with no model from Django Setup #}
-    {#  <img src="{% static 'django_admin/images/Original Admin File - No Models.png' %}"> #}
+    <img src="{% static 'images/django_admin/include_models/Original Admin File - No Models.png' %}"> 
 
     <p>With original admin.py setup we are using a django.contrib library to import admin for this Django 
        Admin interface.<br><br>
@@ -28,7 +32,7 @@
     </p>
 
     {# Image showing Admin file with Member model added #}
-    {# <img src="{% static 'django_admin/images/Admin File - Member Model.png' %}"> #}    
+    <img src="{% static 'images/django_admin/include_models/Admin File - Member Model.png' %}">    
 
     <p>Here we are <code>importing</code> our <code>Member model</code> so we can use it, from 
        <code>my_tennis_club/members/models.py</code> file.<br><br>
@@ -38,13 +42,13 @@
     </p>
 
     {# Image showing that members database now shows in Django Admin #}
-    {# <img src="{% static 'django_admin/images/Django Admin - Members Appears.png' %}"> #}
+    <img src="{% static 'images/django_admin/include_models/Django Admin - Members Appears.png' %}"> 
 
     <p>Click <code>members</code> database name and we can now see five records we created earlier.</p>
 
     {# Image showing that when we click on members database name, we can see five records #}
-    {# <img src="{% static 'django_admin/images/Django - Member Model pg 1.png' %}"> #}
-    {# <img src="{% static 'django_admin/images/Django - Member Model pg 2.png' %}"> #}
+    <img src="{% static 'images/django_admin/include_models/Django - Member Model pg 1.png' %}">
+    <img src="{% static 'images/django_admin/include_models/Django - Member Model pg 2.png' %}">
 
     <hr>
 

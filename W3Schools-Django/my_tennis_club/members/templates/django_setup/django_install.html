@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -21,15 +21,16 @@
 
         <p><b>Windows:</b></p>
 
-        {# <img src="{% static 'django_setup/images/install_django_with_pip_on_windows.png' %}"> #} 
+        <img src="{% static 'django_setup/images/install_django_with_pip_on_windows.png' %}">  
 
         <p><b>Mac/ Unix:</b></p>
 
-        {# <img src="{% static 'django_setup/images/install_django_with_pip_on_mac_and_unix.png' %}"> #}  
+        {# <img src="{% static 'django_setup/images/install_django_with_pip_on_mac_and_unix.png' %}"> #}
+        <img src="{% static 'django_setup/images/install_django_with_pip_on_mac.png' %}">  
         
         <p>This will give a downloading and installing result like this on my Mac laptop:</p>
 
-        {# <img src="{% static 'django_setup/images/django_download_and_install_result.png' %}"> #}         
+        <img src="{% static 'django_setup/images/django_download_and_install_result.png' %}">          
 
         <p>That's it! Now you have installed Django in your new project and it is running in a virtual environment!</p>
 
@@ -39,11 +40,11 @@
 
         <p>You can check if Django is installed by asking for its version number like this:</p>
 
-        {# <img src="{% static 'django_setup/images/check_django_installed.png' %}"> #} 
+        <img src="{% static 'django_setup/images/check_django_installed.png' %}">  
         
         <p>If Django is installed, you will get a result with a version number:</p>
 
-        {# <img src="{% static 'django_setup/images/django_installed_version_number_shows.png' %}"> #}
+        <img src="{% static 'django_setup/images/django_installed_version_number_shows.png' %}"> 
 
         <hr>
 
@@ -58,13 +59,18 @@
             Windows uses <code>py</code> as a first word in command line for python commands.       
         </p>
 
-        {# <img src="{% static 'django_setup/images/python_command_on_windows.png' %}"> #}
+        <img src="{% static 'django_setup/images/python_command_on_windows.png' %}"> 
 
         <p><b>Mac/ Unix:</b><br><br>
             Mac and Unix use <code>python</code> as a first word in command line for python commands.       
         </p>
 
         {# <img src="{% static 'django_setup/images/python_command_on_mac_and_unix.png' %}"> #}
+        <img src="{% static 'django_setup/images/python_command_on_mac.png' %}"> 
+
+        <p>Here is what all commands look like on my Mac for this whole installation process.</p>
+
+        <img src="{% static 'django_setup/images/Django - Installed with Python3.png' %}">
 
         <p>In rest of this Django learning website, we will use Mac commands.</p> 
 

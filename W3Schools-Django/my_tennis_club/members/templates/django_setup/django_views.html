@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -20,18 +20,19 @@
            Django Views are put in a file called views.py located in your app's folder.<br>
            There is a <code>views.py</code> file in your <code>members</code> folder that looks like this : 
            <br><br>
-           
            <code>my_tennis_club/members/views.py</code> :
         </p>
 
-        {# <img src="{% static 'django_setup/images/Initial Django Views File.png' %}"> #}
+        {# Image showing  #}
+        <img src="{% static 'images/django_setup/django_views/Initial Django Views File.png' %}"> 
 
         <p>Find views.py, open it and replace content with this :
         <br><br>
         
         <code>my_tennis_club/members/views.py</code> :
         </p>
-        {# <img src="{% static 'django_setup/images/Members in (8 Django Views).png' %}"> #}
+
+        <img src="{% static 'images/django_setup/django_views/Members in (8 Django Views).png' %}"> 
 
         <p><b>Note:</b> Name of view does not have to be same as <code>members</code> application, it can be a name of your 
             choice.<br><br> 
@@ -40,7 +41,8 @@
             you are better off using a different name after your initial members view setup, like shown with my example below.  
         </p>
 
-        {# <img src="{% static 'django_setup/images/Use hello for 1st view.png' %}"> #}
+        {#  #}
+        <img src="{% static 'images/django_setup/django_views/Use hello for 1st view.png' %}"> 
 
         <p>This is a simple example on how to send a response back to a browser.<br><br>
            How can we execute this view (run code within view function) ?<br>

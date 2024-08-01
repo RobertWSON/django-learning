@@ -1,3 +1,7 @@
+
+{# Handles images and videos from static folder #}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     
@@ -16,9 +20,9 @@
     </p>
 
     {# Image showing Django Admin default with each record as a string representation of an object #}
-    {# <img src="{% static 'django_admin/images/Django - Member Model pg 1.png' %}"> #}
-    {# <img src="{% static 'django_admin/images/Django - Member Model pg 2.png' %}"> #}
-    
+    <img src="{% static 'images/django_admin/include_models/Django - Member Model pg 1.png' %}"> 
+    <img src="{% static 'images/django_admin/include_models/Django - Member Model pg 2.png' %}"> 
+     
     <p>To change this Django default beaviour to a more reader-friendly format, we can do following:</p> 
 
     <ol>
@@ -33,10 +37,10 @@
     <p>To change string representation, we have to define <code>__str__()</code> function of Member model in 
        <code>models.py</code> like this :<br><br>
        <code>my_tennis_club/members/models.py</code> :
-    </p>
+    </p> 
 
     {# Image showing how to use string representation function for showing members #}
-    {# <img src="{% static 'django_admin/images/Change Member Object String.png' %}"> #}
+    <img src="{% static 'images/django_admin/set_list_display/Change Member Object String.png' %}"> 
 
     <p><code>def __str__(self):</code> as well as defining a special string function method for a member class 
         also uses<br> <code>(self)</code> to get an object, which is a record with ours being a member.<br><br>
@@ -58,7 +62,7 @@
     </p>
 
     {# image showing member names now showing in Django Admin #}
-    {# <img src="{% static 'django_admin/images/Member String Rep Changed.png' %}"> #}
+    <img src="{% static 'images/django_admin/set_list_display/Member String Rep Changed.png' %}"> 
 
     <p>Defining <code>__str__()</code> function is not a Django feature, it is how to change string 
        representation of objects with Python.
@@ -80,7 +84,7 @@
     </p>
 
     {# admin.py file with MemberAdmin class and list_diplay tuple #}
-    {# <img src="{% static 'django_admin/images/Admin With Set List Display.png' %}"> #}
+    <img src="{% static 'images/django_admin/set_list_display/Admin With Set List Display.png' %}"> 
 
    <p>Within parenthesis () of our tuple we have "firstname", "lastname", "joined_date" as data types 
       (fields) within our model.<br>  
@@ -100,7 +104,7 @@
    </p>
         
    {# Image showing that all members firstname and lastname are showing, but only one joined_date for Emil #}    
-   {# <img src="{% static 'django_admin/images/Member Set List Display Changed.png' %}"> #}    
+   <img src="{% static 'images/django_admin/set_list_display/Member Set List Display Changed.png' %}">    
         
    <p>You will notice so far that we only have all field values for Emil Refsnes member.<br> 
       Next we will <a href="/django_admin/update_members">update members</a>, so that remaining members will 
