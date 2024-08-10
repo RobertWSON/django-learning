@@ -7,7 +7,7 @@
 <body>
 
     {# <h2>Django Syntax Section</h2>  Maybe better to go one heading higher #}  
-    <h1><center>Django Syntax<center></h1>
+    <h1><center>Django Syntax</center></h1>
 
     {#<h2><center>Django For Tag</center></h2> #} 
     <h2>Django For Tag</h2>   
@@ -15,7 +15,8 @@
     <h3>For Loops</h3>
 
     <p>A <code>for</code> loop is used for iterating over a sequence, like looping over items in an array,
-       list or a dictionary.</p>
+       list or a dictionary.
+    </p>
 
     <h4>For Loop List Items Example</h4>
 
@@ -85,8 +86,9 @@
         </tr>
     </table>    
 
-    <p>When we fetch data from a model, it comes as a QuerySet object, with a similar format as cars example 
-       above: a list with dictionaries:</p>
+    <p>When we fetch data from a model, it comes as a QuerySet object, with a similar format as cars 
+       example above: a list with dictionaries:
+    </p>
        
     {# Screenshot W3Schools QuerySet example as an Image #} 
     {# <img src="my_tennis_club/members/templates/testing/tested_images/Model_Data_QuerySet.png"> #}
@@ -128,13 +130,16 @@
         </p>
     {% endfor %}
 
-    <p>In views.py you can see how to import and fetch members from a database for revesed keyword method.</p>
+    <p>In views.py you can see how to import and fetch members from a database for revesed keyword method.
+    </p>
 
     <hr>
 
     <h3 id="empty">Empty</h3>
 
-    <p>The <code>empty</code> keyword can be used if you you want to do something special if an object is empty:</p>
+    <p>The <code>empty</code> keyword can be used if you you want to do something special if an object is 
+       empty:
+    </p>
 
     <h4>For with Empty Object Example</h4>
 
@@ -180,7 +185,7 @@
         <li>forloop.revcounter0</li>
     </ul> 
     
-    <h3 id="counter">forloop.counter</h4>
+    <h3 id="counter">forloop.counter</h3>
 
     <p>The current iteration, starting at 1</p>
 
@@ -196,7 +201,7 @@
 
     {# {% include 'testing/for_loop_counter.html' %} #}
 
-    <h3 id="counter0">forloop.counter0</h4>
+    <h3 id="counter0">forloop.counter0</h3>
 
     <p>The current iteration, starting at 0</p>
 
@@ -212,7 +217,7 @@
 
     {# {% include 'testing/for_loop_counter0.html' %} #}
 
-    <h3 id="first">forloop.first</h4>
+    <h3 id="first">forloop.first</h3>
 
     <p>Allows you to test if a loop is on its first iteration of a loop.</p>
 
@@ -234,7 +239,7 @@
 
     {# {% include 'testing/for_loop_first.html' %} #}
 
-    <h3 id="last">forloop.last</h4>
+    <h3 id="last">forloop.last</h3>
         
     <p>Allows you to test if a loop is on its last iteration.</p>
 
@@ -256,7 +261,7 @@
 
     {# {% include 'testing/for_loop_last.html' %} #}
 
-    <h3 id="parent">forloop.parentloop</h4>
+    <h3 id="parent">forloop.parentloop</h3>
 
     <p>Sets up a parent loop for a child.</p>
 
@@ -281,7 +286,7 @@
 
     {# {% include 'testing/for_loop_parent.html' %} #}
 
-    <h3 id="revcounter">forloop.revcounter</h4>
+    <h3 id="revcounter">forloop.revcounter</h3>
 
     <p>The current iteration if you start at end and count backwards, ending up at 1.</p>
 
@@ -297,7 +302,7 @@
 
     {# {% include 'testing/for_loop_revcounter.html' %} #}
 
-    <h3 id="revcounter0">forloop.revcounter0</h4>
+    <h3 id="revcounter0">forloop.revcounter0</h3>
 
     <p>The current iteration if you start at end and count backwards, ending up at 0.</p>
 

@@ -1,3 +1,4 @@
+
 {# This is an HTML Template for Testing Home Page to Django Examples used for Testing   #}
 {# Testing Home Page has Links to these Django Examples and it has a /testing/ url.#}
 
@@ -35,7 +36,8 @@
         <tr>
           <td><a href="/testing/prepare_template">Prepare Template</a> </td>
           <td>In django we create a template with HTML in a templates folder. <br>
-              As well as HTML, a template uses django tags and this is covered in more detail, when you click on link.</td> 
+              As well as HTML, a template uses django tags and this is covered in more detail, when you click on link.
+          </td> 
         </tr>
         <tr>
           <td><a href="/testing/prepare_template#prepare_view">Prepare Django View</a></td>
@@ -72,6 +74,10 @@
           <td><a href="/testing/add_test_view">Add Test View</a></td>
           <td>Add a view to test how code works.</td>
         </tr>
+        <tr>
+          <td><a href="/testing/django_forms">Django Forms</a></td>
+          <td>Learn how to make a Form with Django.</td>
+        </tr>
       </table>
 
 
@@ -85,19 +91,23 @@
             <th>Description</th>
          </tr>
          <tr>
-            <td><a href="/testing/template_variable">Template Variable</a> </td>
+            {#<td><a href="/testing/template_variable">Template Variable</a> </td>#}
+            <td><a href="/testing/variables_tested">Django Variable</a> </td>
             <td>In Django templates, you can render (show) variables by putting them <b> inside { {  } } curly brackets </b>.</td> 
          </tr>
          <tr>
-            <td><a href="/testing/view_variable">Variable in View</a></td>
+            {#<td><a href="/testing/view_variable">Variable in View</a></td>#}
+            <td><a href="/testing/variables_tested#view">Template Variable</a> </td>
             <td>A variable in a views.py file is sent to a template through this view.</td>
          </tr> 
          <tr>
-            <td><a href="/testing/template_variables">Variables in Template</a></td>
+            {#<td><a href="/testing/template_variables">Variables in Template</a></td>#}
+            <td><a href="/testing/variables_tested#template">Template Variable</a> </td>
             <td>You can also create a variable and assign it a value directly in a template, by using <br><b>{ % with % } </b> template tag. <br> An assigned variable can then be used as a template variable with <b>{ { } } brackets</b>, as mentioned above. <br> The assigned variable is available for use until the <b>closing tag { % endwith % } appears</b>. </td> 
          </tr> 
          <tr>
-            <td><a href="/testing/model_data">Data From a Model</a></td>
+            {#<td><a href="/testing/model_data">Data From a Model</a></td>#}
+            <td><a href="/testing/variables_tested#model_data">Data From a Model</a></td>
             <td>Normally, most of external data you want to use in a template, comes from a table in a database called a <br>model. To get data from a model, an import has to be created in views.py file and data is extract from it<br> in a view. Data can now be used in an HMTL Template by using a <b>For Loop Django Template Tag <br>{ % for % } </b> to loop through an object that has all values of a model.</td>
          </tr> 
         </table> 

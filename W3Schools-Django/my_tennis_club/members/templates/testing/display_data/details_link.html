@@ -1,4 +1,7 @@
 
+{# Handles images from static folder #}
+{% load static %} 
+
 <!DOCTYPE html>
 <html>
     
@@ -6,7 +9,7 @@
     </head> 
 
 <body>
-    <h1><center>Display Data<center></h1>
+    <h1><center>Display Data</center></h1>
 
     <h2>Django Add Link to Details</h2>
 
@@ -16,7 +19,7 @@
        specific member.<br>
        Start by creating a new template called <code>details.html</code> :
     <br><br>
-    <code>my_tennis_club/members/templates/details.html</code> :
+      <code>my_tennis_club/members/templates/details.html</code> :
     </p>
 
     {# Screenshot image of details.html code for template. #}
@@ -54,7 +57,7 @@
     {# Shows code needed for our new details view #}
     <img src="{% static 'images/testing/display_data/details_link/details_view.png' %}">
 
-    <p><code>Details</code> view does following:<p>
+    <p><code>Details</code> view does following:</p>
 
     <ul>
         <li>Gets an <code>id</code> as an argument.</li>
@@ -91,7 +94,7 @@
 
     <p>You may already be in <code>/my_tennis_club/</code> folder, but if you are not, just type 
         <code>cd my_tennis_club</code> as shown in image below.
-     </p>
+    </p>
  
      {# Screenshot image showing how to get into my_tennis_club folder  #}   
      <img src="{% static 'images/testing/display_data/details_link/Access_Django_Project_Folder.png' %}">
@@ -103,7 +106,8 @@
      
      <p>In browser window, type <code>127.0.0.1:8000/members/</code> in web address bar and you should get a 
         result<br> shown in image below or you can click on this <a href="/members">Members Page Link</a> 
-        to see also how it is displayed.</p> 
+        to see also how it is displayed.
+     </p> 
  
      {# Screenshot image showing Members page run with django built-in local host server #}
      <img src="{% static 'images/testing/display_data/details_link/Members View List on Server.png' %}">

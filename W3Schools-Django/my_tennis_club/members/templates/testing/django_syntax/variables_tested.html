@@ -1,0 +1,126 @@
+
+{# Handles images from static folder #}
+{% load static %} 
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Templates Tag</title>
+    </head> 
+
+<body>
+
+    <h1><center>Django Syntax Section</center></h1>  
+
+    <h2>Django Template Variable</h2> 
+    
+    <p>In Django Templates, you can render (display) variables by putting them inside &#123;&#123; &#125;&#125;</p>
+
+    <h3>Django Variable Example</h3>
+
+    <h1>Hello {{ firstname }}, how are you?</h1>
+
+
+    <p>In template.html you can see how to use a variable within a H1 heading.<br/>
+       You can see that <code>firstname</code> variable is place within our &#123;&#123; &#125;&#125; brackets.  
+    </p>
+
+    {# Image showing how to use a Django variable in an HTML Template file #}
+    <img src="{% static 'images/testing/django_syntax/variables_tested/django_variable_in_HTML_template.png' %}">
+
+    <hr>
+
+    <h2>Create Django Variable in View</h2>
+
+    <p>The variable <code>firstname</code> in above example was sent to a template through a view.<br/>
+       You can see in views.py below how to create a variable.<br/>
+       Our<code>firstname</code> variable has been given a value of <code>Linus</code><br/> and this has been used
+       as a context with our template.   
+    </p>
+
+    {# Image showing how to create a Django variable in views.py file #}
+    <img src="{% static 'images/testing/django_syntax/variables_tested/views_imports_to_use.png' %}">
+    <img src="{% static 'images/testing/django_syntax/variables_tested/django_variable_in_views.png' %}">
+
+    <p>As you can see in view above, we create an object named context, fill it with a property 
+       <code>firstname</code><br/> that we call a variable, along with its value <code>Linus</code>.<br>
+       Our <code>firstname</code> variable is sent to HTML template as first parameter in 
+       <code>template.render()</code> function.<br/>
+       <code>HttpRespsonse</code> module is used with second parameter <code>request</code> . 
+    </p>
+
+    <p>You can also see this Django Template Variable using a View example on a separate page, through link below.</p>
+       
+    <a href="/testing/template_using_view_var">Django Template using a View Variable Example</a>
+
+    <hr>
+
+    <h2>Create Django Variable in Template</h2>
+
+    <p>You can also create a variable or variables directly in a template, by using &#123;% with %&#125;
+       template tag.<br/>
+       A variable is available for use before &#123;% endwith %&#125; tag: 
+    </p>
+
+    {# Image showing how to create a Django variable in a template #}
+    <img src="{% static 'images/testing/django_syntax/variables_tested/django_variable_created_in_template.png' %}">
+
+    <p>You will learn more about <a href="/testing/django_syntax/tags_tested">template tags</a> in next section.
+    </p>
+
+    <p>You can see below that a view for this is very simple, as it only refers to a template and no variable 
+       because our variable is only created in a template.<br/>
+       <code>my_tennis_club/members/views.py</code> :  
+    </p>
+
+    {# Image showing how views.py only uses template and does not create a variable #}
+    <img src="{% static 'images/testing/django_syntax/variables_tested/views_imports_to_use.png' %}">
+    <img src="{% static 'images/testing/django_syntax/variables_tested/no_variable_in_views.png' %}">
+
+    <p>You can also see this Django Variable created in a Template example on a separate page, through link below.</p>
+       
+    <a href="/testing/var_created_in_template">Django Variable created in Template Example</a>
+
+    <hr>
+
+    <h2>Data from a Model (Table)</h2>
+
+    <p>Example above showed an easy approach on how to create and use variables in a template.<br/><br/>
+       Normally, most of data you want to use in a template, comes from a model (table).<br/>
+       A model has been created in previous sections, called <code>Member</code>, which we will be using in examples 
+       in next sections for our learning.<br/>
+       To get data from <code>Member</code> model (table), we have to use import in <code>views.py</code> file and 
+       extract data from a model in a view :<br/>
+       <br/>
+       <code>my_tennis_club/members/views.py</code> : 
+    </p>
+
+    {# Image showing member model used in view.py with mymembers = Member.objects.all().values() #}
+    <img src="{% static 'images/testing/django_syntax/variables_tested/Views_model_data_imports.png' %}">    
+    <img src="{% static 'images/testing/django_syntax/variables_tested/use_member_model_in_views.png' %}">
+
+    <p>In views.py, you can see how to import and fetch members from a model (table) in a database.<br/>
+       <br/>
+       Now we can use data in an HTML Template.
+    </p>
+
+    {# Image showing model data is used in HTML Template with a for loop in an unordered list#}
+    <img src="{% static 'images/testing/django_syntax/variables_tested/use_model_data_in_HTML_template.png' %}">#}
+
+    <p>We use Django template tag &#123;% for %&#125; to loop through members from member model (table) in 
+       database.<br/>
+       Within unordered list, you can see that our variable from views.py is in a <b>for loop</b> and
+       <b>x</b> is used to<br> represent each record id for a member, from model (table) in database.<br/>
+       <b>x.firstname</b> is using each id of a record to get a firstname for each record, so this means that we 
+       show a list with First Name for 5 members.          
+    </p>
+
+    <p>You can also see this Django Variable created in a Template example on a separate page, through link below.</p>
+       
+    <a href="/testing/data_from_model">Django Data from a Model Example</a>
+    
+    <p>    
+       You can learn more about <a href="/testing/django_syntax/tags_tested">template tags</a> in next section.
+    </p>
+
+</body>
+</html>

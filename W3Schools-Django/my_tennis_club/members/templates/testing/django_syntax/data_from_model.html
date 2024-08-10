@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Template Variable</title>
+    </head>
+
+<body>
+    
+    <h1><center>Django Data from a Model Example</center></h1>
+
+   <br><br>
+
+    <ul>
+        {% for x in mymembers %}
+            <li>{{ x.firstname }}</li>
+        {% endfor %}
+    </ul>
+    
+    <p>This Django list is using <b><code>mymembers</code></b> variable from views.py, in a for loop 
+       <b>&#123;% for x in mymembers %&#125;</b>.<br>
+       An <b><code>x</code></b> object is used to represent each record for a member from our model (table) of our
+       database.<br/> 
+       When we use <b><code>&lt;li&gt;&#123;&#123; x.firstname &#125;&#125;&lt;/li&gt;</code></b> , we are getting 
+       each member object<br> through using <code>mymembers = Member.objects.all().values()</code> in views.py and 
+       showing a value for each firstname property in a list.<br>
+       The result as shown above is firstname value for each of 5 members in an unordered list. 
+    </p>
+
+</body>
+</html>

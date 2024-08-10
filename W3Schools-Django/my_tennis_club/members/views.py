@@ -1,9 +1,18 @@
+from django.shortcuts import render
+# django.shortcuts is a module used to import a render library
+from django.http import HttpResponse, HttpResponseRedirect
+# HttpResponse and HttpResponseRedirect are classes that live in django.http module
+from django.template import loader
+# loader is a class that is in django.template module and is used for loading data from a template
+from .models import Member
+# Member model (table) from database is imported from models.py file
+
 # Below I am explaining what terms mean in this views.py file.
 # This helps give me a better understanding on what the code is doing. 
 
 # Imports 
 #from django.shortcuts import render 
-#  - Uses a django.shortcuts module to import a render library
+#  - Uses a django.shortcuts s to import a render library
 #    django.shortcuts module is used for  
 #    render is used for render() function with templates, requests etc. 
 #    See javatpoint.com/django-shortcuts and educative.io/ansers/how-to-render-data-in-django
@@ -27,7 +36,6 @@
 
 # Create your views here.
 
- 
 # Views within (8 Django Views) of Django Tutorial Section 
  # Original 2 imports below, created in Views, within (8 Django Views) of Django Tutorial Section 
  
@@ -38,17 +46,20 @@
 # Check out another internet source educative.io/answers/how-to-render-data-in-django
 # Django shortcuts installs a django binary library that proxies Django's manage.py and django-admin.py scripts
 
-from django.http import HttpResponseRedirect
-from .models import Member
-from django.template import loader
+# from django.http import HttpResponseRedirect
+#from .models import Member
+#from django.template import loader
 # loader is a class that is in django.template module and is used for loading data from a template
 
-
-from django.shortcuts import render 
+#from django.shortcuts import render, 
+from django.shortcuts import get_object_or_404 
 #  - Uses a django.shortcuts module to import a render library
-from django.http import HttpResponse
+# I have added get_object_or_404 import needed if a form is not found 
+# from django.http import HttpResponse
 # HttpResponse is a class that lives in django.http module, so it is imported here 
-
+from .forms import MemberSearchForm 
+# MemberSearchForm is a class name for a form thst searches for a member from a model
+# of a database. 
 
  
 # Original members view created in Views, within (8 Django Views) of Django Tutorial Section
@@ -186,7 +197,7 @@ def update_model(request):
 #from django.http import HttpResponse
 #from django.template import loader
 def prepare_template(request): 
-  template = loader.get_template('testing/template_and_view.html')
+  template = loader.get_template('testing/display_data/template_and_view.html')
   return HttpResponse(template.render())
  
 # Modify View within Django Prepare Template (16 Prepare Template & View) of Display Data Section
@@ -198,7 +209,7 @@ def prepare_template(request):
 # Create a view for handling Add a Link to Details Page. This will be for testing/details_link url
 # and Django Add Link to Details (17 Django - Add Link to Details ) of Display Data Section. 
 def details_link(request):
-  template = loader.get_template('testing/details_link.html')
+  template = loader.get_template('testing/display_data//details_link.html')
   return HttpResponse(template.render())
 
 
@@ -248,7 +259,7 @@ def details(request, id):
 # Create a view for handling Add a Master Template Page. This will be for testing/master_template url
 # and Django Add Master Template (18 Django - Add Master Template) of Display Data Section. 
 def master_template(request):
-  template = loader.get_template('testing/master_template.html')
+  template = loader.get_template('testing/display_data/master_template.html')
   return HttpResponse(template.render())
 
 
@@ -260,27 +271,27 @@ def master_template(request):
 #from .models import Member
 
 def main_index(request):
-  template = loader.get_template('testing/main_index.html')
+  template = loader.get_template('testing/display_data/main_index.html')
   return HttpResponse(template.render())
 
 # Create a view for handling Django 404 Page. This will be for testing/django_404 url
 # and Django 404 Template Page (20 Django 404 Template) of Display Data Section. 
 def django_404(request):
-  template = loader.get_template('testing/django_404.html')
+  template = loader.get_template('testing/display_data/django_404.html')
   return HttpResponse(template.render())
 
 # Create a view for my Add Test Views page that discusses how to test some Django Code. 
 # I will use a testing/add_test url for Django Add Test View (21 Django - Add Test View) 
 # of Display Data Section.   
 def add_test_view(request): 
-  template = loader.get_template('testing/add_test_view.html')
+  template = loader.get_template('testing/display_data/add_test_view.html')
   return HttpResponse(template.render())
   
 # Create an example view that actually shows how a test view works as a link from add_test_view page.
 # Again this is for Django Add Test View (21 Django - Add Test View) 
 # of Display Data Section.
 def test_view(request):
-  template = loader.get_template('testing/test_view.html')  
+  template = loader.get_template('testing/display_data/test_view.html')  
   context = {
       #'fruits': ['Apple', 'Banana', 'Cherry'] 
       'sports': ['Cricket', 'Car Racing', 'Basketball']
@@ -288,6 +299,35 @@ def test_view(request):
   return HttpResponse(template.render(context, request))
 
 
+# Create a view for displaying Django Forms Page. This will be for testing/django_forms url
+# and (21A My Own - Django Forms) of Display Data Section. 
+def django_forms(request):
+  #template = loader.get_template.get('testing/django_forms.html')
+  #return httpResponse(template.render())
+  return render(request, 'testing/display_data/django_forms.html')
+
+# Create a view for a form example that has a search option for a specific member and shows details 
+def form_member_detail(request):
+    member = None 
+    # Allow below for when there is no error message
+    error_message = None 
+    if request.method == 'POST':
+        form = MemberSearchForm(request.POST)
+        if form.is_valid():
+          member_id = form.cleaned_data['member_id']
+          # Allow below for when you have typed a valid member_id within range
+          if 1 <= member_id <= 5:
+            member = get_object_or_404(Member, id=member_id)
+            # Allow below for an error  message when you have typed an invalid id outside range
+          else:
+              error_message = "Member ID must be between 1 and 5."
+    else:
+        form = MemberSearchForm()
+        
+    return render(request,'testing/display_data/django_form_example.html', {'form': form, 
+                          'member': member, 'error_message':error_message})
+  
+    
 # This view is used for members page (/all_members.html url), which has all_members.html template
 #def members(request):
   #mymembers = Member.objects.all().values()
@@ -472,6 +512,36 @@ def delete_members(request):
 #    }
 #    return HttpResponse(template.render(context, request))
     
+
+
+# Django Template Variables within Django Variables (29 Django Syntax - Variables) of Django Syntax Section   
+def variables_tested(request):
+  context = {
+    'firstname': 'Linus',
+  }
+  return render(request, 'testing/django_syntax/variables_tested.html')
+    
+# Django Template using a View Variable Example on a separate page.    
+def template_view_var(request):
+  template = loader.get_template('testing/django_syntax/template_using_view_var.html')
+  context = {
+    'firstname': 'Linus'
+  } 
+  return HttpResponse(template.render(context, request)) 
+
+# Django Variable created in Template Example on a separate page.
+def var_created_in_template(request):
+  template = loader.get_template('testing/django_syntax/var_created_in_template.html')
+  return HttpResponse(template.render())
+    
+# Django Data from a Model Example on a separate page.
+def data_from_model(request):
+  mymembers = Member.objects.all().values() 
+  template = loader.get_template('testing/django_syntax/data_from_model.html')   
+  context = {
+    'mymembers': mymembers
+  }  
+  return HttpResponse(template.render(context, request))
     
     
 # Django Template Tags within Django Tags (30 Django Syntax - Tags) of Django Syntax Section
@@ -486,7 +556,7 @@ def delete_members(request):
 #    }
 #    return HttpResponse(template.render(context, request))
 def tags_tested(request):
-  template = loader.get_template('testing/tags_tested.html')
+  template = loader.get_template('testing/django_syntax/tags_tested.html')
   context = {
     'greeting': 1,
   }    
@@ -531,7 +601,7 @@ def tags_tested(request):
 # from testing page, which now has links to all examples.
 def if_tested(request):
 #   template = loader.get_template('template.html') Now use template below
-  template = loader.get_template('testing/if_tested.html')
+  template = loader.get_template('testing/django_syntax/if_tested.html')
   context = {
     'greeting': 1,     
   }
@@ -820,7 +890,7 @@ def for_loop_tested(request):
         'year': '1964'
       },
       {
-        'brand': 'Ford',
+        'brand': 'Ford',  
         'model': 'Bronco',
         'year': '1970' 
       },
@@ -845,8 +915,7 @@ def for_loop_tested(request):
     }
     
     #return HttpResponse(template.render(context, request))
-    return render(request, 'testing/for_loop_tested.html', context)
-    
+    return render(request, 'testing/django_syntax/for_loop_tested.html', context)
     
     #context = {}
     #context['fruits'] = ['Apple', 'Banana', 'Cherry'],
@@ -1222,7 +1291,7 @@ def for_loop_tested(request):
 
 # Use a view that has a name appropriate to this section, in this case comments
 def comments_tested(request):
-  template = loader.get_template('testing/comments_tested.html')
+  template = loader.get_template('testing/django_syntax/comments_tested.html')
   return HttpResponse(template.render())
 
 # Comment in Views within Django Comment Tag of Django Comment(33 Django Syntax - Comment) in Django Syntax Section #}
@@ -1233,15 +1302,18 @@ def comments_tested(request):
   #template = loader.get_template('template.html')
 # Change this view and give it this name comment_views, so that we can seperate it from comments view for all other 
 # comments examples.   
-def comment_views(request):
-  template = loader.get_template('testing/comment_views.html')  
+
+#def comment_views(request):
+  #template = loader.get_template('testing/django_syntax/comment_views.html')  
+  
   # Views are written in Python, and Python comments are written with the # character
   # This comment in view example below, comments context, so John does not show on loclahost web page.
   #context = {
   #  'var1': 'John',
   #}
   # End of Comment in view example with context 
-  return HttpResponse(template.render())   
+  
+  #return HttpResponse(template.render())   
   
   
   
@@ -1262,7 +1334,7 @@ def comment_views(request):
 # Django Include from this Django Syntax section can be seperated from include within
 # Template Tag Reference of Django References. 
 def include_tested(request):
-  template = loader.get_template('testing/include_tested.html')  
+  template = loader.get_template('testing/django_syntax/include_tested.html')  
   return HttpResponse(template.render())
   
   
@@ -1291,7 +1363,7 @@ def queryset_intro(request):
   # mydata = Member.objects.all()
   #change to mydata_query because it is for Querying Data.
   mydata_query = Member.objects.all()
-  template = loader.get_template('testing/queryset_intro.html')
+  template = loader.get_template('testing/django_querysets/queryset_intro.html')
   context = {
     #'mymembers': mydata,
     #change to mymembers_query
@@ -1320,7 +1392,7 @@ def queryset_get(request):
   # more suitable variable name for getting specific rows displayed
   mydata_rows = Member.objects.filter(firstname='Emil').values()
 
-  template = loader.get_template('testing/queryset_get.html')
+  template = loader.get_template('testing/django_querysets/queryset_get.html')
   context = { 
     # Get Data values() method
     #'mymembers': mydata,
@@ -1362,7 +1434,7 @@ def queryset_filter(request):
   # Queryset field lookup statement 
   mydata_fieldlookup = Member.objects.filter(firstname__startswith='L').values()
 
-  template = loader.get_template('testing/queryset_filter.html')
+  template = loader.get_template('testing/django_querysets/queryset_filter.html')
   context = {
     # Queryset straight filter method
     #'mymembers': mydata,
@@ -1391,7 +1463,7 @@ def queryset_order_by(request):
   # Queryset orderby method with multiple order bys (order by more than one field)
   mydata_multiple = Member.objects.all().order_by('lastname', '-id').values()
 
-  template = loader.get_template('testing/queryset_order_by.html')
+  template = loader.get_template('testing/django_querysets/queryset_order_by.html')
   context = {
     'mymembers_order': mydata_order,
     'mymembers_descend': mydata_descend,

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+    <head><title>Django Template Variable</title>
+    </head>
+<body>
+    <h1><center>Django Variable Created in Template Example</center></h1>
+
+    <br/><br/>
+    {% with firstname="Tobias" %}
+        <h1>Hello {{ firstname }}, how are you?</h1>
+    {% endwith %}
+
+    <p><br/>This Django variable is created in template using a <b>&#123;&#123; with firstname="Tobias"
+        &#125;&#125;</b> template tag, where<br/> a variable is created and a value is given.<br/>
+        Variable is shown in h1 heading using <b>&#123;&#123; firstname &#125;&#125;</b> and with template tag is
+        ended using <b>&#123;% endwith %&#125;</b> .
+        <br><br> 
+        Remember a Django Variable is created here using <code>HTML template</code> and we jave not needed to get 
+        it from a view in <code>view.py</code> file.
+    </p>
+
+</body>
+</html>

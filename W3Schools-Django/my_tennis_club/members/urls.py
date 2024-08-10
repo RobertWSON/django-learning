@@ -157,9 +157,14 @@ urlpatterns = [
     # Here 'testing/' is url path, views.testing a function_name (is testing within views.py file)
     # and name has testing as a url name. 
     
+    # URL, within (21A My Own - Django Forms) of Django Display Data Section. 
+    # This will be a page discussing what Django Forms are and how they work and there will be a link to 
+    # a separate page with an example on it.  
+    path('testing/django_forms', views.django_forms, name='django_forms'),
    
-   
-   
+    # URL for my Form Example in (21A My Own - Django Forms) of Django Display Data Section.
+    # This is separate page that gives users an opportunity to try out a Form.   
+    path('testing/django_form_example', views.form_member_detail, name='django_form_example'),
    
     
     # comment code for now
@@ -198,14 +203,26 @@ urlpatterns = [
     
     
     
-    #Django Syntax Section
+    #Django Syntax Section (29 to 34)
+    # Create a url for a page that will show 29 Django Syntax - Django Variables section
+    path('testing/variables_tested', views.variables_tested, name='django_vars_tested'),
     
-    # Django Tags Section 
+    # Create a url for Django Template using a View Variable example on a separate page.
+    path('testing/template_using_view_var', views.template_view_var, name='template_view_var'),
+    
+    # Create a url for Django Variable Created in Template example on a separate page.
+    path('testing/var_created_in_template', views.var_created_in_template, name='var_created_in_template'),
+    
+    # Create a url Django Data from a Model Example on a separate page. 
+    path('testing/data_from_model', views.data_from_model, name='data_from_model'),
+
+    
+    # Create a url for a page that will show 30 Django Syntax - Django Tags Section 
     path('testing/tags_tested', views.tags_tested, name='tags_tested'),
     
     #path('testing/tags_tested', views.django_code, name='django_code'),
     
-    # Django If Tag
+    # Create a url for a page that will show 31 Django Syntax - Django If Tag Section
     path('testing/if_tested', views.if_tested, name='if_tested'),
     
     # path('testing/if_tested', views.if_elif, name='if_elif'),
@@ -263,7 +280,7 @@ urlpatterns = [
     
     path('testing/comments_tested', views.comments_tested, name='comments'),
     
-    path('testing/comments_tested', views.comment_views, name='comment_views'),
+    #path('testing/comments_tested', views.comment_views, name='comment_views'),
     
     #Route for Django Include Tag
     # Do not use this route below for Django Syntax section

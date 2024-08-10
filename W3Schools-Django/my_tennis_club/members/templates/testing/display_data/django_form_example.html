@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+    
+    <head><title>Django Form Example</title>
+    </head> 
+
+<body>
+    <h1><center>Django Form Example</center></h1>
+
+    <h2>Use a Django Form to search for a Member</h2>
+
+    <form method="post">
+
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit">Search</button> 
+    
+        {# Allow below for clearing member details by using a reset button  #} 
+        <button type="reset" id="resetButton">Reset</button>
+        {# Use id for Reset Button, so that it works with JavaScript Event Listener #}
+
+    </form>
+
+    {# Add memberDetails div so that reset button works with JavScript. #}
+    <div id="memberDetails">   
+
+        {# Allow for error message to show when member id is outside of range. #}
+        {# This uses our defined error_message variable taken from form_member_detail in views.py. #}
+        {% if error_message %}
+            <p style="color: blue">{{ error_message }}</p>
+        {% endif %}
+
+        {% if member %}
+
+            <h3>Member Details</h3>
+
+            <p>Member First Name: <b><i>{{ member.firstname }}</i></b></p>
+
+            <p>Member Last Name: <b><i>{{ member.lastname }}</i></b></p>
+
+            <p>Date Member Joined Tennis Club: <b><i>{{ member.joined_date }}</i></b></p>
+
+            <p>Member Phone Number: <b><i>{{ member.phone }}</i></b></p>
+
+            {% elif member is None %} 
+    
+                <p>No member found with this ID.</p>
+
+        {% endif %} 
+
+    </div>   {# Closing div for member Details #}
+    
+    <p><br><br>You will notice, as there are 5 members within this Tennis Club, Member ID 1 to 5 will work and 
+        any other Member ID will show an error message
+        {# Not Found page.#}
+        {# I am not using a Not found error page anymore when member id is out of range #}
+    </p>
+
+    {# JavaScript code for error message within memberDetails div. #}
+    <script>
+        document.getElementById('resetButton').addEventListener('click', function() {
+            // Clear member details in our div, so that m
+            document.getElementById('memberDetails').innerHTML = '';
+        })
+    </script>
+    
+</body>
+</html>
