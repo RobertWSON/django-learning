@@ -1,0 +1,19 @@
+
+{# Handles global CSS File (myglobal.css) from mystaticfiles folder #}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+
+    <body>
+
+    {% for x in sports %}
+        <h1>{{ x }}</h1>
+    {% endfor %} 
+    
+    <p>In myglobal.css you can see what stylesheet looks like.</p>
+
+    </body>
+</html>

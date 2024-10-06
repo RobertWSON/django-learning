@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -32,48 +32,50 @@
          <code>my_tennis_club/my_tennis_club/settings.py</code> :
       </p>
 
-      {# <img src="{% static 'django_static/images/settings_static_root.png' %}"> #}
+      <img src="{% static 'images/django_static/collect/settings_static_root.png' %}"> 
 
       <p>You could manually create this folder and collect and put all static files of your Django project into this
-         folder.<br> Django has a command that can do this for you: 
+         folder.<br> Django has a command that can do this for you:</br></br>
+         On Mac this this is <code>python manage.py collectstatic</code></br> 
+         and on Windows or Linux this is <code>py manage.py collectstatic</code>
       </p>
 
-      {# <img src="{% static 'django_static/images/collect_static.png' %}"> #}
+      <img src="{% static 'images/django_static/collect/collect_static.png' %}"> 
 
       <p>This collectstatic command will produce this result:</p>
 
-      {# <img src="{% static 'django_static/images/collect_static_result.png' %}"> #}
+      <img src="{% static 'images/django_static/collect/collect_static_result.png' %}"> 
 
-      <p>131 files ? Why so many ? Well this is because of files stored with admin user interface, that comes built-in with 
-         Django.<br>
+      <p>311 files ? Why so many ? Well this is because of files stored with admin user interface, that come built-in with 
+         Django<br> and also because of my own images to produce this website.</br></br>
          We want to keep this admin user interface feature in production, as it comes with a whole bunch of files including<br>
          stylesheets, fonts, images and JavaScripts. 
       </p>
 
-      {# <img src="{% static 'django_static/images/collected_static_files.png' %}"> #}      
+      <img src="{% static 'images/django_static/collect/collected_static_files.png' %}">       
 
-      <h4>CSS Example Should Work Now</h4>
+      <h4 id="static_works">CSS Example Should Work Now</h4>
 
-      <p>Now you have collected static files of you project and <a href="/django_static/whitenoise">installed whitenoise</a>
-         , so first CSS example from <a href="/django_static/files">Add Static File page</a><br> will finally work. <br><br>
+      <p>Now that you have collected static files of you project and <a href="/django_static/whitenoise">installed whitenoise</a>
+         , your first CSS example from <a href="/django_static/files">Add Static File page</a><br> will finally work. <br><br>
          If your localhost server is not running, start it up again with your command line by typing this command below:
       </p>
 
-      {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}  
+      <img src="{% static 'images/django_static/collect/run_localhost_server_first_static_css.png' %}">  
 
       <p>And check out result in your own browser: <a href="/django_static/files/first_css_example">
          127.0.0.1:8000/django_static/files/first_css_example</a>.
       </p>
 
+      <img src="{% static 'images/django_static/collect/first_css_now_works.png' %}"> 
+
       <p>This is same code below, from before on <a href="/django_static/files#mod_template">Add Static File page</a> 
-         , that now works. 
+         , that now works and shows CSS. 
       </p>
 
-      {# <img src="{% static 'django_static/images/first_css_example_code.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/first_css_example_html_code.png' %}"> 
 
-      <p>Next we will look at <a href="/django_static/global">Global Static Files</a>
-
-      </p>
+      <p>Next we will look at <a href="/django_static/global">Global Static Files</a></p>
 
    </body>
 </html>

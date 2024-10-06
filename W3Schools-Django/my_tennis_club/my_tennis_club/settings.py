@@ -29,11 +29,11 @@ SECRET_KEY = 'django-insecure-xm&5-yo%zpl!md#arke8=n%%!qi9$50b6(e^zcz(v)bpvz@r9j
 # Page Not Found, within Django 404 (page not found) (20 Django 404 Template) of Django Display Data Section 
 DEBUG = False
 
-
 # Originally it had
 #ALLOWED_HOSTS = []
 # Use * as a string domain name for now, as it works locally with localhost 
 ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
@@ -58,6 +58,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Add middleware for using whitenoise in settings. 
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'my_tennis_club.urls'
@@ -126,7 +128,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'productionfiles'
+
 STATIC_URL = 'static/'
+
+# Directory for using Global CSS
+# Add this in your settings.py file:
+
+# This can also be used for Django Project CSS Stylesheet (mystyles.css) 
+STATICFILES_DIRS = [
+    BASE_DIR / 'mystaticfiles'
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

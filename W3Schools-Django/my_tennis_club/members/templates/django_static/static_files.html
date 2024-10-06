@@ -1,6 +1,6 @@
 
-{# Handles images and videos from static folder #}
-{# {% load static %} #}
+{# Handles images from static folder #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -22,45 +22,57 @@
          Name of folder has to be <code>static</code> . 
       </p>
 
-      {# <img src="{% static 'django_static/images/static_folder.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/static_folder.png' %}"> 
 
       <p>Add a CSS file in <code>static</code> folder and as it is our first css file an appropriate could be 
          <code>myfirst.css</code>, but it is your choice for a name.</p>
 
-      {# <img src="{% static 'django_static/images/first_css_file.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/first_css_file.png' %}"> 
 
       <p>Open your first new CSS file and insert following code:</p>
 
-      {# <img src="{% static 'django_static/images/first_css_code.png' %}"> #}
+      {# <img src="{% static 'images/django_static/first_css_code.png' %}"> #}
+      {# Change Static Image Name to this below #}
+      <img src="{% static 'images/django_static/add_files/Static Setup First CSS File Code.png' %}"> 
       
       <h3 id="mod_template">Modify HTML Template</h3>
 
       <p>Now you have a CSS file, with some styling.<br>
          Next step is to include this CSS file in an HTML template:<br><br>
-         Open HTML template file and add following:
+         We can either open an existing HTML template file such as test_view.hmtl we created earlier in Django 
+         Display section</br> or create a new first_css_example.html HTML template file and add following link:
       </p>   
            
-      {# <img src="{% static 'django_static/images/HTML_CSS_Link.png' %}"> #}  
+      <img src="{% static 'images/django_static/add_files/HTML_CSS_Link.png' %}"> 
         
-      <p>We also want to let HTML template know that we are dealing with a static file, by typing following code 
-         before HTML:
+      <p>We also want to let HTML template know that we are dealing with a static file, by typing following 
+         code before HTML:
       </p>
 
-      {# <img src="{% static 'django_static/images/load_static.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/load_static.png' %}"> 
 
       <h4>First CSS Example</h4>
 
-      {# <img src="{% static 'django_static/images/first_css_example_code.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/first_css_example_html_code.png' %}">
 
       <p>Restart localhost server for changes to take effect:</p>
 
-      {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/run_localhost_server_first_css_example.png' %}">
 
-      <p>And check out result in your own browser: <a href="/django_static/files/first_css_example">
+      <p>Our first HTML file example that uses CSS from our static folder should now like like this.</br>
+         You will notice that CSS used in this HTML example is not working yet, we will discuss next
+         why this happening. 
+      </p>
+
+      <img src="{% static 'images/django_static/add_files/Run First CSS Example - No CSS.png' %}">
+
+      <p>You can check out result in your own browser: <a href="/django_static/files/first_css_example">
          127.0.0.1:8000/django_static/files/first_css_example</a>.
       </p>
 
       <h4>First CSS Example Didn't Work</h4>
+
+      <img src="{% static 'images/django_static/add_files/First CSS Example - No CSS.png' %}">
 
       <p><b>Just testing ?</b> If you want to play around and not deploy your work, you can set <code>DEBUG=TRUE</code><br>
          in <code>settings.py</code> file and example aboce will work.<br><br>
@@ -77,7 +89,7 @@
 
       <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
 
-      {# <img src="{% static 'django_static/images/debug_development.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/debug_development.png' %}"> 
 
       <p>This will make example work, but we want you to choose <code>DEBUG = FALSE</code>, because that is best way to 
          learn<br> how to wotk with Django.   
@@ -95,7 +107,7 @@
 
       <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
 
-      {# <img src="{% static 'django_static/images/debug_false_example.png' %}"> #}
+      <img src="{% static 'images/django_static/add_files/debug_false_example.png' %}"> 
 
       <p>ALLOWED_HOSTS<br><br>
          When using <code>DEBUG = False</code> you have to specify which host name(s) are allowed to host your work.<br>

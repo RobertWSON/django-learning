@@ -1,7 +1,9 @@
-{# comment is where the code should be #}
 
 {# The extends Tag within Django Add Master Template (18 Add Master Template) of Django Display Data Section #}
 {# my_tennis_club/members/templates/master.html #}
+
+{# Used for loading our CSS File in static folder and mystaticfiles folder that is connected to it. #}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -10,8 +12,25 @@
             {# This Block Tag is a placeholder, that tells Django to replace this block with contents from other sources #} 
             {% block title %}{% endblock %}
         </title>
+
+        {# In this master.html template we need to have a link to our Django Project cascading Stylesheet #}
+        {# Note: Our static folder can get our stylesheet file from our mystaticfiles folder that it is in. #}
+        <link rel="stylesheet" href="{% static 'mystyles.css' %}">
     </head>
     <body>
+        {# Add this div for Navigation at top of both members and home page #}
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/members">Members</a>
+            <a href="/django_setup">Django Setup</a>
+            <a href="/testing">Django Code Examples</a>
+            <a href="/django_admin">Django Admin</a>
+            <a href="/django_static">Django Static</a>
+            <a href="/django_postgreSQL">PostgreSQL</a>
+            <a href="/django_more">More Django</a>
+            <a href="/template">Django References</a>
+        </div>    
+
         {# This Block Tag is a placeholder, that tells Django to replace this block with contents from other sources #} 
         {% block content %}
         {% endblock %}
@@ -19,8 +38,8 @@
     </body>
 </html> 
 
+{# Note: Now three templates (main.html, all_members.html and details.html) can use this master.html template #}
 
-{# Note: Now two templates (all_members.html and details.html) can use this master.html template #}
 
 {# Break down of above code into Separate Django Learning parts of their section #}
 

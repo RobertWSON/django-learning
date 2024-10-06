@@ -1,8 +1,5 @@
 
-{# comment is where the code should be #}
-
-{# Now we use master template that has all necessary HTML elements common in layout for web pages #} 
-
+{# Now we use master template that has all necessary HTML elements common in layout for web pages #}
 {% extends "master.html" %} 
 
 {# <!DOCTYPE html> #}
@@ -25,6 +22,8 @@
   
     {% block content %}   {# Using a content block tag from master.html #}         
     
+      {# Add a div with a class so that we can style elements in block content tag #}
+      <div class="mycard">
         {# Now we can have html and django content for main body part of web page, within content block #}
         
         <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
@@ -32,7 +31,11 @@
         <p>Phone: {{ mymember.phone }}</p>
         <p>Member since: {{ mymember.joined_date }}</p>
 
+        {% comment %}
         <p>Back to <a href="/members">Members</a></p>
+        Remove Link navigation, because that is now a part of master template. {% endcomment %} 
+
+      </div>
 
     {% endblock %} 
 

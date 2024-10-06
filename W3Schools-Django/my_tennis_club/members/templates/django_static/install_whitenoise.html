@@ -1,6 +1,6 @@
 
-{# Handles images and videos from static folder #}
-{# {% load static %} #}
+{# Handles images from static folder #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -23,13 +23,18 @@
         
         <h3>Install Whitenoise</h3>
 
-        <p>To install Whitenoise in your virtual environment, type this command below, in your command line.</p>
+        <p>To install Whitenoise in your virtual environment, type this command below, in your command line.</br>
+           Note: Make sure you are in your virtual environment of your Django folder for this whole Django project 
+           that you are working on.</br> 
+           In this case I have a <code>W3Schools-Django</code> folder for storing this <code>my_tennis_club</code> 
+           Django project and <code>members</code> app.  
+        </p>
       
-        {# <img src="{% static 'django_static/images/install_whitenoise.png' %}"> #}
+        <img src="{% static 'images/django_static/whitenoise/install_whitenoise.png' %}"> 
 
         <p>The downloading result should look like this:</p>
 
-        {# <img src="{% static 'django_static/images/whitenoise_downloading.png' %}"> #}
+        <img src="{% static 'images/django_static/whitenoise/whitenoise_downloading.png' %}">
 
         <h3 id="mod_settings">Modify Settings</h3>
 
@@ -39,12 +44,12 @@
 
         <p><code>my_tennis_club/my_tennis_club/settings.py</code> :</p>
 
-        {# <img src="{% static 'django_static/images/whitenoise_in_settings.png' %}"> #}
+        <img src="{% static 'images/django_static/whitenoise/whitenoise_in_settings.png' %}"> 
 
         <h3>Collect Static Files</h3>
 
         <p>There is one more action you have to perform before you can serve a static file from CSS example in 
-           <a href="/django_static/files">previous page</a>. <br>
+           <a href="/django_static/files">previous page</a>. <br></br>
            Now you have to collect all static files and put them into one specified folder. This will be shown on 
            <a href="/django_static/collect">next page</a>.    
 

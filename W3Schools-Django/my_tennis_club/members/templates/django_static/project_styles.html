@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -14,24 +14,30 @@
 
       <h3>Django Project - My Tennis Club</h3>
 
-      <p>If you have followed steps for this Django Project, you will have a <code>my_tennis_club</code> Django project on 
-         your computer with 5 members:
+      <p>If you have followed steps for this Django Project, you will have a <code>my_tennis_club</code> 
+         Django project on your computer with 5 members:
       </p>
 
-      {# <img src="{% static 'django_static/images/my_tennis_club_members_page.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/my_tennis_club_members_page.png' %}"> 
 
-      {# <img src="{% static 'django_static/images/my_tennis_club_members_page_code.png' %}"> #}
+      <p>We used code below to make this members page. </br>
+         You can see that each link for a member are shown by using a for loop.</br>
+         Our master HTML template is used for block layout of our members page and is used soon for linking 
+         to our Project CSS file.
+      </p>
+
+      <img src="{% static 'images/django_static/styles/my_tennis_club_members_page_code.png' %}"> 
 
       <p>Now we want to add a stylesheet to this project and put it in <code>mystaticfiles</code> folder :</p>
 
-      {# <img src="{% static 'django_static/images/django_project_stylesheet(master).png' %}"> #}
+      <img src="{% static 'images/django_static/styles/django_project_stylesheet (master).png' %}">
 
-      <p>Name of CSS file is your choice, we will call it <code>mystyles.css</code> in this Django project.
+      <p>Name of CSS file is your choice, we will call it <code>mystyles.css</code> in this Django project.<br>
          Open new CSS file and insert following code:<br><br>
          <code>my_tennis_club/mystaticfiles/mystyles.css</code> :
       </p>
 
-      {# <img src="{% static 'django_static/images/project_stylesheet(master)_initial_code.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/project_stylesheet (master)_initial_code.png' %}"> 
 
       <hr>
 
@@ -42,7 +48,7 @@
          <code>my_tennis_club/members/templates/master.html</code> :  
       </p>
 
-      {# <img src="{% static 'django_static/images/css_in master_html.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/css_project_link_in master_html.png' %}"> 
 
       <hr>
 
@@ -54,56 +60,78 @@
          <code>my_tennis_clu/my_tennis_club/settings.py</code> :
       </p>
     
-      {# <img src="{% static 'django_static/images/settings_staticfiles_directory.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/settings_staticfiles_directory.png' %}"> 
 
       <hr>
 
       <h3 id="collect_master_css">Collect Master CSS Static File</h3>
 
       <p>Every time you make a change in a static file, you must run <code>collectstatic</code> command to make changes 
-         take effect :</p>
+         take effect :</br></br>
 
-      {# <img src="{% static 'django_static/images/collectstatic_master_css.png' %}"> #}      
+         Remember on Mac this this is <code>python manage.py collectstatic</code></br> 
+         and on Windows or Linux this is <code>py manage.py collectstatic</code>
+      </p>
+
+      <img src="{% static 'images/django_static/styles/collectstatic_master_css.png' %}">      
 
       <p>If you have executed collectstatic command earlier in your Django project, you will now be prompted with a 
          question :
       </p>
 
-      {# <img src="{% static 'django_static/images/collectstatic_command_question.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/collectstatic_command_question.png' %}"> 
 
-      <p>Type 'yes'. This will update any changes  done in static files and give you this result :</p>
+      <p>Type 'yes'. This will update any changes done in static files and give you this result :</p>
 
-      {# <img src="{% static 'django_static/images/static_file(mystyles.css)_copied.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/static_file_copied (mystyles css).png' %}"> 
 
       <p>If you have not got your localhost server running, you can restart it once again with following command :<br><br>   
       </p> 
 
-      {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #} 
+      <img src="{% static 'images/django_static/styles/run_localhost_server_project_css_works.png' %}"> 
 
-      <p>If you have followed all steps on your own computer, you can see result in your own browser window by typing 
-         <a href="/members">127.0.0.1:8000/members/</a> in address bar.
+      <p>If you have followed all steps on your own computer, type <a href="/members">127.0.0.1:8000/members/</a>
+         in address bar of your browser.</br>
+         You can see that we now have a violet color for background of our members page. 
+         
+         {% comment%}
+         If you have followed all steps on your own computer, you can see result in your own browser window by 
+         typing <a href="/members">127.0.0.1:8000/members/</a> in address bar.{% endcomment %}
       </p>
 
-      {# <img src="{% static 'django_static/images/members_page_master_static_css.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/members_page_master_static_css.png' %}"> 
       
-      <p>You probably have done all this code for members page already, but just in case you have not done a members page,
-         here is code to produce<br> this, including CSS for master HTML template we have learnt about, above.   
+      <p>You can also see that home page also uses this violet color background.</br>
+         This is because our main.html template for homepage, also uses master.html template for a link to our 
+         Project CSS file.  
+         {% comment %}
+         You probably have done all this code for members page already, but just in case you have not done a members page,
+         here is code to produce<br> this, including CSS for master HTML template we have learnt about, above.</br></br>
+         {% endcomment %}
       </p>
 
-      {# <img src="{% static 'django_static/images/members_page_code_including_css.png' %}"> #}      
+      <img src="{% static 'images/django_static/styles/home_page_showing_project_violet_css.png' %}"> 
+      {# <img src="{% static 'images/django_static/styles/members_page_code_including_css.png' %}"> #}      
+
+      <p>You may of noticed, while you were running your localhost server for both members and home page that 
+         "GET /static/mystyles.css HTTP/1.1" 304 0 shows.</br>
+         This shows how Django uses a link for a static file, with our CSS for this project.  
+      </p>
 
       <hr>
 
       <h3 id="spice_css_style">Spice up CSS Style</h3>
 
       <p>In members page example above, we showed you how to include a stylesheet to your Django project.<br><br>
-         We ended up with a pruple web page, but CSS can do much more than just change background color.<br><br>
+         We ended up with a violet (pinkish purple) web page, but CSS can do much more than just change background color.
+         <br><br>
          We want to do more with styles, so to start with we will replace content of <code>mystyles.css</code> file with 
          this :<br><br>
          <code>my_tennis_club/mystaticfiles/mystyles.css</code> :
       </p>
 
-      {# <img src="{% static 'django_static/images/mystyles.css_new_code.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/mystyles.css_new_code_pg1.png' %}"> 
+      <img src="{% static 'images/django_static/styles/mystyles.css_new_code_pg2.png' %}"> 
 
       <hr>
 
@@ -118,7 +146,7 @@
          <code>my_tennis_club/members/templates/master.html</code> :
       </p>
 
-      {# <img src="{% static 'django_static/images/master_template_nav.png' %}"> #}      
+      <img src="{% static 'images/django_static/styles/master_template_nav.png' %}">      
 
       <h4 id="#members_css">Members HTML Template Changes for CSS</h4>
 
@@ -127,7 +155,8 @@
          We also want to remove navigation for home, because that is now in master template.
       </p>
 
-      {# <img src="{% static 'django_static/images/all_members_template_changes.png' %}"> #}      
+      <img src="{% static 'images/django_static/styles/all_members_template_changes_pg1.png' %}">     
+      <img src="{% static 'images/django_static/styles/all_members_template_changes_pg2.png' %}"> 
 
       <h4 id="details_css">Details HTML Template Changes for CSS</h4>
 
@@ -136,7 +165,7 @@
          <code>my_tennis_club/members/templates/details.html</code> :
       </p>
 
-      {# <img src="{% static 'django_static/images/details_template_changes.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/details_template_changes.png' %}"> 
 
       <h4 id="main_css">Main HTML Template Changes for CSS</h4>
 
@@ -144,7 +173,9 @@
          <code>my_tennis_club/members/templates/main.html</code> :
       </p>      
 
-      {# <img src="{% static 'django_static/images/main_template_changes.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/main_template_changes_pg1.png' %}"> 
+      <img src="{% static 'images/django_static/styles/main_template_changes_pg2.png' %}"> 
+      <img src="{% static 'images/django_static/styles/main_template_changes_pg3.png' %}"> 
 
       <hr>
  
@@ -154,30 +185,40 @@
          command to make changes take effect :
       </p>
 
-      {# <img src="{% static 'django_static/images/collectstatic_all_template_changes.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/collectstatic_all_template_changes.png' %}">
       
       <p>Now, if you run your Django project on your localhost server, by typing this command below, on your command line :
       </p>
 
-      {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}
+      {# <img src="{% static 'images/django_static/styles/run_localhost_server.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/run_localhost_server_members_project_css.png' %}"> 
 
       <p>You can see how it displays in your own browser window with new css, by typing <a href="/members">
          127.0.0.1:8000/members</a> in address bar.<br><br>
-         <b>Notice</b> nice blend of blue color, font styles and transition effect when hovering over a member in list.  
+         <b>Notice</b> nice blend of blue color, font styles and transition card effect when hovering over a member in list.  
       </p>
 
-      {# <img src="{% static 'django_static/images/members_page with_css_code.png' %}"> #}
+      {# <img src="{% static 'images/django_static/styles/members_page with_css_code.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/members_page_project_css.png' %}"> 
 
       <p>We can see below how CSS Code from above, fits in with HTML code on members and home pages.</p>
 
-      {# <img src="{% static 'django_static/images/mystyles.css_new_code.png' %}"> #}
+      {# <img src="{% static 'images/django_static/styles/mystyles.css_new_code.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/mystyles.css_new_code_pg1.png' %}"> 
+      <img src="{% static 'images/django_static/styles/mystyles.css_new_code_pg2.png' %}">
 
       <p>You can also see how home page is displayed, with new css in your own browser window, by typing <a href="/">
          127.0.0.1:8000/</a> in address bar.<br><br>
          <b>Notice</b> nice blend of blue colors for font and headings within block content, as can be seen below   
       </p>
 
-      {# <img src="{% static 'django_static/images/home_page with_css_code.png' %}"> #}
+      {# <img src="{% static 'images/django_static/styles/home_page with_css_code.png' %}"> #}
+      <img src="{% static 'images/django_static/styles/home_page_project_css.png' %}">
+
+      <p>Next we will look at how we can use a slug with a url and bootstrap instead of plain 
+         CSS for our website.</br></br>
+         In next more section, we will start off by using a <a href="/django_more">Django Slug</a>.
+      </p>
 
     </body>
 </html>   

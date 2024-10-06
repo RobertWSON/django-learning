@@ -339,9 +339,11 @@ urlpatterns = [
     # Create a url for a page that will show 42 Django - Add Global Static Files section 
     path('django_static/global', views.global_static, name='global_static'),
 
+    # Create a url for a page that will show Global CSS Example from 42 Django - Add Global Static Files section
+    path('django_static/global/global_css_example', views.global_css_example, name='global_css_example'),
+
     # Create a url for a page that will show 43 Django - Add Styles to Project
     path('django_static/styles', views.styles, name='styles'),
-
 
 
 

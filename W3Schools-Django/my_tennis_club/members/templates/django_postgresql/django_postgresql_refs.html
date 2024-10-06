@@ -1,11 +1,23 @@
 
-<!DOCTYPE html>
-<html>
-        <head>
-            <title>PostgreSQL</title> 
-        </head>  
+{# Now we use master template that has all block elements and navigation common in layout for web pages #}
+{% extends "master.html" %} 
 
-    <body> 
+{% comment %}
+<!DOCTYPE html> !DOCTYPE html and html tags now used in master.html Template
+<html>
+    <head> head tag is now used in master.html template
+        <title>PostgreSQL</title> title tag is now used in master.html template{% endcomment %} 
+        {% block title %}   {# Using title block tag from master.html #} 
+        PostgreSQL
+        {% endblock %}
+    {% comment %}    
+    </head> closing head tag is now used in master.html template   
+
+    <body> body tag is now used in master.html template{% endcomment %} 
+    
+    {# This child Content Block Tag is a placeholder, that tells Django to replace the master html parent #} 
+    {# Content Block with contents in it below. It also inherit the parent body tag with this child block #}  
+    {% block content %}  {# Using a child content block tag from master.html for body content of web page. #}  
 
     <h1><center>PostgreSQL with Django</center></h1> 
 
@@ -121,5 +133,7 @@
         </tr>    
     </table>
 
-    </body>
-<html>
+    {% endblock %}
+   {% comment %}
+   </body> closing body tag is now used in master.html template
+<html> closing html tag is now used in master.html template {% endcomment %}

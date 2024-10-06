@@ -2,22 +2,28 @@
 {# This is an HTML Template for Testing Home Page to Django Examples used for Testing   #}
 {# Testing Home Page has Links to these Django Examples and it has a /testing/ url.#}
 
-<!DOCTYPE html>
+{# Now we use master template that has all block elements and navigation common in layout for web pages #}
+{% extends "master.html" %}
+
+{% comment %}
+<!DOCTYPE html> !DOCTYPE html and html tags now used in master.html Template
 <html>
 
-{# {% block title %} #} 
-  <head>
-    <title>
-      {% comment %}<h2> {% endcomment %}
+  <head> head tag is now used in master.html template
+    <title>Django Examples</title> title tag is now used in master.html template 
+      <h2> {% endcomment %}
+      {% block title %}    {# Using title block tag from master.html #}  
         Django Examples
+      {% endblock %}
       {% comment %}</h2>
-      <hr> {% endcomment %}
-    </title> 
-  </head>  
-{#{% endblock %} #}
+      <hr>  
+  </head> closing head tag is now used in master.html template  
 
- {# {% block content %} #}
-  <body>
+  <body>  body tag is now used in master.html template{% endcomment %}
+
+  {# This child Content Block Tag is a placeholder, that tells Django to replace the master html parent #} 
+  {# Content Block with contents in it below. It also inherit the parent body tag with this child block #}  
+  {% block content %}  {# Using a child content block tag from master.html for body content of web page. #}
 
     {# <h2>Django Examples</h2> change to h1 heading for main heading of page #}
     <h1><center>Django Examples</center></h1>
@@ -447,10 +453,10 @@
 
       </table>
 
-  </body>         
-{# {% endblock %} #}
-
-</html>
+  {% endblock %} 
+  {% comment %}
+  </body> closing body tag is now used in master.html template         
+</html> closing html tag is now used in master.html template {% endcomment %}
 
 
 

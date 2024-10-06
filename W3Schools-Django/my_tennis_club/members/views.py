@@ -1055,7 +1055,6 @@ def for_loop_tested(request):
   #return HttpResponse(template.render(context, request))
 
 
-
 # Reversed within Django for Tag (32 Django Syntax - For Loop) of Django Syntax Section
 # We are using members object, which has properties and property values within it,
 # that can be used in numerical id order within template.html
@@ -1474,13 +1473,6 @@ def queryset_order_by(request):
 
 
 
-
-
-
-
-
-
-
 # Django Static section at beginning. W3Schools has this as a Static Files section
 # 44 Django - ProstgreSQL Intro to 48 Django - Add Members sections.
 def django_static(request):
@@ -1492,7 +1484,7 @@ def static_files(request):
   template = loader.get_template('django_static/static_files.html')
   return HttpResponse(template.render())
 
-# first css example from a link off static_files page.
+# Create a view for a page that will show first css example page from a link off static files page.
 def first_css_example(request):
   template = loader.get_template('django_static/first_css_example.html')
   context = {
@@ -1514,6 +1506,14 @@ def collect_static(request):
 def global_static(request):
   template = loader.get_template('django_static/global_static.html')
   return HttpResponse(template.render())
+
+# Create a view for a page that will show global css example page from a link off global static files page.
+def global_css_example(request):
+  template = loader.get_template('django_static/global_css_example.html')  
+  context = {
+      'sports': ['Cricket', 'Car Racing', 'Basketball']
+  }
+  return HttpResponse(template.render(context, request))
 
 # Create a view for a page that will show 43 Django - Add Styles to Project
 def styles(request):

@@ -1,8 +1,12 @@
 
-{#{% load static %}#}
+{# Handles first CSS File (myfirst.css) from static/css folder #}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
-{#<link rel="stylesheet" href="{% static 'django_static/css/myfirst.css' %}">#}    
+
+<link rel="stylesheet" href="{% static 'css/myfirst.css' %}">
+
     <body>
 
     {% for x in fruits %}

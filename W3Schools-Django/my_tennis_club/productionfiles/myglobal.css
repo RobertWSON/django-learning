@@ -1,0 +1,9 @@
+
+/* First global CSS that can be used for more more than one application
+   if you want within this my_tennis_club project */
+
+/* Note: This CSS style will give text color, but not background color */
+
+body    {
+    color: violet;
+}   

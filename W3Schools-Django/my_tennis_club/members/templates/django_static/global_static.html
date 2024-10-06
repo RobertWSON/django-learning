@@ -1,6 +1,6 @@
 
 {# Handles images and videos from static folder #}
-{# {% load static %} #}
+{% load static %} 
 
 <!DOCTYPE html>
 
@@ -24,18 +24,18 @@
        a suitable name like <code>mystaticfiles</code> that I will use: 
     </p>        
 
-    {# <img src="{% static 'django_static/images/global_static_folder.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_static_folder.png' %}"> 
 
     <p>Add a Global CSS file in <code>mystaticfiles</code> folder and we will give it a suitable name, with my choice 
        being <code>myglobal.css</code> :</p>
 
-    {# <img src="{% static 'django_static/images/global_static_file.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_static_file.png' %}"> 
 
     <p>Open newly created Global CSS file and insert following code:<br><br>
        <code>my_tennis_club/mystaticfiles/myglobal.css</code> :
     </p>
 
-    {# <img src="{% static 'django_static/images/global_css_body_code.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_css_body_code.png' %}"> 
 
     <h3 id="mod_static_settings">Modify Settings for Static Files</h3>
 
@@ -46,7 +46,7 @@
        <code>my_tennis_club/my_tennis_club/settings.py</code> :
     </p>
 
-    {# <img src="{% static 'django_static/images/static_files_in_settings.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_static_file_setting.png' %}"> 
 
     <p>In <code>STATICFILES_DIRS</code> list, you can list all directories where Django should look for static files.
        <br><br>
@@ -65,31 +65,39 @@
 
     <p>Now you have a <i>global</i> CSS file for entire Django project, which can be accessed from all your applications.
        <br><br>
-       To use <i>global</i> CSS in an HTML template, sue same syntax as you did for <code>myfirst.css</code> file : 
+       To use <i>global</i> CSS in an HTML template, use same syntax as you did for <code>myfirst.css</code> file : 
        <br><br>
-       Begin HTML template with folling code : 
+       Begin HTML template with following code : 
     </p>
 
-    {# <img src="{% static 'django_static/images/html_template_load_static.png' %}"> #}
+    <img src="{% static 'images/django_static/add_files/html_template_load_static.png' %}"> 
 
     <p>And refer to Global CSS file like this :</p>
 
-    {# <img src="{% static 'django_static/images/html_template_global_css.png' %}"> #}
+    <img src="{% static 'images/django_static/global/html_template_global_css_link.png' %}"> 
 
     <h4>Global CSS Example</h4>
 
-    {# <img src="{% static 'django_static/images/global_css_example_code.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_css_example_html_code.png' %}">
+    
+    <p>We also need to create a view and url for this global css example.</br>
+       Here is code needed to do this below :
+    </p>
 
-    <p>Restart localhost server for changes to take effect:</p>
+    <img src="{% static 'images/django_static/global/global_css_example_view_and_url.png' %}">
 
-    {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}
+    <p>Ignore styles url, as that is covered in next section.</br></br>
+       Restart localhost server for changes to take effect:
+    </p>
+
+    <img src="{% static 'images/django_static/global/run_localhost_server_global_css_example.png' %}"> 
 
     <p>And check out result in your own browser: <a href="/django_static/global/global_css_example">
        127.0.0.1:8000/django_static/global/global_css_example</a>.<br><br>
        At this early stage you will notice that Global CSS is not showing, as can be seen below. 
     </p>   
 
-    {# <img src="{% static 'django_static/images/global_css_not_showing.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_css_not_showing.png' %}"> 
 
     <h4>Global CSS Didn't Work ?</h4>
 
@@ -97,39 +105,50 @@
 
     <h4>Collect Global Static File(s)</h4>
 
-    <p>Run collectstatic command once again to collect new static global css file :</p>
+    <p>Run collectstatic command once again to collect new static global css file :</br></br>
 
-    {# <img src="{% static 'django_static/images/collect_static.png' %}"> #}
+       Remember on Mac this this is <code>python manage.py collectstatic</code></br> 
+       and on Windows or Linux this is <code>py manage.py collectstatic</code>
+    </p>
+
+    <img src="{% static 'images/django_static/global/collect_global_static.png' %}"> 
 
     <p>Which will produce this result :</p>
 
-    {# <img src="{% static 'django_static/images/collect_global_static_file.png' %}"> #}
+    <img src="{% static 'images/django_static/global/collect_global_static_file.png' %}"> 
 
     <p>Type Yes :</p>
 
-    {# <img src="{% static 'django_static/images/yes_to_continue.png' %}"> #}  
+    <img src="{% static 'images/django_static/global/yes_to_continue.png' %}">   
     
     <p>Which will produce this result :</p>
 
-      {# <img src="{% static 'django_static/images/global_static_file_collected.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_static_file_collected.png' %}"> 
 
     <h3>Global CSS Example Should Work Now</h3>
 
-    <p>If your localhost server is not running, start it up again with your command line by typing this command below:</p>
-
-    {# <img src="{% static 'django_static/images/run_localhost_server.png' %}"> #}  
-
-    <p>And when you check out result in your own browser: <a href="/django_static/global/global_css_example">
-      127.0.0.1:8000/django_static/global/global_css_example</a>, <br>you can see that Global CSS Example is now working.
+    <p>If your localhost server is not running, start it up again with your command line by typing this 
+       command below:
     </p>
 
-    {# <img src="{% static 'django_static/images/global_css_showing.png' %}"> #}
+    <img src="{% static 'images/django_static/global/run_localhost_server_global_css_works.png' %}">   
 
-    <p><b>Note:</b> We are using same code as before, shown below, but because we have collected a global static file, it now 
-       works.
+    <p>And when you check out result in your own browser: 
+      <a href="/django_static/global/global_css_example">
+      127.0.0.1:8000/django_static/global/global_css_example</a>, <br>
+      you can see that Global CSS Example is now working.
     </p>
 
-    {# <img src="{% static 'django_static/images/global_css_example_code.png' %}"> #}
+    <img src="{% static 'images/django_static/global/global_css_showing.png' %}">
+
+    <p><b>Note:</b> We are using same code as before, shown below, but because we have collected a 
+       global static file, it now works.
+    </p>
+
+    <img src="{% static 'images/django_static/global/global_css_example_html_code.png' %}"> 
+
+    <p>Next we will look at how we can <a href="/django_static/styles">Add Styles to this Project</a>
+    </p>
 
   </body>
 </html>        

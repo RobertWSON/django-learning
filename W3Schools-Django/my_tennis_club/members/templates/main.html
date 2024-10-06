@@ -1,5 +1,4 @@
 
-{# comment is where the code should be #}
 {# Main of Main Index Page within Django Add Main Index Page (19 Django - Add Main Index Page) #}
 
 {# Now we use master template that has all necessary HTML elements common in layout for web pages #}
@@ -32,6 +31,9 @@
     {# Content Block with contents in it below. It also inherit the parent body tag with this child block #} 
     {% block content %}   {# Using a child content block tag from master.html for body content of web page. #}
 
+      {# Add a div with a class so that we can style elements in block content tag #}
+      <div class="main">
+
         {# Now we can have html and django content for main body part of web page, within content block #}
         <h1>My Tennis Club</h1>
 
@@ -52,8 +54,7 @@
            Django setup pages.
         </p>
         <p>I have given a link here, to access <a href="hello/">Hello World Page</a></p>
-        {#<p>and I have a link here, to access <a href="first/">First Django Project Page</a></p> #}
-        {# <p>and I have a link here, to access <a href="first_django_page/">First Django Project Page</a></p> #} 
+         
         <p>and a link here, to access <a href="first_django_page/">First Django Project Page</a></p> 
 
         <p>You can find out how I have my <a href="django_setup/">Django set up</a> in more detail through this link.
@@ -91,6 +92,7 @@
           
         <p><a href="field/">Field Lookups Reference</a></p>   
         
+      </div>
 
     {% endblock %}
     
