@@ -71,46 +71,45 @@ This repository is used to help me learn Django through a collection of projects
   Please also read this as well, carefully before setting up Django project.
 
 
-  | Step   | Topic                                  |      Links
-  |--------|----------------------------------------|--------------------------- 
-  |  1     |  Django Setup                          |  [Django Setup](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/)
-  |        |                                        |  [django_setup_refs.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_setup_refs.html) 
+  | Step   | Topic                                  |      Links                           |     Localhost (after setup)           | 
+  |--------|----------------------------------------|--------------------------------------|-------------------------------------- |
+  |  1     |  Django Setup                          |  [Django Setup](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/)       |                                             |     
+  |                                                 |                                      |                                       |    
+  |        |    └─  Django Setup Home               |  [django_setup_refs.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_setup_refs.html)         |    [http://127.0.0.1:8000/django_setup/](http://127.0.0.1:8000/django_setup/)    |
+  |        |                                        |                                      |                                       | 
+  |  1.1   |    Django Introduction                 |  [django_intro.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_intro.html)               |                                        |         
+  |        |                                        |                                      |                                       |
+  |  1.2   |    Django Get Started                  |  [django_get_started.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_get_started.html)        |                                             |
+  |        |                                        |   
+  |  1.3   |    Virtual Environment                 |  [django_virtual_env.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_virtual_env.html)        |                                             |
+  |                                                 |                                      |                                       |  
+  |  1.4   |    Install Django                      |  [django_install.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_install.html)               |   
+  |        |                                        |                                      |                                       |   
+  |  1.5   |    Django Project                      |  [django_project.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_project.html)
+  |        |                                        |                                      |                                       | 
+  |  1.6   |    Django App                          |  [django_app.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_app.html)
+  |        |                                        |                                      |                                       | 
+  |  1.7   |    Django View                         |  [django_views.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_views.html)
+  |        | 
+  |  1.8   |    Django URL                          |  [django_url.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_url.html)        |   [http://127.0.0.1:8000/django_setup/url](http://127.0.0.1:8000/django_setup/url)      |     
+  |        |                                        | 
+  |  1.9   |    Django Template                     |  [django_template.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_template.html)      |     [http://127.0.0.1:8000/django_setup/template](http://127.0.0.1:8000/django_setup/template)         
+  |        |                                        | 
+  |  1.10  |    Django Model                        |  [django_model.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_model.html)       |     [http://127.0.0.1:8000/django_setup/model](http://127.0.0.1:8000/django_setup/model)     |    
+  |        |                                        | 
+  |  1.11  |    Django Insert Data                  |  [django_insert_data.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_insert_data.html)         |    [http://127.0.0.1:8000/django_setup/insert_data](http://127.0.0.1:8000/django_setup/insert_data)        |     
+  |        |                                        | 
+  |  1.12  |    Django Update Data                  |  [django_update_data.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_update_data.html)        |     [http://127.0.0.1:8000/django_setup/update_data](http://127.0.0.1:8000/django_setup/update_data)         |
   |        |                                        |
-  |  1.1   |    └─  Django Intro                    |  [django_intro.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_intro.html)  
-
-  |  1.2   |    └─  Django Get Started              |  [django_get_started.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_get_started.html) 
-
-  |  1.3   |    └─  Virtual Environment             |  [django_virtual_env.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_virtual_env.html)
-
-  |  1.4   |    └─  Install Django                  |  [django_install.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_install.html) 
-
-  |  1.5   |    └─  Django Project                  |  [django_project.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_project.html)
-
-  |  1.6   |    └─  Django App                      |  [django_app.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_app.html)
-
-  |  1.7   |    └─  Django View                     |  [django_views.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_views.html)
-
-  |  1.8   |    └─  Django URL                      |  [django_url.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_url.html)
-  |        |                                        |  [Django URL (localhost)](http://127.0.0.1:8000/django_setup/url)         
-  |        |                                        | 
-  |  1.9   |    └─  Django Template                 |  [django_template.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_template.html)
-  |        |                                        |  [Django Template (localhost)](http://127.0.0.1:8000/django_setup/template)         
-  |        |                                        | 
-  |  1.10  |    └─  Django Model                    |  [django_model.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_model.html)
-  |        |                                        |  [Django Model (localhost)](http://127.0.0.1:8000/django_setup/model)         
-  |        |                                        | 
-  |  1.11  |    └─  Django Insert Data              |  [django_insert_data.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_insert_data.html)
-  |        |                                        |  [Django Insert Data (localhost)](http://127.0.0.1:8000/django_setup/insert_data)         
-  |        |                                        | 
-  |  1.12  |    └─  Django Update Data              |  [django_update_data.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_update_data.html)
-  |        |                                        |  [Django Update Data (localhost)](http://127.0.0.1:8000/django_setup/update_data)                                      |
+  |  1.13  |    Django Delete Data                  |  [django_delete_data.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_delete_data.html)                |  [http://127.0.0.1:8000/django_setup/delete_data](http://127.0.0.1:8000/django_setup/delete_data)         |                                   
   |        |                                        |
-  |  1.13  |    └─  Django Delete Data              |  [django_delete_data.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_delete_data.html)
-  |        |                                        |  [Django Delete Data (localhost)](http://127.0.0.1:8000/django_setup/delete_data)                                      |
-  |        |                                        |
-  |  1.14  |    └─  Django Update Model             |  [django_update_model.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_update_model.html)
-  |        |                                        |  [Django Update Data (localhost)](http://127.0.0.1:8000/django_setup/update_data) 
+  |  1.14  |    Django Update Model                 |  [django_update_model.html](https://github.com/RobertWSON/django-learning/blob/main/W3Schools-Django/my_tennis_club/members/templates/django_setup/django_update_model.html)          |    [http://127.0.0.1:8000/django_setup/update_data](http://127.0.0.1:8000/django_setup/update_data)     |
+  |        |                                        |   
   
+
+  > ℹ️ When running your project for the first time, it is recommended to use [http://127.0.0.1:8000/hello](http://127.0.0.1:8000/hello) to display Hello World message.  
+> While [http://127.0.0.1:8000/members](http://127.0.0.1:8000/members) may also work initially, it is used later for displaying tennis club member data — so it’s clearer to keep Hello World on its own route.
+
 
 - **Setup Instructions**
 
